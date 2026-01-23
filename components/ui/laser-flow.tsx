@@ -255,6 +255,8 @@ interface LaserFlowProps {
   falloffStart?: number;
   fogFallSpeed?: number;
   color?: string;
+  /** Target FPS limit to reduce GPU load (default: 30) */
+  targetFps?: number;
 }
 
 export const LaserFlow = ({
@@ -278,6 +280,7 @@ export const LaserFlow = ({
   falloffStart = 1.2,
   fogFallSpeed = 0.6,
   color = "#FF79C6",
+  targetFps = 30,
 }: LaserFlowProps) => {
   const mountRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -325,7 +328,8 @@ export const LaserFlow = ({
     });
     rendererRef.current = renderer;
 
-    baseDprRef.current = Math.min(dpr ?? (window.devicePixelRatio || 1), 2);
+    // Default to 1.0 DPR to reduce GPU load (was devicePixelRatio which is 2x on Retina)
+    baseDprRef.current = Math.min(dpr ?? 1, 2);
     currentDprRef.current = baseDprRef.current;
 
     renderer.setPixelRatio(currentDprRef.current);
@@ -525,11 +529,20 @@ export const LaserFlow = ({
       lastFpsCheckRef.current = now;
     };
 
+    // FPS limiting
+    const frameInterval = 1 / targetFps;
+    let lastFrameTime = 0;
+
     const animate = () => {
       raf = requestAnimationFrame(animate);
       if (pausedRef.current || !inViewRef.current) return;
 
       const t = clock.getElapsedTime();
+
+      // Skip frame if not enough time has passed (FPS limiting)
+      if (t - lastFrameTime < frameInterval) return;
+      lastFrameTime = t;
+
       const dt = Math.max(0, t - prevTime);
       prevTime = t;
 
