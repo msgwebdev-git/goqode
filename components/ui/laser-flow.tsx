@@ -390,7 +390,6 @@ export const LaserFlow = ({
     mesh.frustumCulled = false;
     scene.add(mesh);
 
-    const clock = new THREE.Clock();
     let prevTime = 0;
     let fade = hasFadedRef.current ? 1 : 0;
 
@@ -482,8 +481,6 @@ export const LaserFlow = ({
     canvas.addEventListener("webglcontextlost", onCtxLost, false);
     canvas.addEventListener("webglcontextrestored", onCtxRestored, false);
 
-    let raf = 0;
-
     const clamp = (v: number, lo: number, hi: number) =>
       Math.max(lo, Math.min(hi, v));
     const dprFloor = 0.6;
@@ -525,11 +522,10 @@ export const LaserFlow = ({
       lastFpsCheckRef.current = now;
     };
 
-    const animate = () => {
-      raf = requestAnimationFrame(animate);
+    const animate = (time: number) => {
       if (pausedRef.current || !inViewRef.current) return;
 
-      const t = clock.getElapsedTime();
+      const t = time * 0.001; // convert to seconds
       const dt = Math.max(0, t - prevTime);
       prevTime = t;
 
@@ -561,10 +557,11 @@ export const LaserFlow = ({
       adjustDprIfNeeded(performance.now());
     };
 
-    animate();
+    // Use Three.js recommended animation loop
+    renderer.setAnimationLoop(animate);
 
     return () => {
-      cancelAnimationFrame(raf);
+      renderer.setAnimationLoop(null);
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", onVis);

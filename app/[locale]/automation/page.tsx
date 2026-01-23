@@ -95,6 +95,7 @@ function AutomationHero() {
           wispDensity={1.2}
           wispIntensity={6}
           flowSpeed={0.4}
+          dpr={1}
         />
       </div>
 
