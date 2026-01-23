@@ -1,0 +1,892 @@
+{
+  "Navbar": {
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Let's talk",
+    "language": "Language",
+    "allSolutions": "All solutions",
+    "solutionsMenu": {
+      "launch": "Business Launch",
+      "launchDesc": "From zero to first sales",
+      "growth": "Sales Growth",
+      "growthDesc": "Scaling and conversion optimization",
+      "platforms": "Online Platforms",
+      "platformsDesc": "Web applications and marketplaces",
+      "events": "Event Solutions",
+      "eventsDesc": "Registration and event management",
+      "automation": "Automation",
+      "automationDesc": "Business process optimization",
+      "branding": "Branding",
+      "brandingDesc": "Identity and visual style",
+      "support": "Support",
+      "supportDesc": "Technical support 24/7"
+    }
+  },
+  "Hero": {
+    "subtitle": "We develop. We automate. We promote",
+    "description": "We create websites, web applications, and digital solutions that help businesses grow. From design to development to marketing — we handle the full cycle.",
+    "cta": "Let's talk",
+    "ctaSecondary": "View cases"
+  },
+  "Solutions": {
+    "title": "Solutions",
+    "subtitle": "What we do",
+    "description": "Comprehensive digital solutions for businesses of any scale",
+    "columns": {
+      "number": "#",
+      "solution": "Solution",
+      "task": "Task",
+      "result": "Result"
+    },
+    "items": {
+      "0": {
+        "solution": "Business Launch",
+        "task": "Brand, website, marketing",
+        "result": "First leads and sales"
+      },
+      "1": {
+        "solution": "Sales Growth",
+        "task": "Conversion optimization",
+        "result": "Increased leads and revenue"
+      },
+      "2": {
+        "solution": "Online Platforms",
+        "task": "SaaS, marketplaces, dashboards",
+        "result": "Digital product"
+      },
+      "3": {
+        "solution": "Event Solutions",
+        "task": "Digital event infrastructure",
+        "result": "Managed event product"
+      },
+      "4": {
+        "solution": "Branding",
+        "task": "Identity and positioning",
+        "result": "Cohesive brand"
+      },
+      "5": {
+        "solution": "Automation",
+        "task": "CRM, integrations, processes",
+        "result": "Resource savings"
+      },
+      "6": {
+        "solution": "Support",
+        "task": "Post-launch development",
+        "result": "Stable product operation"
+      }
+    }
+  },
+  "Cases": {
+    "title": "Cases",
+    "subtitle": "Portfolio",
+    "description": "Real projects that helped our clients achieve their business goals",
+    "viewAll": "View all cases",
+    "viewProject": "View project",
+    "items": {
+      "0": {
+        "title": "E-commerce Fashion Platform",
+        "description": "Modern online store with personalized shopping experience and payment system integration",
+        "challenge": "Client needed a scalable platform to handle thousands of products and heavy traffic",
+        "solution": "We developed a Next.js solution with advanced optimization and AI recommendation system",
+        "result": "+180% conversion in 3 months"
+      },
+      "1": {
+        "title": "Mobile Banking App",
+        "description": "iOS and Android app for personal finance management and instant transfers",
+        "challenge": "Maximum security combined with intuitive UX for all user categories",
+        "solution": "Biometric authentication, end-to-end encryption and simple design",
+        "result": "50K+ downloads in first month"
+      },
+      "2": {
+        "title": "Analytics Dashboard SaaS",
+        "description": "Business intelligence platform with interactive visualizations and automated reports",
+        "challenge": "Processing and visualizing large volumes of data in real-time",
+        "solution": "Microservices architecture with smart caching and optimized charts",
+        "result": "70% reduction in analysis time"
+      },
+      "3": {
+        "title": "Tech Company Rebranding",
+        "description": "Complete visual identity for a medical technology startup",
+        "challenge": "Creating a brand that inspires trust and innovation",
+        "solution": "Modern logo, distinctive color palette and complete brand guide",
+        "result": "+200% brand recognition"
+      },
+      "4": {
+        "title": "Corporate Events Platform",
+        "description": "Registration, ticketing and management system for events with 5000+ participants",
+        "challenge": "Managing high participant flow and integration with external systems",
+        "solution": "Custom platform with QR check-in, live streaming and virtual networking",
+        "result": "15+ events managed"
+      },
+      "5": {
+        "title": "HR Process Automation",
+        "description": "Integrated human resources management system with automated workflow",
+        "challenge": "Digitizing manual processes and reducing processing time",
+        "solution": "Integration with existing systems, document automation and notifications",
+        "result": "40 hours/week saved"
+      }
+    }
+  },
+  "About": {
+    "title": "About us",
+    "subtitle": "Team",
+    "heroText": "We build complete digital solutions that transform businesses. Strategy. Design. Development. Marketing. Everything you need to dominate your market.",
+    "description": "We are a team of professionals passionate about technology and design. We believe every project deserves an individual approach and quality solutions.",
+    "stats": {
+      "experience": "years of combined experience",
+      "projects": "projects delivered",
+      "industries": "industries served"
+    },
+    "teamMessage": "We're a young company that brings together experts with years of digital experience. We combine startup energy with the depth of knowledge from top agencies.",
+    "advantages": {
+      "flexibility": {
+        "title": "Flexibility",
+        "description": "We adapt quickly to your needs. No bureaucracy or lengthy approvals — we work as part of your team."
+      },
+      "attention": {
+        "title": "Personal Attention",
+        "description": "Every client is a priority. You won't get lost among hundreds of projects — you get founders' attention."
+      },
+      "drive": {
+        "title": "Energy & Drive",
+        "description": "We're passionate about every project. Your success is our reputation, so we give 100%."
+      },
+      "results": {
+        "title": "Results-Focused",
+        "description": "We work toward measurable business outcomes. We don't just build websites — we help you grow revenue."
+      }
+    },
+    "cta": {
+      "title": "Ready to collaborate?",
+      "button": "Contact us"
+    }
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's talk",
+    "description": "Have an idea or a project? Write to us and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "company": "Company",
+      "companyPlaceholder": "Company name (optional)",
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or idea...",
+      "submit": "Send message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title": "Contact information"
+    },
+    "social": {
+      "title": "Follow us"
+    }
+  },
+  "Footer": {
+    "description": "We create digital solutions that help businesses grow. From design to development and marketing.",
+    "nav": {
+      "title": "Navigation",
+      "solutions": "Solutions",
+      "cases": "Cases",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "rights": "All rights reserved."
+  },
+  "Clients": {
+    "title": "Trusted by",
+    "ariaLabel": "Client logos"
+  },
+  "Testimonials": {
+    "title": "Reviews",
+    "subtitle": "What clients say",
+    "description": "Real feedback from companies we've helped achieve their digital goals",
+    "items": {
+      "0": {
+        "quote": "Working with GoQode was a game-changer for our business. They delivered a stunning website that increased our conversions by 200%. Their attention to detail and understanding of our needs exceeded all expectations.",
+        "author": "Alex Johnson",
+        "role": "CEO",
+        "company": "TechStart"
+      },
+      "1": {
+        "quote": "The team's expertise in modern web technologies helped us launch our platform ahead of schedule. Highly recommend!",
+        "author": "Maria Santos",
+        "role": "Product Manager",
+        "company": "DataFlow"
+      },
+      "2": {
+        "quote": "Professional, responsive, and incredibly talented. They transformed our outdated website into a modern masterpiece.",
+        "author": "David Chen",
+        "role": "Founder",
+        "company": "GreenLeaf"
+      },
+      "3": {
+        "quote": "Outstanding results! Our e-commerce sales doubled within the first month after the redesign.",
+        "author": "Emma Wilson",
+        "role": "Marketing Director",
+        "company": "StyleHub"
+      }
+    }
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Articles",
+    "description": "Sharing experience, trends and insights from the world of digital development",
+    "viewAll": "All articles",
+    "readTime": "min",
+    "categories": {
+      "design": "Design",
+      "development": "Development",
+      "technology": "Technology",
+      "marketing": "Marketing"
+    },
+    "posts": {
+      "0": {
+        "title": "Web Design Trends 2025",
+        "excerpt": "What visual solutions will dominate in the coming year and how to apply them in your projects"
+      },
+      "1": {
+        "title": "Next.js Performance Optimization",
+        "excerpt": "Practical tips for speeding up loading and improving Core Web Vitals of your application"
+      },
+      "2": {
+        "title": "AI in Web Development",
+        "excerpt": "How artificial intelligence is changing the approach to creating websites and applications"
+      }
+    }
+  },
+  "Process": {
+    "title": "Process",
+    "subtitle": "How we work",
+    "marquee": "PROCESS • ",
+    "steps": {
+      "0": {
+        "title": "Brief",
+        "description": "Getting to know your business, goals and objectives",
+        "includes": ["Meeting/call", "Requirements analysis", "KPI definition"]
+      },
+      "1": {
+        "title": "Research",
+        "description": "Analyzing market, competitors and target audience",
+        "includes": ["Competitor analysis", "Audience research", "Strategy development"]
+      },
+      "2": {
+        "title": "Execution",
+        "description": "Designing, developing and building the solution",
+        "includes": ["UX/UI design", "Development", "Integrations"]
+      },
+      "3": {
+        "title": "Launch",
+        "description": "Deploying, testing and optimizing results",
+        "includes": ["Testing", "Deployment", "Analytics & optimization"]
+      }
+    },
+    "cta": {
+      "step": "Next step",
+      "cardTitle": "Ready to start?",
+      "cardSubtitle": "Transform your idea into reality",
+      "title": "Ready to start a project?",
+      "subtitle": "Let's discuss your idea and build the perfect solution together",
+      "button": "Get in touch"
+    }
+  },
+  "Launch": {
+    "hero": {
+      "label": "Solution",
+      "title": "Business Launch",
+      "subtitle": "Bring your product or company to market with a properly built digital foundation.",
+      "cta": "Start Your Project"
+    },
+    "overview": {
+      "label": "What's Included",
+      "title": "Launch Package Contents",
+      "description": "A comprehensive approach to launching your digital business. Every step is designed to achieve results — your first customers and sales.",
+      "steps": {
+        "0": {
+          "title": "Niche Analytics",
+          "description": "We research the market, competitors, and target audience to form a strategy",
+          "details": "Deep dive into your niche: we analyze top-10 competitors, identify their strengths and weaknesses, study target audience through interviews and surveys. Output: positioning, USP, and go-to-market strategy.",
+          "deliverables": "Competitor analysis, Customer personas, USP, Strategy"
+        },
+        "1": {
+          "title": "UX Architecture",
+          "description": "We design user scenarios and information structure",
+          "details": "We create a customer journey map from first touch to purchase. Design information architecture, wireframes, and interactive prototypes. Test with real users to optimize conversion.",
+          "deliverables": "User Flows, Sitemap, Wireframes, Prototypes"
+        },
+        "2": {
+          "title": "UI Design",
+          "description": "We create a visual style that sets you apart from competitors",
+          "details": "We develop a unique brand visual language: color palette, typography, icons, illustrations. Create a design system and all page layouts with mobile adaptation.",
+          "deliverables": "Design system, UI Kit, All layouts, Responsive"
+        },
+        "3": {
+          "title": "Development",
+          "description": "We build websites or platforms using modern technologies",
+          "details": "We use modern stack: Next.js, React, TypeScript. Optimize for SEO and Core Web Vitals. Integrate with CMS for easy content management. Connect necessary services and APIs.",
+          "deliverables": "Frontend, CMS, Integrations, SEO optimization"
+        },
+        "4": {
+          "title": "Analytics",
+          "description": "We connect analytics systems to track effectiveness",
+          "details": "Set up Google Analytics 4, advertising pixels. Create dashboards to track key metrics: traffic, conversions, user behavior.",
+          "deliverables": "GA4, Goals & events, Dashboards"
+        },
+        "5": {
+          "title": "Marketing",
+          "description": "We set up initial customer acquisition channels",
+          "details": "Basic SEO optimization for organic traffic. Set up advertising accounts for Google Ads, Meta Ads. CRM integration for lead automation. Email marketing for audience nurturing.",
+          "deliverables": "SEO on-page, Ad pixels, CRM, Email"
+        },
+        "6": {
+          "title": "Funnel",
+          "description": "We build a sales funnel to convert visitors into customers",
+          "details": "Design complete funnel: from acquisition to repeat sales. Create lead magnets, landing pages, email sequences. Set up retargeting to bring visitors back.",
+          "deliverables": "Lead magnets, Landing pages, Email sequences, Retargeting"
+        }
+      }
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "digital_presence": "Complete digital presence from day one",
+      "first_leads": "First leads in the first month",
+      "conversion_growth": "Conversion increase vs industry average"
+    },
+    "cta": {
+      "title": "Ready to Launch?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "Growth": {
+    "hero": {
+      "label": "Solution",
+      "title": "Sales Growth",
+      "subtitle": "Increase conversion, reduce acquisition costs, and scale sales through funnel optimization.",
+      "cta": "Boost Sales"
+    },
+    "overview": {
+      "label": "What's Included",
+      "title": "Growth Package Contents",
+      "description": "A comprehensive approach to increasing sales through optimization of every funnel stage. We analyze, test, implement — measurable results.",
+      "steps": {
+        "0": {
+          "title": "Funnel Audit",
+          "description": "Complete analysis of your current sales funnel and identification of drop-off points",
+          "details": "We conduct a deep audit of all funnel stages: from first touch to repeat sales. We analyze user behavior, identify bottlenecks, and determine growth potential at each stage.",
+          "deliverables": "Funnel map, Drop-off report, Growth points, Priorities"
+        },
+        "1": {
+          "title": "A/B Testing",
+          "description": "Systematic hypothesis testing to increase conversion",
+          "details": "We form data-driven hypotheses and run A/B tests on key elements: headlines, CTAs, forms, landing pages. Statistically significant results for decision-making.",
+          "deliverables": "Hypothesis bank, A/B tests, Statistics, Conclusions"
+        },
+        "2": {
+          "title": "CRO Optimization",
+          "description": "Implementing changes to increase conversion at every stage",
+          "details": "Based on test data, we implement changes: optimize UX, simplify forms, improve load speed, add social proof and urgency triggers.",
+          "deliverables": "UX improvements, New forms, Social proof, Triggers"
+        },
+        "3": {
+          "title": "Behavior Analytics",
+          "description": "Deep analytics of user actions on the website",
+          "details": "We set up heatmaps, session recordings, form analytics. We understand how users interact with the site, where they drop off, and why they don't convert.",
+          "deliverables": "Heatmaps, Session recordings, Form analysis, Insights"
+        },
+        "4": {
+          "title": "Performance Marketing",
+          "description": "Optimizing ad campaigns to reduce CAC",
+          "details": "Audit and optimization of ad accounts: we improve targeting, test creatives, optimize bids. We reduce customer acquisition cost while maintaining quality.",
+          "deliverables": "Ad audit, New creatives, Bid optimization, Retargeting"
+        },
+        "5": {
+          "title": "Email Marketing",
+          "description": "Automated sequences for nurturing and customer retention",
+          "details": "We create automated email sequences: welcome series, abandoned carts, reactivation, upsell. Personalization based on user behavior.",
+          "deliverables": "Welcome series, Abandoned cart, Reactivation, Upsell"
+        },
+        "6": {
+          "title": "Sales Automation",
+          "description": "CRM implementation and sales process automation",
+          "details": "We configure CRM for your processes: automatic lead distribution, manager reminders, automatic follow-ups. Integration with website and advertising systems.",
+          "deliverables": "CRM setup, Lead automation, Follow-up, Integrations"
+        }
+      }
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "conversion_increase": "Average conversion growth after optimization",
+      "cost_reduction": "Reduction in customer acquisition cost",
+      "roi_growth": "Marketing investment ROI growth"
+    },
+    "cta": {
+      "title": "Ready to Grow?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "Platforms": {
+    "hero": {
+      "title": "Platforms",
+      "subtitle": "We build scalable platforms from scratch: SaaS, marketplaces, client portals. Reliable architecture, modern design, fast launch.",
+      "cta": "Discuss Project"
+    },
+    "types": {
+      "label": "Platform Types",
+      "title": "Platforms",
+      "description": "Tools, security, and integrations — everything you need to launch and scale, zero hassle.",
+      "items": {
+        "0": {
+          "title": "SaaS",
+          "description": "Subscription-based cloud services: CRM, analytics, automation. Multi-tenant architecture with data isolation.",
+          "features": "Subscription monetization, Auto-scaling, Built-in analytics"
+        },
+        "1": {
+          "title": "Marketplaces",
+          "description": "Platforms connecting sellers and buyers. Payments, ratings, search and filtering.",
+          "features": "Commission system, Seller verification, Secure payments"
+        },
+        "2": {
+          "title": "Client Portals",
+          "description": "Personal spaces for business clients. Orders, history, documents, communication.",
+          "features": "Secure authorization, Role management, Notifications"
+        }
+      }
+    },
+    "features": {
+      "label": "Capabilities",
+      "title": "Why Clients Choose Us",
+      "items": {
+        "0": {
+          "title": "Scalability",
+          "description": "Platform architecture designed for growth. From 100 to 100,000 users without rewriting code. Load balancing, caching, database optimization.",
+          "points": "Auto-scaling, Global CDN, Distributed databases"
+        },
+        "1": {
+          "title": "Security",
+          "description": "Protection at all levels: data encryption, secure authentication, access audit. GDPR, PCI DSS compliance.",
+          "points": "End-to-end encryption, 2FA, Auto-backup"
+        },
+        "2": {
+          "title": "Integrations",
+          "description": "Connection to any external services: payments, CRM, ERP, marketing. Own API for partners and developers.",
+          "points": "REST API, Webhooks, Ready-made SDKs"
+        }
+      }
+    },
+    "process": {
+      "label": "Process",
+      "title": "How We Build Platforms",
+      "phases": {
+        "discovery": {
+          "title": "Discovery",
+          "steps": {
+            "strategy": "Strategy Workshop",
+            "requirements": "Requirements Gathering",
+            "audit": "Technical Audit",
+            "architecture": "System Architecture"
+          }
+        },
+        "design": {
+          "title": "Design",
+          "steps": {
+            "ux": "UX Research",
+            "prototypes": "Prototyping",
+            "ui": "UI Design System"
+          }
+        },
+        "development": {
+          "title": "Development",
+          "steps": {
+            "frontend": "Frontend Development",
+            "backend": "Backend & API",
+            "testing": "Testing & QA"
+          }
+        },
+        "launch": {
+          "title": "Launch",
+          "steps": {
+            "deployment": "Deployment & CI/CD",
+            "support": "Monitoring & Support"
+          }
+        }
+      }
+    },
+    "bento": {
+      "label": "Technologies",
+      "title": "What's Under the Hood",
+      "items": {
+        "architecture": {
+          "title": "Cloud Architecture",
+          "description": "Microservices, containers and orchestration for maximum reliability"
+        },
+        "security": {
+          "title": "Data Protection",
+          "description": "Encryption, audit, compliance with security standards"
+        },
+        "api": {
+          "title": "Platform API",
+          "description": "REST and GraphQL for integration with any system"
+        },
+        "analytics": {
+          "title": "Built-in Analytics",
+          "description": "Metrics, reports and dashboards for data-driven decisions"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "description": "Works perfectly on any device"
+        }
+      }
+    },
+    "stack": {
+      "label": "Tech Stack",
+      "title": "Technologies We Use",
+      "categories": {
+        "frontend": {
+          "title": "Frontend"
+        },
+        "backend": {
+          "title": "Backend"
+        },
+        "database": {
+          "title": "Database"
+        },
+        "devops": {
+          "title": "DevOps"
+        }
+      }
+    },
+    "stats": {
+      "label": "In Numbers",
+      "title": "Guaranteed Results",
+      "items": {
+        "0": {
+          "value": "99.9",
+          "suffix": "%",
+          "label": "Platform uptime guarantee"
+        },
+        "1": {
+          "value": "50",
+          "suffix": "+",
+          "label": "Successfully launched platforms"
+        },
+        "2": {
+          "value": "24/7",
+          "suffix": "",
+          "label": "Technical support and monitoring"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "Automation": {
+    "hero": {
+      "title": "Automation",
+      "subtitle": "Turn routine into autopilot. Save time and money by automating business processes, integrations, and communications.",
+      "cta": "Automate Business"
+    },
+    "types": {
+      "label": "Types of Automation",
+      "title": "What We Automate",
+      "description": "From chatbots to complex integrations — we automate everything that takes your team's time",
+      "items": {
+        "chatbots": {
+          "title": "Chatbots & AI Assistants",
+          "description": "24/7 customer support, lead qualification, and sales automation. Integration with any messenger and website.",
+          "features": "Telegram, WhatsApp, Website, Lead qualification, FAQ automation"
+        },
+        "crm": {
+          "title": "CRM & ERP Integrations",
+          "description": "Automatic data synchronization between systems. No more manual data entry and lost information.",
+          "features": "Bitrix, Amo, Kommo, Custom CRM"
+        },
+        "email": {
+          "title": "Email Marketing",
+          "description": "Trigger sequences, personalization, and automatic segmentation. Each client receives relevant content.",
+          "features": "Welcome series, Abandoned cart, Reactivation, Personalization"
+        },
+        "messengers": {
+          "title": "Messenger Automation",
+          "description": "Telegram and WhatsApp bots for customer communication. Notifications, orders, support.",
+          "features": "Order notifications, Status updates, Support chat, Feedback"
+        },
+        "workflow": {
+          "title": "Workflow Automation",
+          "description": "Automation of internal processes, tasks, and approvals. Fewer routine tasks for employees.",
+          "features": "Approval chains, Task assignment, Reminders, Reports"
+        },
+        "reporting": {
+          "title": "Reporting & Analytics",
+          "description": "Automatic dashboards and reports. All key metrics in one place, updated in real-time.",
+          "features": "Auto-reports, Dashboards, Data aggregation, Alerts"
+        }
+      }
+    },
+    "flow": {
+      "label": "Transformation",
+      "title": "Before & After Automation",
+      "before": {
+        "title": "Before",
+        "items": {
+          "0": "Manual data entry between systems",
+          "1": "Lost leads and missed messages",
+          "2": "Hours spent on routine tasks",
+          "3": "Human errors in processes"
+        }
+      },
+      "after": {
+        "title": "After",
+        "items": {
+          "0": "Automatic data synchronization",
+          "1": "Instant response to every request",
+          "2": "Team focuses on strategic tasks",
+          "3": "Predictable and error-free processes"
+        }
+      }
+    },
+    "stack": {
+      "label": "Technologies",
+      "title": "Integrations & Tools",
+      "description": "We work with all popular platforms and can integrate any service via API"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "time_saved": "Less time on routine tasks",
+      "conversion": "Higher conversion with chatbots",
+      "availability": "Work without breaks",
+      "errors": "Errors in data processing"
+    },
+    "process": {
+      "label": "Process",
+      "title": "How We Implement",
+      "steps": {
+        "audit": {
+          "title": "Audit",
+          "description": "Analyze current processes and find automation opportunities"
+        },
+        "design": {
+          "title": "Design",
+          "description": "Create automation architecture and integration scheme"
+        },
+        "development": {
+          "title": "Development",
+          "description": "Build integrations, bots and automated workflows"
+        },
+        "testing": {
+          "title": "Testing",
+          "description": "Test all scenarios and edge cases"
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Deploy and train your team"
+        }
+      }
+    },
+    "cta": {
+      "title": "Automate Routine?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "Events": {
+    "hero": {
+      "title": "Event Solutions",
+      "subtitle": "Full cycle event management: registration, QR tickets, check-in systems, analytics. From planning to post-event analysis.",
+      "cta": "Plan Your Event"
+    },
+    "flow": {
+      "label": "How It Works",
+      "title": "Complete Event Cycle",
+      "steps": {
+        "0": { "title": "Event Website", "description": "Ticket sales & registration" },
+        "1": { "title": "QR Tickets", "description": "Generation & delivery" },
+        "2": { "title": "Check-in", "description": "Entrance scanning" },
+        "3": { "title": "Analytics", "description": "Real-time data" },
+        "4": { "title": "Post-event", "description": "Reports & follow-up" }
+      }
+    },
+    "services": {
+      "label": "What's Included",
+      "title": "Event Solutions Package",
+      "description": "Complete digital infrastructure for events of any scale",
+      "items": {
+        "0": {
+          "title": "Event Website",
+          "description": "Custom landing page with built-in ticket sales, registration forms, and integrated payment systems.",
+          "deliverables": "Landing page, Payment integration, Shopping cart, Promo codes"
+        },
+        "1": {
+          "title": "QR Tickets",
+          "description": "Unique QR codes for each ticket with encryption protection. Automated email delivery with PDF attachments.",
+          "deliverables": "QR generation, Email automation, PDF tickets, Unique codes"
+        },
+        "2": {
+          "title": "Check-in System",
+          "description": "Mobile and tablet scanning apps for entrance staff. Real-time validation with live attendance dashboard.",
+          "deliverables": "Scanner app, Dashboard, Real-time stats, Offline mode"
+        },
+        "3": {
+          "title": "Analytics Dashboard",
+          "description": "Comprehensive dashboard with ticket sales trends, revenue tracking, and attendee demographics.",
+          "deliverables": "Reports, Dashboards, Export, Real-time metrics"
+        },
+        "4": {
+          "title": "Additional Services",
+          "description": "Automated reminder emails, post-event surveys for feedback, and certificate generation for attendees.",
+          "deliverables": "Email automation, Reminders, Surveys, Certificates"
+        }
+      },
+      "drawerIncluded": "What's included",
+      "drawerFeatures": "Features",
+      "drawerCta": "Discuss project",
+      "drawerClose": "Close"
+    },
+    "solutions": {
+      "0": {
+        "headline": "Event website that sells",
+        "features": "Responsive design for all devices|Payment systems integration|Shopping cart with promo codes|Multi-language support built-in|SEO optimization included"
+      },
+      "1": {
+        "headline": "Smart QR tickets",
+        "features": "Unique QR code for each ticket|Automatic email delivery|PDF and mobile formats|Custom design for your brand|Bulk ticket generation"
+      },
+      "2": {
+        "headline": "Check-in in 0.3 seconds",
+        "features": "Scan with any device|Live attendance dashboard|Multiple entry points|Duplicate scan protection"
+      },
+      "3": {
+        "headline": "Complete picture in real-time",
+        "features": "Sales and conversion charts|Attendee demographics & geography|Compare with past events|Export to Excel, PDF, CSV|API for your system integration"
+      },
+      "4": {
+        "headline": "Automation before and after",
+        "features": "Smart reminders at 7d, 1d, 2h|Post-event surveys|Email and SMS campaigns|CRM system integration"
+      }
+    },
+    "ticket": {
+      "label": "Technology",
+      "title": "Smart QR Tickets",
+      "description": "Each ticket contains encrypted data with multi-level protection against counterfeiting. Instant validation ensures smooth check-in process.",
+      "eventLabel": "Event",
+      "dateLabel": "Date",
+      "timeLabel": "Time",
+      "locationLabel": "Location",
+      "ticketId": "Ticket ID",
+      "verified": "Verified",
+      "scanning": "Scanning...",
+      "hoverToScan": "Hover to simulate scan",
+      "features": {
+        "0": "Unique encrypted QR codes",
+        "1": "Instant validation in 0.3 seconds",
+        "2": "Works offline with sync"
+      }
+    },
+    "results": {
+      "label": "Track Record",
+      "title": "Proven Results",
+      "items": {
+        "0": "Events managed",
+        "1": "Participants registered",
+        "2": "Scan accuracy",
+        "3": "Average scan time"
+      },
+      "bottomText": "Numbers based on successfully completed projects"
+    },
+    "process": {
+      "label": "Process",
+      "title": "How We Work",
+      "steps": {
+        "brief": {
+          "title": "Brief",
+          "description": "Discuss goals and requirements"
+        },
+        "development": {
+          "title": "Development",
+          "description": "Build platform for your event"
+        },
+        "testing": {
+          "title": "Testing",
+          "description": "Verify all scenarios"
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Deploy and open registration"
+        },
+        "support": {
+          "title": "Support",
+          "description": "Assistance on event day"
+        }
+      }
+    },
+    "stack": {
+      "label": "Technologies",
+      "title": "Our Stack",
+      "frontend": {
+        "title": "Frontend",
+        "subtitle": "Modern UI and interactivity"
+      },
+      "backend": {
+        "title": "Backend",
+        "subtitle": "Reliable server-side solutions"
+      },
+      "infra": {
+        "title": "Infrastructure",
+        "subtitle": "Hosting and deployment"
+      },
+      "mobile": {
+        "title": "Mobile",
+        "subtitle": "Cross-platform applications"
+      }
+    },
+    "comparison": {
+      "label": "Comparison",
+      "title": "Aggregators vs Custom Platform",
+      "aggregators": {
+        "title": "Aggregators",
+        "features": {
+          "0": "5-15% commission per ticket",
+          "1": "No control over customer data",
+          "2": "Limited customization options",
+          "3": "Platform dependency",
+          "4": "The more you sell — the more you pay"
+        }
+      },
+      "custom": {
+        "title": "Custom Platform",
+        "features": {
+          "0": "0% commission forever",
+          "1": "Full control over data",
+          "2": "Any customization for your brand",
+          "3": "Your platform, your rules",
+          "4": "Investment that pays off"
+        }
+      },
+      "note": "After 2-3 events, your own platform pays for itself completely"
+    },
+    "cta": {
+      "title": "Ready to Launch Your Event?",
+      "button": "Plan Event",
+      "contactText": "Or email us at",
+      "benefits": {
+        "0": "Free consultation",
+        "1": "Custom solution",
+        "2": "24/7 support on event day"
+      }
+    }
+  }
+}

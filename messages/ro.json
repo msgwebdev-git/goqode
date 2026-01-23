@@ -1,0 +1,892 @@
+{
+  "Navbar": {
+    "solutions": "Solutii",
+    "cases": "Cazuri",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "cta": "Hai sa discutam",
+    "language": "Limba",
+    "allSolutions": "Toate solutiile",
+    "solutionsMenu": {
+      "launch": "Lansare afacere",
+      "launchDesc": "De la zero la primele vanzari",
+      "growth": "Crestere vanzari",
+      "growthDesc": "Scalare si optimizarea conversiei",
+      "platforms": "Platforme online",
+      "platformsDesc": "Aplicatii web si marketplace-uri",
+      "events": "Solutii event",
+      "eventsDesc": "Inregistrare si managementul evenimentelor",
+      "automation": "Automatizare",
+      "automationDesc": "Optimizarea proceselor de business",
+      "branding": "Branding",
+      "brandingDesc": "Identitate si stil vizual",
+      "support": "Suport",
+      "supportDesc": "Suport tehnic 24/7"
+    }
+  },
+  "Hero": {
+    "subtitle": "Dezvoltăm. Automatizăm. Promovăm",
+    "description": "Creăm site-uri, aplicații web și soluții digitale care ajută afacerile să crească. De la design la dezvoltare și marketing — ne ocupăm de ciclul complet.",
+    "cta": "Hai să discutăm",
+    "ctaSecondary": "Vezi cazuri"
+  },
+  "Solutions": {
+    "title": "Soluții",
+    "subtitle": "Ce facem",
+    "description": "Soluții digitale complete pentru afaceri de orice dimensiune",
+    "columns": {
+      "number": "#",
+      "solution": "Soluție",
+      "task": "Sarcină",
+      "result": "Rezultat"
+    },
+    "items": {
+      "0": {
+        "solution": "Lansare afacere",
+        "task": "Brand, site, marketing",
+        "result": "Primele cereri și vânzări"
+      },
+      "1": {
+        "solution": "Creștere vânzări",
+        "task": "Optimizarea conversiei",
+        "result": "Creștere lead-uri și venituri"
+      },
+      "2": {
+        "solution": "Platforme online",
+        "task": "SaaS, marketplace-uri, dashboard-uri",
+        "result": "Produs digital"
+      },
+      "3": {
+        "solution": "Soluții event",
+        "task": "Infrastructură digitală pentru evenimente",
+        "result": "Produs event gestionat"
+      },
+      "4": {
+        "solution": "Branding",
+        "task": "Identitate și poziționare",
+        "result": "Brand coerent"
+      },
+      "5": {
+        "solution": "Automatizare",
+        "task": "CRM, integrări, procese",
+        "result": "Economie de resurse"
+      },
+      "6": {
+        "solution": "Suport",
+        "task": "Dezvoltare post-lansare",
+        "result": "Funcționare stabilă a produsului"
+      }
+    }
+  },
+  "Cases": {
+    "title": "Cazuri",
+    "subtitle": "Portofoliu",
+    "description": "Proiecte reale care au ajutat clienții noștri să-și atingă obiectivele de business",
+    "viewAll": "Vezi toate cazurile",
+    "viewProject": "Vezi proiectul",
+    "items": {
+      "0": {
+        "title": "E-commerce Fashion Platform",
+        "description": "Magazin online modern cu experiență de cumpărături personalizată și integrare cu sisteme de plată",
+        "challenge": "Clientul avea nevoie de o platformă scalabilă care să gestioneze mii de produse și trafic intens",
+        "solution": "Am dezvoltat o soluție Next.js cu optimizare avansată și sistem de recomandări AI",
+        "result": "+180% conversie în 3 luni"
+      },
+      "1": {
+        "title": "Aplicație Mobilă Banking",
+        "description": "Aplicație iOS și Android pentru gestionarea finanțelor personale și transferuri instant",
+        "challenge": "Securitate maximă combinată cu UX intuitiv pentru toate categoriile de utilizatori",
+        "solution": "Autentificare biometrică, criptare end-to-end și design simplu",
+        "result": "50K+ descărcări în prima lună"
+      },
+      "2": {
+        "title": "Dashboard Analytics SaaS",
+        "description": "Platformă de business intelligence cu vizualizări interactive și rapoarte automatizate",
+        "challenge": "Procesarea și vizualizarea unor volume mari de date în timp real",
+        "solution": "Arhitectură microservicii cu cache inteligent și grafice optimizate",
+        "result": "Reducere 70% timp de analiză"
+      },
+      "3": {
+        "title": "Rebranding Companie Tech",
+        "description": "Identitate vizuală completă pentru startup în domeniul tehnologiei medicale",
+        "challenge": "Crearea unui brand care să inspire încredere și inovație",
+        "solution": "Logo modern, paletă de culori distinctivă și ghid de brand complet",
+        "result": "Recunoaștere brand +200%"
+      },
+      "4": {
+        "title": "Platformă Evenimente Corporate",
+        "description": "Sistem de înregistrare, ticketing și management pentru evenimente cu peste 5000 participanți",
+        "challenge": "Gestionarea fluxului mare de participanți și integrarea cu sisteme externe",
+        "solution": "Platformă custom cu QR check-in, streaming live și networking virtual",
+        "result": "15+ evenimente gestionate"
+      },
+      "5": {
+        "title": "Automatizare Procese HR",
+        "description": "Sistem integrat de management al resurselor umane cu flux de lucru automatizat",
+        "challenge": "Digitalizarea proceselor manuale și reducerea timpului de procesare",
+        "solution": "Integrare cu sistemele existente, automatizare documente și notificări",
+        "result": "Economie 40 ore/săptămână"
+      }
+    }
+  },
+  "About": {
+    "title": "Despre noi",
+    "subtitle": "Echipa",
+    "heroText": "Creăm soluții digitale complete care transformă afacerile. Strategie. Design. Dezvoltare. Marketing. Tot ce ai nevoie pentru a domina piața.",
+    "description": "Suntem o echipă de profesioniști pasionați de tehnologie și design. Credem că fiecare proiect merită o abordare individuală și soluții de calitate.",
+    "stats": {
+      "experience": "ani de experiență cumulată",
+      "projects": "proiecte livrate",
+      "industries": "industrii deservite"
+    },
+    "teamMessage": "Suntem o companie tânără care reunește experți cu ani de experiență în digital. Combinăm energia unui startup cu profunzimea cunoștințelor marilor agenții.",
+    "advantages": {
+      "flexibility": {
+        "title": "Flexibilitate",
+        "description": "Ne adaptăm rapid la nevoile tale. Fără birocrație sau aprobări lungi — lucrăm ca parte din echipa ta."
+      },
+      "attention": {
+        "title": "Atenție personală",
+        "description": "Fiecare client este o prioritate. Nu te pierzi printre sute de proiecte — primești atenția fondatorilor."
+      },
+      "drive": {
+        "title": "Energie și pasiune",
+        "description": "Suntem pasionați de fiecare proiect. Succesul tău este reputația noastră, de aceea dăm 100%."
+      },
+      "results": {
+        "title": "Focus pe rezultate",
+        "description": "Lucrăm pentru indicatori de business măsurabili. Nu doar construim site-uri — te ajutăm să crești veniturile."
+      }
+    },
+    "cta": {
+      "title": "Pregătit pentru colaborare?",
+      "button": "Contactează-ne"
+    }
+  },
+  "Contact": {
+    "title": "Contactează-ne",
+    "subtitle": "Hai să vorbim",
+    "description": "Ai o idee sau un proiect? Scrie-ne și îți vom răspunde în cel mai scurt timp.",
+    "form": {
+      "name": "Nume",
+      "namePlaceholder": "Numele tău",
+      "email": "Email",
+      "emailPlaceholder": "email@exemplu.com",
+      "company": "Companie",
+      "companyPlaceholder": "Numele companiei (opțional)",
+      "message": "Mesaj",
+      "messagePlaceholder": "Descrie proiectul sau ideea ta...",
+      "submit": "Trimite mesajul",
+      "sending": "Se trimite..."
+    },
+    "info": {
+      "title": "Informații de contact"
+    },
+    "social": {
+      "title": "Urmărește-ne"
+    }
+  },
+  "Footer": {
+    "description": "Creăm soluții digitale care ajută afacerile să crească. De la design la dezvoltare și marketing.",
+    "nav": {
+      "title": "Navigare",
+      "solutions": "Soluții",
+      "cases": "Cazuri",
+      "about": "Despre noi",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "rights": "Toate drepturile rezervate."
+  },
+  "Clients": {
+    "title": "Au încredere în noi",
+    "ariaLabel": "Logo-uri clienți"
+  },
+  "Testimonials": {
+    "title": "Recenzii",
+    "subtitle": "Ce spun clienții",
+    "description": "Feedback real de la companiile pe care le-am ajutat să-și atingă obiectivele digitale",
+    "items": {
+      "0": {
+        "quote": "Colaborarea cu GoQode a fost un punct de cotitură pentru afacerea noastră. Au livrat un site uimitor care ne-a crescut conversiile cu 200%. Atenția lor la detalii și înțelegerea nevoilor noastre a depășit toate așteptările.",
+        "author": "Alexandru Popescu",
+        "role": "CEO",
+        "company": "TechStart"
+      },
+      "1": {
+        "quote": "Expertiza echipei în tehnologiile web moderne ne-a ajutat să lansăm platforma înainte de termen. Recomand cu încredere!",
+        "author": "Maria Ionescu",
+        "role": "Product Manager",
+        "company": "DataFlow"
+      },
+      "2": {
+        "quote": "Profesioniști, receptivi și incredibil de talentați. Au transformat site-ul nostru învechit într-o capodoperă modernă.",
+        "author": "David Gheorghe",
+        "role": "Fondator",
+        "company": "GreenLeaf"
+      },
+      "3": {
+        "quote": "Rezultate excepționale! Vânzările din magazinul nostru online s-au dublat în prima lună după redesign.",
+        "author": "Elena Munteanu",
+        "role": "Director Marketing",
+        "company": "StyleHub"
+      }
+    }
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Articole",
+    "description": "Împărtășim experiență, tendințe și perspective din lumea dezvoltării digitale",
+    "viewAll": "Toate articolele",
+    "readTime": "min",
+    "categories": {
+      "design": "Design",
+      "development": "Dezvoltare",
+      "technology": "Tehnologie",
+      "marketing": "Marketing"
+    },
+    "posts": {
+      "0": {
+        "title": "Tendințe în Web Design 2025",
+        "excerpt": "Ce soluții vizuale vor domina anul viitor și cum să le aplici în proiectele tale"
+      },
+      "1": {
+        "title": "Optimizarea Performanței Next.js",
+        "excerpt": "Sfaturi practice pentru accelerarea încărcării și îmbunătățirea Core Web Vitals"
+      },
+      "2": {
+        "title": "IA în Dezvoltarea Web",
+        "excerpt": "Cum inteligența artificială schimbă abordarea creării site-urilor și aplicațiilor"
+      }
+    }
+  },
+  "Process": {
+    "title": "Proces",
+    "subtitle": "Cum lucrăm",
+    "marquee": "PROCES • ",
+    "steps": {
+      "0": {
+        "title": "Brief",
+        "description": "Cunoaștem afacerea, obiectivele și sarcinile tale",
+        "includes": ["Întâlnire/apel", "Analiza cerințelor", "Definirea KPI"]
+      },
+      "1": {
+        "title": "Analiză",
+        "description": "Cercetăm piața, concurenții și publicul țintă",
+        "includes": ["Analiza concurenței", "Cercetare audiență", "Dezvoltare strategie"]
+      },
+      "2": {
+        "title": "Execuție",
+        "description": "Proiectăm, designăm și dezvoltăm soluția",
+        "includes": ["Design UX/UI", "Dezvoltare", "Integrări"]
+      },
+      "3": {
+        "title": "Lansare",
+        "description": "Implementăm, testăm și optimizăm rezultatul",
+        "includes": ["Testare", "Deploy", "Analiză și optimizare"]
+      }
+    },
+    "cta": {
+      "step": "Următorul pas",
+      "cardTitle": "Gata să începem?",
+      "cardSubtitle": "Transformă-ți ideea în realitate",
+      "title": "Gata să începem proiectul?",
+      "subtitle": "Hai să discutăm ideea ta și să-ți construim soluția perfectă",
+      "button": "Contactează-ne"
+    }
+  },
+  "Launch": {
+    "hero": {
+      "label": "Soluție",
+      "title": "Lansare Afacere",
+      "subtitle": "Lansează produsul sau compania pe piață cu o bază digitală corect construită.",
+      "cta": "Începe Proiectul"
+    },
+    "overview": {
+      "label": "Ce este inclus",
+      "title": "Conținutul Pachetului de Lansare",
+      "description": "O abordare cuprinzătoare pentru lansarea afacerii tale digitale. Fiecare pas este conceput pentru a obține rezultate — primii clienți și vânzări.",
+      "steps": {
+        "0": {
+          "title": "Analiză Nișă",
+          "description": "Cercetăm piața, concurenții și publicul țintă pentru a forma o strategie",
+          "details": "Imersiune profundă în nișa ta: analizăm top-10 concurenți, identificăm punctele forte și slabe, studiem publicul țintă prin interviuri și sondaje. Rezultat: poziționare, USP și strategie de lansare.",
+          "deliverables": "Analiză concurenți, Profiluri clienți, USP, Strategie"
+        },
+        "1": {
+          "title": "Arhitectură UX",
+          "description": "Proiectăm scenarii utilizator și structura informațională",
+          "details": "Creăm harta parcursului clientului de la primul contact până la achiziție. Proiectăm arhitectura informațională, wireframes și prototipuri interactive. Testăm cu utilizatori reali pentru optimizarea conversiei.",
+          "deliverables": "User Flows, Sitemap, Wireframes, Prototipuri"
+        },
+        "2": {
+          "title": "Design UI",
+          "description": "Creăm un stil vizual care te diferențiază de concurenți",
+          "details": "Dezvoltăm un limbaj vizual unic al brandului: paletă de culori, tipografie, icoane, ilustrații. Creăm un sistem de design și toate layout-urile paginilor cu adaptare mobilă.",
+          "deliverables": "Sistem design, UI Kit, Toate layout-urile, Responsive"
+        },
+        "3": {
+          "title": "Dezvoltare",
+          "description": "Construim site-uri sau platforme folosind tehnologii moderne",
+          "details": "Folosim stack modern: Next.js, React, TypeScript. Optimizăm pentru SEO și Core Web Vitals. Integrăm cu CMS pentru gestionare ușoară a conținutului. Conectăm servicii și API-uri necesare.",
+          "deliverables": "Frontend, CMS, Integrări, Optimizare SEO"
+        },
+        "4": {
+          "title": "Analiză",
+          "description": "Conectăm sisteme de analiză pentru a urmări eficiența",
+          "details": "Configurăm Google Analytics 4, pixeli publicitari. Creăm dashboards pentru urmărirea metricilor cheie: trafic, conversii, comportamentul utilizatorilor.",
+          "deliverables": "GA4, Obiective și evenimente, Dashboards"
+        },
+        "5": {
+          "title": "Marketing",
+          "description": "Configurăm canalele inițiale de atragere a clienților",
+          "details": "Optimizare SEO de bază pentru trafic organic. Configurare conturi publicitare Google Ads, Meta Ads. Integrare CRM pentru automatizarea lead-urilor. Email marketing pentru cultivarea audienței.",
+          "deliverables": "SEO on-page, Pixeli publicitari, CRM, Email"
+        },
+        "6": {
+          "title": "Funnel",
+          "description": "Construim un funnel de vânzări pentru a converti vizitatorii în clienți",
+          "details": "Proiectăm funnel complet: de la atragere până la vânzări repetate. Creăm lead magnets, landing pages, secvențe email. Configurăm retargeting pentru a readuce vizitatorii.",
+          "deliverables": "Lead magnets, Landing pages, Secvențe email, Retargeting"
+        }
+      }
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce vei obține",
+      "digital_presence": "Prezență digitală completă din prima zi",
+      "first_leads": "Primele lead-uri în prima lună",
+      "conversion_growth": "Creșterea conversiei față de media pieței"
+    },
+    "cta": {
+      "title": "Gata de lansare?",
+      "button": "Discută proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "Growth": {
+    "hero": {
+      "label": "Soluție",
+      "title": "Creștere Vânzări",
+      "subtitle": "Crește conversia, reduce costul de achiziție și scalează vânzările prin optimizarea funnel-ului.",
+      "cta": "Crește Vânzările"
+    },
+    "overview": {
+      "label": "Ce este inclus",
+      "title": "Conținutul Pachetului de Creștere",
+      "description": "O abordare cuprinzătoare pentru creșterea vânzărilor prin optimizarea fiecărei etape a funnel-ului. Analizăm, testăm, implementăm — rezultate măsurabile.",
+      "steps": {
+        "0": {
+          "title": "Audit Funnel",
+          "description": "Analiză completă a funnel-ului actual de vânzări și identificarea punctelor de pierdere",
+          "details": "Realizăm un audit profund al tuturor etapelor funnel-ului: de la primul contact până la vânzări repetate. Analizăm comportamentul utilizatorilor, identificăm blocajele, determinăm potențialul de creștere la fiecare etapă.",
+          "deliverables": "Hartă funnel, Raport pierderi, Puncte de creștere, Priorități"
+        },
+        "1": {
+          "title": "Testare A/B",
+          "description": "Testare sistematică a ipotezelor pentru creșterea conversiei",
+          "details": "Formăm ipoteze bazate pe date și rulăm teste A/B pe elementele cheie: titluri, CTA-uri, formulare, landing pages. Rezultate semnificative statistic pentru luarea deciziilor.",
+          "deliverables": "Bancă ipoteze, Teste A/B, Statistici, Concluzii"
+        },
+        "2": {
+          "title": "Optimizare CRO",
+          "description": "Implementarea modificărilor pentru creșterea conversiei la fiecare etapă",
+          "details": "Pe baza datelor din teste, implementăm modificări: optimizăm UX, simplificăm formularele, îmbunătățim viteza de încărcare, adăugăm dovezi sociale și declanșatoare de urgență.",
+          "deliverables": "Îmbunătățiri UX, Formulare noi, Dovezi sociale, Declanșatoare"
+        },
+        "3": {
+          "title": "Analiză Comportament",
+          "description": "Analiză profundă a acțiunilor utilizatorilor pe site",
+          "details": "Configurăm hărți de căldură, înregistrări sesiuni, analiză formulare. Înțelegem cum utilizatorii interacționează cu site-ul, unde se pierd și de ce nu convertesc.",
+          "deliverables": "Hărți căldură, Înregistrări sesiuni, Analiză formulare, Insight-uri"
+        },
+        "4": {
+          "title": "Marketing Performance",
+          "description": "Optimizarea campaniilor publicitare pentru reducerea CAC",
+          "details": "Audit și optimizare a conturilor publicitare: îmbunătățim targetarea, testăm creative-uri, optimizăm ofertele. Reducem costul de achiziție client menținând calitatea.",
+          "deliverables": "Audit publicitate, Creative-uri noi, Optimizare oferte, Retargeting"
+        },
+        "5": {
+          "title": "Email Marketing",
+          "description": "Secvențe automatizate pentru nurturing și retenția clienților",
+          "details": "Creăm secvențe email automatizate: serii de bun venit, coșuri abandonate, reactivare, upsell. Personalizare bazată pe comportamentul utilizatorilor.",
+          "deliverables": "Serie welcome, Coș abandonat, Reactivare, Upsell"
+        },
+        "6": {
+          "title": "Automatizare Vânzări",
+          "description": "Implementare CRM și automatizarea procesului de vânzări",
+          "details": "Configurăm CRM-ul pentru procesele tale: distribuire automată lead-uri, reminder-uri manageri, follow-up-uri automate. Integrare cu site-ul și sistemele publicitare.",
+          "deliverables": "Configurare CRM, Automatizare lead-uri, Follow-up, Integrări"
+        }
+      }
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce vei obține",
+      "conversion_increase": "Creșterea medie a conversiei după optimizare",
+      "cost_reduction": "Reducerea costului de achiziție client",
+      "roi_growth": "Creșterea ROI pentru investițiile de marketing"
+    },
+    "cta": {
+      "title": "Gata să crești?",
+      "button": "Discută proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "Platforms": {
+    "hero": {
+      "title": "Platforme",
+      "subtitle": "Construim platforme scalabile de la zero: SaaS, marketplace-uri, cabinete clienți. Arhitectură de încredere, design modern, lansare rapidă.",
+      "cta": "Discută Proiectul"
+    },
+    "types": {
+      "label": "Tipuri de Platforme",
+      "title": "Platforme",
+      "description": "Instrumente, securitate și integrări — tot ce ai nevoie pentru lansare și scalare, fără complicații.",
+      "items": {
+        "0": {
+          "title": "SaaS",
+          "description": "Servicii cloud cu abonament: CRM-uri, sisteme de analiză, instrumente de automatizare. Arhitectură multi-tenant cu izolarea datelor.",
+          "features": "Monetizare prin abonament, Scalare automată, Analytics integrat"
+        },
+        "1": {
+          "title": "Marketplace-uri",
+          "description": "Platforme care conectează vânzătorii și cumpărătorii. Integrare plăți, evaluări, căutare și filtrare.",
+          "features": "Sistem de comision, Verificare vânzători, Plăți sigure"
+        },
+        "2": {
+          "title": "Cabinete Clienți",
+          "description": "Spații personale pentru clienții afacerii tale. Comenzi, istoric, documente, comunicare.",
+          "features": "Autorizare sigură, Gestionare roluri, Notificări"
+        }
+      }
+    },
+    "features": {
+      "label": "Capabilități",
+      "title": "De ce clienții ne aleg",
+      "items": {
+        "0": {
+          "title": "Scalabilitate",
+          "description": "Arhitectura platformei este proiectată pentru creștere. De la 100 la 100.000 utilizatori fără refacerea codului. Load balancing, caching, optimizarea bazei de date.",
+          "points": "Auto-scalare, CDN global, Baze de date distribuite"
+        },
+        "1": {
+          "title": "Securitate",
+          "description": "Protecție la toate nivelurile: criptarea datelor, autentificare sigură, auditare acces. Respectarea standardelor GDPR, PCI DSS.",
+          "points": "Criptare End-to-end, 2FA, Backup automat"
+        },
+        "2": {
+          "title": "Integrări",
+          "description": "Conectare cu orice serviciu extern: plăți, CRM, ERP, marketing. API propriu pentru parteneri și dezvoltatori.",
+          "points": "REST API, Webhooks, SDK-uri gata de utilizare"
+        }
+      }
+    },
+    "process": {
+      "label": "Proces",
+      "title": "Cum construim platforme",
+      "phases": {
+        "discovery": {
+          "title": "Discovery",
+          "steps": {
+            "strategy": "Strategy Workshop",
+            "requirements": "Colectare cerințe",
+            "audit": "Audit tehnic",
+            "architecture": "Arhitectură sistem"
+          }
+        },
+        "design": {
+          "title": "Design",
+          "steps": {
+            "ux": "UX Research",
+            "prototypes": "Prototipare",
+            "ui": "Sistem design UI"
+          }
+        },
+        "development": {
+          "title": "Development",
+          "steps": {
+            "frontend": "Dezvoltare Frontend",
+            "backend": "Backend & API",
+            "testing": "Testare & QA"
+          }
+        },
+        "launch": {
+          "title": "Launch",
+          "steps": {
+            "deployment": "Deployment & CI/CD",
+            "support": "Monitorizare & suport"
+          }
+        }
+      }
+    },
+    "bento": {
+      "label": "Tehnologii",
+      "title": "Ce este sub capotă",
+      "items": {
+        "architecture": {
+          "title": "Arhitectură Cloud",
+          "description": "Microservicii, containere și orchestrare pentru fiabilitate maximă"
+        },
+        "security": {
+          "title": "Protecție Date",
+          "description": "Criptare, auditare, respectarea standardelor de securitate"
+        },
+        "api": {
+          "title": "API Platform",
+          "description": "REST și GraphQL pentru integrare cu orice sistem"
+        },
+        "analytics": {
+          "title": "Analiză Încorporată",
+          "description": "Metrici, rapoarte și dashboard-uri pentru decizii bazate pe date"
+        },
+        "responsive": {
+          "title": "Design Responsive",
+          "description": "Funcționează perfect pe orice dispozitiv"
+        }
+      }
+    },
+    "stack": {
+      "label": "Stack Tehnologic",
+      "title": "Tehnologii pe care le folosim",
+      "categories": {
+        "frontend": {
+          "title": "Frontend"
+        },
+        "backend": {
+          "title": "Backend"
+        },
+        "database": {
+          "title": "Database"
+        },
+        "devops": {
+          "title": "DevOps"
+        }
+      }
+    },
+    "stats": {
+      "label": "În cifre",
+      "title": "Rezultate garantate",
+      "items": {
+        "0": {
+          "value": "99.9",
+          "suffix": "%",
+          "label": "Garanție disponibilitate platformă"
+        },
+        "1": {
+          "value": "50",
+          "suffix": "+",
+          "label": "Platforme lansate cu succes"
+        },
+        "2": {
+          "value": "24/7",
+          "suffix": "",
+          "label": "Suport tehnic și monitorizare"
+        }
+      }
+    },
+    "cta": {
+      "title": "Pregătit pentru dezvoltare?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "Automation": {
+    "hero": {
+      "title": "Automatizare",
+      "subtitle": "Transformă rutina în autopilot. Economisește timp și bani automatizând procesele de business, integrările și comunicațiile.",
+      "cta": "Automatizează Business-ul"
+    },
+    "types": {
+      "label": "Tipuri de automatizare",
+      "title": "Ce automatizăm",
+      "description": "De la chatboți la integrări complexe — automatizăm tot ce ocupă timpul echipei tale",
+      "items": {
+        "chatbots": {
+          "title": "Chatboți și asistenți AI",
+          "description": "Suport clienți 24/7, calificarea lead-urilor și automatizarea vânzărilor. Integrare cu orice messenger și site.",
+          "features": "Telegram, WhatsApp, Site, Calificare lead-uri, Automatizare FAQ"
+        },
+        "crm": {
+          "title": "Integrări CRM și ERP",
+          "description": "Sincronizare automată a datelor între sisteme. Fără introducere manuală și informații pierdute.",
+          "features": "Bitrix, Amo, Kommo, CRM custom"
+        },
+        "email": {
+          "title": "Email Marketing",
+          "description": "Secvențe trigger, personalizare și segmentare automată. Fiecare client primește conținut relevant.",
+          "features": "Serie welcome, Coș abandonat, Reactivare, Personalizare"
+        },
+        "messengers": {
+          "title": "Automatizare Messengere",
+          "description": "Boți Telegram și WhatsApp pentru comunicare cu clienții. Notificări, comenzi, suport.",
+          "features": "Notificări comenzi, Actualizări status, Chat suport, Feedback"
+        },
+        "workflow": {
+          "title": "Automatizare Workflow",
+          "description": "Automatizarea proceselor interne, task-urilor și aprobărilor. Mai puțină rutină pentru angajați.",
+          "features": "Lanțuri de aprobare, Atribuire task-uri, Reminder-uri, Rapoarte"
+        },
+        "reporting": {
+          "title": "Raportare și Analiză",
+          "description": "Dashboard-uri și rapoarte automate. Toate metricile cheie într-un singur loc, actualizate în timp real.",
+          "features": "Auto-rapoarte, Dashboard-uri, Agregare date, Alerte"
+        }
+      }
+    },
+    "flow": {
+      "label": "Transformare",
+      "title": "Înainte și după automatizare",
+      "before": {
+        "title": "Înainte",
+        "items": {
+          "0": "Introducere manuală a datelor între sisteme",
+          "1": "Lead-uri pierdute și mesaje ratate",
+          "2": "Ore petrecute pe task-uri de rutină",
+          "3": "Erori umane în procese"
+        }
+      },
+      "after": {
+        "title": "După",
+        "items": {
+          "0": "Sincronizare automată a datelor",
+          "1": "Răspuns instant la fiecare cerere",
+          "2": "Echipa se concentrează pe task-uri strategice",
+          "3": "Procese previzibile și fără erori"
+        }
+      }
+    },
+    "stack": {
+      "label": "Tehnologii",
+      "title": "Integrări și instrumente",
+      "description": "Lucrăm cu toate platformele populare și putem integra orice serviciu prin API"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce vei obține",
+      "time_saved": "Mai puțin timp pe task-uri de rutină",
+      "conversion": "Conversie mai mare cu chatboți",
+      "availability": "Lucru fără pauze",
+      "errors": "Erori în procesarea datelor"
+    },
+    "process": {
+      "label": "Proces",
+      "title": "Cum implementăm",
+      "steps": {
+        "audit": {
+          "title": "Audit",
+          "description": "Analizăm procesele curente și găsim oportunități de automatizare"
+        },
+        "design": {
+          "title": "Proiectare",
+          "description": "Creăm arhitectura automatizării și schema de integrare"
+        },
+        "development": {
+          "title": "Dezvoltare",
+          "description": "Construim integrări, boți și workflow-uri automate"
+        },
+        "testing": {
+          "title": "Testare",
+          "description": "Testăm toate scenariile și cazurile limită"
+        },
+        "launch": {
+          "title": "Lansare",
+          "description": "Deploy și instruirea echipei tale"
+        }
+      }
+    },
+    "cta": {
+      "title": "Automatizezi rutina?",
+      "button": "Discută proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "Events": {
+    "hero": {
+      "title": "Event Soluții",
+      "subtitle": "Ciclu complet de management al evenimentelor: înregistrare, bilete QR, sisteme de check-in, analiză. De la planificare la analiză post-eveniment.",
+      "cta": "Planifică Evenimentul"
+    },
+    "flow": {
+      "label": "Cum funcționează",
+      "title": "Ciclul complet al evenimentului",
+      "steps": {
+        "0": { "title": "Site eveniment", "description": "Vânzare bilete" },
+        "1": { "title": "Bilete QR", "description": "Generare și livrare" },
+        "2": { "title": "Check-in", "description": "Scanare la intrare" },
+        "3": { "title": "Analiză", "description": "Date în timp real" },
+        "4": { "title": "Post-eveniment", "description": "Rapoarte și follow-up" }
+      }
+    },
+    "services": {
+      "label": "Ce este inclus",
+      "title": "Pachet soluții pentru evenimente",
+      "description": "Infrastructură digitală completă pentru evenimente de orice amploare",
+      "items": {
+        "0": {
+          "title": "Site eveniment",
+          "description": "Landing page cu vânzare de bilete integrată, formulare de înregistrare și sisteme de plată.",
+          "deliverables": "Landing page, Plăți, Coș, Coduri promoționale"
+        },
+        "1": {
+          "title": "Bilete QR",
+          "description": "Coduri QR unice pentru fiecare bilet cu protecție criptată. Livrare automată pe email cu PDF.",
+          "deliverables": "Generare QR, Email automat, Bilete PDF, Coduri unice"
+        },
+        "2": {
+          "title": "Sistem Check-in",
+          "description": "Aplicații mobile pentru scanare la intrare. Validare în timp real cu dashboard live.",
+          "deliverables": "Aplicație scanner, Dashboard, Statistici real-time, Mod offline"
+        },
+        "3": {
+          "title": "Dashboard analiză",
+          "description": "Dashboard cuprinzător cu tendințe de vânzări, urmărirea veniturilor și demografii participanți.",
+          "deliverables": "Rapoarte, Dashboard-uri, Export, Metrici"
+        },
+        "4": {
+          "title": "Servicii adiționale",
+          "description": "Memento-uri automate, sondaje post-eveniment pentru feedback și generare certificate.",
+          "deliverables": "Email automat, Memento-uri, Sondaje, Certificate"
+        }
+      },
+      "drawerIncluded": "Ce este inclus",
+      "drawerFeatures": "Funcționalități",
+      "drawerCta": "Discută proiectul",
+      "drawerClose": "Închide"
+    },
+    "solutions": {
+      "0": {
+        "headline": "Site de eveniment care vinde",
+        "features": "Design responsive pentru toate dispozitivele|Integrare sisteme de plată|Coș cu coduri promoționale|Suport multilingv inclus|Optimizare SEO inclusă"
+      },
+      "1": {
+        "headline": "Bilete QR inteligente",
+        "features": "Cod QR unic pentru fiecare bilet|Livrare automată pe email|Formate PDF și mobile|Design personalizat pentru brandul tău|Generare în masă a biletelor"
+      },
+      "2": {
+        "headline": "Check-in în 0.3 secunde",
+        "features": "Scanare cu orice dispozitiv|Dashboard live pentru prezență|Puncte multiple de intrare|Protecție împotriva scanării duplicate"
+      },
+      "3": {
+        "headline": "Imagine completă în timp real",
+        "features": "Grafice de vânzări și conversie|Demografie și geografie participanți|Comparație cu evenimentele anterioare|Export în Excel, PDF, CSV|API pentru integrarea cu sistemele tale"
+      },
+      "4": {
+        "headline": "Automatizare înainte și după eveniment",
+        "features": "Memento-uri inteligente la 7z, 1z, 2h|Sondaje post-eveniment|Campanii email și SMS|Integrare cu sisteme CRM"
+      }
+    },
+    "ticket": {
+      "label": "Tehnologie",
+      "title": "Bilete QR inteligente",
+      "description": "Fiecare bilet conține date criptate cu protecție multi-nivel împotriva falsificării. Validarea instantanee asigură check-in rapid.",
+      "eventLabel": "Eveniment",
+      "dateLabel": "Data",
+      "timeLabel": "Ora",
+      "locationLabel": "Locație",
+      "ticketId": "ID bilet",
+      "verified": "Verificat",
+      "scanning": "Scanare...",
+      "hoverToScan": "Treci cursorul pentru simulare scanare",
+      "features": {
+        "0": "Coduri QR unice criptate",
+        "1": "Validare instantanee în 0.3 secunde",
+        "2": "Funcționează offline cu sincronizare"
+      }
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Rezultate dovedite",
+      "items": {
+        "0": "Evenimente gestionate",
+        "1": "Participanți înregistrați",
+        "2": "Precizie scanare",
+        "3": "Timp mediu scanare"
+      },
+      "bottomText": "Cifrele se bazează pe proiecte finalizate cu succes"
+    },
+    "process": {
+      "label": "Proces",
+      "title": "Cum lucrăm",
+      "steps": {
+        "brief": {
+          "title": "Brief",
+          "description": "Discutăm obiectivele și cerințele"
+        },
+        "development": {
+          "title": "Dezvoltare",
+          "description": "Construim platforma pentru eveniment"
+        },
+        "testing": {
+          "title": "Testare",
+          "description": "Verificăm toate scenariile"
+        },
+        "launch": {
+          "title": "Lansare",
+          "description": "Deploy și deschidem înregistrarea"
+        },
+        "support": {
+          "title": "Suport",
+          "description": "Asistență în ziua evenimentului"
+        }
+      }
+    },
+    "stack": {
+      "label": "Tehnologii",
+      "title": "Stack-ul nostru",
+      "frontend": {
+        "title": "Frontend",
+        "subtitle": "UI modern și interactivitate"
+      },
+      "backend": {
+        "title": "Backend",
+        "subtitle": "Soluții server fiabile"
+      },
+      "infra": {
+        "title": "Infrastructură",
+        "subtitle": "Hosting și deploy"
+      },
+      "mobile": {
+        "title": "Mobile",
+        "subtitle": "Aplicații cross-platform"
+      }
+    },
+    "comparison": {
+      "label": "Comparație",
+      "title": "Agregatoare vs Platformă proprie",
+      "aggregators": {
+        "title": "Agregatoare",
+        "features": {
+          "0": "Comision 5-15% pe fiecare bilet",
+          "1": "Fără control asupra datelor clienților",
+          "2": "Personalizare limitată",
+          "3": "Dependență de platformă",
+          "4": "Cu cât vinzi mai mult — cu atât plătești mai mult"
+        }
+      },
+      "custom": {
+        "title": "Platformă proprie",
+        "features": {
+          "0": "0% comision pentru totdeauna",
+          "1": "Control total asupra datelor",
+          "2": "Orice personalizare pentru brandul tău",
+          "3": "Platforma ta, regulile tale",
+          "4": "Investiție care se amortizează"
+        }
+      },
+      "note": "După 2-3 evenimente, platforma proprie se amortizează complet"
+    },
+    "cta": {
+      "title": "Pregătit să lansezi evenimentul?",
+      "button": "Planifică",
+      "contactText": "Sau scrie-ne la",
+      "benefits": {
+        "0": "Consultație gratuită",
+        "1": "Soluție personalizată",
+        "2": "Suport 24/7 în ziua evenimentului"
+      }
+    }
+  }
+}
