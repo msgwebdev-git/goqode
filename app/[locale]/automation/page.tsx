@@ -87,22 +87,14 @@ function AutomationHero() {
       <div className="absolute inset-0 z-0">
         <LaserFlow
           color="#C9FD48"
-          horizontalBeamOffset={0.1}
-          verticalBeamOffset={0.0}
-          horizontalSizing={0.5}
-          verticalSizing={2.0}
-          wispDensity={1}
-          wispSpeed={15.0}
-          wispIntensity={5.0}
-          flowSpeed={0.35}
-          flowStrength={0.25}
-          fogIntensity={0.45}
-          fogScale={0.3}
-          fogFallSpeed={0.6}
-          mouseTiltStrength={0.01}
-          mouseSmoothTime={0.0}
-          decay={1.1}
-          falloffStart={1.2}
+          verticalBeamOffset={-0.25}
+          horizontalBeamOffset={0}
+          verticalSizing={2.5}
+          horizontalSizing={0.6}
+          fogIntensity={0.5}
+          wispDensity={1.2}
+          wispIntensity={6}
+          flowSpeed={0.4}
         />
       </div>
 
