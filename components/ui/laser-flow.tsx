@@ -427,7 +427,18 @@ export const LaserFlow = ({
       resizeRaf = requestAnimationFrame(setSizeNow);
     };
 
-    setSizeNow();
+    // Force initial size setup
+    const forceResize = () => {
+      lastSizeRef.current = { width: 0, height: 0, dpr: 0 };
+      setSizeNow();
+    };
+
+    // Multiple attempts to ensure proper sizing after layout
+    forceResize();
+    requestAnimationFrame(forceResize);
+    setTimeout(forceResize, 100);
+    setTimeout(forceResize, 300);
+
     const ro = new ResizeObserver(scheduleResize);
     ro.observe(mount);
 
