@@ -54,7 +54,7 @@ const cardVariant = {
 function AnimatedPlusX({ isOpen }: { isOpen: boolean }) {
   return (
     <motion.div
-      className="relative w-6 h-6"
+      className="relative w-6 h-6 md:w-[1.5vw] md:h-[1.5vw]"
       animate={{ rotate: isOpen ? 180 : 0 }}
       transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
     >
@@ -85,7 +85,7 @@ function PlatformsHero() {
       <ContainerScroll
         titleComponent={
           <motion.div
-            className="flex flex-col items-center gap-6 md:gap-8"
+            className="flex flex-col items-center gap-[4vw] md:gap-[1.5vw]"
             variants={container}
             initial="hidden"
             animate="show"
@@ -95,7 +95,7 @@ function PlatformsHero() {
               <Shuffle
                 text={t("hero.title")}
                 tag="h1"
-                className="text-[12vw] md:text-[8vw] font-black leading-[0.9] tracking-tight text-foreground"
+                className="text-[14vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
                 textAlign="center"
                 shuffleDirection="right"
                 duration={0.35}
@@ -113,7 +113,7 @@ function PlatformsHero() {
             {/* Subtitle */}
             <motion.p
               variants={cardVariant}
-              className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed max-w-2xl px-4"
+              className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed px-4"
             >
               {t("hero.subtitle")}
             </motion.p>
@@ -122,7 +122,7 @@ function PlatformsHero() {
             <motion.div variants={cardVariant}>
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-[5vw] md:px-[1.5vw] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
               >
                 <Monitor className="h-4 w-4" />
                 <span>{t("hero.cta")}</span>
@@ -222,7 +222,7 @@ function PlatformsHero() {
   );
 }
 
-// Platform Types Bento Grid - Same style as SolutionsSection
+// Platform Types Bento Grid
 function PlatformTypesSection() {
   const t = useTranslations("Platforms");
 
@@ -242,14 +242,14 @@ function PlatformTypesSection() {
         className="w-full"
       >
         {/* Section Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-2 mb-4 md:mb-6">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm md:text-base font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("types.label")}
             </span>
           </div>
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-[3vw] md:gap-[1.5vw]">
             <Shuffle
               text={t("types.title")}
               tag="h2"
@@ -266,7 +266,7 @@ function PlatformTypesSection() {
               triggerOnHover={true}
               respectReducedMotion={true}
             />
-            <div className="border-l-2 border-[#C9FD48] pl-6 md:pl-8 max-w-2xl">
+            <div className="border-l-2 border-[#C9FD48] pl-[2vw] md:pl-[1vw]">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
                 {t("types.description")}
               </p>
@@ -275,14 +275,14 @@ function PlatformTypesSection() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[1.5vw]">
           {types.map((type) => (
             <motion.div
               key={type.index}
               variants={cardVariant}
               className="group"
             >
-              <div className="relative h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 overflow-hidden p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer aspect-square flex flex-col">
+              <div className="relative h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 overflow-hidden p-[4vw] md:p-[1.5vw] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer aspect-square flex flex-col">
                 {/* Large number background */}
                 <div className="absolute -top-4 -right-4 text-[25vw] md:text-[10vw] font-black leading-none select-none pointer-events-none text-white/[0.03] dark:text-black/[0.03]">
                   {String(type.index + 1).padStart(2, "0")}
@@ -295,17 +295,17 @@ function PlatformTypesSection() {
 
                 {/* Content */}
                 <div className="relative z-10 mt-auto">
-                  <h3 className="clamp-[text,1.25rem,1.75rem] font-bold text-white dark:text-black mb-3">
+                  <h3 className="text-[4.5vw] md:text-[1.45vw] font-bold text-white dark:text-black mb-[1vw] md:mb-[0.4vw]">
                     {t(`types.items.${type.index}.title`)}
                   </h3>
-                  <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed mb-4">
+                  <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed mb-[1.5vw] md:mb-[0.6vw]">
                     {t(`types.items.${type.index}.description`)}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-[1vw] md:gap-[0.3vw]">
                     {t(`types.items.${type.index}.features`).split(", ").map((item, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1.5 text-xs font-medium bg-white/10 dark:bg-black/10 text-white/70 dark:text-black/70 rounded-full"
+                        className="px-3 py-1.5 clamp-[text,0.75rem,0.875rem] font-medium bg-white/10 dark:bg-black/10 text-white/70 dark:text-black/70 rounded-full"
                       >
                         {item}
                       </span>
@@ -321,7 +321,7 @@ function PlatformTypesSection() {
   );
 }
 
-// Features Accordion Section - Like Launch page
+// Features Accordion Section
 function FeaturesSection() {
   const t = useTranslations("Platforms");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -338,22 +338,22 @@ function FeaturesSection() {
 
   return (
     <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
-      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-8 lg:pt-12">
+      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-[3vw] md:pt-[1.2vw]">
         {/* Left Column - Title */}
-        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-8 lg:mb-0 lg:pr-12">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-[3vw] lg:mb-0 lg:pr-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("features.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3.5rem] font-bold leading-tight text-foreground">
+          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("features.title")}
           </h2>
         </div>
 
         {/* Right Column - List */}
-        <div className="lg:w-[60%] lg:pl-12 lg:border-l border-zinc-200 dark:border-zinc-800">
+        <div className="lg:w-[60%] lg:pl-[2vw] lg:border-l border-zinc-200 dark:border-zinc-800">
           {features.map((feature) => {
             const isOpen = openIndex === feature.index;
 
@@ -364,17 +364,17 @@ function FeaturesSection() {
               >
                 <button
                   onClick={() => toggleItem(feature.index)}
-                  className="w-full py-6 lg:py-8 flex items-center justify-between gap-4 text-left group"
+                  className="w-full py-[2.5vw] md:py-[1vw] flex items-center justify-between gap-[1.5vw] md:gap-[0.8vw] text-left group"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-[1.5vw] md:gap-[0.8vw]">
                     <div className="w-12 h-12 rounded-xl bg-zinc-900 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-6 h-6 text-[#C9FD48]" strokeWidth={1.5} />
                     </div>
-                    <h3 className="clamp-[text,1.25rem,1.75rem] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-bold">
+                    <h3 className="text-[4.5vw] md:text-[1.45vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-bold">
                       {t(`features.items.${feature.index}.title`)}
                     </h3>
                   </div>
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center text-muted-foreground">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-[2.5vw] md:h-[2.5vw] flex items-center justify-center text-muted-foreground">
                     <AnimatedPlusX isOpen={isOpen} />
                   </div>
                 </button>
@@ -388,15 +388,15 @@ function FeaturesSection() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-8 pl-16 pr-12">
-                        <p className="clamp-[text,0.9375rem,1.0625rem] text-muted-foreground leading-relaxed mb-4">
+                      <div className="pb-[3vw] md:pb-[1.5vw] pl-[5vw] md:pl-[3.5vw] pr-[4vw] md:pr-[3vw]">
+                        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-[1.5vw] md:mb-[0.5vw]">
                           {t(`features.items.${feature.index}.description`)}
                         </p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-[1.5vw] md:gap-[0.4vw]">
                           {t(`features.items.${feature.index}.points`).split(", ").map((item, i) => (
                             <span
                               key={i}
-                              className="px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.8125rem,0.875rem] font-medium rounded-full"
+                              className="px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.75rem,0.875rem] font-medium rounded-full"
                             >
                               {item}
                             </span>
@@ -415,7 +415,7 @@ function FeaturesSection() {
   );
 }
 
-// Bento Grid Section - Clean cards
+// Bento Grid Section
 function BentoGridSection() {
   const t = useTranslations("Platforms");
 
@@ -437,32 +437,32 @@ function BentoGridSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("bento.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3.5rem] font-bold leading-tight text-foreground">
+          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("bento.title")}
           </h2>
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
-          {bentoItems.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-[3vw] md:gap-[1vw]">
+          {bentoItems.map((item) => (
             <motion.div
               key={item.key}
               variants={cardVariant}
               className={item.span}
             >
-              <div className={`h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${item.span.includes("row-span-2") ? "min-h-[300px] md:min-h-full" : "aspect-square md:aspect-auto"}`}>
+              <div className={`h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-[4vw] md:p-[1.5vw] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${item.span.includes("row-span-2") ? "min-h-[300px] md:min-h-full" : "aspect-square md:aspect-auto"}`}>
                 <div className="h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center mb-[1.5vw] md:mb-[0.5vw]">
                     <item.icon className="w-6 h-6 text-[#C9FD48]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-2">
+                  <h3 className="text-[4.5vw] md:text-[1.2vw] font-bold text-white dark:text-black mb-[1vw] md:mb-[0.3vw]">
                     {t(`bento.items.${item.key}.title`)}
                   </h3>
                   <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed">
@@ -471,7 +471,7 @@ function BentoGridSection() {
 
                   {/* Visual for large card */}
                   {item.span.includes("row-span-2") && (
-                    <div className="flex-1 flex items-center justify-center mt-6 min-h-[100px]">
+                    <div className="flex-1 flex items-center justify-center mt-[2vw] md:mt-[1vw] min-h-[100px]">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center">
                           <Server className="w-6 h-6 text-[#C9FD48]" />
@@ -497,7 +497,7 @@ function BentoGridSection() {
   );
 }
 
-// Tech Stack Section - Clean tags with SVGL icons
+// Tech Stack Section
 function TechStackSection() {
   const t = useTranslations("Platforms");
 
@@ -547,42 +547,42 @@ function TechStackSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("stack.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3.5rem] font-bold leading-tight text-foreground">
+          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("stack.title")}
           </h2>
         </motion.div>
 
         {/* Tech Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[4vw] md:gap-[1.5vw]">
           {categories.map((category) => (
             <motion.div key={category.key} variants={cardVariant}>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-[1.5vw] md:gap-[0.5vw] mb-[2vw] md:mb-[0.8vw]">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center">
                   <category.icon className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
                 </div>
-                <h3 className="clamp-[text,1rem,1.25rem] font-semibold text-foreground">
+                <h3 className="text-[4vw] md:text-[1.1vw] font-semibold text-foreground">
                   {t(`stack.categories.${category.key}.title`)}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-[1.5vw] md:gap-[0.4vw]">
                 {technologies[category.key].map((tech, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                    className="flex items-center gap-2 px-[2.5vw] py-[1vw] md:px-[0.7vw] md:py-[0.3vw] rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
                   >
                     <img
                       src={tech.icon}
                       alt={tech.name}
                       className="w-5 h-5"
                     />
-                    <span className="text-sm font-medium text-foreground">
+                    <span className="clamp-[text,0.75rem,0.875rem] font-medium text-foreground">
                       {tech.name}
                     </span>
                   </div>
@@ -619,14 +619,14 @@ function ProcessStep({
       <span className="w-6 h-6 rounded-full bg-zinc-700 dark:bg-zinc-300 flex items-center justify-center text-xs font-bold flex-shrink-0">
         {step.num}
       </span>
-      <span className="text-sm font-medium whitespace-nowrap">
+      <span className="clamp-[text,0.75rem,0.875rem] font-medium whitespace-nowrap">
         {t(`process.phases.${phaseKey}.steps.${step.key}`)}
       </span>
     </motion.div>
   );
 }
 
-// Development Process Section - Timeline style with scroll-driven animation
+// Development Process Section
 function ProcessSection() {
   const t = useTranslations("Platforms");
   const sectionRef = useRef<HTMLElement>(null);
@@ -681,38 +681,33 @@ function ProcessSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("process.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3.5rem] font-bold leading-tight text-foreground">
+          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>
 
         {/* Timeline */}
         <motion.div variants={cardVariant}>
-          {/* Top line */}
-          <div className="w-full h-px bg-zinc-300 dark:bg-zinc-700 mb-8" />
+          <div className="w-full h-px bg-zinc-300 dark:bg-zinc-700 mb-[3vw] md:mb-[1.5vw]" />
 
-          {/* Phases grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[3vw] md:gap-[1vw]">
             {phases.map((phase) => (
               <div key={phase.key} className="relative">
-                {/* Vertical line */}
                 <div className="absolute left-0 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-800 hidden md:block" />
 
-                <div className="md:pl-6">
-                  {/* Phase title */}
-                  <h3 className="text-sm font-medium text-muted-foreground mb-6">
+                <div className="md:pl-[1.2vw]">
+                  <h3 className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground mb-[2vw] md:mb-[1vw]">
                     {t(`process.phases.${phase.key}.title`)}
                   </h3>
 
-                  {/* Steps with scroll-driven cascade */}
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-[1.5vw] md:gap-[0.5vw]">
                     {phase.steps.map((step, stepIndex) => (
                       <ProcessStep
                         key={step.num}
@@ -733,7 +728,7 @@ function ProcessSection() {
   );
 }
 
-// Stats Section - Simple counters
+// Stats Section
 function StatsSection() {
   const t = useTranslations("Platforms");
 
@@ -753,35 +748,35 @@ function StatsSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
+          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
+            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("stats.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3.5rem] font-bold leading-tight text-foreground">
+          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("stats.title")}
           </h2>
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[1.5vw]">
           {stats.map((stat) => (
             <motion.div
               key={stat.index}
               variants={cardVariant}
             >
-              <div className="rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-8 aspect-[4/3] flex flex-col justify-between">
+              <div className="rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-[4vw] md:p-[1.5vw] aspect-[4/3] flex flex-col justify-between">
                 <div className="w-14 h-14 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center">
                   <stat.icon className="w-7 h-7 text-[#C9FD48]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="clamp-[text,3rem,5rem] font-black text-white dark:text-black leading-none">
+                  <div className="flex items-baseline gap-[0.5vw] mb-[0.5vw]">
+                    <span className="text-[8vw] md:text-[3.5vw] font-black text-white dark:text-black leading-none">
                       {t(`stats.items.${stat.index}.value`)}
                     </span>
-                    <span className="clamp-[text,1.5rem,2.5rem] font-black text-[#C9FD48]">
+                    <span className="text-[4vw] md:text-[1.8vw] font-black text-[#C9FD48]">
                       {t(`stats.items.${stat.index}.suffix`)}
                     </span>
                   </div>
@@ -813,34 +808,21 @@ function PlatformsCTA() {
       >
         <motion.div variants={cardVariant}>
           <Link href="/contact" className="block group">
-            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
-              {/* Decorative circles */}
-              <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[15vw] h-[15vw] rounded-full border-2 border-black/5 pointer-events-none" />
-              <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[10vw] h-[10vw] rounded-full border-2 border-black/5 pointer-events-none" />
-
+            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-[2vw] md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
               {/* First text */}
-              <span className="block text-[6vw] md:text-[5vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+              <span className="block text-[6vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
                 {t("cta.title")}
               </span>
               {/* Second text */}
-              <span className="absolute inset-0 flex items-center justify-center text-[6vw] md:text-[5vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+              <span className="absolute inset-0 flex items-center justify-center text-[6vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
                 {t("cta.button")}
               </span>
-
-              {/* Monitor icon */}
-              <motion.div
-                className="absolute bottom-4 right-6 md:right-8 text-black/20"
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Monitor className="w-10 h-10 md:w-14 md:h-14" />
-              </motion.div>
             </div>
           </Link>
         </motion.div>
 
         {/* Contact text */}
-        <motion.div variants={cardVariant} className="mt-6 md:mt-8 text-center">
+        <motion.div variants={cardVariant} className="mt-[2.5vw] md:mt-[1vw] text-center">
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contact_text")}{" "}
             <a

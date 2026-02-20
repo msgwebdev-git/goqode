@@ -1,0 +1,368 @@
+"use client";
+
+import React from "react";
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
+import Shuffle from "@/components/Shuffle";
+import {
+  Phone,
+  Mail,
+  Filter,
+  Search,
+  CheckCircle,
+  MessageCircle,
+  ArrowRight,
+  HeadphonesIcon,
+  type LucideIcon,
+} from "lucide-react";
+
+/* ─── Animation variants ─────────────────────────────── */
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] as const },
+  },
+};
+
+/* ═══════════════════════════════════════════════════════
+   1. HERO SECTION
+   ═══════════════════════════════════════════════════════ */
+
+function ClockVisualization() {
+  const segments = Array.from({ length: 24 }, (_, i) => i);
+
+  return (
+    <div className="relative w-64 md:w-80 aspect-square mx-auto rounded-full bg-zinc-950 border border-zinc-800">
+      <svg viewBox="0 0 200 200" className="w-full h-full" style={{ transform: "rotate(-90deg)" }}>
+        {segments.map((i) => {
+          const angle = (i * 360) / 24;
+          const radius = 80;
+          const x = 100 + radius * Math.cos((angle * Math.PI) / 180);
+          const y = 100 + radius * Math.sin((angle * Math.PI) / 180);
+
+          return (
+            <motion.circle
+              key={i}
+              cx={x}
+              cy={y}
+              r="2.5"
+              fill="#C9FD48"
+              initial={{ opacity: 0.2 }}
+              animate={{ opacity: [0.2, 1, 0.2], r: [2.5, 4, 2.5] }}
+              transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.1 }}
+            />
+          );
+        })}
+
+        {/* Outer ring */}
+        <circle cx="100" cy="100" r="88" fill="none" stroke="#C9FD48" strokeWidth="0.3" opacity="0.3" />
+
+        {/* Center disc */}
+        <circle cx="100" cy="100" r="35" fill="#18181b" />
+        <circle cx="100" cy="100" r="36" fill="none" stroke="#C9FD48" strokeWidth="0.5" opacity="0.4" />
+      </svg>
+
+      {/* Center icons overlay */}
+      <div className="absolute inset-0 flex items-center justify-center gap-3">
+        <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
+          <Phone className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
+        </div>
+        <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
+          <Mail className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SupportHero() {
+  const t = useTranslations("Support");
+
+  return (
+    <section className="w-full min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center clamp-[px,12,24]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex flex-col items-center gap-8"
+      >
+        <Shuffle
+          text={t("hero.title")}
+          tag="h1"
+          className="text-[12vw] md:text-[8vw] font-black leading-[0.9] tracking-tight text-foreground"
+          textAlign="center"
+          shuffleDirection="right"
+          duration={0.35}
+          animationMode="evenodd"
+          shuffleTimes={1}
+          ease="power3.out"
+          stagger={0.03}
+          threshold={0.1}
+          triggerOnce={true}
+          triggerOnHover={true}
+          respectReducedMotion={true}
+        />
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed text-center md:w-2/3 lg:w-1/2"
+        >
+          {t("hero.subtitle")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <ClockVisualization />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Link
+            href="/contact"
+            className="group inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-foreground text-background font-semibold clamp-[text,0.875rem,1rem] transition-all duration-200 hover:opacity-90"
+          >
+            <HeadphonesIcon className="w-5 h-5" strokeWidth={1.5} />
+            {t("hero.cta")}
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+          </Link>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   2. SUPPORT CHANNELS
+   ═══════════════════════════════════════════════════════ */
+
+function ChannelsSection() {
+  const t = useTranslations("Support");
+
+  const channels = [
+    { icon: Phone, key: "phone" as const },
+    { icon: Mail, key: "email" as const },
+  ];
+
+  return (
+    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={container}
+      >
+        {/* Header */}
+        <motion.div variants={itemVariant} className="text-center mb-10 md:mb-16">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              {t("channels.label")}
+            </span>
+          </div>
+          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+            {t("channels.title")}
+          </h2>
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 clamp-[gap,16,32]">
+          {channels.map(({ icon: Icon, key }) => (
+            <motion.div
+              key={key}
+              variants={itemVariant}
+              className="relative clamp-[p,16,32] rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:border-[#C9FD48]/50 hover:shadow-lg hover:shadow-[#C9FD48]/5"
+            >
+              {/* Available badge */}
+              <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                <motion.div
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-2 h-2 rounded-full bg-green-500"
+                />
+                <span className="text-xs font-medium text-muted-foreground">
+                  {t("channels.available")}
+                </span>
+              </div>
+
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center mb-5">
+                <Icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9FD48]" strokeWidth={1.5} />
+              </div>
+
+              <h3 className="clamp-[text,1.25rem,1.75rem] font-bold text-foreground mb-2">
+                {t(`channels.${key}.title`)}
+              </h3>
+              <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-5">
+                {t(`channels.${key}.description`)}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {t(`channels.${key}.features`).split(", ").map((feature, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center h-7 px-3 rounded-full bg-zinc-900 clamp-[text,0.75rem,0.875rem] font-medium text-[#C9FD48]"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   3. PROCESS — Horizontal Steps
+   ═══════════════════════════════════════════════════════ */
+
+const processIcons: LucideIcon[] = [Phone, Filter, Search, CheckCircle, MessageCircle];
+
+function ProcessSection() {
+  const t = useTranslations("Support");
+
+  return (
+    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={container}
+      >
+        {/* Header */}
+        <motion.div variants={itemVariant} className="text-center mb-10 md:mb-16">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              {t("process.label")}
+            </span>
+          </div>
+          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+            {t("process.title")}
+          </h2>
+        </motion.div>
+
+        {/* Horizontal Steps */}
+        <div className="grid grid-cols-2 md:grid-cols-5 clamp-[gap,16,32]">
+          {processIcons.map((Icon, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariant}
+              className="flex flex-col items-center text-center"
+            >
+              {/* Icon */}
+              <div className="relative mb-4">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
+                  <Icon className="w-6 h-6 md:w-7 md:h-7 text-[#C9FD48]" strokeWidth={1.5} />
+                </div>
+                <div className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-[#C9FD48] text-black text-xs font-bold flex items-center justify-center">
+                  {i + 1}
+                </div>
+              </div>
+
+              {/* Content */}
+              <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-foreground mb-1">
+                {t(`process.steps.${i}.title`)}
+              </h3>
+              <p className="clamp-[text,0.75rem,0.875rem] text-muted-foreground leading-relaxed">
+                {t(`process.steps.${i}.description`)}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   8. CTA SECTION — Text-swap with lime card
+   ═══════════════════════════════════════════════════════ */
+
+function SupportCTA() {
+  const t = useTranslations("Support");
+
+  return (
+    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <Link href="/contact" className="block group">
+        <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+          <span className="block text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+            {t("cta.title")}
+          </span>
+          <span className="absolute inset-0 flex items-center justify-center text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+            <span className="flex items-center gap-3">
+              {t("cta.button")}
+              <ArrowRight className="w-[4vw] md:w-[3vw] lg:w-[2vw] h-[4vw] md:h-[3vw] lg:h-[2vw] min-w-6 min-h-6" />
+            </span>
+          </span>
+        </div>
+      </Link>
+
+      {/* Contact */}
+      <div className="mt-6 md:mt-8 text-center">
+        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
+          {t("cta.contact_text")}{" "}
+          <a
+            href="mailto:hello@goqode.dev"
+            className="text-zinc-900 dark:text-[#C9FD48] font-medium hover:underline transition-colors"
+          >
+            hello@goqode.dev
+          </a>
+        </p>
+      </div>
+
+      {/* Benefits */}
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className="flex items-center gap-3 p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-[#C9FD48] flex-shrink-0" />
+            <span className="clamp-[text,0.875rem,1rem] text-foreground font-medium">
+              {t(`cta.benefits.${i}`)}
+            </span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   PAGE
+   ═══════════════════════════════════════════════════════ */
+
+export default function SupportPage() {
+  return (
+    <main className="min-h-screen w-full">
+      <SupportHero />
+      <ProcessSection />
+      <SupportCTA />
+    </main>
+  );
+}

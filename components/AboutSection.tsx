@@ -157,14 +157,14 @@ export function AboutSection() {
   const tClients = useTranslations("Clients");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       {/* Section Header */}
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-50px" }}
         variants={container}
-        className="mb-10 md:mb-16 text-center"
+        className="mb-4 md:mb-[1.5vw] text-center"
       >
         {/* Title */}
         <Shuffle
@@ -186,14 +186,14 @@ export function AboutSection() {
       </motion.div>
 
       {/* Hero Text with Scroll Reveal */}
-      <div className="mb-12 md:mb-20">
+      <div className="mb-6 md:mb-[3vw]">
         <ScrollReveal
           enableBlur={true}
           baseOpacity={0.1}
           baseRotation={3}
           blurStrength={4}
           containerClassName="w-full"
-          textClassName="clamp-[text,2rem,5.5rem] font-bold leading-[1.15] text-foreground text-center"
+          textClassName="text-[5.5vw] md:text-[3.5vw] font-bold leading-[1.15] text-foreground text-center"
         >
           {t("heroText")}
         </ScrollReveal>
@@ -210,9 +210,9 @@ export function AboutSection() {
           {/* Team Message */}
           <motion.div
             variants={cardVariant}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-4 md:mb-[1.5vw]"
           >
-            <p className="clamp-[text,1rem,1.5rem] text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
               {t("teamMessage")}
             </p>
           </motion.div>
@@ -220,11 +220,11 @@ export function AboutSection() {
           {/* Stats Row */}
           <motion.div
             variants={cardVariant}
-            className="grid grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-20"
+            className="grid grid-cols-3 gap-2 md:gap-[1.5vw] mb-8 md:mb-[3vw]"
           >
             {stats.map((stat) => (
               <div key={stat.id} className="text-center">
-                <div className="clamp-[text,4rem,8rem] font-bold text-foreground leading-none mb-2">
+                <div className="text-[10vw] md:text-[5vw] font-bold text-foreground leading-none mb-[0.5vw]">
                   <CountUp
                     from={0}
                     to={stat.value}
@@ -233,7 +233,7 @@ export function AboutSection() {
                   />
                   {stat.suffix}
                 </div>
-                <p className="clamp-[text,0.75rem,1rem] text-muted-foreground font-medium">
+                <p className="clamp-[text,0.75rem,0.875rem] text-muted-foreground font-medium">
                   {t(`stats.${stat.id}`)}
                 </p>
               </div>
@@ -241,18 +241,18 @@ export function AboutSection() {
           </motion.div>
 
           {/* Advantages Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-[1.25vw]">
             {advantages.map((id) => (
               <motion.div
                 key={id}
                 variants={cardVariant}
                 className="group"
               >
-                <div className="h-full rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#C9FD48]/50">
-                  <h3 className="clamp-[text,1.25rem,1.75rem] font-bold text-foreground mb-3">
+                <div className="h-full rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 md:p-[1vw] transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#C9FD48]/50">
+                  <h3 className="text-base md:text-[1.45vw] font-bold text-foreground mb-1.5 md:mb-[0.6vw]">
                     {t(`advantages.${id}.title`)}
                   </h3>
-                  <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed">
                     {t(`advantages.${id}.description`)}
                   </p>
                 </div>
@@ -261,14 +261,14 @@ export function AboutSection() {
           </div>
 
           {/* Clients Grid */}
-          <motion.div variants={cardVariant} className="mt-20 md:mt-32">
-            <div className="flex items-center justify-center gap-2 mb-8 md:mb-10">
-              <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-              <span className="text-sm md:text-base font-medium text-muted-foreground uppercase tracking-wider">
+          <motion.div variants={cardVariant} className="mt-10 md:mt-[5vw]">
+            <div className="flex items-center justify-center gap-2 md:gap-[0.4vw] mb-4 md:mb-[1.5vw]">
+              <div className="w-2 h-2 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+              <span className="text-xs md:clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
                 {tClients("title")}
               </span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-px bg-zinc-200 dark:bg-zinc-800 rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-5 gap-px bg-zinc-200 dark:bg-zinc-800 rounded-2xl overflow-hidden">
               {clientLogos.map((client, index) => (
                 <motion.div
                   key={client.name}
@@ -276,9 +276,9 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05, duration: 0.4 }}
                   viewport={{ once: true }}
-                  className="group flex items-center justify-center h-20 md:h-28 bg-background transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900"
+                  className="group flex items-center justify-center h-16 md:h-[5.8vw] bg-background transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900"
                 >
-                  <div className="text-zinc-400 dark:text-zinc-600 transition-all duration-300 group-hover:text-foreground group-hover:scale-110">
+                  <div className="text-zinc-400 dark:text-zinc-600 transition-all duration-300 group-hover:text-foreground group-hover:scale-110 [&_svg]:h-4 [&_svg]:md:h-[1.6vw] [&_svg]:w-auto">
                     {client.logo}
                   </div>
                 </motion.div>
@@ -289,16 +289,16 @@ export function AboutSection() {
           {/* CTA Card */}
           <motion.div
             variants={cardVariant}
-            className="mt-20 md:mt-32"
+            className="mt-10 md:mt-[5vw]"
           >
             <Link href="/contact" className="block group">
-              <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-4 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+              <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-3 md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
                 {/* First text */}
-                <span className="block text-[5vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                <span className="block text-[5vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
                   {t("cta.title")}
                 </span>
                 {/* Second text */}
-                <span className="absolute inset-0 flex items-center justify-center text-[5vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="absolute inset-0 flex items-center justify-center text-[5vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
                   {t("cta.button")}
                 </span>
               </div>

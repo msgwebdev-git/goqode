@@ -95,7 +95,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
 
   return (
     <div
-      className={`relative flex gap-2 justify-center items-center flex-wrap ${className}`}
+      className={`relative flex gap-2 justify-center items-center flex-col sm:flex-row flex-wrap ${className}`}
       ref={containerRef}
       style={{ outline: 'none', userSelect: 'none' }}
     >

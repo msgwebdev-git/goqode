@@ -28,7 +28,7 @@
     "subtitle": "Dezvoltăm. Automatizăm. Promovăm",
     "description": "Creăm site-uri, aplicații web și soluții digitale care ajută afacerile să crească. De la design la dezvoltare și marketing — ne ocupăm de ciclul complet.",
     "cta": "Hai să discutăm",
-    "ctaSecondary": "Vezi cazuri"
+    "ctaSecondary": "Vezi pachetele"
   },
   "Solutions": {
     "title": "Soluții",
@@ -86,46 +86,46 @@
     "viewProject": "Vezi proiectul",
     "items": {
       "0": {
-        "title": "E-commerce Fashion Platform",
-        "description": "Magazin online modern cu experiență de cumpărături personalizată și integrare cu sisteme de plată",
-        "challenge": "Clientul avea nevoie de o platformă scalabilă care să gestioneze mii de produse și trafic intens",
-        "solution": "Am dezvoltat o soluție Next.js cu optimizare avansată și sistem de recomandări AI",
-        "result": "+180% conversie în 3 luni"
+        "title": "goQode Project",
+        "description": "Soluție web completă construită cu tehnologii moderne și cele mai bune practici UX",
+        "challenge": "Clientul avea nevoie de un produs digital performant și scalabil",
+        "solution": "Dezvoltare full-cycle de la design până la lansare",
+        "result": "Lansare reușită"
       },
       "1": {
-        "title": "Aplicație Mobilă Banking",
-        "description": "Aplicație iOS și Android pentru gestionarea finanțelor personale și transferuri instant",
-        "challenge": "Securitate maximă combinată cu UX intuitiv pentru toate categoriile de utilizatori",
-        "solution": "Autentificare biometrică, criptare end-to-end și design simplu",
-        "result": "50K+ descărcări în prima lună"
+        "title": "goQode Project",
+        "description": "Aplicație mobilă cross-platform cu interfață intuitivă și experiență fluidă",
+        "challenge": "Crearea unui produs care funcționează impecabil pe toate dispozitivele",
+        "solution": "Stack tehnologic modern cu accent pe performanță și utilizabilitate",
+        "result": "Lansare reușită"
       },
       "2": {
-        "title": "Dashboard Analytics SaaS",
-        "description": "Platformă de business intelligence cu vizualizări interactive și rapoarte automatizate",
-        "challenge": "Procesarea și vizualizarea unor volume mari de date în timp real",
-        "solution": "Arhitectură microservicii cu cache inteligent și grafice optimizate",
-        "result": "Reducere 70% timp de analiză"
+        "title": "goQode Project",
+        "description": "Aplicație web personalizată cu analiză avansată și vizualizare a datelor în timp real",
+        "challenge": "Construirea unei platforme robuste pentru decizii bazate pe date",
+        "solution": "Arhitectură scalabilă cu procesare optimizată a datelor",
+        "result": "Lansare reușită"
       },
       "3": {
-        "title": "Rebranding Companie Tech",
-        "description": "Identitate vizuală completă pentru startup în domeniul tehnologiei medicale",
-        "challenge": "Crearea unui brand care să inspire încredere și inovație",
-        "solution": "Logo modern, paletă de culori distinctivă și ghid de brand complet",
-        "result": "Recunoaștere brand +200%"
+        "title": "goQode Project",
+        "description": "Identitate de brand completă și sistem de design vizual pentru o companie în creștere",
+        "challenge": "Crearea unei prezențe de brand distinctivă și memorabilă",
+        "solution": "Branding strategic cu ghiduri de stil complete",
+        "result": "Lansare reușită"
       },
       "4": {
-        "title": "Platformă Evenimente Corporate",
-        "description": "Sistem de înregistrare, ticketing și management pentru evenimente cu peste 5000 participanți",
-        "challenge": "Gestionarea fluxului mare de participanți și integrarea cu sisteme externe",
-        "solution": "Platformă custom cu QR check-in, streaming live și networking virtual",
-        "result": "15+ evenimente gestionate"
+        "title": "goQode Project",
+        "description": "Platformă digitală de management al evenimentelor cu sistem de înregistrare și ticketing",
+        "challenge": "Simplificarea experienței evenimentelor pentru organizatori și participanți",
+        "solution": "Soluție completă pentru evenimente cu integrări moderne",
+        "result": "Lansare reușită"
       },
       "5": {
-        "title": "Automatizare Procese HR",
-        "description": "Sistem integrat de management al resurselor umane cu flux de lucru automatizat",
-        "challenge": "Digitalizarea proceselor manuale și reducerea timpului de procesare",
-        "solution": "Integrare cu sistemele existente, automatizare documente și notificări",
-        "result": "Economie 40 ore/săptămână"
+        "title": "goQode Project",
+        "description": "Sistem de automatizare a proceselor de business cu integrări și fluxuri inteligente",
+        "challenge": "Eliminarea proceselor manuale și îmbunătățirea eficienței operaționale",
+        "solution": "Automatizare personalizată cu integrare perfectă a sistemelor",
+        "result": "Lansare reușită"
       }
     }
   },
@@ -164,26 +164,40 @@
     }
   },
   "Contact": {
-    "title": "Contactează-ne",
-    "subtitle": "Hai să vorbim",
-    "description": "Ai o idee sau un proiect? Scrie-ne și îți vom răspunde în cel mai scurt timp.",
-    "form": {
-      "name": "Nume",
-      "namePlaceholder": "Numele tău",
-      "email": "Email",
-      "emailPlaceholder": "email@exemplu.com",
-      "company": "Companie",
-      "companyPlaceholder": "Numele companiei (opțional)",
-      "message": "Mesaj",
+    "heading": "Hai să creăm\nceva extraordinar\nîmpreună.",
+    "step1": {
+      "indicator": "1/2 pași",
+      "title": "Introduceți datele de contact",
+      "name": "NUMELE TĂU",
+      "email": "EMAIL",
+      "phone": "TELEFON (OPȚIONAL)",
+      "continue": "Continuă"
+    },
+    "step2": {
+      "indicator": "2/2 pași",
+      "title": "Împărtășește ideea ta",
+      "message": "DESCRIE IDEEA TA",
       "messagePlaceholder": "Descrie proiectul sau ideea ta...",
-      "submit": "Trimite mesajul",
-      "sending": "Se trimite..."
+      "selectService": "Selectează un serviciu:",
+      "services": {
+        "0": "Website",
+        "1": "Aplicație mobilă",
+        "2": "Branding",
+        "3": "Automatizare",
+        "4": "Să discutăm"
+      },
+      "agree": "Prin trimiterea acestui mesaj sunt de acord să împărtășesc informațiile mele personale",
+      "back": "Înapoi",
+      "submit": "Trimite mesajul"
     },
-    "info": {
-      "title": "Informații de contact"
+    "success": {
+      "title": "Mesaj trimis!",
+      "subtitle": "Îți vom răspunde în cel mult 2 ore.",
+      "sendAnother": "Trimite alt mesaj"
     },
-    "social": {
-      "title": "Urmărește-ne"
+    "bottom": {
+      "project": "Începe un proiect:",
+      "email": "hello@goqode.dev"
     }
   },
   "Footer": {
@@ -596,111 +610,116 @@
   "Automation": {
     "hero": {
       "title": "Automatizare",
-      "subtitle": "Transformă rutina în autopilot. Economisește timp și bani automatizând procesele de business, integrările și comunicațiile.",
+      "subtitle": "Transformă rutina în autopilot. Automatizăm procesele de business, integrările și comunicațiile pentru a economisi timp și bani.",
       "cta": "Automatizează Business-ul"
     },
     "types": {
-      "label": "Tipuri de automatizare",
-      "title": "Ce automatizăm",
-      "description": "De la chatboți la integrări complexe — automatizăm tot ce ocupă timpul echipei tale",
+      "label": "Ce Automatizăm",
+      "title": "Automatizare Care Lucrează Pentru Tine",
       "items": {
-        "chatbots": {
-          "title": "Chatboți și asistenți AI",
-          "description": "Suport clienți 24/7, calificarea lead-urilor și automatizarea vânzărilor. Integrare cu orice messenger și site.",
-          "features": "Telegram, WhatsApp, Site, Calificare lead-uri, Automatizare FAQ"
+        "0": {
+          "title": "Chatboți & AI",
+          "description": "Chatboți inteligenți pentru suport clienți, calificare lead-uri și gestionarea FAQ pe toate canalele."
         },
-        "crm": {
-          "title": "Integrări CRM și ERP",
-          "description": "Sincronizare automată a datelor între sisteme. Fără introducere manuală și informații pierdute.",
-          "features": "Bitrix, Amo, Kommo, CRM custom"
+        "1": {
+          "title": "Integrare CRM",
+          "description": "Sincronizare perfectă între CRM, email și instrumentele de comunicare. Fără introducere manuală a datelor."
         },
-        "email": {
-          "title": "Email Marketing",
-          "description": "Secvențe trigger, personalizare și segmentare automată. Fiecare client primește conținut relevant.",
-          "features": "Serie welcome, Coș abandonat, Reactivare, Personalizare"
+        "2": {
+          "title": "Email Automatizat",
+          "description": "Secvențe automate de email, follow-up-uri și notificări declanșate de acțiunile utilizatorilor."
         },
-        "messengers": {
-          "title": "Automatizare Messengere",
-          "description": "Boți Telegram și WhatsApp pentru comunicare cu clienții. Notificări, comenzi, suport.",
-          "features": "Notificări comenzi, Actualizări status, Chat suport, Feedback"
+        "3": {
+          "title": "Boți Messenger",
+          "description": "Boți Telegram, WhatsApp și Viber pentru comenzi, suport și notificări automate."
         },
-        "workflow": {
-          "title": "Automatizare Workflow",
-          "description": "Automatizarea proceselor interne, task-urilor și aprobărilor. Mai puțină rutină pentru angajați.",
-          "features": "Lanțuri de aprobare, Atribuire task-uri, Reminder-uri, Rapoarte"
+        "4": {
+          "title": "Procese de Business",
+          "description": "Automatizare end-to-end: de la preluarea comenzii la livrare, de la onboarding la raportare."
         },
-        "reporting": {
-          "title": "Raportare și Analiză",
-          "description": "Dashboard-uri și rapoarte automate. Toate metricile cheie într-un singur loc, actualizate în timp real.",
-          "features": "Auto-rapoarte, Dashboard-uri, Agregare date, Alerte"
+        "5": {
+          "title": "Analiză & Rapoarte",
+          "description": "Dashboard-uri, rapoarte și alerte generate automat. Date în timp real fără tabele manuale."
         }
       }
     },
-    "flow": {
-      "label": "Transformare",
-      "title": "Înainte și după automatizare",
+    "comparison": {
+      "label": "De Ce Să Automatizezi",
+      "title": "Înainte & După Automatizare",
       "before": {
-        "title": "Înainte",
+        "title": "Muncă Manuală",
         "items": {
-          "0": "Introducere manuală a datelor între sisteme",
-          "1": "Lead-uri pierdute și mesaje ratate",
-          "2": "Ore petrecute pe task-uri de rutină",
-          "3": "Erori umane în procese"
+          "0": { "label": "Introducere Date", "value": "40h/lună" },
+          "1": { "label": "Timp de Răspuns", "value": "2-4 ore" },
+          "2": { "label": "Erori Umane", "value": "15-20%" },
+          "3": { "label": "Program de Lucru", "value": "9–18" },
+          "4": { "label": "Generare Rapoarte", "value": "1-2 zile" }
         }
       },
       "after": {
-        "title": "După",
+        "title": "Cu Automatizare",
         "items": {
-          "0": "Sincronizare automată a datelor",
-          "1": "Răspuns instant la fiecare cerere",
-          "2": "Echipa se concentrează pe task-uri strategice",
-          "3": "Procese previzibile și fără erori"
+          "0": { "label": "Introducere Date", "value": "0h/lună" },
+          "1": { "label": "Timp de Răspuns", "value": "< 1 secundă" },
+          "2": { "label": "Erori Umane", "value": "0%" },
+          "3": { "label": "Program de Lucru", "value": "24/7" },
+          "4": { "label": "Generare Rapoarte", "value": "Timp real" }
         }
+      }
+    },
+    "process": {
+      "label": "Cum Lucrăm",
+      "title": "De la Idee la Autopilot",
+      "steps": {
+        "0": { "title": "Audit", "description": "Analizăm procesele curente și identificăm blocajele care pot fi automatizate." },
+        "1": { "title": "Design", "description": "Proiectăm fluxurile de automatizare și integrările adaptate nevoilor tale." },
+        "2": { "title": "Dezvoltare", "description": "Dezvoltăm, conectăm API-uri, configurăm boți și setăm toate automatizările." },
+        "3": { "title": "Testare", "description": "Testăm riguros fiecare scenariu pentru funcționare fiabilă 24/7." },
+        "4": { "title": "Lansare & Suport", "description": "Implementăm în producție și asigurăm monitorizare și optimizare continuă." }
+      }
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Obții",
+      "metrics": {
+        "0": { "value": "70", "suffix": "%", "description": "Mai puțină muncă de rutină" },
+        "1": { "value": "3", "suffix": "×", "description": "Timp de răspuns mai rapid" },
+        "2": { "value": "24", "suffix": "/7", "description": "Funcționare non-stop" },
+        "3": { "value": "0", "suffix": "", "description": "Erori umane în procese" }
       }
     },
     "stack": {
       "label": "Tehnologii",
-      "title": "Integrări și instrumente",
-      "description": "Lucrăm cu toate platformele populare și putem integra orice serviciu prin API"
-    },
-    "results": {
-      "label": "Rezultate",
-      "title": "Ce vei obține",
-      "time_saved": "Mai puțin timp pe task-uri de rutină",
-      "conversion": "Conversie mai mare cu chatboți",
-      "availability": "Lucru fără pauze",
-      "errors": "Erori în procesarea datelor"
-    },
-    "process": {
-      "label": "Proces",
-      "title": "Cum implementăm",
-      "steps": {
-        "audit": {
-          "title": "Audit",
-          "description": "Analizăm procesele curente și găsim oportunități de automatizare"
-        },
-        "design": {
-          "title": "Proiectare",
-          "description": "Creăm arhitectura automatizării și schema de integrare"
-        },
-        "development": {
-          "title": "Dezvoltare",
-          "description": "Construim integrări, boți și workflow-uri automate"
-        },
-        "testing": {
-          "title": "Testare",
-          "description": "Testăm toate scenariile și cazurile limită"
-        },
-        "launch": {
-          "title": "Lansare",
-          "description": "Deploy și instruirea echipei tale"
-        }
+      "title": "Stack-ul nostru",
+      "categories": {
+        "0": { "title": "Backend", "tools": "Node.js, Python, TypeScript, Go" },
+        "1": { "title": "Mesagerie", "tools": "Telegram API, WhatsApp Business, Viber" },
+        "2": { "title": "Date", "tools": "PostgreSQL, Redis, ClickHouse, S3" },
+        "3": { "title": "AI & ML", "tools": "OpenAI, Claude, LangChain, Pinecone" }
       }
     },
     "cta": {
-      "title": "Automatizezi rutina?",
-      "button": "Discută proiectul",
-      "contact_text": "Sau scrie-ne la"
+      "title": "Pregătit Să Automatizezi?",
+      "button": "Hai Să Discutăm",
+      "contactText": "Sau scrie-ne la",
+      "benefits": {
+        "0": "Audit gratuit al proceselor",
+        "1": "Lansare în 2-4 săptămâni",
+        "2": "Suport continuu inclus"
+      }
+    },
+    "demo": {
+      "label": "Cum Funcționează",
+      "title": "Un lead. Cinci acțiuni. Trei secunde.",
+      "trigger": "Lead nou de pe site",
+      "steps": {
+        "0": { "title": "Analiză AI", "desc": "Cerere clasificată" },
+        "1": { "title": "CRM", "desc": "Contact creat" },
+        "2": { "title": "Email", "desc": "Răspuns trimis" },
+        "3": { "title": "Email", "desc": "Manager notificat" }
+      },
+      "done": "Lead procesat",
+      "time": "3 sec"
     }
   },
   "Events": {
@@ -887,6 +906,271 @@
         "1": "Soluție personalizată",
         "2": "Suport 24/7 în ziua evenimentului"
       }
+    }
+  },
+  "Support": {
+    "hero": {
+      "title": "SUPORT 24/7",
+      "subtitle": "Sistemele tale nu dorm niciodată. Nici noi. Suport telefonic și email întotdeauna disponibil când ai nevoie cel mai mult.",
+      "cta": "Obține suport acum"
+    },
+    "channels": {
+      "label": "Canale de suport",
+      "title": "Cum suntem aici pentru tine",
+      "phone": {
+        "title": "Linie telefonică directă",
+        "description": "Conexiune instantanee cu inginerii de suport. Fără meniuri, fără muzică de așteptare—doar experți gata să ajute.",
+        "features": "< 30 sec răspuns, Ingineri experți, Rutare prioritară"
+      },
+      "email": {
+        "title": "Email și sistem de tichete",
+        "description": "Depanare detaliată cu istoric complet al conversației. Perfect pentru probleme complexe care necesită documentare.",
+        "features": "< 2 ore SLA, Istoric complet, Suport atașamente"
+      },
+      "available": "Disponibil acum"
+    },
+    "process": {
+      "label": "Proces",
+      "title": "Cum funcționează",
+      "steps": {
+        "0": { "title": "Contact", "description": "Telefon sau email—alegerea ta. Creăm un tichet automat." },
+        "1": { "title": "Triere", "description": "Evaluăm severitatea (P0-P3) și direcționăm către specialistul potrivit." },
+        "2": { "title": "Diagnostic", "description": "Inginerul investighează loguri și identifică cauza principală." },
+        "3": { "title": "Rezolvare", "description": "Remediere implementată, testată și implementată în producție." },
+        "4": { "title": "Urmărire", "description": "Confirmăm rezolvarea și discutăm măsuri preventive." }
+      }
+    },
+    "cta": {
+      "title": "GATA PENTRU SUPORT 24/7?",
+      "button": "HAI SĂ VORBIM",
+      "contact_text": "Sau trimite-ne email la",
+      "benefits": {
+        "0": "Audit suport gratuit",
+        "1": "Fără contracte pe termen lung",
+        "2": "Start în 48 ore"
+      }
+    }
+  },
+  "Branding": {
+    "hero": {
+      "title": "BRANDING",
+      "subtitle": "Un brand este un sistem, nu doar un logo. Construim sisteme complete de identitate care fac afacerile recunoscute, de încredere și premium.",
+      "cta": "Discutăm brandul tău"
+    },
+    "manifesto": {
+      "label": "Filozofie",
+      "0": "Prețul aduce un client o singură dată.",
+      "1": "Brandul îl face să rămână pentru totdeauna.",
+      "2": "Nu e design — e ceea ce oamenii simt despre afacerea ta înainte să spună «bună ziua».",
+      "3": "Noi transformăm această senzație într-un sistem."
+    },
+    "system": {
+      "label": "Sistemul brandului",
+      "title": "Totul funcționează ca un întreg"
+    },
+    "comparison": {
+      "label": "De ce branding",
+      "title": "Afacere fără branding vs cu branding",
+      "without_title": "Fără Branding",
+      "with_title": "Cu Branding Profesional",
+      "rows": {
+        "0": { "aspect": "Prima impresie", "without": "Aspect generic", "with": "Identitate unică" },
+        "1": { "aspect": "Încrederea clienților", "without": "Recunoaștere scăzută", "with": "Imagine profesională" },
+        "2": { "aspect": "Prețuri", "without": "Competiție pe preț", "with": "Poziționare premium" },
+        "3": { "aspect": "Marketing", "without": "Materiale haotice", "with": "Sistem coerent" },
+        "4": { "aspect": "Scalare", "without": "Refaci de fiecare dată", "with": "Un sistem, ∞ utilizări" }
+      }
+    },
+    "deliverables": {
+      "label": "Ce primești",
+      "title": "Pachet complet de brand",
+      "items": {
+        "brandbook": { "title": "Brand Book", "description": "Ghid complet cu reguli, șabloane și specificații pentru aplicarea consistentă a brandului" },
+        "logo": { "title": "Sistem de logo", "description": "Primar, inversat, monocrom, iconiță și versiune orizontală" },
+        "colors": { "title": "Paletă de culori", "description": "Culori primare, secundare și de accent cu coduri exacte pentru toate mediile" },
+        "typography": { "title": "Tipografie", "description": "Combinare fonturi, scară dimensiuni, ierarhie greutăți, reguli spațiere" },
+        "digital": { "title": "Materiale digitale", "description": "Kit social media, șabloane prezentări, cărți de vizită, anteturi" }
+      }
+    },
+    "process": {
+      "label": "Proces",
+      "title": "Cum construim branduri",
+      "phases": {
+        "discovery": {
+          "title": "Discovery",
+          "steps": {
+            "audit": "Audit de brand",
+            "competitors": "Analiză concurenți",
+            "audience": "Cercetare audiență",
+            "positioning": "Strategie de poziționare"
+          }
+        },
+        "concept": {
+          "title": "Concept",
+          "steps": {
+            "moodboards": "Moodboard-uri",
+            "directions": "Direcții vizuale",
+            "selection": "Selectare concept"
+          }
+        },
+        "design": {
+          "title": "Design",
+          "steps": {
+            "logo": "Sistem de logo",
+            "colors": "Paletă de culori",
+            "typography": "Tipografie",
+            "elements": "Elemente vizuale"
+          }
+        },
+        "delivery": {
+          "title": "Livrare",
+          "steps": {
+            "brandbook": "Brand Book",
+            "files": "Fișiere și asset-uri",
+            "guide": "Ghid de implementare"
+          }
+        }
+      }
+    },
+    "demo": {
+      "label": "Brandul în acțiune",
+      "title": "Un sistem — fiecare punct de contact",
+      "trigger": "Brand System",
+      "touchpoints": {
+        "0": "Website",
+        "1": "Social Media",
+        "2": "Materiale tipărite",
+        "3": "Prezentări"
+      },
+      "done": "Brand consistent",
+      "badge": "1 sistem = ∞ puncte de contact"
+    },
+    "features": {
+      "label": "Trei piloni",
+      "title": "Ce face un brand puternic",
+      "items": {
+        "0": {
+          "title": "Fundament strategic",
+          "description": "Cercetăm piața, definim poziționarea și construim strategia de brand pe baza datelor, nu a presupunerilor. Arhetipul, tonul vocii și propunerea de valoare — toate fundamentate pe analiză.",
+          "points": "Cercetare piață, Poziționare, Arhetip brand, Ton de comunicare"
+        },
+        "1": {
+          "title": "Identitate vizuală",
+          "description": "Logo, culori, tipografie, stil foto — fiecare element vizual este proiectat ca parte dintr-un sistem coerent. Brandul tău arată profesional și consistent peste tot.",
+          "points": "Sistem logo, Paletă culori, Tipografie, Stil fotografic"
+        },
+        "2": {
+          "title": "Managementul brandului",
+          "description": "Livrăm un brand book complet cu reguli de utilizare, șabloane și toate fișierele sursă. Echipa și partenerii tăi vor aplica brandul corect întotdeauna.",
+          "points": "Brand book, Reguli utilizare, Șabloane, Fișiere sursă"
+        }
+      }
+    },
+    "stats": {
+      "label": "De ce contează",
+      "title": "Brand = Încredere",
+      "items": {
+        "0": { "value": "80", "suffix": "%", "label": "dintre consumatori au încredere în branduri consistente" },
+        "1": { "value": "3", "suffix": "x", "label": "vizibilitate mai mare pentru branduri sistematice" },
+        "2": { "value": "23", "suffix": "%", "label": "creștere medie a veniturilor cu branding consistent" }
+      }
+    },
+    "cta": {
+      "title": "Gata să vă construiți brandul?",
+      "button": "Să începem!",
+      "contact_text": "Sau scrieți-ne la",
+      "benefits": {
+        "0": "Audit gratuit de brand",
+        "1": "2–3 concepte",
+        "2": "Pachet complet de asset-uri"
+      }
+    }
+  },
+  "Packages": {
+    "hero": {
+      "title": "PACHETE",
+      "subtitle": "Soluții gata pentru creșterea afacerii tale în digital. Alege pachetul potrivit obiectivelor și dimensiunii tale.",
+      "cta": "Discută proiectul"
+    },
+    "grid": {
+      "label": "Tarife",
+      "popular": "Popular",
+      "from": "de la"
+    },
+    "packages": {
+      "0": {
+        "name": "START",
+        "price": "690",
+        "period": "/ lună",
+        "tagline": "Afaceri mici",
+        "description": "Pentru afaceri mici și proiecte locale. Potrivit dacă abia intri în digital sau vrei să pui ordine.",
+        "result": "Start clar, imagine îngrijită, primele cereri.",
+        "features": {
+          "0": "Audit Instagram, Facebook și site",
+          "1": "Strategie digitală de bază",
+          "2": "SMM (8–10 postări și stories)",
+          "3": "Stil vizual de bază",
+          "4": "Configurare publicitate (1–2 campanii)",
+          "5": "Raport lunar"
+        }
+      },
+      "1": {
+        "name": "GROW",
+        "price": "1 250",
+        "period": "/ lună",
+        "tagline": "Creștere stabilă",
+        "description": "Pentru afaceri care vor o creștere stabilă. Un sistem de atragere a clienților în loc de conținut haotic.",
+        "result": "Sistem de atragere a clienților în loc de conținut haotic.",
+        "features": {
+          "0": "Strategie digitală aprofundată",
+          "1": "SMM (12–16 postări, Reels, stories)",
+          "2": "Plan de conținut orientat pe vânzări",
+          "3": "Targeting și retargeting",
+          "4": "Landing page sau redesign site",
+          "5": "Analiză de bază și KPI",
+          "6": "Recomandări lunare de creștere"
+        }
+      },
+      "2": {
+        "name": "SCALE",
+        "price": "2 400",
+        "period": "/ lună",
+        "tagline": "Scalare",
+        "description": "Pentru branduri care vor să se extindă. Control complet asupra cifrelor și creșterea vânzărilor.",
+        "result": "Creșterea vânzărilor, controlul cifrelor, scalare.",
+        "features": {
+          "0": "Strategie de creștere pe 3–6 luni",
+          "1": "SMM complet și creativ",
+          "2": "Marketing de performanță",
+          "3": "Optimizarea conversiilor",
+          "4": "Site, e-commerce sau integrare CRM",
+          "5": "Promovare PR",
+          "6": "Analiză end-to-end",
+          "7": "Sesiuni strategice lunare"
+        }
+      },
+      "3": {
+        "name": "DIGITAL PRODUCT",
+        "price": "custom",
+        "period": "",
+        "priceLabel": "La cerere",
+        "tagline": "Dezvoltare produs",
+        "description": "Dezvoltare completă a produsului digital — de la cercetare până la lansare.",
+        "result": "Un produs convenabil, clar și competitiv.",
+        "features": {
+          "0": "Cercetare UX/UI",
+          "1": "Prototipare",
+          "2": "Design interfață",
+          "3": "Dezvoltare site sau aplicație",
+          "4": "Testare",
+          "5": "Lansare și suport"
+        }
+      }
+    },
+    "cta": {
+      "title": "Gata să începem?",
+      "button": "Contactează-ne",
+      "contact_text": "Sau scrie-ne la"
     }
   }
 }

@@ -3,7 +3,19 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
 import Shuffle from "./Shuffle";
+
+const SOLUTION_LINKS = [
+  "/launch",
+  "/growth",
+  "/platforms",
+  "/events",
+  "/solutions/branding",
+  "/automation",
+  "/solutions/support",
+] as const;
 
 const container = {
   hidden: {},
@@ -681,7 +693,7 @@ export function SolutionsSection() {
   }));
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -725,16 +737,56 @@ export function SolutionsSection() {
           </div>
         </motion.div>
 
-        {/* Mobile layout - simple 2 column grid */}
-        <div className="md:hidden grid grid-cols-2 gap-5">
-          <div className="aspect-square"><Card1 solution={items[0].solution} task={items[0].task} result={items[0].result} /></div>
-          <div className="aspect-square"><Card2 solution={items[1].solution} task={items[1].task} result={items[1].result} /></div>
-          <div className="aspect-square"><Card3 solution={items[2].solution} task={items[2].task} result={items[2].result} /></div>
-          <div className="aspect-square"><Card4 solution={items[3].solution} task={items[3].task} result={items[3].result} /></div>
-          <div className="aspect-square"><Card6 solution={items[4].solution} task={items[4].task} result={items[4].result} /></div>
-          <div className="aspect-square"><Card5 solution={items[5].solution} task={items[5].task} result={items[5].result} /></div>
-          <div className="aspect-square col-span-2"><Card7 solution={items[6].solution} task={items[6].task} result={items[6].result} /></div>
-        </div>
+        {/* Mobile layout - minimal text list */}
+        <motion.div
+          className="md:hidden flex flex-col"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.15,
+              },
+            },
+          }}
+        >
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                show: {
+                  opacity: 1,
+                  x: 0,
+                  transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
+                },
+              }}
+            >
+              <Link
+                href={SOLUTION_LINKS[i]}
+                className="group flex items-center justify-between gap-4 py-5 border-b border-zinc-200 dark:border-zinc-800"
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-sm font-medium text-zinc-400 dark:text-[#C9FD48] shrink-0">
+                      0{i + 1}
+                    </span>
+                    <h3 className="text-[1.5rem] font-bold text-foreground leading-tight">
+                      {item.solution}
+                    </h3>
+                  </div>
+                  <p className="text-base text-muted-foreground mt-1 pl-8">
+                    {item.task}
+                  </p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-muted-foreground shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" />
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Desktop layout - structured rows with explicit aspect ratios */}
         <div className="hidden md:flex flex-col gap-8">

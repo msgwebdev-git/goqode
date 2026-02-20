@@ -10,80 +10,73 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-zinc-200 dark:border-zinc-800">
-      <div className="clamp-[px,12,24] py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Logo & Description */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/goQode - white.svg"
-                alt="GoQode"
-                width={120}
-                height={32}
-                className="h-8 w-auto dark:hidden"
-              />
-              <Image
-                src="/goQode - dark.svg"
-                alt="GoQode"
-                width={120}
-                height={32}
-                className="h-8 w-auto hidden dark:block"
-              />
-            </Link>
-            <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed max-w-md">
-              {t("description")}
-            </p>
-          </div>
+      <div className="px-6 md:clamp-[px,12,24] py-8">
+        {/* Logo & Description */}
+        <div className="mb-8">
+          <Link href="/" className="inline-block mb-4">
+            <Image
+              src="/goQode - white.svg"
+              alt="GoQode"
+              width={120}
+              height={32}
+              className="h-8 w-auto dark:hidden"
+            />
+            <Image
+              src="/goQode - dark.svg"
+              alt="GoQode"
+              width={120}
+              height={32}
+              className="h-8 w-auto hidden dark:block"
+            />
+          </Link>
+          <p className="text-sm md:clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed max-w-md">
+            {t("description")}
+          </p>
+        </div>
 
-          {/* Navigation */}
+        {/* Navigation + Contact — 2 columns on mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
           <div>
-            <h4 className="font-semibold text-foreground mb-4">{t("nav.title")}</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground text-sm mb-3">{t("nav.title")}</h4>
+            <ul className="space-y-2">
               <li>
-                <Link href="/#solutions" className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#solutions" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t("nav.solutions")}
                 </Link>
               </li>
               <li>
-                <Link href="/#cases" className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#cases" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t("nav.cases")}
                 </Link>
               </li>
               <li>
-                <Link href="/#about" className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t("nav.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t("nav.contact")}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">{t("contact.title")}</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground text-sm mb-3">{t("contact.title")}</h4>
+            <ul className="space-y-2">
               <li>
-                <a
-                  href="mailto:hello@goqode.dev"
-                  className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="mailto:hello@goqode.dev" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   hello@goqode.dev
                 </a>
               </li>
               <li>
-                <a
-                  href="tel:+37360000000"
-                  className="clamp-[text,0.875rem,1rem] text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href="tel:+37360000000" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   +373 60 000 000
                 </a>
               </li>
               <li>
-                <span className="clamp-[text,0.875rem,1rem] text-muted-foreground">
+                <span className="text-sm text-muted-foreground">
                   Chișinău, Moldova
                 </span>
               </li>
@@ -92,8 +85,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 mt-8 border-t border-zinc-200 dark:border-zinc-800">
-          <p className="clamp-[text,0.75rem,0.875rem] text-muted-foreground">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 mt-8 border-t border-zinc-200 dark:border-zinc-800">
+          <p className="text-xs md:clamp-[text,0.75rem,0.875rem] text-muted-foreground">
             © {currentYear} GoQode. {t("rights")}
           </p>
           <div className="flex gap-6">

@@ -28,7 +28,7 @@
     "subtitle": "We develop. We automate. We promote",
     "description": "We create websites, web applications, and digital solutions that help businesses grow. From design to development to marketing — we handle the full cycle.",
     "cta": "Let's talk",
-    "ctaSecondary": "View cases"
+    "ctaSecondary": "View packages"
   },
   "Solutions": {
     "title": "Solutions",
@@ -86,46 +86,46 @@
     "viewProject": "View project",
     "items": {
       "0": {
-        "title": "E-commerce Fashion Platform",
-        "description": "Modern online store with personalized shopping experience and payment system integration",
-        "challenge": "Client needed a scalable platform to handle thousands of products and heavy traffic",
-        "solution": "We developed a Next.js solution with advanced optimization and AI recommendation system",
-        "result": "+180% conversion in 3 months"
+        "title": "goQode Project",
+        "description": "A comprehensive web solution built with modern technologies and best UX practices",
+        "challenge": "The client needed a high-performance, scalable digital product",
+        "solution": "Full-cycle development from design to deployment",
+        "result": "Successful launch"
       },
       "1": {
-        "title": "Mobile Banking App",
-        "description": "iOS and Android app for personal finance management and instant transfers",
-        "challenge": "Maximum security combined with intuitive UX for all user categories",
-        "solution": "Biometric authentication, end-to-end encryption and simple design",
-        "result": "50K+ downloads in first month"
+        "title": "goQode Project",
+        "description": "Cross-platform mobile application with intuitive interface and seamless user experience",
+        "challenge": "Creating a product that works flawlessly on all devices",
+        "solution": "Modern tech stack with focus on performance and usability",
+        "result": "Successful launch"
       },
       "2": {
-        "title": "Analytics Dashboard SaaS",
-        "description": "Business intelligence platform with interactive visualizations and automated reports",
-        "challenge": "Processing and visualizing large volumes of data in real-time",
-        "solution": "Microservices architecture with smart caching and optimized charts",
-        "result": "70% reduction in analysis time"
+        "title": "goQode Project",
+        "description": "Custom web application with advanced analytics and real-time data visualization",
+        "challenge": "Building a robust platform for data-driven decisions",
+        "solution": "Scalable architecture with optimized data processing",
+        "result": "Successful launch"
       },
       "3": {
-        "title": "Tech Company Rebranding",
-        "description": "Complete visual identity for a medical technology startup",
-        "challenge": "Creating a brand that inspires trust and innovation",
-        "solution": "Modern logo, distinctive color palette and complete brand guide",
-        "result": "+200% brand recognition"
+        "title": "goQode Project",
+        "description": "Complete brand identity and visual design system for a growing company",
+        "challenge": "Creating a distinctive and memorable brand presence",
+        "solution": "Strategic branding with comprehensive style guidelines",
+        "result": "Successful launch"
       },
       "4": {
-        "title": "Corporate Events Platform",
-        "description": "Registration, ticketing and management system for events with 5000+ participants",
-        "challenge": "Managing high participant flow and integration with external systems",
-        "solution": "Custom platform with QR check-in, live streaming and virtual networking",
-        "result": "15+ events managed"
+        "title": "goQode Project",
+        "description": "Digital event management platform with registration and ticketing system",
+        "challenge": "Streamlining the event experience for organizers and attendees",
+        "solution": "End-to-end event solution with modern integrations",
+        "result": "Successful launch"
       },
       "5": {
-        "title": "HR Process Automation",
-        "description": "Integrated human resources management system with automated workflow",
-        "challenge": "Digitizing manual processes and reducing processing time",
-        "solution": "Integration with existing systems, document automation and notifications",
-        "result": "40 hours/week saved"
+        "title": "goQode Project",
+        "description": "Business process automation system with smart integrations and workflows",
+        "challenge": "Eliminating manual processes and improving operational efficiency",
+        "solution": "Custom automation with seamless system integration",
+        "result": "Successful launch"
       }
     }
   },
@@ -164,26 +164,40 @@
     }
   },
   "Contact": {
-    "title": "Get in Touch",
-    "subtitle": "Let's talk",
-    "description": "Have an idea or a project? Write to us and we'll get back to you as soon as possible.",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "email@example.com",
-      "company": "Company",
-      "companyPlaceholder": "Company name (optional)",
-      "message": "Message",
+    "heading": "Let's Create\nSomething Great\nTogether.",
+    "step1": {
+      "indicator": "1/2 steps",
+      "title": "Enter your contact details",
+      "name": "YOUR NAME",
+      "email": "EMAIL",
+      "phone": "PHONE (OPTIONAL)",
+      "continue": "Continue"
+    },
+    "step2": {
+      "indicator": "2/2 steps",
+      "title": "Share your idea",
+      "message": "EXPLAIN YOUR IDEA",
       "messagePlaceholder": "Describe your project or idea...",
-      "submit": "Send message",
-      "sending": "Sending..."
+      "selectService": "Select a service:",
+      "services": {
+        "0": "Website",
+        "1": "Mobile App",
+        "2": "Branding",
+        "3": "Automation",
+        "4": "Let's discuss"
+      },
+      "agree": "By sending this message I agree to share my personal information",
+      "back": "Back",
+      "submit": "Send Message"
     },
-    "info": {
-      "title": "Contact information"
+    "success": {
+      "title": "Message sent!",
+      "subtitle": "We'll get back to you within 2 hours.",
+      "sendAnother": "Send another message"
     },
-    "social": {
-      "title": "Follow us"
+    "bottom": {
+      "project": "Start a project:",
+      "email": "hello@goqode.dev"
     }
   },
   "Footer": {
@@ -596,111 +610,116 @@
   "Automation": {
     "hero": {
       "title": "Automation",
-      "subtitle": "Turn routine into autopilot. Save time and money by automating business processes, integrations, and communications.",
+      "subtitle": "Turn routine into autopilot. We automate business processes, integrations, and communications to save your time and money.",
       "cta": "Automate Business"
     },
     "types": {
-      "label": "Types of Automation",
-      "title": "What We Automate",
-      "description": "From chatbots to complex integrations — we automate everything that takes your team's time",
+      "label": "What We Automate",
+      "title": "Automation That Works For You",
       "items": {
-        "chatbots": {
-          "title": "Chatbots & AI Assistants",
-          "description": "24/7 customer support, lead qualification, and sales automation. Integration with any messenger and website.",
-          "features": "Telegram, WhatsApp, Website, Lead qualification, FAQ automation"
+        "0": {
+          "title": "Chatbots & AI",
+          "description": "Intelligent chatbots for customer support, lead qualification, and FAQ handling across all channels."
         },
-        "crm": {
-          "title": "CRM & ERP Integrations",
-          "description": "Automatic data synchronization between systems. No more manual data entry and lost information.",
-          "features": "Bitrix, Amo, Kommo, Custom CRM"
+        "1": {
+          "title": "CRM Integration",
+          "description": "Seamless sync between your CRM, email, and communication tools. No more manual data entry."
         },
-        "email": {
-          "title": "Email Marketing",
-          "description": "Trigger sequences, personalization, and automatic segmentation. Each client receives relevant content.",
-          "features": "Welcome series, Abandoned cart, Reactivation, Personalization"
+        "2": {
+          "title": "Email Workflows",
+          "description": "Automated email sequences, follow-ups, and notifications triggered by user actions."
         },
-        "messengers": {
-          "title": "Messenger Automation",
-          "description": "Telegram and WhatsApp bots for customer communication. Notifications, orders, support.",
-          "features": "Order notifications, Status updates, Support chat, Feedback"
+        "3": {
+          "title": "Messenger Bots",
+          "description": "Telegram, WhatsApp, and Viber bots for orders, support, and automated notifications."
         },
-        "workflow": {
-          "title": "Workflow Automation",
-          "description": "Automation of internal processes, tasks, and approvals. Fewer routine tasks for employees.",
-          "features": "Approval chains, Task assignment, Reminders, Reports"
+        "4": {
+          "title": "Business Workflows",
+          "description": "End-to-end process automation: from order intake to delivery, from onboarding to reporting."
         },
-        "reporting": {
-          "title": "Reporting & Analytics",
-          "description": "Automatic dashboards and reports. All key metrics in one place, updated in real-time.",
-          "features": "Auto-reports, Dashboards, Data aggregation, Alerts"
+        "5": {
+          "title": "Analytics & Reports",
+          "description": "Auto-generated dashboards, reports, and alerts. Real-time data without manual spreadsheets."
         }
       }
     },
-    "flow": {
-      "label": "Transformation",
+    "comparison": {
+      "label": "Why Automate",
       "title": "Before & After Automation",
       "before": {
-        "title": "Before",
+        "title": "Manual Work",
         "items": {
-          "0": "Manual data entry between systems",
-          "1": "Lost leads and missed messages",
-          "2": "Hours spent on routine tasks",
-          "3": "Human errors in processes"
+          "0": { "label": "Data Entry", "value": "40h/month" },
+          "1": { "label": "Response Time", "value": "2-4 hours" },
+          "2": { "label": "Human Errors", "value": "15-20%" },
+          "3": { "label": "Working Hours", "value": "9 to 6" },
+          "4": { "label": "Report Generation", "value": "1-2 days" }
         }
       },
       "after": {
-        "title": "After",
+        "title": "With Automation",
         "items": {
-          "0": "Automatic data synchronization",
-          "1": "Instant response to every request",
-          "2": "Team focuses on strategic tasks",
-          "3": "Predictable and error-free processes"
+          "0": { "label": "Data Entry", "value": "0h/month" },
+          "1": { "label": "Response Time", "value": "< 1 second" },
+          "2": { "label": "Human Errors", "value": "0%" },
+          "3": { "label": "Working Hours", "value": "24/7" },
+          "4": { "label": "Report Generation", "value": "Real-time" }
         }
+      }
+    },
+    "process": {
+      "label": "How We Work",
+      "title": "From Idea to Autopilot",
+      "steps": {
+        "0": { "title": "Audit", "description": "We analyze your current processes and find bottlenecks that can be automated." },
+        "1": { "title": "Design", "description": "We architect the automation flows and integrations tailored to your needs." },
+        "2": { "title": "Build", "description": "We develop, connect APIs, configure bots, and set up all automations." },
+        "3": { "title": "Test", "description": "We thoroughly test every scenario to ensure reliable 24/7 operation." },
+        "4": { "title": "Launch & Support", "description": "We deploy to production and provide ongoing monitoring and optimization." }
+      }
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You Get",
+      "metrics": {
+        "0": { "value": "70", "suffix": "%", "description": "Less routine work" },
+        "1": { "value": "3", "suffix": "×", "description": "Faster response time" },
+        "2": { "value": "24", "suffix": "/7", "description": "Non-stop operation" },
+        "3": { "value": "0", "suffix": "", "description": "Human errors in processes" }
       }
     },
     "stack": {
       "label": "Technologies",
-      "title": "Integrations & Tools",
-      "description": "We work with all popular platforms and can integrate any service via API"
-    },
-    "results": {
-      "label": "Results",
-      "title": "What You'll Achieve",
-      "time_saved": "Less time on routine tasks",
-      "conversion": "Higher conversion with chatbots",
-      "availability": "Work without breaks",
-      "errors": "Errors in data processing"
-    },
-    "process": {
-      "label": "Process",
-      "title": "How We Implement",
-      "steps": {
-        "audit": {
-          "title": "Audit",
-          "description": "Analyze current processes and find automation opportunities"
-        },
-        "design": {
-          "title": "Design",
-          "description": "Create automation architecture and integration scheme"
-        },
-        "development": {
-          "title": "Development",
-          "description": "Build integrations, bots and automated workflows"
-        },
-        "testing": {
-          "title": "Testing",
-          "description": "Test all scenarios and edge cases"
-        },
-        "launch": {
-          "title": "Launch",
-          "description": "Deploy and train your team"
-        }
+      "title": "Our Stack",
+      "categories": {
+        "0": { "title": "Backend", "tools": "Node.js, Python, TypeScript, Go" },
+        "1": { "title": "Messaging", "tools": "Telegram API, WhatsApp Business, Viber" },
+        "2": { "title": "Data", "tools": "PostgreSQL, Redis, ClickHouse, S3" },
+        "3": { "title": "AI & ML", "tools": "OpenAI, Claude, LangChain, Pinecone" }
       }
     },
     "cta": {
-      "title": "Automate Routine?",
-      "button": "Discuss Project",
-      "contact_text": "Or email us at"
+      "title": "Ready to Automate?",
+      "button": "Let's Talk",
+      "contactText": "Or email us at",
+      "benefits": {
+        "0": "Free process audit",
+        "1": "Launch in 2-4 weeks",
+        "2": "Ongoing support included"
+      }
+    },
+    "demo": {
+      "label": "How It Works",
+      "title": "One lead. Five actions. Three seconds.",
+      "trigger": "New lead from website",
+      "steps": {
+        "0": { "title": "AI Analysis", "desc": "Request classified" },
+        "1": { "title": "CRM", "desc": "Contact created" },
+        "2": { "title": "Email", "desc": "Reply sent" },
+        "3": { "title": "Email", "desc": "Manager notified" }
+      },
+      "done": "Lead processed",
+      "time": "3 sec"
     }
   },
   "Events": {
@@ -887,6 +906,271 @@
         "1": "Custom solution",
         "2": "24/7 support on event day"
       }
+    }
+  },
+  "Support": {
+    "hero": {
+      "title": "SUPPORT 24/7",
+      "subtitle": "Your systems never sleep. Neither do we. Phone & email support that's always available when you need it most.",
+      "cta": "Get Support Now"
+    },
+    "channels": {
+      "label": "Support Channels",
+      "title": "How We're Here for You",
+      "phone": {
+        "title": "Direct Phone Line",
+        "description": "Instant connection to support engineers. No menus, no waiting music—just experts ready to help.",
+        "features": "< 30 sec pickup, Expert engineers, Priority routing"
+      },
+      "email": {
+        "title": "Email & Ticket System",
+        "description": "Detailed troubleshooting with full conversation history. Perfect for complex issues that need documentation.",
+        "features": "< 2 hour SLA, Full history, Attachment support"
+      },
+      "available": "Available Now"
+    },
+    "process": {
+      "label": "Process",
+      "title": "How It Works",
+      "steps": {
+        "0": { "title": "Contact", "description": "Phone or email—your choice. We create a ticket automatically." },
+        "1": { "title": "Triage", "description": "We assess severity (P0-P3) and route to the right specialist." },
+        "2": { "title": "Diagnose", "description": "Engineer investigates logs and identifies root cause." },
+        "3": { "title": "Resolve", "description": "Fix implemented, tested, and deployed to production." },
+        "4": { "title": "Follow-up", "description": "We confirm resolution and discuss preventive measures." }
+      }
+    },
+    "cta": {
+      "title": "READY FOR 24/7 SUPPORT?",
+      "button": "LET'S TALK",
+      "contact_text": "Or email us at",
+      "benefits": {
+        "0": "Free support audit",
+        "1": "No long-term contracts",
+        "2": "Start in 48 hours"
+      }
+    }
+  },
+  "Branding": {
+    "hero": {
+      "title": "BRANDING",
+      "subtitle": "A brand is a system, not just a logo. We build complete identity systems that make businesses recognizable, trusted, and premium.",
+      "cta": "Discuss your brand"
+    },
+    "manifesto": {
+      "label": "Philosophy",
+      "0": "Price brings a client once.",
+      "1": "A brand makes them stay forever.",
+      "2": "It's not design — it's how people feel about your business before they even say hello.",
+      "3": "We turn that feeling into a system."
+    },
+    "system": {
+      "label": "Brand System",
+      "title": "Everything works as one"
+    },
+    "comparison": {
+      "label": "Why Branding",
+      "title": "Business Without vs With Branding",
+      "without_title": "Without Branding",
+      "with_title": "With Professional Branding",
+      "rows": {
+        "0": { "aspect": "First Impression", "without": "Template look", "with": "Unique identity" },
+        "1": { "aspect": "Client Trust", "without": "Low recognition", "with": "Professional image" },
+        "2": { "aspect": "Pricing", "without": "Competing on price", "with": "Premium positioning" },
+        "3": { "aspect": "Marketing", "without": "Chaotic materials", "with": "Cohesive system" },
+        "4": { "aspect": "Scaling", "without": "Redo every time", "with": "One system, ∞ uses" }
+      }
+    },
+    "deliverables": {
+      "label": "What You Get",
+      "title": "Complete Brand Package",
+      "items": {
+        "brandbook": { "title": "Brand Book", "description": "Complete guide with all rules, templates, and specifications for consistent brand application" },
+        "logo": { "title": "Logo System", "description": "Primary, reversed, monochrome, icon, and horizontal versions" },
+        "colors": { "title": "Color Palette", "description": "Primary, secondary, accent colors with exact codes for all media" },
+        "typography": { "title": "Typography", "description": "Font pairing, size scale, weight hierarchy, spacing rules" },
+        "digital": { "title": "Digital Assets", "description": "Social media kit, presentation templates, business cards, letterheads" }
+      }
+    },
+    "process": {
+      "label": "Process",
+      "title": "How We Build Brands",
+      "phases": {
+        "discovery": {
+          "title": "Discovery",
+          "steps": {
+            "audit": "Brand Audit",
+            "competitors": "Competitor Analysis",
+            "audience": "Audience Research",
+            "positioning": "Positioning Strategy"
+          }
+        },
+        "concept": {
+          "title": "Concept",
+          "steps": {
+            "moodboards": "Moodboards",
+            "directions": "Visual Directions",
+            "selection": "Concept Selection"
+          }
+        },
+        "design": {
+          "title": "Design",
+          "steps": {
+            "logo": "Logo System",
+            "colors": "Color Palette",
+            "typography": "Typography",
+            "elements": "Visual Elements"
+          }
+        },
+        "delivery": {
+          "title": "Delivery",
+          "steps": {
+            "brandbook": "Brand Book",
+            "files": "Files & Assets",
+            "guide": "Implementation Guide"
+          }
+        }
+      }
+    },
+    "demo": {
+      "label": "Brand in Action",
+      "title": "One System — Every Touchpoint",
+      "trigger": "Brand System",
+      "touchpoints": {
+        "0": "Website",
+        "1": "Social Media",
+        "2": "Print Materials",
+        "3": "Presentations"
+      },
+      "done": "Consistent Brand",
+      "badge": "1 system = ∞ touchpoints"
+    },
+    "features": {
+      "label": "Three Pillars",
+      "title": "What Makes a Strong Brand",
+      "items": {
+        "0": {
+          "title": "Strategic Foundation",
+          "description": "We research your market, define positioning, and build a brand strategy based on data, not assumptions. Your archetype, tone of voice, and value proposition — all grounded in analysis.",
+          "points": "Market research, Positioning, Brand archetype, Tone of voice"
+        },
+        "1": {
+          "title": "Visual Identity",
+          "description": "Logo, colors, typography, photo style — every visual element is designed as part of a cohesive system. Your brand looks professional and consistent across all touchpoints.",
+          "points": "Logo system, Color palette, Typography, Photo style"
+        },
+        "2": {
+          "title": "Brand Management",
+          "description": "We deliver a complete brand book with usage rules, templates, and all source files. Your team and partners will always apply the brand correctly.",
+          "points": "Brand book, Usage guidelines, Templates, Source files"
+        }
+      }
+    },
+    "stats": {
+      "label": "Why It Matters",
+      "title": "Brand = Trust",
+      "items": {
+        "0": { "value": "80", "suffix": "%", "label": "of consumers trust brands with consistent identity" },
+        "1": { "value": "3", "suffix": "x", "label": "higher recognition for systematic brands" },
+        "2": { "value": "23", "suffix": "%", "label": "average revenue growth with consistent branding" }
+      }
+    },
+    "cta": {
+      "title": "Ready to Build Your Brand?",
+      "button": "Let's Start!",
+      "contact_text": "Or email us at",
+      "benefits": {
+        "0": "Free brand audit",
+        "1": "2–3 concepts",
+        "2": "Full asset package"
+      }
+    }
+  },
+  "Packages": {
+    "hero": {
+      "title": "PACKAGES",
+      "subtitle": "Ready-made solutions for your business growth in digital. Choose the package that fits your goals and scale.",
+      "cta": "Discuss your project"
+    },
+    "grid": {
+      "label": "Pricing",
+      "popular": "Popular",
+      "from": "from"
+    },
+    "packages": {
+      "0": {
+        "name": "START",
+        "price": "690",
+        "period": "/ month",
+        "tagline": "Small business",
+        "description": "For small businesses and local projects. Perfect if you're just entering digital or want to bring order.",
+        "result": "Clear start, polished image, first leads.",
+        "features": {
+          "0": "Instagram, Facebook & website audit",
+          "1": "Basic digital strategy",
+          "2": "SMM (8–10 posts & stories)",
+          "3": "Basic visual style",
+          "4": "Ad setup (1–2 campaigns)",
+          "5": "Monthly report"
+        }
+      },
+      "1": {
+        "name": "GROW",
+        "price": "1,250",
+        "period": "/ month",
+        "tagline": "Stable growth",
+        "description": "For businesses that want stable growth. A client acquisition system instead of chaotic content.",
+        "result": "Client acquisition system instead of chaotic content.",
+        "features": {
+          "0": "Deep digital strategy",
+          "1": "SMM (12–16 posts, Reels, stories)",
+          "2": "Sales-driven content plan",
+          "3": "Targeting & retargeting",
+          "4": "Landing page or website redesign",
+          "5": "Basic analytics & KPIs",
+          "6": "Monthly growth recommendations"
+        }
+      },
+      "2": {
+        "name": "SCALE",
+        "price": "2,400",
+        "period": "/ month",
+        "tagline": "Scaling up",
+        "description": "For brands that want to scale. Full control over numbers and sales growth.",
+        "result": "Sales growth, number control, scaling.",
+        "features": {
+          "0": "3–6 month growth strategy",
+          "1": "Full SMM & creative",
+          "2": "Performance marketing",
+          "3": "Conversion optimization",
+          "4": "Website, e-commerce or CRM integration",
+          "5": "PR promotion",
+          "6": "End-to-end analytics",
+          "7": "Monthly strategy sessions"
+        }
+      },
+      "3": {
+        "name": "DIGITAL PRODUCT",
+        "price": "custom",
+        "period": "",
+        "priceLabel": "On request",
+        "tagline": "Product development",
+        "description": "Full-cycle digital product development — from research to launch.",
+        "result": "A product that's convenient, clear, and competitive.",
+        "features": {
+          "0": "UX/UI research",
+          "1": "Prototyping",
+          "2": "Interface design",
+          "3": "Website or app development",
+          "4": "Testing",
+          "5": "Launch & support"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "button": "Get in touch",
+      "contact_text": "Or email us at"
     }
   }
 }

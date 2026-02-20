@@ -249,12 +249,148 @@ function ProcessCard({
   );
 }
 
+// Mobile Horizontal Scroll with progress indicator
+function MobileProcessScroll({
+  steps,
+  subtitle,
+  title,
+}: {
+  steps: { title: string; description: string; includes: string[] }[];
+  subtitle: string;
+  title: string;
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [mobileStep, setMobileStep] = useState(0);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / (steps.length + 2); // account for spacers
+    const index = Math.round((el.scrollLeft - 24) / (cardWidth + 16)); // 16 = gap
+    const clamped = Math.max(0, Math.min(steps.length - 1, index));
+    if (clamped !== mobileStep) setMobileStep(clamped);
+  };
+
+  const progress = steps.length > 1 ? mobileStep / (steps.length - 1) : 0;
+
+  return (
+    <section className="md:hidden w-full py-12">
+      {/* Header */}
+      <div className="px-6 mb-6">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+            {subtitle}
+          </span>
+        </div>
+        <h2 className="text-[10vw] font-black leading-tight text-foreground">
+          {title}
+        </h2>
+      </div>
+
+      {/* Horizontal Scroll */}
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide"
+        style={{ WebkitOverflowScrolling: "touch", scrollPaddingLeft: "24px" }}
+      >
+        {/* Left spacer */}
+        <div className="shrink-0 w-6" />
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="snap-start shrink-0 w-[80vw] relative rounded-2xl bg-zinc-900 dark:bg-zinc-100 p-5 overflow-hidden"
+          >
+            {/* Step number bg */}
+            <div className="absolute -top-2 -right-2 text-[8rem] font-black leading-none text-white/5 dark:text-black/5 select-none pointer-events-none">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+
+            <div className="relative z-10">
+              {/* Icon + Step */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#C9FD48]/20 flex items-center justify-center text-[#C9FD48]">
+                  <div className="w-5 h-5">{StepIcons[index]}</div>
+                </div>
+                <span className="text-xs font-mono text-white/40 dark:text-black/40 uppercase tracking-wider">
+                  Step {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-white dark:text-black mb-2">
+                {step.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-white/60 dark:text-black/60 leading-relaxed mb-4">
+                {step.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {step.includes.map((item, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 text-xs font-medium bg-white/10 dark:bg-black/10 text-white/70 dark:text-black/70 rounded-full"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+        {/* Spacer for right padding */}
+        <div className="shrink-0 w-6" />
+      </div>
+
+      {/* Progress indicator */}
+      <div className="px-6 pt-4">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-[#C9FD48] rounded-full transition-all duration-300 ease-out"
+              style={{ width: `${((mobileStep + 1) / steps.length) * 100}%` }}
+            />
+          </div>
+          <span className="text-sm font-mono text-muted-foreground">
+            {mobileStep + 1}/{steps.length}
+          </span>
+        </div>
+
+        {/* Step names */}
+        <div className="flex justify-between mt-3">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`flex items-center gap-1.5 transition-opacity duration-300 ${
+                mobileStep === index ? "opacity-100" : "opacity-30"
+              }`}
+            >
+              <div
+                className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
+                  mobileStep >= index ? "bg-[#C9FD48]" : "bg-zinc-400"
+                }`}
+              />
+              <span className="text-[0.625rem] font-medium text-muted-foreground">
+                {step.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Mobile CTA Section
 function MobileCTASection() {
   const t = useTranslations("Process");
 
   return (
-    <section className="md:hidden w-full clamp-[px,12,24] pb-12">
+    <section className="md:hidden w-full px-6 pb-12">
       <div className="bg-[#C9FD48] rounded-2xl p-8 text-center text-black">
         <h2 className="text-2xl font-bold mb-3">
           {t("cta.title")}
@@ -413,84 +549,8 @@ export function ProcessSection() {
         </div>
       </section>
 
-      {/* Mobile: Vertical Layout */}
-      <section className="md:hidden w-full clamp-[px,12,24] clamp-[py,24,48]">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-              {t("subtitle")}
-            </span>
-          </div>
-          <h2 className="clamp-[text,2rem,4rem] font-black leading-tight text-foreground">
-            {t("title")}
-          </h2>
-        </div>
-
-        {/* Vertical Cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={container}
-          className="flex flex-col gap-6"
-        >
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariant}
-              className="relative"
-            >
-              {/* Connecting line */}
-              {index < steps.length - 1 && (
-                <div className="absolute left-6 top-full w-0.5 h-6 bg-zinc-200 dark:bg-zinc-800" />
-              )}
-
-              <div className="relative rounded-2xl bg-zinc-900 dark:bg-zinc-100 p-5 overflow-hidden">
-                {/* Step number */}
-                <div className="absolute -top-2 -right-2 text-[8rem] font-black leading-none text-white/5 dark:text-black/5 select-none">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div className="relative z-10">
-                  {/* Icon + Step */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#C9FD48]/20 flex items-center justify-center text-[#C9FD48]">
-                      <div className="w-5 h-5">{StepIcons[index]}</div>
-                    </div>
-                    <span className="text-xs font-mono text-white/40 dark:text-black/40 uppercase tracking-wider">
-                      Step {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white dark:text-black mb-2">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-white/60 dark:text-black/60 leading-relaxed mb-4">
-                    {step.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {step.includes.map((item, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-1 text-xs font-medium bg-white/10 dark:bg-black/10 text-white/70 dark:text-black/70 rounded-full"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      {/* Mobile: Horizontal Scroll Snap */}
+      <MobileProcessScroll steps={steps} subtitle={t("subtitle")} title={t("title")} />
 
       {/* Mobile CTA */}
       <MobileCTASection />

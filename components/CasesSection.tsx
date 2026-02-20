@@ -1,10 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
 import Shuffle from "./Shuffle";
 
 const container = {
@@ -32,42 +34,42 @@ const casesData = [
   {
     id: 1,
     featured: true,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["Web", "E-commerce", "UX/UI"],
     year: "2024",
   },
   {
     id: 2,
     featured: false,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["Mobile", "iOS", "Android"],
     year: "2024",
   },
   {
     id: 3,
     featured: false,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["Web App", "Dashboard"],
     year: "2023",
   },
   {
     id: 4,
     featured: false,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["Branding", "Identity"],
     year: "2023",
   },
   {
     id: 5,
     featured: false,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["Event", "Platform"],
     year: "2024",
   },
   {
     id: 6,
     featured: false,
-    image: "/01.jpg",
+    image: "/placeholder.svg",
     tags: ["SaaS", "Automation"],
     year: "2024",
   },
@@ -76,12 +78,10 @@ const casesData = [
 interface CaseCardProps {
   caseItem: (typeof casesData)[0];
   title: string;
-  description: string;
-  result: string;
   featured?: boolean;
 }
 
-function CaseCard({ caseItem, title, description, result, featured = false }: CaseCardProps) {
+function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   if (featured) {
@@ -147,13 +147,6 @@ function CaseCard({ caseItem, title, description, result, featured = false }: Ca
             <h3 className="clamp-[text,1.5rem,3rem] font-bold text-white mb-2 leading-tight">
               {title}
             </h3>
-            <p className="clamp-[text,0.875rem,1.125rem] text-white/70 max-w-2xl mb-4 line-clamp-2">
-              {description}
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-              <span className="text-[#C9FD48] font-medium clamp-[text,0.875rem,1rem]">{result}</span>
-            </div>
           </div>
         </div>
       </motion.div>
@@ -215,7 +208,6 @@ function CaseCard({ caseItem, title, description, result, featured = false }: Ca
           <h3 className="clamp-[text,1rem,1.25rem] font-bold text-white mb-1 line-clamp-1">
             {title}
           </h3>
-          <p className="text-white/60 text-sm line-clamp-1">{result}</p>
         </div>
       </div>
     </motion.div>
@@ -281,13 +273,31 @@ export function CasesSection() {
 
   const featuredCase = casesData.find((c) => c.featured);
   const otherCases = casesData.filter((c) => !c.featured);
+  const mobileCases = casesData.slice(0, 5);
+
+  // Refs for floating button visibility
+  const firstCaseRef = useRef<HTMLDivElement>(null);
+  const lastCaseRef = useRef<HTMLDivElement>(null);
+  const firstInView = useInView(firstCaseRef);
+  const lastInView = useInView(lastCaseRef, { amount: "all" });
+  const [showFloatingBtn, setShowFloatingBtn] = useState(false);
+
+  useEffect(() => {
+    if (lastInView) {
+      setShowFloatingBtn(false);
+    } else if (firstInView) {
+      setShowFloatingBtn(true);
+    } else {
+      setShowFloatingBtn(false);
+    }
+  }, [firstInView, lastInView]);
 
   const getCaseTranslation = (id: number, key: string) => {
     return t(`items.${id - 1}.${key}`);
   };
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -296,7 +306,7 @@ export function CasesSection() {
         className="w-full"
       >
         {/* Section Header */}
-        <motion.div variants={cardVariant} className="mb-10 md:mb-16">
+        <motion.div variants={cardVariant} className="mb-8 md:mb-16">
           <div className="flex items-center gap-2 mb-4 md:mb-6">
             <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
             <span className="text-sm md:text-base font-medium text-muted-foreground uppercase tracking-wider">
@@ -329,34 +339,104 @@ export function CasesSection() {
           </div>
         </motion.div>
 
-        {/* Featured Case */}
-        {featuredCase && (
-          <div className="mb-6 md:mb-8">
-            <CaseCard
-              caseItem={featuredCase}
-              title={getCaseTranslation(featuredCase.id, "title")}
-              description={getCaseTranslation(featuredCase.id, "description")}
-              result={getCaseTranslation(featuredCase.id, "result")}
-              featured
-            />
+        {/* Desktop: Featured + Grid */}
+        <div className="hidden md:block">
+          {featuredCase && (
+            <div className="mb-6 md:mb-8">
+              <CaseCard
+                caseItem={featuredCase}
+                title={getCaseTranslation(featuredCase.id, "title")}
+                featured
+              />
+            </div>
+          )}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {otherCases.map((caseItem) => (
+              <CaseCard
+                key={caseItem.id}
+                caseItem={caseItem}
+                title={getCaseTranslation(caseItem.id, "title")}
+              />
+            ))}
+            <ViewAllCard text={t("viewAll")} />
           </div>
-        )}
-
-        {/* Cases Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {otherCases.map((caseItem) => (
-            <CaseCard
-              key={caseItem.id}
-              caseItem={caseItem}
-              title={getCaseTranslation(caseItem.id, "title")}
-              description={getCaseTranslation(caseItem.id, "description")}
-              result={getCaseTranslation(caseItem.id, "result")}
-            />
-          ))}
-          {/* View All Card */}
-          <ViewAllCard text={t("viewAll")} />
         </div>
+
+        {/* Mobile: Compact list */}
+        <motion.div
+          className="md:hidden flex flex-col"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+          }}
+        >
+          {mobileCases.map((caseItem, i) => (
+            <motion.div
+              key={caseItem.id}
+              ref={i === 0 ? firstCaseRef : i === 4 ? lastCaseRef : undefined}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] } },
+              }}
+              className="mb-4"
+            >
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
+                <Image
+                  src={caseItem.image}
+                  alt={getCaseTranslation(caseItem.id, "title")}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+                <div className="absolute top-4 right-4 z-20">
+                  <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {caseItem.tags.slice(0, 2).map((tag, idx) => (
+                      <Badge
+                        key={idx}
+                        variant="outline"
+                        className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <h3 className="text-lg font-bold text-white leading-tight line-clamp-1">
+                    {getCaseTranslation(caseItem.id, "title")}
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
+
+      {/* Floating bottom button - mobile only */}
+      <AnimatePresence>
+        {showFloatingBtn && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            className="md:hidden fixed bottom-6 left-6 right-6 z-50"
+          >
+            <Link
+              href="/cases"
+              className="flex items-center justify-center gap-2 h-14 w-full rounded-full bg-[#C9FD48] text-black font-semibold text-base shadow-[0_8px_30px_rgba(201,253,72,0.4)] active:scale-[0.98] transition-transform"
+            >
+              <span>{t("viewAll")}</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
