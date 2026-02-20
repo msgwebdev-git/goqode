@@ -55,9 +55,9 @@ function AutomationHero() {
   const t = useTranslations("Automation");
 
   return (
-    <section className="w-full flex flex-col items-center clamp-[px,12,24] pt-28 md:pt-36 pb-6">
+    <section className="w-full flex flex-col items-center px-6 md:clamp-[px,12,24] pt-28 md:pt-36 pb-6">
       <motion.div
-        className="flex flex-col items-center gap-4 md:gap-6 text-center w-full"
+        className="flex flex-col items-center gap-5 md:gap-6 text-center w-full"
         variants={container}
         initial="hidden"
         animate="show"
@@ -67,7 +67,7 @@ function AutomationHero() {
           <Shuffle
             text={t("hero.title")}
             tag="h1"
-            className="text-[12vw] md:text-[8vw] font-black leading-[0.9] tracking-tight text-foreground"
+            className="text-[9vw] md:text-[8vw] font-black leading-[0.9] tracking-tight text-foreground"
             textAlign="center"
             shuffleDirection="right"
             duration={0.35}
@@ -94,11 +94,10 @@ function AutomationHero() {
         <motion.div variants={itemVariant}>
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-8 md:clamp-[px,24,32] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
           >
-            <Cog className="h-4 w-4" />
-            <span>{t("hero.cta")}</span>
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="whitespace-nowrap">{t("hero.cta")}</span>
+            <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </motion.div>
@@ -123,7 +122,7 @@ function AutomationTypesSection() {
   const t = useTranslations("Automation");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -133,26 +132,26 @@ function AutomationTypesSection() {
         {/* Header */}
         <motion.div
           variants={itemVariant}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("types.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("types.title")}
           </h2>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 clamp-[gap,8,12]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:clamp-[gap,8,12]">
           {typeIcons.map((Icon, i) => (
             <motion.div
               key={i}
               variants={itemVariant}
-              className="relative clamp-[p,12,20] rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+              className="relative p-4 md:clamp-[p,12,20] rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
             >
               <div className="relative">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 dark:bg-zinc-800 flex items-center justify-center mb-3">
@@ -186,7 +185,7 @@ function AutomationComparisonSection() {
   const t = useTranslations("Automation");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -196,21 +195,45 @@ function AutomationComparisonSection() {
         {/* Header */}
         <motion.div
           variants={itemVariant}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("comparison.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("comparison.title")}
           </h2>
         </motion.div>
 
-        {/* Comparison Table */}
-        <div className="w-full rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
+        {/* Mobile: Comparison Cards */}
+        <div className="flex flex-col gap-3 md:hidden">
+          {comparisonKeys.map((key) => (
+            <motion.div
+              key={key}
+              variants={itemVariant}
+              className="rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4"
+            >
+              <span className="text-sm font-bold text-foreground">
+                {t(`comparison.before.items.${key}.label`)}
+              </span>
+              <div className="flex items-center gap-3 mt-2">
+                <span className="text-sm text-red-500 line-through">
+                  {t(`comparison.before.items.${key}.value`)}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0" />
+                <span className="inline-flex items-center h-6 px-2.5 rounded-full bg-zinc-900 text-xs font-bold text-[#C9FD48]">
+                  {t(`comparison.after.items.${key}.value`)}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop: Comparison Table */}
+        <div className="hidden md:block w-full md:max-w-4xl md:mx-auto rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
           {/* Header row */}
           <div className="grid grid-cols-3 bg-zinc-100 dark:bg-zinc-900">
             <div className="clamp-[p,8,12]" />
@@ -282,7 +305,7 @@ function AutomationProcessSection() {
   const t = useTranslations("Automation");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -292,21 +315,21 @@ function AutomationProcessSection() {
         {/* Header */}
         <motion.div
           variants={itemVariant}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("process.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>
 
         {/* Steps */}
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative md:max-w-3xl md:mx-auto">
           {/* Vertical line */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#C9FD48]/50 via-[#C9FD48]/20 to-transparent" />
 
@@ -395,7 +418,7 @@ function AutomationResultsSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -405,21 +428,21 @@ function AutomationResultsSection() {
         {/* Header */}
         <motion.div
           variants={itemVariant}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("results.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("results.title")}
           </h2>
         </motion.div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 clamp-[gap,12,20]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:clamp-[gap,12,20]">
           {metrics.map((metric) => (
             <motion.div
               key={metric.key}
@@ -454,7 +477,7 @@ function AutomationCTASection() {
   const t = useTranslations("Automation");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -464,13 +487,13 @@ function AutomationCTASection() {
         {/* CTA Card */}
         <motion.div variants={itemVariant}>
           <Link href="/contact" className="block group">
-            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-8 md:py-12 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+            <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-12 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
               {/* Content — text swap on hover */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
-                <span className="block text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
+                <span className="block text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0">
                   {t("cta.title")}
                 </span>
-                <span className="absolute inset-0 flex items-center justify-center text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
                   <span className="flex items-center gap-3">
                     {t("cta.button")}
                     <ArrowRight className="w-[4vw] md:w-[3vw] lg:w-[2vw] h-[4vw] md:h-[3vw] lg:h-[2vw] min-w-6 min-h-6" />
@@ -485,7 +508,7 @@ function AutomationCTASection() {
         {/* Contact */}
         <motion.div
           variants={itemVariant}
-          className="mt-6 md:mt-8 text-center"
+          className="mt-4 md:mt-8 text-center"
         >
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contactText")}{" "}
@@ -498,25 +521,6 @@ function AutomationCTASection() {
           </p>
         </motion.div>
 
-        {/* Benefits */}
-        <motion.div
-          variants={itemVariant}
-          className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3"
-        >
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="flex items-center gap-3 p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
-            >
-              <div className="w-9 h-9 rounded-lg bg-zinc-900 flex items-center justify-center flex-shrink-0">
-                <Cog className="w-4 h-4 text-[#C9FD48]" />
-              </div>
-              <span className="clamp-[text,0.875rem,1rem] text-foreground font-medium">
-                {t(`cta.benefits.${i}`)}
-              </span>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
     </section>
   );
@@ -533,18 +537,18 @@ const demoContainer = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.6,
-      delayChildren: 0.3,
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };
 
 const demoStep = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as const },
+    transition: { duration: 0.3, ease: [0.25, 0.4, 0.25, 1] as const },
   },
 };
 
@@ -552,7 +556,7 @@ const demoLine = {
   hidden: { scaleX: 0 },
   show: {
     scaleX: 1,
-    transition: { duration: 0.4, ease: "easeOut" as const },
+    transition: { duration: 0.2, ease: "easeOut" as const },
   },
 };
 
@@ -564,7 +568,7 @@ function AutomationDemoSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-zinc-950 flex flex-col items-center justify-center clamp-[px,12,24] clamp-[py,24,48] relative overflow-hidden"
+      className="w-full bg-zinc-950 flex flex-col items-center justify-center px-6 md:clamp-[px,12,24] clamp-[py,24,48] relative overflow-hidden"
     >
       {/* Dot grid */}
       <div
@@ -591,11 +595,11 @@ function AutomationDemoSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-6 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-zinc-500 uppercase tracking-wider">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-zinc-500 uppercase tracking-wider">
               {t("demo.label")}
             </span>
           </div>
@@ -641,7 +645,7 @@ function AutomationDemoSection() {
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
-                    transition={{ delay: 1 + i * 0.6, duration: 0.3, ease: "backOut" }}
+                    transition={{ delay: 0.3 + i * 0.2, duration: 0.2, ease: "backOut" }}
                     className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#C9FD48] flex items-center justify-center"
                   >
                     <Check className="w-3 h-3 text-black" strokeWidth={2.5} />
@@ -678,22 +682,6 @@ function AutomationDemoSection() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom result badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ delay: 3.5, duration: 0.5 }}
-          className="mt-12 md:mt-16 inline-flex items-center gap-3 h-12 px-6 rounded-full bg-[#C9FD48]/10 border border-[#C9FD48]/20"
-        >
-          <Cog className="w-4 h-4 text-[#C9FD48]" />
-          <span className="text-sm font-semibold text-[#C9FD48]">
-            {t("demo.time")}
-          </span>
-          <span className="text-sm text-zinc-400">—</span>
-          <span className="text-sm text-zinc-300">
-            {t("demo.done")}
-          </span>
-        </motion.div>
       </div>
     </section>
   );

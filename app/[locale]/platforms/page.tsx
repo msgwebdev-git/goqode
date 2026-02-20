@@ -85,7 +85,7 @@ function PlatformsHero() {
       <ContainerScroll
         titleComponent={
           <motion.div
-            className="flex flex-col items-center gap-[4vw] md:gap-[1.5vw]"
+            className="flex flex-col items-center gap-5 md:gap-[1.5vw]"
             variants={container}
             initial="hidden"
             animate="show"
@@ -95,7 +95,7 @@ function PlatformsHero() {
               <Shuffle
                 text={t("hero.title")}
                 tag="h1"
-                className="text-[14vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
+                className="text-[13vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
                 textAlign="center"
                 shuffleDirection="right"
                 duration={0.35}
@@ -122,7 +122,7 @@ function PlatformsHero() {
             <motion.div variants={cardVariant}>
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-[5vw] md:px-[1.5vw] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-8 md:px-[1.5vw] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
               >
                 <Monitor className="h-4 w-4" />
                 <span>{t("hero.cta")}</span>
@@ -133,30 +133,33 @@ function PlatformsHero() {
         }
       >
         {/* Dashboard Mockup */}
-        <div className="h-full w-full p-4 md:p-6">
+        <div className="h-full w-full p-3 md:p-6">
           {/* Top Bar */}
-          <div className="flex items-center justify-between mb-4 md:mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#C9FD48] flex items-center justify-center">
-                <Monitor className="w-4 h-4 text-black" />
-              </div>
-              <span className="text-white font-semibold text-sm md:text-base">Platform Dashboard</span>
-            </div>
+          <div className="flex items-center justify-between mb-3 md:mb-6">
             <div className="flex items-center gap-2 md:gap-3">
-              <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
-                <Search className="w-4 h-4 text-zinc-400" />
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#C9FD48] flex items-center justify-center">
+                <Monitor className="w-3.5 h-3.5 md:w-4 md:h-4 text-black" />
               </div>
-              <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
-                <Bell className="w-4 h-4 text-zinc-400" />
+              <span className="text-white font-semibold text-xs md:text-base">Dashboard</span>
+            </div>
+            <div className="flex items-center gap-1.5 md:gap-3">
+              {/* Mobile: bottom nav icons */}
+              <div className="hidden md:flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
+                  <Search className="w-4 h-4 text-zinc-400" />
+                </div>
+                <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
+                  <Bell className="w-4 h-4 text-zinc-400" />
+                </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-[#C9FD48]" />
+              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#C9FD48]" />
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-12 gap-3 md:gap-4 h-[calc(100%-3rem)]">
-            {/* Sidebar */}
-            <div className="col-span-3 md:col-span-2 space-y-2">
+          <div className="grid grid-cols-12 gap-2 md:gap-4 h-[calc(100%-2.5rem)] md:h-[calc(100%-3rem)]">
+            {/* Sidebar - hidden on mobile */}
+            <div className="hidden md:block md:col-span-2 space-y-2">
               <div className="h-10 rounded-lg bg-[#C9FD48]/20 border border-[#C9FD48]/30 flex items-center justify-center">
                 <BarChart3 className="w-4 h-4 text-[#C9FD48]" />
               </div>
@@ -168,43 +171,43 @@ function PlatformsHero() {
             </div>
 
             {/* Main Area */}
-            <div className="col-span-9 md:col-span-10 space-y-3 md:space-y-4">
+            <div className="col-span-12 md:col-span-10 space-y-2 md:space-y-4">
               {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-2 md:gap-3">
-                <div className="rounded-xl bg-zinc-800/50 p-3 md:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <TrendingUp className="w-4 h-4 text-[#C9FD48]" />
-                    <span className="text-zinc-400 text-xs">Revenue</span>
+              <div className="grid grid-cols-3 gap-1.5 md:gap-3">
+                <div className="rounded-lg md:rounded-xl bg-zinc-800/50 p-2 md:p-4">
+                  <div className="flex items-center gap-1.5 mb-1 md:mb-2">
+                    <TrendingUp className="w-3 h-3 md:w-4 md:h-4 text-[#C9FD48]" />
+                    <span className="text-zinc-400 text-[10px] md:text-xs">Revenue</span>
                   </div>
-                  <div className="text-white font-bold text-lg md:text-xl">$48.2k</div>
+                  <div className="text-white font-bold text-sm md:text-xl">$48.2k</div>
                 </div>
-                <div className="rounded-xl bg-zinc-800/50 p-3 md:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Users className="w-4 h-4 text-[#C9FD48]" />
-                    <span className="text-zinc-400 text-xs">Users</span>
+                <div className="rounded-lg md:rounded-xl bg-zinc-800/50 p-2 md:p-4">
+                  <div className="flex items-center gap-1.5 mb-1 md:mb-2">
+                    <Users className="w-3 h-3 md:w-4 md:h-4 text-[#C9FD48]" />
+                    <span className="text-zinc-400 text-[10px] md:text-xs">Users</span>
                   </div>
-                  <div className="text-white font-bold text-lg md:text-xl">2,847</div>
+                  <div className="text-white font-bold text-sm md:text-xl">2,847</div>
                 </div>
-                <div className="rounded-xl bg-zinc-800/50 p-3 md:p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <PieChart className="w-4 h-4 text-[#C9FD48]" />
-                    <span className="text-zinc-400 text-xs">Growth</span>
+                <div className="rounded-lg md:rounded-xl bg-zinc-800/50 p-2 md:p-4">
+                  <div className="flex items-center gap-1.5 mb-1 md:mb-2">
+                    <PieChart className="w-3 h-3 md:w-4 md:h-4 text-[#C9FD48]" />
+                    <span className="text-zinc-400 text-[10px] md:text-xs">Growth</span>
                   </div>
-                  <div className="text-white font-bold text-lg md:text-xl">+24%</div>
+                  <div className="text-white font-bold text-sm md:text-xl">+24%</div>
                 </div>
               </div>
 
               {/* Chart Area */}
-              <div className="flex-1 rounded-xl bg-zinc-800/30 p-3 md:p-4 min-h-[120px] md:min-h-[180px]">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-zinc-400 text-xs md:text-sm">Analytics Overview</span>
-                  <div className="flex gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-                    <div className="w-2 h-2 rounded-full bg-zinc-600" />
+              <div className="flex-1 rounded-lg md:rounded-xl bg-zinc-800/30 p-2 md:p-4 min-h-[80px] md:min-h-[180px]">
+                <div className="flex items-center justify-between mb-2 md:mb-3">
+                  <span className="text-zinc-400 text-[10px] md:text-sm">Analytics Overview</span>
+                  <div className="flex gap-1.5">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-zinc-600" />
                   </div>
                 </div>
                 {/* Fake Chart Bars */}
-                <div className="flex items-end justify-between gap-1 md:gap-2 h-[80px] md:h-[120px] pt-4">
+                <div className="flex items-end justify-between gap-[3px] md:gap-2 h-[60px] md:h-[120px] pt-2 md:pt-4">
                   {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75, 95, 50].map((h, i) => (
                     <div
                       key={i}
@@ -213,6 +216,18 @@ function PlatformsHero() {
                     />
                   ))}
                 </div>
+              </div>
+
+              {/* Mobile bottom nav */}
+              <div className="flex md:hidden items-center justify-around rounded-lg bg-zinc-800/50 py-2">
+                <div className="flex flex-col items-center gap-0.5">
+                  <BarChart3 className="w-4 h-4 text-[#C9FD48]" />
+                </div>
+                {[Users, ShoppingCart, Search, Settings].map((Icon, i) => (
+                  <div key={i} className="flex flex-col items-center gap-0.5">
+                    <Icon className="w-4 h-4 text-zinc-500" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -233,7 +248,7 @@ function PlatformTypesSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -242,18 +257,18 @@ function PlatformTypesSection() {
         className="w-full"
       >
         {/* Section Header */}
-        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("types.label")}
             </span>
           </div>
-          <div className="flex flex-col gap-[3vw] md:gap-[1.5vw]">
+          <div className="flex flex-col gap-4 md:gap-[1.5vw]">
             <Shuffle
               text={t("types.title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+              className="text-[13vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
               textAlign="left"
               shuffleDirection="right"
               duration={0.35}
@@ -266,7 +281,7 @@ function PlatformTypesSection() {
               triggerOnHover={true}
               respectReducedMotion={true}
             />
-            <div className="border-l-2 border-[#C9FD48] pl-[2vw] md:pl-[1vw]">
+            <div className="border-l-2 border-[#C9FD48] pl-4 md:pl-[1vw]">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
                 {t("types.description")}
               </p>
@@ -275,14 +290,14 @@ function PlatformTypesSection() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[1.5vw]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[1.5vw]">
           {types.map((type) => (
             <motion.div
               key={type.index}
               variants={cardVariant}
               className="group"
             >
-              <div className="relative h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 overflow-hidden p-[4vw] md:p-[1.5vw] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer aspect-square flex flex-col">
+              <div className="relative h-full rounded-2xl md:rounded-3xl bg-zinc-900 dark:bg-zinc-100 overflow-hidden p-6 md:p-[1.5vw] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer aspect-auto md:aspect-square flex flex-col">
                 {/* Large number background */}
                 <div className="absolute -top-4 -right-4 text-[25vw] md:text-[10vw] font-black leading-none select-none pointer-events-none text-white/[0.03] dark:text-black/[0.03]">
                   {String(type.index + 1).padStart(2, "0")}
@@ -295,13 +310,13 @@ function PlatformTypesSection() {
 
                 {/* Content */}
                 <div className="relative z-10 mt-auto">
-                  <h3 className="text-[4.5vw] md:text-[1.45vw] font-bold text-white dark:text-black mb-[1vw] md:mb-[0.4vw]">
+                  <h3 className="text-lg md:text-[1.45vw] font-bold text-white dark:text-black mb-1 md:mb-[0.4vw]">
                     {t(`types.items.${type.index}.title`)}
                   </h3>
-                  <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed mb-[1.5vw] md:mb-[0.6vw]">
+                  <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed mb-3 md:mb-[0.6vw]">
                     {t(`types.items.${type.index}.description`)}
                   </p>
-                  <div className="flex flex-wrap gap-[1vw] md:gap-[0.3vw]">
+                  <div className="flex flex-wrap gap-2 md:gap-[0.3vw]">
                     {t(`types.items.${type.index}.features`).split(", ").map((item, i) => (
                       <span
                         key={i}
@@ -337,17 +352,17 @@ function FeaturesSection() {
   };
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
-      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-[3vw] md:pt-[1.2vw]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-4 md:pt-[1.2vw]">
         {/* Left Column - Title */}
-        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-[3vw] lg:mb-0 lg:pr-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-5 lg:mb-0 lg:pr-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("features.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("features.title")}
           </h2>
         </div>
@@ -364,17 +379,17 @@ function FeaturesSection() {
               >
                 <button
                   onClick={() => toggleItem(feature.index)}
-                  className="w-full py-[2.5vw] md:py-[1vw] flex items-center justify-between gap-[1.5vw] md:gap-[0.8vw] text-left group"
+                  className="w-full py-4 md:py-[1vw] flex items-center justify-between gap-3 md:gap-[0.8vw] text-left group"
                 >
-                  <div className="flex items-center gap-[1.5vw] md:gap-[0.8vw]">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-900 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-[#C9FD48]" strokeWidth={1.5} />
+                  <div className="flex items-center gap-3 md:gap-[0.8vw]">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-zinc-900 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9FD48]" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-[4.5vw] md:text-[1.45vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-bold">
+                    <h3 className="text-base md:text-[1.45vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-bold">
                       {t(`features.items.${feature.index}.title`)}
                     </h3>
                   </div>
-                  <div className="flex-shrink-0 w-10 h-10 md:w-[2.5vw] md:h-[2.5vw] flex items-center justify-center text-muted-foreground">
+                  <div className="flex-shrink-0 w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] flex items-center justify-center text-muted-foreground">
                     <AnimatedPlusX isOpen={isOpen} />
                   </div>
                 </button>
@@ -388,15 +403,15 @@ function FeaturesSection() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-[3vw] md:pb-[1.5vw] pl-[5vw] md:pl-[3.5vw] pr-[4vw] md:pr-[3vw]">
-                        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-[1.5vw] md:mb-[0.5vw]">
+                      <div className="pb-4 md:pb-[1.5vw] pl-[52px] md:pl-[3.5vw] pr-0 md:pr-[3vw]">
+                        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-2 md:mb-[0.5vw]">
                           {t(`features.items.${feature.index}.description`)}
                         </p>
-                        <div className="flex flex-wrap gap-[1.5vw] md:gap-[0.4vw]">
+                        <div className="flex flex-wrap gap-2 md:gap-[0.4vw]">
                           {t(`features.items.${feature.index}.points`).split(", ").map((item, i) => (
                             <span
                               key={i}
-                              className="px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.75rem,0.875rem] font-medium rounded-full"
+                              className="px-3 py-1.5 md:px-[0.8vw] md:py-[0.3vw] border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.75rem,0.875rem] font-medium rounded-full"
                             >
                               {item}
                             </span>
@@ -428,7 +443,7 @@ function BentoGridSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -437,32 +452,32 @@ function BentoGridSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("bento.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("bento.title")}
           </h2>
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[3vw] md:gap-[1vw]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-[1vw]">
           {bentoItems.map((item) => (
             <motion.div
               key={item.key}
               variants={cardVariant}
               className={item.span}
             >
-              <div className={`h-full rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-[4vw] md:p-[1.5vw] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${item.span.includes("row-span-2") ? "min-h-[300px] md:min-h-full" : "aspect-square md:aspect-auto"}`}>
+              <div className={`h-full rounded-2xl md:rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-6 md:p-[1.5vw] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${item.span.includes("row-span-2") ? "min-h-[200px] md:min-h-full" : ""}`}>
                 <div className="h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center mb-[1.5vw] md:mb-[0.5vw]">
+                  <div className="w-12 h-12 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center mb-3 md:mb-[0.5vw]">
                     <item.icon className="w-6 h-6 text-[#C9FD48]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-[4.5vw] md:text-[1.2vw] font-bold text-white dark:text-black mb-[1vw] md:mb-[0.3vw]">
+                  <h3 className="text-lg md:text-[1.2vw] font-bold text-white dark:text-black mb-1 md:mb-[0.3vw]">
                     {t(`bento.items.${item.key}.title`)}
                   </h3>
                   <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 leading-relaxed">
@@ -500,6 +515,7 @@ function BentoGridSection() {
 // Tech Stack Section
 function TechStackSection() {
   const t = useTranslations("Platforms");
+  const [openStack, setOpenStack] = useState<number | null>(0);
 
   const technologies = {
     frontend: [
@@ -538,7 +554,7 @@ function TechStackSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -547,44 +563,88 @@ function TechStackSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("stack.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("stack.title")}
           </h2>
         </motion.div>
 
-        {/* Tech Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[4vw] md:gap-[1.5vw]">
+        {/* Mobile: Accordion */}
+        <div className="md:hidden">
+          {categories.map((category, idx) => {
+            const isOpen = openStack === idx;
+            return (
+              <motion.div key={category.key} variants={cardVariant} className="border-b border-zinc-200 dark:border-zinc-800">
+                <button
+                  onClick={() => setOpenStack(isOpen ? null : idx)}
+                  className="w-full py-4 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center">
+                      <category.icon className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground">
+                      {t(`stack.categories.${category.key}.title`)}
+                    </h3>
+                  </div>
+                  <div className="w-8 h-8 flex items-center justify-center text-muted-foreground">
+                    <AnimatedPlusX isOpen={isOpen} />
+                  </div>
+                </button>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="flex flex-wrap gap-2 pb-4">
+                        {technologies[category.key].map((tech, i) => (
+                          <div
+                            key={i}
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                          >
+                            <img src={tech.icon} alt={tech.name} className="w-5 h-5" />
+                            <span className="text-xs font-medium text-foreground">{tech.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-[1.5vw]">
           {categories.map((category) => (
             <motion.div key={category.key} variants={cardVariant}>
-              <div className="flex items-center gap-[1.5vw] md:gap-[0.5vw] mb-[2vw] md:mb-[0.8vw]">
+              <div className="flex items-center gap-[0.5vw] mb-[0.8vw]">
                 <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center">
                   <category.icon className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-[4vw] md:text-[1.1vw] font-semibold text-foreground">
+                <h3 className="text-[1.1vw] font-semibold text-foreground">
                   {t(`stack.categories.${category.key}.title`)}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-[1.5vw] md:gap-[0.4vw]">
+              <div className="flex flex-wrap gap-[0.4vw]">
                 {technologies[category.key].map((tech, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 px-[2.5vw] py-[1vw] md:px-[0.7vw] md:py-[0.3vw] rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                    className="flex items-center gap-1.5 px-[0.7vw] py-[0.3vw] rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
                   >
-                    <img
-                      src={tech.icon}
-                      alt={tech.name}
-                      className="w-5 h-5"
-                    />
-                    <span className="clamp-[text,0.75rem,0.875rem] font-medium text-foreground">
-                      {tech.name}
-                    </span>
+                    <img src={tech.icon} alt={tech.name} className="w-5 h-5" />
+                    <span className="clamp-[text,0.75rem,0.875rem] font-medium text-foreground">{tech.name}</span>
                   </div>
                 ))}
               </div>
@@ -614,12 +674,12 @@ function ProcessStep({
   return (
     <motion.div
       style={{ x }}
-      className="flex items-center gap-3 px-4 py-3 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black w-fit"
+      className="flex items-center gap-2 md:gap-3 px-3 py-2 md:px-4 md:py-3 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black md:w-fit"
     >
       <span className="w-6 h-6 rounded-full bg-zinc-700 dark:bg-zinc-300 flex items-center justify-center text-xs font-bold flex-shrink-0">
         {step.num}
       </span>
-      <span className="clamp-[text,0.75rem,0.875rem] font-medium whitespace-nowrap">
+      <span className="text-xs md:clamp-[text,0.75rem,0.875rem] font-medium md:whitespace-nowrap">
         {t(`process.phases.${phaseKey}.steps.${step.key}`)}
       </span>
     </motion.div>
@@ -672,7 +732,7 @@ function ProcessSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section ref={sectionRef} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -681,46 +741,78 @@ function ProcessSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("process.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>
 
-        {/* Timeline */}
+        {/* Timeline - Mobile: vertical timeline */}
         <motion.div variants={cardVariant}>
-          <div className="w-full h-px bg-zinc-300 dark:bg-zinc-700 mb-[3vw] md:mb-[1.5vw]" />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[3vw] md:gap-[1vw]">
+          {/* Mobile timeline */}
+          <div className="md:hidden flex flex-col gap-5">
             {phases.map((phase) => (
-              <div key={phase.key} className="relative">
-                <div className="absolute left-0 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-800 hidden md:block" />
-
-                <div className="md:pl-[1.2vw]">
-                  <h3 className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground mb-[2vw] md:mb-[1vw]">
+              <div key={phase.key}>
+                <div className="flex items-center gap-2 mb-2.5">
+                  <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                     {t(`process.phases.${phase.key}.title`)}
                   </h3>
-
-                  <div className="flex flex-col gap-[1.5vw] md:gap-[0.5vw]">
-                    {phase.steps.map((step, stepIndex) => (
-                      <ProcessStep
-                        key={step.num}
-                        step={step}
-                        stepIndex={stepIndex}
-                        phaseKey={phase.key}
-                        scrollYProgress={scrollYProgress}
-                      />
-                    ))}
-                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {phase.steps.map((step) => (
+                    <div
+                      key={step.num}
+                      className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-zinc-700 dark:bg-zinc-300 flex items-center justify-center text-[10px] font-bold shrink-0">
+                        {step.num}
+                      </span>
+                      <span className="text-xs font-medium">
+                        {t(`process.phases.${phase.key}.steps.${step.key}`)}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Desktop timeline */}
+          <div className="hidden md:block">
+            <div className="w-full h-px bg-zinc-300 dark:bg-zinc-700 mb-[1.5vw]" />
+
+            <div className="grid grid-cols-4 gap-[1vw]">
+              {phases.map((phase) => (
+                <div key={phase.key} className="relative">
+                  <div className="absolute left-0 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-800" />
+
+                  <div className="pl-[1.2vw]">
+                    <h3 className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground mb-[1vw]">
+                      {t(`process.phases.${phase.key}.title`)}
+                    </h3>
+
+                    <div className="flex flex-col gap-[0.5vw]">
+                      {phase.steps.map((step, stepIndex) => (
+                        <ProcessStep
+                          key={step.num}
+                          step={step}
+                          stepIndex={stepIndex}
+                          phaseKey={phase.key}
+                          scrollYProgress={scrollYProgress}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </motion.div>
@@ -739,7 +831,7 @@ function StatsSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -748,39 +840,39 @@ function StatsSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={cardVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("stats.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("stats.title")}
           </h2>
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[1.5vw]">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-[1.5vw]">
           {stats.map((stat) => (
             <motion.div
               key={stat.index}
               variants={cardVariant}
             >
-              <div className="rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-[4vw] md:p-[1.5vw] aspect-[4/3] flex flex-col justify-between">
-                <div className="w-14 h-14 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center">
-                  <stat.icon className="w-7 h-7 text-[#C9FD48]" strokeWidth={1.5} />
+              <div className="rounded-2xl md:rounded-3xl bg-zinc-900 dark:bg-zinc-100 p-6 md:p-[1.5vw] flex items-center gap-4 md:flex-col md:items-start md:justify-between md:aspect-[4/3]">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-zinc-800 dark:bg-zinc-900 flex items-center justify-center shrink-0">
+                  <stat.icon className="w-6 h-6 md:w-7 md:h-7 text-[#C9FD48]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="flex items-baseline gap-[0.5vw] mb-[0.5vw]">
-                    <span className="text-[8vw] md:text-[3.5vw] font-black text-white dark:text-black leading-none">
+                  <div className="flex items-baseline gap-1 md:gap-[0.5vw] md:mb-[0.5vw]">
+                    <span className="text-3xl md:text-[3.5vw] font-black text-white dark:text-black leading-none">
                       {t(`stats.items.${stat.index}.value`)}
                     </span>
-                    <span className="text-[4vw] md:text-[1.8vw] font-black text-[#C9FD48]">
+                    <span className="text-lg md:text-[1.8vw] font-black text-[#C9FD48]">
                       {t(`stats.items.${stat.index}.suffix`)}
                     </span>
                   </div>
-                  <p className="clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60">
+                  <p className="text-sm md:clamp-[text,0.875rem,1rem] text-white/60 dark:text-black/60 mt-0.5">
                     {t(`stats.items.${stat.index}.label`)}
                   </p>
                 </div>
@@ -798,7 +890,7 @@ function PlatformsCTA() {
   const t = useTranslations("Platforms");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -808,13 +900,13 @@ function PlatformsCTA() {
       >
         <motion.div variants={cardVariant}>
           <Link href="/contact" className="block group">
-            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-[2vw] md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+            <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-4 md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
               {/* First text */}
-              <span className="block text-[6vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+              <span className="block text-[5.5vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
                 {t("cta.title")}
               </span>
               {/* Second text */}
-              <span className="absolute inset-0 flex items-center justify-center text-[6vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+              <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
                 {t("cta.button")}
               </span>
             </div>
@@ -822,7 +914,7 @@ function PlatformsCTA() {
         </motion.div>
 
         {/* Contact text */}
-        <motion.div variants={cardVariant} className="mt-[2.5vw] md:mt-[1vw] text-center">
+        <motion.div variants={cardVariant} className="mt-4 md:mt-[1vw] text-center">
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contact_text")}{" "}
             <a

@@ -225,6 +225,14 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Packages — highlighted, after Solutions */}
+            <Link
+              href="/packages"
+              className="relative px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-full bg-[#C9FD48] text-black transition-all duration-300 hover:bg-[#b8ec3d] hover:shadow-sm"
+            >
+              {t("packages")}
+            </Link>
+
             {/* Other nav items */}
             {navItems.map((item) => (
               <Link
@@ -420,6 +428,15 @@ export function Navbar() {
                 })}
               </div>
 
+              {/* Packages — highlighted */}
+              <Link
+                href="/packages"
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 flex items-center justify-center gap-2 w-full h-11 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d]"
+              >
+                {t("packages")}
+              </Link>
+
               {/* Other nav links */}
               <div className="mt-6 pt-6 border-t border-border/50 flex flex-col gap-0">
                 {navItems.map((item) => (
@@ -432,13 +449,6 @@ export function Navbar() {
                     {t(item.key)}
                   </Link>
                 ))}
-                <Link
-                  href="/packages"
-                  onClick={() => setMenuOpen(false)}
-                  className="py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors"
-                >
-                  {t("packages") || "Пакеты"}
-                </Link>
               </div>
             </div>
 

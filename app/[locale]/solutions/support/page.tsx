@@ -47,7 +47,7 @@ function ClockVisualization() {
   const segments = Array.from({ length: 24 }, (_, i) => i);
 
   return (
-    <div className="relative w-64 md:w-80 aspect-square mx-auto rounded-full bg-zinc-950 border border-zinc-800">
+    <div className="relative w-48 md:w-80 aspect-square mx-auto rounded-full bg-zinc-950 border border-zinc-800">
       <svg viewBox="0 0 200 200" className="w-full h-full" style={{ transform: "rotate(-90deg)" }}>
         {segments.map((i) => {
           const angle = (i * 360) / 24;
@@ -94,12 +94,12 @@ function SupportHero() {
   const t = useTranslations("Support");
 
   return (
-    <section className="w-full min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center clamp-[px,12,24]">
+    <section className="w-full min-h-[60vh] md:min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="flex flex-col items-center gap-8"
+        className="flex flex-col items-center gap-5 md:gap-8"
       >
         <Shuffle
           text={t("hero.title")}
@@ -142,7 +142,7 @@ function SupportHero() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-foreground text-background font-semibold clamp-[text,0.875rem,1rem] transition-all duration-200 hover:opacity-90"
+            className="group inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-8 md:clamp-[px,24,32] rounded-full bg-foreground text-background font-semibold clamp-[text,0.875rem,1rem] transition-all duration-200 hover:opacity-90"
           >
             <HeadphonesIcon className="w-5 h-5" strokeWidth={1.5} />
             {t("hero.cta")}
@@ -246,7 +246,7 @@ function ProcessSection() {
   const t = useTranslations("Support");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -254,37 +254,62 @@ function ProcessSection() {
         variants={container}
       >
         {/* Header */}
-        <motion.div variants={itemVariant} className="text-center mb-10 md:mb-16">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={itemVariant} className="text-center mb-6 md:mb-16">
+          <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("process.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>
 
-        {/* Horizontal Steps */}
-        <div className="grid grid-cols-2 md:grid-cols-5 clamp-[gap,16,32]">
+        {/* Mobile: Horizontal rows */}
+        <div className="flex flex-col gap-4 md:hidden">
+          {processIcons.map((Icon, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariant}
+              className="flex items-center gap-4"
+            >
+              <div className="relative flex-shrink-0">
+                <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#C9FD48] text-black text-[10px] font-bold flex items-center justify-center z-10">
+                  {i + 1}
+                </div>
+                <div className="w-12 h-12 rounded-xl bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-[#C9FD48]" strokeWidth={1.5} />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground">
+                  {t(`process.steps.${i}.title`)}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-snug">
+                  {t(`process.steps.${i}.description`)}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop: 5-column grid */}
+        <div className="hidden md:grid md:grid-cols-5 clamp-[gap,16,32]">
           {processIcons.map((Icon, i) => (
             <motion.div
               key={i}
               variants={itemVariant}
               className="flex flex-col items-center text-center"
             >
-              {/* Icon */}
               <div className="relative mb-4">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
-                  <Icon className="w-6 h-6 md:w-7 md:h-7 text-[#C9FD48]" strokeWidth={1.5} />
+                <div className="w-16 h-16 rounded-2xl bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/50 flex items-center justify-center">
+                  <Icon className="w-7 h-7 text-[#C9FD48]" strokeWidth={1.5} />
                 </div>
                 <div className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-[#C9FD48] text-black text-xs font-bold flex items-center justify-center">
                   {i + 1}
                 </div>
               </div>
-
-              {/* Content */}
               <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-foreground mb-1">
                 {t(`process.steps.${i}.title`)}
               </h3>
@@ -307,13 +332,13 @@ function SupportCTA() {
   const t = useTranslations("Support");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <Link href="/contact" className="block group">
-        <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
-          <span className="block text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+        <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+          <span className="block text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
             {t("cta.title")}
           </span>
-          <span className="absolute inset-0 flex items-center justify-center text-[5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+          <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
             <span className="flex items-center gap-3">
               {t("cta.button")}
               <ArrowRight className="w-[4vw] md:w-[3vw] lg:w-[2vw] h-[4vw] md:h-[3vw] lg:h-[2vw] min-w-6 min-h-6" />
@@ -323,7 +348,7 @@ function SupportCTA() {
       </Link>
 
       {/* Contact */}
-      <div className="mt-6 md:mt-8 text-center">
+      <div className="mt-4 md:mt-8 text-center">
         <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
           {t("cta.contact_text")}{" "}
           <a
@@ -335,20 +360,6 @@ function SupportCTA() {
         </p>
       </div>
 
-      {/* Benefits */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#C9FD48] flex-shrink-0" />
-            <span className="clamp-[text,0.875rem,1rem] text-foreground font-medium">
-              {t(`cta.benefits.${i}`)}
-            </span>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }

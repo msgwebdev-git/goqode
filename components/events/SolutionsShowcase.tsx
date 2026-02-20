@@ -80,14 +80,14 @@ function WebsiteDemoVisual() {
         </div>
       </div>
       <motion.div
-        className="absolute -right-4 top-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800"
+        className="absolute -right-4 top-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800 hidden md:flex"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 3, repeat: Infinity }}
       >
         <CreditCard className="w-6 h-6 text-[#C9FD48]" />
       </motion.div>
       <motion.div
-        className="absolute -left-4 bottom-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800"
+        className="absolute -left-4 bottom-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800 hidden md:flex"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity }}
       >
@@ -342,7 +342,7 @@ function AnalyticsDemoVisual() {
         </div>
       </div>
       <motion.div
-        className="absolute -right-2 top-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800"
+        className="absolute -right-2 top-1/4 bg-white dark:bg-zinc-900 rounded-xl p-3 shadow-lg border border-zinc-200 dark:border-zinc-800 hidden md:block"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
@@ -373,8 +373,8 @@ function AdditionalServicesDemoVisual() {
         whileInView={{ opacity: 1, y: 0 }}
       >
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-            <Mail className="w-5 h-5 text-blue-500" />
+          <div className="w-10 h-10 rounded-xl bg-zinc-900 dark:bg-[#C9FD48]/10 flex items-center justify-center flex-shrink-0">
+            <Mail className="w-5 h-5 text-[#C9FD48]" />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between mb-1">
@@ -394,8 +394,8 @@ function AdditionalServicesDemoVisual() {
         transition={{ delay: 0.1 }}
       >
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-            <Smartphone className="w-5 h-5 text-emerald-500" />
+          <div className="w-10 h-10 rounded-xl bg-zinc-900 dark:bg-[#C9FD48]/10 flex items-center justify-center flex-shrink-0">
+            <Smartphone className="w-5 h-5 text-[#C9FD48]" />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between mb-1">
@@ -414,29 +414,18 @@ function AdditionalServicesDemoVisual() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
-            <FileText className="w-5 h-5 text-purple-500" />
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-zinc-900 dark:bg-[#C9FD48]/10 flex items-center justify-center">
+            <FileText className="w-5 h-5 text-[#C9FD48]" />
           </div>
           <div>
             <p className="font-medium text-sm">Оцените мероприятие</p>
             <p className="text-xs text-muted-foreground">Ваше мнение важно для нас</p>
           </div>
         </div>
-        <div className="flex gap-1">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <motion.div
-              key={star}
-              className="w-8 h-8 rounded-lg bg-[#C9FD48]/20 flex items-center justify-center cursor-pointer hover:bg-[#C9FD48]/40 transition-colors"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="text-lg">⭐</span>
-            </motion.div>
-          ))}
-        </div>
       </motion.div>
       <motion.div
-        className="absolute -left-4 top-0 bg-white dark:bg-zinc-900 rounded-full p-3 shadow-lg border border-zinc-200 dark:border-zinc-800"
+        className="absolute -left-4 top-0 bg-white dark:bg-zinc-900 rounded-full p-3 shadow-lg border border-zinc-200 dark:border-zinc-800 hidden md:block"
         animate={{ rotate: [0, 10, -10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
@@ -485,15 +474,15 @@ function StickyCard({ index, icon: Icon, children, progress, range, targetScale 
   return (
     <div ref={containerRef} className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
-        className={`w-[calc(100%-24px)] md:w-[calc(100%-48px)] max-w-7xl ${cardBgColors[index]} rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden origin-top`}
+        className={`w-full md:w-[calc(100%-48px)] md:max-w-7xl ${cardBgColors[index]} rounded-2xl md:rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden origin-top`}
         style={{
           scale,
           top: `calc(-5vh + ${index * 25}px)`,
         }}
       >
-        <div className="clamp-[p,20,40]">
+        <div className="p-6 md:clamp-[p,20,40]">
           <div
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center ${
               isReversed ? "lg:grid-flow-dense" : ""
             }`}
           >
@@ -535,8 +524,8 @@ function StickyCard({ index, icon: Icon, children, progress, range, targetScale 
               </div>
             </div>
 
-            {/* Visual Demo */}
-            <div className={isReversed ? "lg:col-start-1 lg:row-start-1" : ""}>
+            {/* Visual Demo - hidden on mobile for sticky effect */}
+            <div className={`hidden lg:block ${isReversed ? "lg:col-start-1 lg:row-start-1" : ""}`}>
               {children}
             </div>
           </div>
@@ -566,17 +555,17 @@ export function SolutionsShowcase() {
   ];
 
   return (
-    <section ref={containerRef} className="relative bg-zinc-100 dark:bg-zinc-950">
+    <section ref={containerRef} className="relative bg-zinc-100 dark:bg-zinc-950 px-6 md:px-0">
       {/* Header Section - внутри серой секции */}
-      <div className="clamp-[px,12,24] pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
+      <div className="px-6 md:clamp-[px,12,24] pt-12 pb-8 md:pt-32 md:pb-24">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 md:gap-[0.4vw] mb-2 md:mb-6">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
               {t("services.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,2.5rem,6rem] font-black leading-[0.95] text-foreground uppercase tracking-tight">
+          <h2 className="text-[8vw] md:clamp-[text,2.5rem,6rem] font-black leading-[0.95] text-foreground uppercase tracking-tight">
             {t("services.title")}
           </h2>
         </div>

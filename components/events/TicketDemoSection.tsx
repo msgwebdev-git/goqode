@@ -285,7 +285,7 @@ export function TicketDemoSection() {
   };
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -293,7 +293,7 @@ export function TicketDemoSection() {
         variants={container}
         className="w-full"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 clamp-[gap,16,32] items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:clamp-[gap,16,32] items-center">
           {/* Text Content */}
           <motion.div variants={itemVariant}>
             <div className="flex items-center gap-2 mb-4">

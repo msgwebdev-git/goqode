@@ -28,7 +28,7 @@ export function EventCTASection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -39,13 +39,13 @@ export function EventCTASection() {
         {/* CTA Card */}
         <motion.div variants={itemVariant}>
           <Link href="/contact" className="block group">
-            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-[2vw] md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+            <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-4 md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
               {/* First text */}
-              <span className="block text-[6vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+              <span className="block text-[5.5vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
                 {t("cta.title")}
               </span>
               {/* Second text */}
-              <span className="absolute inset-0 flex items-center justify-center text-[6vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+              <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
                 {t("cta.button")}
               </span>
             </div>
@@ -53,7 +53,7 @@ export function EventCTASection() {
         </motion.div>
 
         {/* Contact text */}
-        <motion.div variants={itemVariant} className="mt-6 md:mt-8 text-center">
+        <motion.div variants={itemVariant} className="mt-4 md:mt-[1vw] text-center">
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contactText")}{" "}
             <a

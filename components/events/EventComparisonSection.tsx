@@ -30,33 +30,33 @@ export function EventComparisonSection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
         variants={container}
-        className="w-full max-w-6xl mx-auto"
+        className="w-full"
       >
         {/* Header */}
-        <motion.div variants={itemVariant} className="text-center mb-12 lg:mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+        <motion.div variants={itemVariant} className="text-center mb-6 md:mb-12">
+          <div className="flex items-center justify-center gap-2 md:gap-[0.4vw] mb-2 md:mb-4">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
+            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("comparison.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
             {t("comparison.title")}
           </h2>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 clamp-[gap,16,32]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:clamp-[gap,16,32]">
           {/* Aggregators Card - Neutral Style */}
           <motion.div
             variants={itemVariant}
-            className="relative clamp-[p,20,32] rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+            className="relative p-6 md:clamp-[p,20,32] rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
           >
             {/* Card Header */}
             <div className="flex items-center gap-3 mb-6">
@@ -86,7 +86,7 @@ export function EventComparisonSection() {
           {/* Custom Platform Card - Accent Style */}
           <motion.div
             variants={itemVariant}
-            className="relative clamp-[p,20,32] rounded-2xl bg-zinc-900 dark:bg-zinc-950 border border-[#C9FD48]/30"
+            className="relative p-6 md:clamp-[p,20,32] rounded-2xl bg-zinc-900 dark:bg-zinc-950 border border-[#C9FD48]/30"
           >
             {/* Accent glow effect */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#C9FD48]/10 to-transparent pointer-events-none" />
@@ -120,7 +120,7 @@ export function EventComparisonSection() {
         {/* Bottom Note */}
         <motion.div
           variants={itemVariant}
-          className="mt-8 lg:mt-12 text-center"
+          className="mt-6 md:mt-8 lg:mt-12 text-center"
         >
           <p className="clamp-[text,0.875rem,1.125rem] text-muted-foreground italic">
             &ldquo;{t("comparison.note")}&rdquo;

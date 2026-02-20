@@ -125,7 +125,7 @@ export function EventFlowSection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] overflow-hidden bg-zinc-50/50 dark:bg-transparent">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] overflow-hidden bg-zinc-50/50 dark:bg-transparent">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -134,9 +134,9 @@ export function EventFlowSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={itemVariant} className="text-center mb-12 lg:mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+        <motion.div variants={itemVariant} className="text-center mb-6 md:mb-12">
+          <div className="flex items-center justify-center gap-2 md:gap-[0.4vw] mb-2 md:mb-4">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#C9FD48]" />
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
               {t("flow.label")}
             </span>
@@ -147,9 +147,22 @@ export function EventFlowSection() {
         </motion.div>
 
         {/* Flow Steps Container - Dark block */}
-        <div className="w-full bg-zinc-900 dark:bg-zinc-950 rounded-2xl clamp-[p,16,32] shadow-xl">
-          {/* Flow Steps - Desktop: horizontal, Mobile: vertical */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+        <div className="w-full bg-zinc-900 dark:bg-zinc-950 rounded-2xl p-6 md:clamp-[p,16,32] shadow-xl">
+          {/* Flow Steps - Desktop: horizontal, Mobile: 2-col grid */}
+          <div className="grid grid-cols-2 gap-5 md:hidden">
+            {flowSteps.map((step, index) => (
+              <FlowStep
+                key={index}
+                icon={step.icon}
+                color={step.color}
+                title={t(`flow.steps.${index}.title`)}
+                description={t(`flow.steps.${index}.description`)}
+                index={index}
+                isLast={true}
+              />
+            ))}
+          </div>
+          <div className="hidden md:flex items-center justify-center gap-0">
             {flowSteps.map((step, index) => (
               <FlowStep
                 key={index}

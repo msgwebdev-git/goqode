@@ -61,9 +61,9 @@ function LaunchHero() {
   const t = useTranslations("Launch");
 
   return (
-    <section className="w-full min-h-[80vh] flex flex-col items-center justify-center clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
-        className="flex flex-col items-center gap-[4vw] md:gap-[1.5vw] text-center w-full"
+        className="flex flex-col items-center gap-5 md:gap-[1.5vw] text-center w-full"
         variants={container}
         initial="hidden"
         animate="show"
@@ -73,7 +73,7 @@ function LaunchHero() {
           <Shuffle
             text={t("hero.title")}
             tag="h1"
-            className="text-[14vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
+            className="text-[13vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
             textAlign="center"
             shuffleDirection="right"
             duration={0.35}
@@ -100,7 +100,7 @@ function LaunchHero() {
         <motion.div variants={itemVariant}>
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-[5vw] md:px-[1.5vw] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-8 md:px-[1.5vw] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden"
           >
             <Rocket className="h-4 w-4" />
             <span>{t("hero.cta")}</span>
@@ -125,17 +125,17 @@ function SolutionOverview() {
   };
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
-      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-[3vw] md:pt-[1.2vw]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+      <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-4 md:pt-[1.2vw]">
         {/* Left Column - Title */}
-        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-[3vw] lg:mb-0 lg:pr-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-5 lg:mb-0 lg:pr-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("overview.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("overview.title")}
           </h2>
         </div>
@@ -153,15 +153,15 @@ function SolutionOverview() {
                 {/* Row */}
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full py-[2.5vw] md:py-[1vw] flex items-center justify-between gap-[1.5vw] md:gap-[0.8vw] text-left group"
+                  className="w-full py-4 md:py-[1vw] flex items-center justify-between gap-3 md:gap-[0.8vw] text-left group"
                 >
                   {/* Title */}
-                  <h3 className="text-[7vw] md:text-[3.2vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-extrabold">
+                  <h3 className="text-[6vw] md:text-[3.2vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-extrabold">
                     {t(`overview.steps.${index}.title`)}
                   </h3>
 
                   {/* Plus/Minus */}
-                  <div className="flex-shrink-0 w-10 h-10 md:w-[2.5vw] md:h-[2.5vw] flex items-center justify-center text-muted-foreground">
+                  <div className="flex-shrink-0 w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] flex items-center justify-center text-muted-foreground">
                     <AnimatedPlusX isOpen={isOpen} />
                   </div>
                 </button>
@@ -176,21 +176,21 @@ function SolutionOverview() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-[3vw] md:pb-[1.5vw] pr-[4vw] md:pr-[3vw]">
+                      <div className="pb-4 md:pb-[1.5vw] pr-0 md:pr-[3vw]">
                         {/* Description */}
-                        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-[1.5vw] md:mb-[0.5vw]">
+                        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed mb-2 md:mb-[0.5vw]">
                           {t(`overview.steps.${index}.description`)}
                         </p>
-                        <p className="clamp-[text,0.875rem,1rem] text-foreground/70 leading-relaxed mb-[2vw] md:mb-[0.8vw]">
+                        <p className="clamp-[text,0.875rem,1rem] text-foreground/70 leading-relaxed mb-3 md:mb-[0.8vw]">
                           {t(`overview.steps.${index}.details`)}
                         </p>
 
                         {/* Deliverables */}
-                        <div className="flex flex-wrap gap-[1.5vw] md:gap-[0.4vw]">
+                        <div className="flex flex-wrap gap-2 md:gap-[0.4vw]">
                           {t(`overview.steps.${index}.deliverables`).split(", ").map((item, i) => (
                             <span
                               key={i}
-                              className="px-[2.5vw] py-[1vw] md:px-[0.8vw] md:py-[0.3vw] border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.75rem,0.875rem] font-medium rounded-full"
+                              className="px-3 py-1.5 md:px-[0.8vw] md:py-[0.3vw] border border-zinc-300 dark:border-zinc-700 text-foreground/80 clamp-[text,0.75rem,0.875rem] font-medium rounded-full"
                             >
                               {item}
                             </span>
@@ -235,7 +235,7 @@ function ResultsSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -244,48 +244,50 @@ function ResultsSection() {
         className="w-full"
       >
         {/* Header */}
-        <motion.div variants={itemVariant} className="mb-[4vw] md:mb-[2vw]">
-          <div className="flex items-center gap-[1vw] md:gap-[0.4vw] mb-[1.5vw] md:mb-[0.5vw]">
-            <div className="w-[1.5vw] h-[1.5vw] md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
+        <motion.div variants={itemVariant} className="mb-6 md:mb-[2vw]">
+          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
+            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
             <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
               {t("results.label")}
             </span>
           </div>
-          <h2 className="text-[6vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
             {t("results.title")}
           </h2>
         </motion.div>
 
-        {/* Results Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[1.5vw]">
+        {/* Results List */}
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-[1.5vw]">
           {results.map((result, index) => (
             <motion.div
               key={index}
               variants={itemVariant}
-              className="flex flex-col items-center text-center"
+              className="flex items-center gap-4 md:flex-col md:text-center"
             >
               {/* Icon */}
-              <div className="w-12 h-12 md:w-[3vw] md:h-[3vw] rounded-2xl bg-zinc-900 dark:bg-[#C9FD48]/10 flex items-center justify-center mb-[2vw] md:mb-[0.8vw]">
+              <div className="w-12 h-12 md:w-[3vw] md:h-[3vw] rounded-2xl bg-zinc-900 dark:bg-[#C9FD48]/10 flex items-center justify-center shrink-0 md:mb-[0.8vw]">
                 <result.icon className="w-6 h-6 md:w-[1.5vw] md:h-[1.5vw] text-[#C9FD48]" strokeWidth={1.5} />
               </div>
 
-              {/* Number */}
-              <div className="flex items-baseline gap-[0.5vw] mb-[1vw] md:mb-[0.4vw]">
-                <CountUp
-                  to={result.value}
-                  duration={2.5}
-                  delay={index * 0.2}
-                  className="text-[10vw] md:text-[5vw] font-black text-foreground leading-none"
-                />
-                <span className="text-[5vw] md:text-[2.5vw] font-black text-[#C9FD48]">
-                  {result.suffix}
-                </span>
-              </div>
+              <div className="flex flex-col md:items-center">
+                {/* Number */}
+                <div className="flex items-baseline gap-0.5 md:gap-[0.5vw] md:mb-[0.4vw]">
+                  <CountUp
+                    to={result.value}
+                    duration={2.5}
+                    delay={index * 0.2}
+                    className="text-4xl md:text-[5vw] font-black text-foreground leading-none"
+                  />
+                  <span className="text-xl md:text-[2.5vw] font-black text-[#C9FD48]">
+                    {result.suffix}
+                  </span>
+                </div>
 
-              {/* Label */}
-              <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
-                {result.label}
-              </p>
+                {/* Label */}
+                <p className="text-sm md:clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed mt-0.5">
+                  {result.label}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -299,7 +301,7 @@ function LaunchCTA() {
   const t = useTranslations("Launch");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -310,13 +312,13 @@ function LaunchCTA() {
         {/* CTA Card */}
         <motion.div variants={itemVariant}>
           <Link href="/contact" className="block group">
-            <div className="relative rounded-3xl bg-[#C9FD48] overflow-hidden py-[2vw] md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
+            <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-4 md:py-[0.8vw] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
               {/* First text */}
-              <span className="block text-[6vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
+              <span className="block text-[5.5vw] md:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
                 {t("cta.title")}
               </span>
               {/* Second text */}
-              <span className="absolute inset-0 flex items-center justify-center text-[6vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
+              <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
                 {t("cta.button")}
               </span>
             </div>
@@ -324,7 +326,7 @@ function LaunchCTA() {
         </motion.div>
 
         {/* Contact text */}
-        <motion.div variants={itemVariant} className="mt-[2.5vw] md:mt-[1vw] text-center">
+        <motion.div variants={itemVariant} className="mt-4 md:mt-[1vw] text-center">
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contact_text")}{" "}
             <a
