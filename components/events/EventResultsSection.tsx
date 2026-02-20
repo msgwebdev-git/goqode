@@ -216,7 +216,7 @@ export function EventResultsSection() {
                       className="overflow-hidden"
                     >
                       <div className="flex flex-wrap gap-3 pb-4">
-                        {category.stack.map((tech) => (
+                        {category.stack.map((tech: { name: string; logo: string; logoDark?: string }) => (
                           <div key={tech.name} className="flex flex-col items-center gap-2">
                             <div className="relative w-14 h-14 rounded-xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center">
                               <Image
