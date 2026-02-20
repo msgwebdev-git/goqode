@@ -552,7 +552,7 @@ const demoLine = {
   hidden: { scaleX: 0 },
   show: {
     scaleX: 1,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" as const },
   },
 };
 
