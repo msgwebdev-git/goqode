@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -491,6 +492,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     if (stepIdx < totalSteps - 1) {
       setDirection(1);
       setStepIdx(stepIdx + 1);
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   }
 
@@ -498,6 +500,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     if (stepIdx > 0) {
       setDirection(-1);
       setStepIdx(stepIdx - 1);
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   }
 
@@ -876,8 +879,10 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     }
   }
 
+  const showBottomBar = priceMin > 0 && !submitted;
+
   return (
-    <>
+  <>
     <main className="w-full min-h-[100dvh] flex flex-col lg:flex-row">
       {/* ── LEFT SIDE — Dark panel ── */}
       {/* Mobile: compact header. Desktop: full side panel */}
@@ -990,8 +995,8 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
 
       {/* ── RIGHT SIDE — Steps panel ── */}
       <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-900 flex flex-col justify-start pt-6 lg:pt-36 clamp-[px,12,24] clamp-[py,24,48] pb-28 lg:pb-12 min-h-[50vh] lg:min-h-[100dvh] relative">
-        <div className="w-full lg:max-w-lg lg:mx-0 lg:ml-[10%]">
-          <AnimatePresence mode="wait" custom={direction}>
+        <div className="w-full lg:max-w-lg lg:mx-0 lg:ml-[10%] relative overflow-hidden">
+          <AnimatePresence mode="popLayout" custom={direction}>
             {submitted ? (
               /* ── Result state ── */
               <motion.div
@@ -1101,34 +1106,38 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
 
     </main>
 
-      {/* ── MOBILE STICKY BOTTOM BAR — Price estimate ── */}
-      <div
-        style={{ transform: `translateY(${priceMin > 0 && !submitted ? 0 : 100}%)` }}
-        className="fixed bottom-0 left-0 right-0 z-50 lg:hidden transition-transform duration-300 ease-out"
-      >
-        <div className="bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800 px-4 py-3 flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-zinc-500">
-              {t("estimate")}
-            </span>
-            <div className="text-[#C9FD48] text-lg font-black tabular-nums leading-tight">
-              €{priceMin.toLocaleString()}
-              <span className="text-zinc-500 mx-1">—</span>
-              €{priceMax.toLocaleString()}
-              {isMonthly && (
-                <span className="text-zinc-500 text-xs font-medium ml-1">{t("perMonth")}</span>
+    {/* ── MOBILE STICKY BOTTOM BAR — via Portal to avoid framer-motion transform interference ── */}
+    {typeof document !== "undefined" &&
+      createPortal(
+        <div
+          style={{ transform: `translateY(${showBottomBar ? 0 : 100}%)` }}
+          className="fixed bottom-0 left-0 right-0 z-50 lg:hidden transition-transform duration-300 ease-out"
+        >
+          <div className="bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800 px-4 py-3 flex items-center justify-between">
+            <div className="flex flex-col">
+              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-zinc-500">
+                {t("estimate")}
+              </span>
+              <div className="text-[#C9FD48] text-lg font-black tabular-nums leading-tight">
+                €{priceMin.toLocaleString()}
+                <span className="text-zinc-500 mx-1">—</span>
+                €{priceMax.toLocaleString()}
+                {isMonthly && (
+                  <span className="text-zinc-500 text-xs font-medium ml-1">{t("perMonth")}</span>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {form.features.length > 0 && (
+                <span className="text-[10px] text-zinc-500 font-medium tabular-nums">
+                  {form.features.length} {t("featuresCount")}
+                </span>
               )}
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            {form.features.length > 0 && (
-              <span className="text-[10px] text-zinc-500 font-medium tabular-nums">
-                {form.features.length} {t("featuresCount")}
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
-    </>
+        </div>,
+        document.body,
+      )}
+  </>
   );
 }
