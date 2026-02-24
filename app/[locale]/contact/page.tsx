@@ -7,7 +7,9 @@ import { ArrowRight, ArrowLeft, Check, Copy, CheckCircle } from "lucide-react";
 
 /* ─── Constants ──────────────────────────────────────── */
 
-const SERVICE_KEYS = ["0", "1", "2", "3", "4"] as const;
+const SOLUTION_KEYS = ["0", "1", "2", "3", "4", "5", "6", "7"] as const;
+const SERVICE_TYPE_KEYS = ["0", "1", "2", "3", "4", "5", "6"] as const;
+const BUDGET_KEYS = ["0", "1", "2", "3", "4"] as const;
 
 /* ─── Copy-to-clipboard pill ─────────────────────────── */
 
@@ -172,7 +174,9 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
-    service: "",
+    solutions: [] as string[],
+    serviceTypes: [] as string[],
+    budget: "",
     agreed: true,
   });
 
@@ -189,17 +193,19 @@ export default function ContactPage() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const subject = form.service
-      ? `${form.service}: ${form.name}`
+    const solutionsStr = form.solutions.join(", ");
+    const serviceTypesStr = form.serviceTypes.join(", ");
+    const subject = solutionsStr || serviceTypesStr
+      ? `${[solutionsStr, serviceTypesStr].filter(Boolean).join(" | ")}: ${form.name}`
       : `Contact from ${form.name}`;
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nService: ${form.service}\n\n${form.message}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nSolutions: ${solutionsStr}\nServices: ${serviceTypesStr}\nBudget: ${form.budget}\n\n${form.message}`;
     window.location.href = `mailto:hello@goqode.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => setSubmitted(true), 400);
   }
 
   function reset() {
-    setForm({ name: "", email: "", phone: "", message: "", service: "", agreed: true });
+    setForm({ name: "", email: "", phone: "", message: "", solutions: [], serviceTypes: [], budget: "", agreed: true });
     setStep(1);
     setDirection(-1);
     setSubmitted(false);
@@ -330,7 +336,7 @@ export default function ContactPage() {
                   disabled={!step1Valid}
                   whileHover={step1Valid ? { scale: 1.02 } : {}}
                   whileTap={step1Valid ? { scale: 0.98 } : {}}
-                  className="group self-start inline-flex items-center gap-3 h-14 px-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-foreground font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#C9FD48] hover:text-black disabled:opacity-40 disabled:pointer-events-none"
+                  className="group self-start inline-flex items-center gap-3 h-14 px-8 rounded-full bg-[#C9FD48] text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#b8ec3a] disabled:opacity-40 disabled:pointer-events-none"
                 >
                   <span className="tracking-widest uppercase">{t("step1.continue")}</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -366,15 +372,15 @@ export default function ContactPage() {
                   placeholder={t("step2.messagePlaceholder")}
                 />
 
-                {/* Service selector pills */}
+                {/* Solutions selector pills */}
                 <div>
                   <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                    {t("step2.selectService")}
+                    {t("step2.selectSolution")}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {SERVICE_KEYS.map((key) => {
-                      const label = t(`step2.services.${key}`);
-                      const selected = form.service === label;
+                    {SOLUTION_KEYS.map((key) => {
+                      const label = t(`step2.solutions.${key}`);
+                      const selected = form.solutions.includes(label);
                       return (
                         <button
                           key={key}
@@ -382,7 +388,75 @@ export default function ContactPage() {
                           onClick={() =>
                             setForm((p) => ({
                               ...p,
-                              service: selected ? "" : label,
+                              solutions: selected
+                                ? p.solutions.filter((s) => s !== label)
+                                : [...p.solutions, label],
+                            }))
+                          }
+                          className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase border transition-all duration-200 ${
+                            selected
+                              ? "bg-[#C9FD48] text-black border-[#C9FD48]"
+                              : "bg-zinc-50 dark:bg-zinc-900 text-foreground border-zinc-200 dark:border-zinc-700 hover:border-[#C9FD48]/50"
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Service type selector pills */}
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
+                    {t("step2.selectServiceType")}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {SERVICE_TYPE_KEYS.map((key) => {
+                      const label = t(`step2.serviceTypes.${key}`);
+                      const selected = form.serviceTypes.includes(label);
+                      return (
+                        <button
+                          key={`st-${key}`}
+                          type="button"
+                          onClick={() =>
+                            setForm((p) => ({
+                              ...p,
+                              serviceTypes: selected
+                                ? p.serviceTypes.filter((s) => s !== label)
+                                : [...p.serviceTypes, label],
+                            }))
+                          }
+                          className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase border transition-all duration-200 ${
+                            selected
+                              ? "bg-[#C9FD48] text-black border-[#C9FD48]"
+                              : "bg-zinc-50 dark:bg-zinc-900 text-foreground border-zinc-200 dark:border-zinc-700 hover:border-[#C9FD48]/50"
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Budget selector pills */}
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
+                    {t("step2.selectBudget")}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {BUDGET_KEYS.map((key) => {
+                      const label = t(`step2.budgets.${key}`);
+                      const selected = form.budget === label;
+                      return (
+                        <button
+                          key={key}
+                          type="button"
+                          onClick={() =>
+                            setForm((p) => ({
+                              ...p,
+                              budget: selected ? "" : label,
                             }))
                           }
                           className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase border transition-all duration-200 ${
@@ -431,7 +505,7 @@ export default function ContactPage() {
                     disabled={!step2Valid || !form.agreed}
                     whileHover={step2Valid && form.agreed ? { scale: 1.02 } : {}}
                     whileTap={step2Valid && form.agreed ? { scale: 0.98 } : {}}
-                    className="group inline-flex items-center gap-3 h-14 px-8 rounded-full bg-zinc-100 dark:bg-zinc-800 text-foreground font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#C9FD48] hover:text-black disabled:opacity-40 disabled:pointer-events-none"
+                    className="group inline-flex items-center gap-3 h-14 px-8 rounded-full bg-[#C9FD48] text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#b8ec3a] disabled:opacity-40 disabled:pointer-events-none"
                   >
                     <span className="tracking-widest uppercase">{t("step2.submit")}</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

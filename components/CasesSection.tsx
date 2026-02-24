@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import Shuffle from "./Shuffle";
+import { casesData, type CaseStudy } from "@/lib/cases-data";
 
 const container = {
   hidden: {},
@@ -29,54 +30,8 @@ const cardVariant = {
   },
 };
 
-// Demo case data (replace with real data later)
-const casesData = [
-  {
-    id: 1,
-    featured: true,
-    image: "/placeholder.svg",
-    tags: ["Web", "E-commerce", "UX/UI"],
-    year: "2024",
-  },
-  {
-    id: 2,
-    featured: false,
-    image: "/placeholder.svg",
-    tags: ["Mobile", "iOS", "Android"],
-    year: "2024",
-  },
-  {
-    id: 3,
-    featured: false,
-    image: "/placeholder.svg",
-    tags: ["Web App", "Dashboard"],
-    year: "2023",
-  },
-  {
-    id: 4,
-    featured: false,
-    image: "/placeholder.svg",
-    tags: ["Branding", "Identity"],
-    year: "2023",
-  },
-  {
-    id: 5,
-    featured: false,
-    image: "/placeholder.svg",
-    tags: ["Event", "Platform"],
-    year: "2024",
-  },
-  {
-    id: 6,
-    featured: false,
-    image: "/placeholder.svg",
-    tags: ["SaaS", "Automation"],
-    year: "2024",
-  },
-];
-
 interface CaseCardProps {
-  caseItem: (typeof casesData)[0];
+  caseItem: CaseStudy;
   title: string;
   featured?: boolean;
 }
@@ -92,6 +47,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        <Link href={`/cases/${caseItem.slug}`}>
         <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-zinc-900 dark:bg-zinc-100 transition-all duration-500 hover:shadow-2xl">
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
@@ -103,7 +59,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <Image
-              src={caseItem.image}
+              src={caseItem.cardImage}
               alt={title}
               fill
               className="object-cover"
@@ -149,6 +105,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
             </h3>
           </div>
         </div>
+        </Link>
       </motion.div>
     );
   }
@@ -160,6 +117,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      <Link href={`/cases/${caseItem.slug}`}>
       <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
@@ -171,7 +129,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <Image
-            src={caseItem.image}
+            src={caseItem.cardImage}
             alt={title}
             fill
             className="object-cover"
@@ -210,6 +168,7 @@ function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
           </h3>
         </div>
       </div>
+      </Link>
     </motion.div>
   );
 }
@@ -292,8 +251,8 @@ export function CasesSection() {
     }
   }, [firstInView, lastInView]);
 
-  const getCaseTranslation = (id: number, key: string) => {
-    return t(`items.${id - 1}.${key}`);
+  const getCaseTranslation = (slug: string, key: string) => {
+    return t(`items.${slug}.${key}`);
   };
 
   return (
@@ -328,7 +287,7 @@ export function CasesSection() {
               stagger={0.03}
               threshold={0.1}
               triggerOnce={true}
-              triggerOnHover={true}
+              triggerOnHover={false}
               respectReducedMotion={true}
             />
             <div className="md:border-l-2 md:border-[#C9FD48] md:pl-8">
@@ -345,7 +304,7 @@ export function CasesSection() {
             <div className="mb-6 md:mb-8">
               <CaseCard
                 caseItem={featuredCase}
-                title={getCaseTranslation(featuredCase.id, "title")}
+                title={getCaseTranslation(featuredCase.slug, "title")}
                 featured
               />
             </div>
@@ -353,9 +312,9 @@ export function CasesSection() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {otherCases.map((caseItem) => (
               <CaseCard
-                key={caseItem.id}
+                key={caseItem.slug}
                 caseItem={caseItem}
-                title={getCaseTranslation(caseItem.id, "title")}
+                title={getCaseTranslation(caseItem.slug, "title")}
               />
             ))}
             <ViewAllCard text={t("viewAll")} />
@@ -375,7 +334,7 @@ export function CasesSection() {
         >
           {mobileCases.map((caseItem, i) => (
             <motion.div
-              key={caseItem.id}
+              key={caseItem.slug}
               ref={i === 0 ? firstCaseRef : i === 4 ? lastCaseRef : undefined}
               variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -383,35 +342,37 @@ export function CasesSection() {
               }}
               className="mb-4"
             >
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-                <Image
-                  src={caseItem.image}
-                  alt={getCaseTranslation(caseItem.id, "title")}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                />
-                <div className="absolute top-4 right-4 z-20">
-                  <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-                  <div className="flex flex-wrap gap-1.5 mb-2">
-                    {caseItem.tags.slice(0, 2).map((tag, idx) => (
-                      <Badge
-                        key={idx}
-                        variant="outline"
-                        className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+              <Link href={`/cases/${caseItem.slug}`}>
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
+                  <Image
+                    src={caseItem.cardImage}
+                    alt={getCaseTranslation(caseItem.slug, "title")}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                  />
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-white leading-tight line-clamp-1">
-                    {getCaseTranslation(caseItem.id, "title")}
-                  </h3>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                    <div className="flex flex-wrap gap-1.5 mb-2">
+                      {caseItem.tags.slice(0, 2).map((tag, idx) => (
+                        <Badge
+                          key={idx}
+                          variant="outline"
+                          className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <h3 className="text-lg font-bold text-white leading-tight line-clamp-1">
+                      {getCaseTranslation(caseItem.slug, "title")}
+                    </h3>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -105,7 +105,7 @@ function PlatformsHero() {
                 stagger={0.03}
                 threshold={0.1}
                 triggerOnce={true}
-                triggerOnHover={true}
+                triggerOnHover={false}
                 respectReducedMotion={true}
               />
             </motion.div>
@@ -278,7 +278,7 @@ function PlatformTypesSection() {
               stagger={0.03}
               threshold={0.1}
               triggerOnce={true}
-              triggerOnHover={true}
+              triggerOnHover={false}
               respectReducedMotion={true}
             />
             <div className="border-l-2 border-[#C9FD48] pl-4 md:pl-[1vw]">

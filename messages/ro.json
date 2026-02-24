@@ -5,6 +5,7 @@
     "about": "Despre noi",
     "contact": "Contact",
     "packages": "Pachete și prețuri",
+    "calculator": "Calculator",
     "cta": "Hai sa discutam",
     "language": "Limba",
     "allSolutions": "Toate solutiile",
@@ -23,6 +24,22 @@
       "brandingDesc": "Identitate si stil vizual",
       "support": "Suport",
       "supportDesc": "Suport tehnic 24/7"
+    },
+    "services": "Servicii",
+    "allServices": "Toate serviciile",
+    "servicesMenu": {
+      "landing": "Landing Page",
+      "landingDesc": "Pagini de aterizare cu conversie ridicată",
+      "ecommerce": "Magazin Online",
+      "ecommerceDesc": "Dezvoltare magazine online",
+      "corporate": "Site Corporativ",
+      "corporateDesc": "Site-uri web profesionale de business",
+      "webapp": "Aplicație Web",
+      "webappDesc": "Aplicații web personalizate",
+      "mobile": "Aplicație Mobilă",
+      "mobileDesc": "Aplicații iOS și Android",
+      "marketing": "Marketing",
+      "marketingDesc": "Marketing digital și promovare"
     }
   },
   "Hero": {
@@ -85,48 +102,31 @@
     "description": "Proiecte reale care au ajutat clienții noștri să-și atingă obiectivele de business",
     "viewAll": "Vezi toate cazurile",
     "viewProject": "Vezi proiectul",
+    "pageTitle": "Cazurile noastre",
+    "pageDescription": "Explorați portofoliul nostru de proiecte digitale de succes: web, mobile, branding și automatizare.",
+    "filterAll": "Toate",
+    "filterWeb": "Web",
+    "filterMobile": "Mobile",
+    "filterBranding": "Branding",
+    "filterPlatforms": "Platforme",
+    "backToCases": "Înapoi la cazuri",
+    "visitSite": "Vizitează site-ul",
+    "challengeLabel": "Provocare",
+    "solutionLabel": "Soluție",
+    "resultLabel": "Rezultat",
+    "mobileVersion": "Versiunea mobilă",
+    "cta": {
+      "title": "Ai un proiect în minte?",
+      "button": "Hai să discutăm",
+      "contactText": "Sau scrie-ne la"
+    },
     "items": {
-      "0": {
-        "title": "goQode Project",
-        "description": "Soluție web completă construită cu tehnologii moderne și cele mai bune practici UX",
-        "challenge": "Clientul avea nevoie de un produs digital performant și scalabil",
-        "solution": "Dezvoltare full-cycle de la design până la lansare",
-        "result": "Lansare reușită"
-      },
-      "1": {
-        "title": "goQode Project",
-        "description": "Aplicație mobilă cross-platform cu interfață intuitivă și experiență fluidă",
-        "challenge": "Crearea unui produs care funcționează impecabil pe toate dispozitivele",
-        "solution": "Stack tehnologic modern cu accent pe performanță și utilizabilitate",
-        "result": "Lansare reușită"
-      },
-      "2": {
-        "title": "goQode Project",
-        "description": "Aplicație web personalizată cu analiză avansată și vizualizare a datelor în timp real",
-        "challenge": "Construirea unei platforme robuste pentru decizii bazate pe date",
-        "solution": "Arhitectură scalabilă cu procesare optimizată a datelor",
-        "result": "Lansare reușită"
-      },
-      "3": {
-        "title": "goQode Project",
-        "description": "Identitate de brand completă și sistem de design vizual pentru o companie în creștere",
-        "challenge": "Crearea unei prezențe de brand distinctivă și memorabilă",
-        "solution": "Branding strategic cu ghiduri de stil complete",
-        "result": "Lansare reușită"
-      },
-      "4": {
-        "title": "goQode Project",
-        "description": "Platformă digitală de management al evenimentelor cu sistem de înregistrare și ticketing",
-        "challenge": "Simplificarea experienței evenimentelor pentru organizatori și participanți",
-        "solution": "Soluție completă pentru evenimente cu integrări moderne",
-        "result": "Lansare reușită"
-      },
-      "5": {
-        "title": "goQode Project",
-        "description": "Sistem de automatizare a proceselor de business cu integrări și fluxuri inteligente",
-        "challenge": "Eliminarea proceselor manuale și îmbunătățirea eficienței operaționale",
-        "solution": "Automatizare personalizată cu integrare perfectă a sistemelor",
-        "result": "Lansare reușită"
+      "lineproduction": {
+        "title": "Line Production",
+        "description": "Site corporativ pentru un studio de producție video din Moldova cu design cinematic îndrăzneț, interacțiuni animate și o vitrină a proiectelor",
+        "challenge": "Line Production avea nevoie de un site care să reflecte calitatea lucrărilor lor video — cinematic, dinamic și memorabil. Site-ul vechi nu transmitea amploarea și profesionalismul studioului",
+        "solution": "Am dezvoltat un site cu temă întunecată, tipografie boldă, animații fluide și un carusel interactiv de proiecte. Designul subliniază natura vizuală a afacerii cu imagini full-bleed și integrare video",
+        "result": "Un site modern și de impact care prezintă eficient portofoliul studioului, atrage clienți noi precum Moldcell, MICB și Ultra, și consolidează brandul Line Production ca lider în producția video din Moldova"
       }
     }
   },
@@ -179,12 +179,33 @@
       "title": "Împărtășește ideea ta",
       "message": "DESCRIE IDEEA TA",
       "messagePlaceholder": "Descrie proiectul sau ideea ta...",
-      "selectService": "Selectează un serviciu:",
-      "services": {
-        "0": "Website",
-        "1": "Aplicație mobilă",
-        "2": "Branding",
-        "3": "Automatizare",
+      "selectSolution": "Selectează o soluție:",
+      "solutions": {
+        "0": "Lansare afacere",
+        "1": "Creștere vânzări",
+        "2": "Platforme online",
+        "3": "Soluții event",
+        "4": "Automatizare",
+        "5": "Branding",
+        "6": "Suport",
+        "7": "Să discutăm"
+      },
+      "selectServiceType": "Selectează un serviciu:",
+      "serviceTypes": {
+        "0": "Landing Page",
+        "1": "E-commerce",
+        "2": "Site corporativ",
+        "3": "Aplicație web",
+        "4": "Aplicație mobilă",
+        "5": "Marketing digital",
+        "6": "Să discutăm"
+      },
+      "selectBudget": "Bugetul proiectului:",
+      "budgets": {
+        "0": "< €1K",
+        "1": "€1K — €5K",
+        "2": "€5K — €15K",
+        "3": "€15K — €50K",
         "4": "Să discutăm"
       },
       "agree": "Prin trimiterea acestui mesaj sunt de acord să împărtășesc informațiile mele personale",
@@ -285,22 +306,38 @@
       "0": {
         "title": "Brief",
         "description": "Cunoaștem afacerea, obiectivele și sarcinile tale",
-        "includes": ["Întâlnire/apel", "Analiza cerințelor", "Definirea KPI"]
+        "includes": [
+          "Întâlnire/apel",
+          "Analiza cerințelor",
+          "Definirea KPI"
+        ]
       },
       "1": {
         "title": "Analiză",
         "description": "Cercetăm piața, concurenții și publicul țintă",
-        "includes": ["Analiza concurenței", "Cercetare audiență", "Dezvoltare strategie"]
+        "includes": [
+          "Analiza concurenței",
+          "Cercetare audiență",
+          "Dezvoltare strategie"
+        ]
       },
       "2": {
         "title": "Execuție",
         "description": "Proiectăm, designăm și dezvoltăm soluția",
-        "includes": ["Design UX/UI", "Dezvoltare", "Integrări"]
+        "includes": [
+          "Design UX/UI",
+          "Dezvoltare",
+          "Integrări"
+        ]
       },
       "3": {
         "title": "Lansare",
         "description": "Implementăm, testăm și optimizăm rezultatul",
-        "includes": ["Testare", "Deploy", "Analiză și optimizare"]
+        "includes": [
+          "Testare",
+          "Deploy",
+          "Analiză și optimizare"
+        ]
       }
     },
     "cta": {
@@ -650,21 +687,51 @@
       "before": {
         "title": "Muncă Manuală",
         "items": {
-          "0": { "label": "Introducere Date", "value": "40h/lună" },
-          "1": { "label": "Timp de Răspuns", "value": "2-4 ore" },
-          "2": { "label": "Erori Umane", "value": "15-20%" },
-          "3": { "label": "Program de Lucru", "value": "9–18" },
-          "4": { "label": "Generare Rapoarte", "value": "1-2 zile" }
+          "0": {
+            "label": "Introducere Date",
+            "value": "40h/lună"
+          },
+          "1": {
+            "label": "Timp de Răspuns",
+            "value": "2-4 ore"
+          },
+          "2": {
+            "label": "Erori Umane",
+            "value": "15-20%"
+          },
+          "3": {
+            "label": "Program de Lucru",
+            "value": "9–18"
+          },
+          "4": {
+            "label": "Generare Rapoarte",
+            "value": "1-2 zile"
+          }
         }
       },
       "after": {
         "title": "Cu Automatizare",
         "items": {
-          "0": { "label": "Introducere Date", "value": "0h/lună" },
-          "1": { "label": "Timp de Răspuns", "value": "< 1 secundă" },
-          "2": { "label": "Erori Umane", "value": "0%" },
-          "3": { "label": "Program de Lucru", "value": "24/7" },
-          "4": { "label": "Generare Rapoarte", "value": "Timp real" }
+          "0": {
+            "label": "Introducere Date",
+            "value": "0h/lună"
+          },
+          "1": {
+            "label": "Timp de Răspuns",
+            "value": "< 1 secundă"
+          },
+          "2": {
+            "label": "Erori Umane",
+            "value": "0%"
+          },
+          "3": {
+            "label": "Program de Lucru",
+            "value": "24/7"
+          },
+          "4": {
+            "label": "Generare Rapoarte",
+            "value": "Timp real"
+          }
         }
       }
     },
@@ -672,31 +739,74 @@
       "label": "Cum Lucrăm",
       "title": "De la Idee la Autopilot",
       "steps": {
-        "0": { "title": "Audit", "description": "Analizăm procesele curente și identificăm blocajele care pot fi automatizate." },
-        "1": { "title": "Design", "description": "Proiectăm fluxurile de automatizare și integrările adaptate nevoilor tale." },
-        "2": { "title": "Dezvoltare", "description": "Dezvoltăm, conectăm API-uri, configurăm boți și setăm toate automatizările." },
-        "3": { "title": "Testare", "description": "Testăm riguros fiecare scenariu pentru funcționare fiabilă 24/7." },
-        "4": { "title": "Lansare & Suport", "description": "Implementăm în producție și asigurăm monitorizare și optimizare continuă." }
+        "0": {
+          "title": "Audit",
+          "description": "Analizăm procesele curente și identificăm blocajele care pot fi automatizate."
+        },
+        "1": {
+          "title": "Design",
+          "description": "Proiectăm fluxurile de automatizare și integrările adaptate nevoilor tale."
+        },
+        "2": {
+          "title": "Dezvoltare",
+          "description": "Dezvoltăm, conectăm API-uri, configurăm boți și setăm toate automatizările."
+        },
+        "3": {
+          "title": "Testare",
+          "description": "Testăm riguros fiecare scenariu pentru funcționare fiabilă 24/7."
+        },
+        "4": {
+          "title": "Lansare & Suport",
+          "description": "Implementăm în producție și asigurăm monitorizare și optimizare continuă."
+        }
       }
     },
     "results": {
       "label": "Rezultate",
       "title": "Ce Obții",
       "metrics": {
-        "0": { "value": "70", "suffix": "%", "description": "Mai puțină muncă de rutină" },
-        "1": { "value": "3", "suffix": "×", "description": "Timp de răspuns mai rapid" },
-        "2": { "value": "24", "suffix": "/7", "description": "Funcționare non-stop" },
-        "3": { "value": "0", "suffix": "", "description": "Erori umane în procese" }
+        "0": {
+          "value": "70",
+          "suffix": "%",
+          "description": "Mai puțină muncă de rutină"
+        },
+        "1": {
+          "value": "3",
+          "suffix": "×",
+          "description": "Timp de răspuns mai rapid"
+        },
+        "2": {
+          "value": "24",
+          "suffix": "/7",
+          "description": "Funcționare non-stop"
+        },
+        "3": {
+          "value": "0",
+          "suffix": "",
+          "description": "Erori umane în procese"
+        }
       }
     },
     "stack": {
       "label": "Tehnologii",
       "title": "Stack-ul nostru",
       "categories": {
-        "0": { "title": "Backend", "tools": "Node.js, Python, TypeScript, Go" },
-        "1": { "title": "Mesagerie", "tools": "Telegram API, WhatsApp Business, Viber" },
-        "2": { "title": "Date", "tools": "PostgreSQL, Redis, ClickHouse, S3" },
-        "3": { "title": "AI & ML", "tools": "OpenAI, Claude, LangChain, Pinecone" }
+        "0": {
+          "title": "Backend",
+          "tools": "Node.js, Python, TypeScript, Go"
+        },
+        "1": {
+          "title": "Mesagerie",
+          "tools": "Telegram API, WhatsApp Business, Viber"
+        },
+        "2": {
+          "title": "Date",
+          "tools": "PostgreSQL, Redis, ClickHouse, S3"
+        },
+        "3": {
+          "title": "AI & ML",
+          "tools": "OpenAI, Claude, LangChain, Pinecone"
+        }
       }
     },
     "cta": {
@@ -714,10 +824,22 @@
       "title": "Un lead. Cinci acțiuni. Trei secunde.",
       "trigger": "Lead nou de pe site",
       "steps": {
-        "0": { "title": "Analiză AI", "desc": "Cerere clasificată" },
-        "1": { "title": "CRM", "desc": "Contact creat" },
-        "2": { "title": "Email", "desc": "Răspuns trimis" },
-        "3": { "title": "Email", "desc": "Manager notificat" }
+        "0": {
+          "title": "Analiză AI",
+          "desc": "Cerere clasificată"
+        },
+        "1": {
+          "title": "CRM",
+          "desc": "Contact creat"
+        },
+        "2": {
+          "title": "Email",
+          "desc": "Răspuns trimis"
+        },
+        "3": {
+          "title": "Email",
+          "desc": "Manager notificat"
+        }
       },
       "done": "Lead procesat",
       "time": "3 sec"
@@ -733,11 +855,26 @@
       "label": "Cum funcționează",
       "title": "Ciclul complet al evenimentului",
       "steps": {
-        "0": { "title": "Site eveniment", "description": "Vânzare bilete" },
-        "1": { "title": "Bilete QR", "description": "Generare și livrare" },
-        "2": { "title": "Check-in", "description": "Scanare la intrare" },
-        "3": { "title": "Analiză", "description": "Date în timp real" },
-        "4": { "title": "Post-eveniment", "description": "Rapoarte și follow-up" }
+        "0": {
+          "title": "Site eveniment",
+          "description": "Vânzare bilete"
+        },
+        "1": {
+          "title": "Bilete QR",
+          "description": "Generare și livrare"
+        },
+        "2": {
+          "title": "Check-in",
+          "description": "Scanare la intrare"
+        },
+        "3": {
+          "title": "Analiză",
+          "description": "Date în timp real"
+        },
+        "4": {
+          "title": "Post-eveniment",
+          "description": "Rapoarte și follow-up"
+        }
       }
     },
     "services": {
@@ -934,11 +1071,26 @@
       "label": "Proces",
       "title": "Cum funcționează",
       "steps": {
-        "0": { "title": "Contact", "description": "Telefon sau email—alegerea ta. Creăm un tichet automat." },
-        "1": { "title": "Triere", "description": "Evaluăm severitatea (P0-P3) și direcționăm către specialistul potrivit." },
-        "2": { "title": "Diagnostic", "description": "Inginerul investighează loguri și identifică cauza principală." },
-        "3": { "title": "Rezolvare", "description": "Remediere implementată, testată și implementată în producție." },
-        "4": { "title": "Urmărire", "description": "Confirmăm rezolvarea și discutăm măsuri preventive." }
+        "0": {
+          "title": "Contact",
+          "description": "Telefon sau email—alegerea ta. Creăm un tichet automat."
+        },
+        "1": {
+          "title": "Triere",
+          "description": "Evaluăm severitatea (P0-P3) și direcționăm către specialistul potrivit."
+        },
+        "2": {
+          "title": "Diagnostic",
+          "description": "Inginerul investighează loguri și identifică cauza principală."
+        },
+        "3": {
+          "title": "Rezolvare",
+          "description": "Remediere implementată, testată și implementată în producție."
+        },
+        "4": {
+          "title": "Urmărire",
+          "description": "Confirmăm rezolvarea și discutăm măsuri preventive."
+        }
       }
     },
     "cta": {
@@ -959,11 +1111,11 @@
       "cta": "Discutăm brandul tău"
     },
     "manifesto": {
-      "label": "Filozofie",
       "0": "Prețul aduce un client o singură dată.",
       "1": "Brandul îl face să rămână pentru totdeauna.",
       "2": "Nu e design — e ceea ce oamenii simt despre afacerea ta înainte să spună «bună ziua».",
-      "3": "Noi transformăm această senzație într-un sistem."
+      "3": "Noi transformăm această senzație într-un sistem.",
+      "label": "Filozofie"
     },
     "system": {
       "label": "Sistemul brandului",
@@ -975,22 +1127,57 @@
       "without_title": "Fără Branding",
       "with_title": "Cu Branding Profesional",
       "rows": {
-        "0": { "aspect": "Prima impresie", "without": "Aspect generic", "with": "Identitate unică" },
-        "1": { "aspect": "Încrederea clienților", "without": "Recunoaștere scăzută", "with": "Imagine profesională" },
-        "2": { "aspect": "Prețuri", "without": "Competiție pe preț", "with": "Poziționare premium" },
-        "3": { "aspect": "Marketing", "without": "Materiale haotice", "with": "Sistem coerent" },
-        "4": { "aspect": "Scalare", "without": "Refaci de fiecare dată", "with": "Un sistem, ∞ utilizări" }
+        "0": {
+          "aspect": "Prima impresie",
+          "without": "Aspect generic",
+          "with": "Identitate unică"
+        },
+        "1": {
+          "aspect": "Încrederea clienților",
+          "without": "Recunoaștere scăzută",
+          "with": "Imagine profesională"
+        },
+        "2": {
+          "aspect": "Prețuri",
+          "without": "Competiție pe preț",
+          "with": "Poziționare premium"
+        },
+        "3": {
+          "aspect": "Marketing",
+          "without": "Materiale haotice",
+          "with": "Sistem coerent"
+        },
+        "4": {
+          "aspect": "Scalare",
+          "without": "Refaci de fiecare dată",
+          "with": "Un sistem, ∞ utilizări"
+        }
       }
     },
     "deliverables": {
       "label": "Ce primești",
       "title": "Pachet complet de brand",
       "items": {
-        "brandbook": { "title": "Brand Book", "description": "Ghid complet cu reguli, șabloane și specificații pentru aplicarea consistentă a brandului" },
-        "logo": { "title": "Sistem de logo", "description": "Primar, inversat, monocrom, iconiță și versiune orizontală" },
-        "colors": { "title": "Paletă de culori", "description": "Culori primare, secundare și de accent cu coduri exacte pentru toate mediile" },
-        "typography": { "title": "Tipografie", "description": "Combinare fonturi, scară dimensiuni, ierarhie greutăți, reguli spațiere" },
-        "digital": { "title": "Materiale digitale", "description": "Kit social media, șabloane prezentări, cărți de vizită, anteturi" }
+        "brandbook": {
+          "title": "Brand Book",
+          "description": "Ghid complet cu reguli, șabloane și specificații pentru aplicarea consistentă a brandului"
+        },
+        "logo": {
+          "title": "Sistem de logo",
+          "description": "Primar, inversat, monocrom, iconiță și versiune orizontală"
+        },
+        "colors": {
+          "title": "Paletă de culori",
+          "description": "Culori primare, secundare și de accent cu coduri exacte pentru toate mediile"
+        },
+        "typography": {
+          "title": "Tipografie",
+          "description": "Combinare fonturi, scară dimensiuni, ierarhie greutăți, reguli spațiere"
+        },
+        "digital": {
+          "title": "Materiale digitale",
+          "description": "Kit social media, șabloane prezentări, cărți de vizită, anteturi"
+        }
       }
     },
     "process": {
@@ -1071,9 +1258,21 @@
       "label": "De ce contează",
       "title": "Brand = Încredere",
       "items": {
-        "0": { "value": "80", "suffix": "%", "label": "dintre consumatori au încredere în branduri consistente" },
-        "1": { "value": "3", "suffix": "x", "label": "vizibilitate mai mare pentru branduri sistematice" },
-        "2": { "value": "23", "suffix": "%", "label": "creștere medie a veniturilor cu branding consistent" }
+        "0": {
+          "value": "80",
+          "suffix": "%",
+          "label": "dintre consumatori au încredere în branduri consistente"
+        },
+        "1": {
+          "value": "3",
+          "suffix": "x",
+          "label": "vizibilitate mai mare pentru branduri sistematice"
+        },
+        "2": {
+          "value": "23",
+          "suffix": "%",
+          "label": "creștere medie a veniturilor cu branding consistent"
+        }
       }
     },
     "cta": {
@@ -1085,6 +1284,496 @@
         "1": "2–3 concepte",
         "2": "Pachet complet de asset-uri"
       }
+    }
+  },
+  "Calculator": {
+    "heading": "Calculează\ncostul\nproiectului.",
+    "estimate": "Cost estimat:",
+    "perMonth": "/lună",
+    "featuresCount": "selectate",
+    "from": "de la",
+    "to": "până la",
+    "continue": "Următorul",
+    "back": "Înapoi",
+    "submit": "Calculează",
+    "step1": {
+      "indicator": "1/4",
+      "title": "Ce ai nevoie?",
+      "types": {
+        "0": "Landing Page",
+        "1": "Magazin Online",
+        "2": "Site Corporativ",
+        "3": "Aplicație Web",
+        "4": "Aplicație Mobilă",
+        "5": "Branding",
+        "6": "Marketing"
+      }
+    },
+    "step2": {
+      "indicator": "2/4",
+      "title": "Nivel design",
+      "levels": {
+        "0": "Șablon",
+        "1": "Semi-personalizat",
+        "2": "Complet personalizat"
+      },
+      "descriptions": {
+        "0": "Design pre-construit adaptat conținutului tău",
+        "1": "Layout personalizat cu elemente unice de brand",
+        "2": "Design unic de la zero, fiecare detaliu"
+      }
+    },
+    "step3": {
+      "indicator": "3/4",
+      "title": "Funcții necesare",
+      "recommended": "Rec",
+      "scopeTitle": "Amploarea proiectului",
+      "categories": {
+        "0": {
+          "designUx": "Design & UX",
+          "leadCapture": "Captare Lead-uri",
+          "conversionTrust": "Conversie & Încredere",
+          "technical": "Tehnic"
+        },
+        "1": {
+          "storefront": "Vitrină",
+          "paymentsOrders": "Plăți & Comenzi",
+          "management": "Management",
+          "growth": "Creștere & Marketing"
+        },
+        "2": {
+          "contentManagement": "Management Conținut",
+          "companyPages": "Pagini Companie",
+          "communication": "Comunicare",
+          "technical": "Tehnic"
+        },
+        "3": {
+          "authUsers": "Autentificare & Utilizatori",
+          "coreFeatures": "Funcții Principale",
+          "dataIntegration": "Date & Integrări",
+          "infrastructure": "Infrastructură"
+        },
+        "4": {
+          "platformBase": "Platformă",
+          "coreFeatures": "Funcții Principale",
+          "advanced": "Funcții Avansate",
+          "backendAnalytics": "Backend & Analiză"
+        },
+        "5": {
+          "coreIdentity": "Identitate de Bază",
+          "documentation": "Documentație Brand",
+          "digitalAssets": "Active Digitale",
+          "print": "Materiale Tipărite"
+        },
+        "6": {
+          "socialMedia": "Social Media",
+          "paidAds": "Publicitate Plătită",
+          "organicGrowth": "Creștere Organică",
+          "strategyAnalytics": "Strategie & Analiză"
+        }
+      },
+      "scopes": {
+        "0": {
+          "sections": {
+            "label": "Secțiuni pagină",
+            "standard": "5–7 secțiuni",
+            "extended": "8–12 secțiuni",
+            "complex": "13+ secțiuni"
+          },
+          "timeline": {
+            "label": "Termen",
+            "standard": "Standard (3–4 săptămâni)",
+            "rush": "Urgent (1–2 săptămâni)"
+          }
+        },
+        "1": {
+          "products": {
+            "label": "Număr produse",
+            "small": "Sub 100",
+            "medium": "100–1.000",
+            "large": "1.000–10.000",
+            "enterprise": "10.000+"
+          },
+          "timeline": {
+            "label": "Termen",
+            "standard": "Standard (6–10 săptămâni)",
+            "rush": "Urgent (3–5 săptămâni)"
+          }
+        },
+        "2": {
+          "pages": {
+            "label": "Pagini unice",
+            "small": "5–10 pagini",
+            "medium": "10–20 pagini",
+            "large": "20–40 pagini",
+            "enterprise": "40+ pagini"
+          },
+          "timeline": {
+            "label": "Termen",
+            "standard": "Standard (4–6 săptămâni)",
+            "rush": "Urgent (2–3 săptămâni)"
+          }
+        },
+        "3": {
+          "users": {
+            "label": "Utilizatori așteptați",
+            "startup": "Sub 1.000",
+            "growing": "1.000–10.000",
+            "scale": "10.000–100.000",
+            "enterprise": "100.000+"
+          },
+          "timeline": {
+            "label": "Termen",
+            "standard": "Standard (8–14 săptămâni)",
+            "rush": "Urgent (4–7 săptămâni)"
+          }
+        },
+        "4": {
+          "platform": {
+            "label": "Platformă",
+            "single": "O platformă (iOS sau Android)",
+            "both": "Ambele iOS + Android"
+          },
+          "screens": {
+            "label": "Număr ecrane",
+            "simple": "5–10 ecrane",
+            "moderate": "10–20 ecrane",
+            "complex": "20–40 ecrane",
+            "enterprise": "40+ ecrane"
+          }
+        },
+        "5": {
+          "scope": {
+            "label": "Amploare brand",
+            "startup": "Brand nou / Startup",
+            "rebrand": "Rebranding companie",
+            "multibrand": "Portofoliu multi-brand"
+          },
+          "timeline": {
+            "label": "Termen",
+            "standard": "Standard (3–5 săptămâni)",
+            "rush": "Urgent (1–2 săptămâni)"
+          }
+        },
+        "6": {
+          "contract": {
+            "label": "Durata contractului",
+            "short": "1–3 luni",
+            "medium": "3–6 luni (−10%)",
+            "long": "6–12 luni (−20%)"
+          }
+        }
+      },
+      "descriptions": {
+        "0": {
+          "animations": "Efecte fluide de scroll, tranziții hover, animații de încărcare",
+          "parallaxScrolling": "Efect de adâncime în straturi la scroll",
+          "videoBackground": "Fundal video fullscreen sau pe secțiuni cu imagine fallback",
+          "darkLightTheme": "Comutare automată a temei cu buton toggle",
+          "contactForm": "Formular optimizat cu validare și livrare instant pe email",
+          "emailCapture": "Popup de colectare email cu declanșatoare temporizate",
+          "chatWidget": "Integrare chat live (Tawk.to, Crisp, etc.)",
+          "phoneCallback": "Formular de cerere apel cu programare",
+          "quizFunnel": "Chestionar interactiv pentru calificarea lead-urilor",
+          "socialProof": "Testimoniale clienți, studii de caz, insigne de încredere",
+          "faqSection": "Acordeon FAQ extensibil cu date structurate",
+          "pricingTable": "Tabel comparativ de prețuri interactiv",
+          "countdown": "Cronometru de urgență pentru oferte limitate",
+          "abTesting": "Configurare teste split pentru titluri, CTA-uri, layout-uri",
+          "analytics": "Google Analytics 4, Meta Pixel, urmărire conversii",
+          "seo": "Meta taguri, date structurate, sitemap, Core Web Vitals",
+          "speedOptimization": "Optimizare imagini, code splitting, lazy loading",
+          "cookieConsent": "Banner cookie GDPR cu management consimțământ"
+        },
+        "1": {
+          "productCatalog": "Grilă produse cu imagini, prețuri, badge-uri, info rapidă",
+          "filtersSearch": "Filtrare multi-fațetă, căutare instantanee, opțiuni sortare",
+          "productVariants": "Selectoare mărime, culoare, material cu urmărire stoc",
+          "productComparison": "Tabel comparativ caracteristici produse",
+          "quickView": "Preview produs în popup fără navigare",
+          "wishlist": "Salvare produse favorite cu stocare persistentă",
+          "cartCheckout": "Coș de cumpărături cu flux checkout multi-pas",
+          "paymentGateway": "Stripe, PayPal sau alte plăți internaționale",
+          "localPayments": "Paynet, Maib și alte metode locale de plată",
+          "orderTracking": "Actualizări status comandă în timp real",
+          "invoiceGeneration": "Generare și livrare automată facturi PDF",
+          "inventory": "Urmărire stoc, alerte stoc redus, sincronizare depozit",
+          "shipping": "Integrare curier, calcul tarife, tracking",
+          "promoSystem": "Coduri discount, vânzări flash, oferte bundle",
+          "reviews": "Recenzii clienți cu rating-uri și moderare",
+          "multiCurrency": "Conversie automată valută cu geo-detecție",
+          "emailIntegration": "Integrare Mailchimp, SendGrid sau Klaviyo",
+          "abandonedCart": "Remindere automate pentru comenzi nefinalizate",
+          "seo": "Schema produse, sitemap, optimizare meta",
+          "analytics": "Tracking e-commerce avansat, analiză funnel"
+        },
+        "2": {
+          "cms": "Sistem management conținut pentru actualizări ușoare",
+          "blog": "Blog cu categorii, taguri, pagini autor și feed RSS",
+          "mediaGallery": "Galerie foto și video cu lightbox și filtrare",
+          "documentLibrary": "Fișiere descărcabile organizate pe categorii",
+          "teamDirectory": "Profiluri membri echipă cu fotografii și bio",
+          "portfolio": "Vitrina proiecte cu filtre, imagini și studii de caz",
+          "companyTimeline": "Istoria interactivă a companiei și jaloane",
+          "careers": "Pagini de joburi cu formulare de aplicare",
+          "clientLogos": "Grilă logo-uri clienți și parteneri cu linkuri",
+          "contactForms": "Formulare multiple cu rutare pe departamente",
+          "mapIntegration": "Google Maps sau Mapbox cu markere personalizate",
+          "chatWidget": "Integrare chat live pentru suport instant",
+          "newsletter": "Formular abonare email cu gestionare listă",
+          "multilingual": "Traducere completă conținut pentru 2-3 limbi",
+          "seo": "SEO tehnic, management meta, date structurate",
+          "accessibility": "Conformitate WCAG 2.1 AA pentru acces inclusiv",
+          "cookieConsent": "Banner cookie GDPR cu management consimțământ"
+        },
+        "3": {
+          "auth": "Autentificare email/parolă, magic link sau SSO",
+          "socialAuth": "Login Google, Apple, GitHub",
+          "twoFactorAuth": "Securitate 2FA prin SMS sau aplicație authenticator",
+          "rbac": "Control acces bazat pe roluri pentru sisteme multi-utilizator",
+          "userProfiles": "Setări utilizator, upload avatar, preferințe",
+          "adminDashboard": "Panou admin complet cu analiză și management",
+          "dataVisualization": "Grafice interactive, diagrame și tabele de date",
+          "searchAndFilters": "Căutare full-text cu filtrare fațetată",
+          "notifications": "Sistem notificări in-app, email și push",
+          "realTimeUpdates": "Sincronizare date live via WebSockets sau SSE",
+          "apiIntegration": "API REST sau GraphQL pentru servicii terțe",
+          "dataExport": "Export date în format CSV, PDF sau Excel",
+          "fileStorage": "Upload fișiere cu stocare cloud (S3, Cloudflare R2)",
+          "crmIntegration": "Sincronizare HubSpot, Salesforce sau CRM custom",
+          "paymentIntegration": "Stripe, PayPal sau sistem billing custom",
+          "emailSystem": "Emailuri tranzacționale automate (welcome, reset, etc.)",
+          "auditLog": "Urmărire toate acțiunile utilizatorilor și schimbări sistem",
+          "backupRecovery": "Backup-uri automate bază de date cu opțiune restaurare",
+          "cicdPipeline": "Pipeline automatizat testare, build și deployment"
+        },
+        "4": {
+          "ios": "Aplicație iOS nativă pentru iPhone cu deployment App Store",
+          "android": "Aplicație Android nativă cu deployment Google Play",
+          "tablet": "Layout-uri optimizate pentru iPad și tablete Android",
+          "appStoreAssets": "Capturi ecran, descrieri, cuvinte cheie pentru store",
+          "pushNotifications": "Notificări push targetate cu programare",
+          "socialAuth": "Login Google, Apple, Facebook",
+          "userProfiles": "Profiluri cu avatar, setări, preferințe",
+          "onboarding": "Ecrane de bun venit prezentând funcțiile aplicației",
+          "deepLinking": "Linkuri directe către ecrane specifice din web",
+          "geolocation": "Tracking GPS, hărți, funcții bazate pe locație",
+          "camera": "Captură foto/video cu filtre și editare",
+          "offlineMode": "Funcționalitate completă fără conexiune internet",
+          "inAppPayments": "Abonamente și achiziții unice în aplicație",
+          "biometricAuth": "Face ID, Touch ID, autentificare prin amprentă",
+          "qrBarcode": "Scanare cod QR și cod de bare",
+          "adminPanel": "Panou admin web pentru management conținut și utilizatori",
+          "analytics": "Firebase Analytics, raportare erori, comportament utilizatori",
+          "chatMessaging": "Mesagerie în timp real între utilizatori",
+          "contentFeed": "Feed conținut stil social cu likes și comentarii",
+          "videoStreaming": "Redare video și integrare live streaming"
+        },
+        "5": {
+          "logoSystem": "Logo principal, variații, monocrom, favicon",
+          "colorPalette": "Culori primare, secundare, accent cu reguli de utilizare",
+          "typography": "Selecție fonturi, ierarhie, scală de mărimi",
+          "iconography": "Set de iconuri personalizate potrivite personalității brandului",
+          "illustrations": "Stil de ilustrații specific brandului și active",
+          "brandbook": "Document complet ghid de brand (40-60 pagini)",
+          "brandGuidelines": "Card referință rapidă (4-8 pagini) pentru echipe",
+          "brandStrategy": "Poziționare piață, audiență, ton de comunicare",
+          "namingTagline": "Opțiuni naming brand și dezvoltare tagline",
+          "socialKit": "Șabloane pentru postări Instagram, Facebook, LinkedIn",
+          "emailSignature": "Semnătură email HTML cu elemente de brand",
+          "presentations": "Șabloane PowerPoint/Keynote cu stilare brand",
+          "websiteMockups": "Mockup-uri pagini cheie website arătând brandul în context",
+          "stationery": "Cărți de vizită, hârtie cu antet, plicuri",
+          "packaging": "Design ambalaj și etichetă produs",
+          "signage": "Semnalistică birou, bannere, materiale expo"
+        },
+        "6": {
+          "smm": "Planificare conținut, postare, engagement comunitate",
+          "contentCreation": "Grafice, reels, stories pentru platforme sociale",
+          "communityManagement": "Moderare comentarii, răspunsuri DM, engagement",
+          "influencerOutreach": "Identificare influenceri, outreach, campanii",
+          "targetedAds": "Management campanii publicitate Facebook & Instagram",
+          "googleAds": "Campanii căutare, display și shopping",
+          "youtubeAds": "Campanii publicitate video pe YouTube",
+          "tiktokAds": "Setup și optimizare campanii TikTok",
+          "retargeting": "Re-engagement vizitatori care nu au convertit",
+          "seoPromotion": "SEO on-page, link building, monitorizare cuvinte cheie",
+          "contentMarketing": "Articole blog, ghiduri și conținut expert",
+          "emailMarketing": "Campanii newsletter cu fluxuri de automatizare",
+          "localSeo": "Google Business Profile, citări locale, recenzii",
+          "brandStrategy": "Poziționare brand și strategie de marketing",
+          "analyticsReporting": "Rapoarte KPI lunare cu insight-uri acționabile",
+          "competitorMonitoring": "Monitorizare activitate competitori și analiză",
+          "conversionOptimization": "Optimizare landing page și funnel",
+          "marketResearch": "Analiză audiență țintă și oportunități de piață"
+        }
+      },
+      "features": {
+        "0": {
+          "animations": "Animații și Efecte",
+          "parallaxScrolling": "Parallax Scrolling",
+          "videoBackground": "Fundal Video",
+          "darkLightTheme": "Mod Dark / Light",
+          "contactForm": "Formular de Contact",
+          "emailCapture": "Colectare Email & Popup",
+          "chatWidget": "Chat Live",
+          "phoneCallback": "Cerere de Apel",
+          "quizFunnel": "Quiz Interactiv / Funnel",
+          "socialProof": "Recenzii & Dovezi Sociale",
+          "faqSection": "Secțiune FAQ",
+          "pricingTable": "Tabel de Prețuri",
+          "countdown": "Cronometru Inversă",
+          "abTesting": "Configurare A/B Testing",
+          "analytics": "Analiză & Tracking",
+          "seo": "Optimizare SEO",
+          "speedOptimization": "Optimizare Core Web Vitals",
+          "cookieConsent": "GDPR / Consimțământ Cookie"
+        },
+        "1": {
+          "productCatalog": "Catalog Produse",
+          "filtersSearch": "Filtre & Căutare",
+          "productVariants": "Variante (Mărime, Culoare)",
+          "productComparison": "Comparare Produse",
+          "quickView": "Vizualizare Rapidă",
+          "wishlist": "Lista de Dorințe",
+          "cartCheckout": "Coș & Checkout",
+          "paymentGateway": "Gateway Plăți (Stripe, PayPal)",
+          "localPayments": "Plăți Locale (Paynet, Maib)",
+          "orderTracking": "Urmărire Comenzi",
+          "invoiceGeneration": "Facturi Automate",
+          "inventory": "Gestionare Stocuri",
+          "shipping": "Integrare Livrare",
+          "promoSystem": "Coduri Promoționale",
+          "reviews": "Recenzii & Rating-uri",
+          "multiCurrency": "Suport Multi-Valută",
+          "emailIntegration": "Integrare Email Marketing",
+          "abandonedCart": "Recuperare Coșuri Abandonate",
+          "seo": "Optimizare SEO",
+          "analytics": "Analiză E-commerce"
+        },
+        "2": {
+          "cms": "CMS / Panou Admin",
+          "blog": "Blog / Știri",
+          "mediaGallery": "Galerie Foto & Video",
+          "documentLibrary": "Bibliotecă Documente",
+          "teamDirectory": "Director Echipă",
+          "portfolio": "Portofoliu / Studii de Caz",
+          "companyTimeline": "Istoria Companiei",
+          "careers": "Cariere & Joburi",
+          "clientLogos": "Logo-uri Clienți & Parteneri",
+          "contactForms": "Formulare de Contact",
+          "mapIntegration": "Hartă Interactivă",
+          "chatWidget": "Chat Live",
+          "newsletter": "Abonare Newsletter",
+          "multilingual": "Multilingv (2–3 limbi)",
+          "seo": "Optimizare SEO",
+          "accessibility": "Accesibilitate WCAG",
+          "cookieConsent": "GDPR / Consimțământ Cookie"
+        },
+        "3": {
+          "auth": "Autentificare Utilizatori",
+          "socialAuth": "Login Social (Google / Apple)",
+          "twoFactorAuth": "Autentificare Doi Factori",
+          "rbac": "Roluri & Permisiuni",
+          "userProfiles": "Profiluri & Setări",
+          "adminDashboard": "Panou de Administrare",
+          "dataVisualization": "Grafice & Vizualizare",
+          "searchAndFilters": "Căutare & Filtre Avansate",
+          "notifications": "Sistem Notificări",
+          "realTimeUpdates": "Actualizări în Timp Real",
+          "apiIntegration": "Integrări API (REST / GraphQL)",
+          "dataExport": "Export Date (CSV, PDF, Excel)",
+          "fileStorage": "Încărcare & Stocare Fișiere",
+          "crmIntegration": "Integrare CRM",
+          "paymentIntegration": "Procesare Plăți",
+          "emailSystem": "Emailuri Tranzacționale",
+          "auditLog": "Jurnal de Activitate",
+          "backupRecovery": "Backup & Recuperare",
+          "cicdPipeline": "CI/CD & Deployment"
+        },
+        "4": {
+          "ios": "Aplicație iOS",
+          "android": "Aplicație Android",
+          "tablet": "Optimizare Tabletă",
+          "appStoreAssets": "Materiale App Store & ASO",
+          "pushNotifications": "Notificări Push",
+          "socialAuth": "Login Social",
+          "userProfiles": "Profiluri Utilizatori",
+          "onboarding": "Ecrane Onboarding",
+          "deepLinking": "Deep Linking / Universal Links",
+          "geolocation": "Geolocalizare & Hărți",
+          "camera": "Cameră & Foto/Video",
+          "offlineMode": "Mod Offline & Sincronizare",
+          "inAppPayments": "Cumpărături în Aplicație",
+          "biometricAuth": "Autentificare Biometrică",
+          "qrBarcode": "Scanner QR / Cod de Bare",
+          "adminPanel": "Panou Admin / CMS",
+          "analytics": "Analiză & Raportare Erori",
+          "chatMessaging": "Chat în Aplicație",
+          "contentFeed": "Feed Conținut",
+          "videoStreaming": "Streaming Video"
+        },
+        "5": {
+          "logoSystem": "Sistem de Logo",
+          "colorPalette": "Paletă de Culori",
+          "typography": "Sistem Tipografic",
+          "iconography": "Set de Iconuri",
+          "illustrations": "Ilustrații de Brand",
+          "brandbook": "Brand Book",
+          "brandGuidelines": "Ghid Rapid de Brand",
+          "brandStrategy": "Strategie & Poziționare",
+          "namingTagline": "Naming & Tagline",
+          "socialKit": "Kit Social Media",
+          "emailSignature": "Design Semnătură Email",
+          "presentations": "Șabloane Prezentări",
+          "websiteMockups": "Mockup-uri Website",
+          "stationery": "Cărți de Vizită & Papetărie",
+          "packaging": "Design Ambalaj",
+          "signage": "Semnalistică & Mediu"
+        },
+        "6": {
+          "smm": "Management SMM",
+          "contentCreation": "Creare Conținut Vizual",
+          "communityManagement": "Management Comunitate",
+          "influencerOutreach": "Colaborare cu Influenceri",
+          "targetedAds": "Reclame Facebook & Instagram",
+          "googleAds": "Google Ads (Căutare & Display)",
+          "youtubeAds": "Publicitate YouTube",
+          "tiktokAds": "Publicitate TikTok",
+          "retargeting": "Campanii Retargeting",
+          "seoPromotion": "Promovare SEO",
+          "contentMarketing": "Blog & Content Marketing",
+          "emailMarketing": "Email Marketing & Automatizare",
+          "localSeo": "SEO Local / Google Maps",
+          "brandStrategy": "Strategie de Brand",
+          "analyticsReporting": "Analiză & Rapoarte KPI",
+          "competitorMonitoring": "Monitorizare Competitori",
+          "conversionOptimization": "Optimizare Conversie",
+          "marketResearch": "Cercetare Piață"
+        }
+      }
+    },
+    "step4": {
+      "indicator": "4/4",
+      "title": "Date de contact",
+      "name": "NUMELE TĂU",
+      "email": "EMAIL",
+      "phone": "TELEFON (OPȚIONAL)",
+      "description": "DESCRIERE SCURTĂ A PROIECTULUI"
+    },
+    "result": {
+      "title": "Estimarea ta",
+      "summary": "Parametri selectați:",
+      "projectType": "Tip proiect",
+      "designLevel": "Nivel design",
+      "features": "Funcții",
+      "scope": "Amploarea proiectului",
+      "discuss": "Discută proiectul",
+      "recalculate": "Recalculează"
+    },
+    "bottom": {
+      "project": "Sau scrie-ne:",
+      "email": "hello@goqode.dev"
     }
   },
   "Packages": {
@@ -1171,6 +1860,804 @@
     "cta": {
       "title": "Gata să începem?",
       "button": "Contactează-ne",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceLanding": {
+    "seo": {
+      "title": "Creare Landing Page | GoQode",
+      "description": "Creare landing page profesional de la €500. Design modern, conversie ridicată, optimizare SEO inclusă. Solicită o ofertă gratuită.",
+      "keywords": "creare landing page, dezvoltare landing page, design landing page, landing page profesional",
+      "ogTitle": "Creare Landing Page — GoQode",
+      "ogDescription": "Transformă vizitatorii în clienți cu un landing page cu conversie ridicată. Design modern, rapid, optimizat SEO."
+    },
+    "hero": {
+      "title": "Landing|Page",
+      "subtitle": "Pagini de aterizare cu conversie ridicată care transformă vizitatorii în clienți. Design modern, performanță rapidă și optimizare SEO inclusă.",
+      "cta": "Comandă un Landing Page"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Pachet Landing Page",
+      "items": {
+        "0": {
+          "title": "Animații și Efecte",
+          "description": "Efecte fluide de scroll, tranziții hover și animații de încărcare care ghidează utilizatorul.",
+          "details": "Micro-interacțiuni, parallax, tranziții fluide — tot ce menține atenția fără a afecta viteza de încărcare.",
+          "deliverables": "Animații scroll, Efecte hover, Tranziții pagină, Micro-interacțiuni"
+        },
+        "1": {
+          "title": "Formular de Contact Personalizat",
+          "description": "Formular optimizat pentru conversii cu validare și livrare instant pe email.",
+          "details": "Formular personalizat cu validare client-side, protecție anti-spam și notificări automate pe email.",
+          "deliverables": "Design formular, Validare, Livrare email, Anti-spam"
+        },
+        "2": {
+          "title": "Testare A/B",
+          "description": "Testarea diferitelor variante de layout și text pentru conversie maximă.",
+          "details": "Configurare split testing pentru compararea titlurilor, CTA-urilor și layout-urilor — găsim ce convertește cel mai bine.",
+          "deliverables": "Variante test, Tracking analitic, Rapoarte, Optimizare"
+        },
+        "3": {
+          "title": "Sistem Captare Email",
+          "description": "Abonare newsletter prin popup-uri inteligente sau formulare inline.",
+          "details": "Popup-uri exit-intent, formulare la scroll și blocuri inline conectate la platforma ta de email marketing.",
+          "deliverables": "Formulare popup, Formulare inline, Integrare email, Automatizare"
+        },
+        "4": {
+          "title": "Dovezi Sociale și Testimoniale",
+          "description": "Recenzii clienți, badge-uri de încredere și cifre cheie care construiesc credibilitate instant.",
+          "details": "Testimoniale strategic plasate, logo-uri parteneri, metrici de succes și indicatori de încredere.",
+          "deliverables": "Blocuri testimoniale, Badge-uri încredere, Contoare, Carusel logo-uri"
+        },
+        "5": {
+          "title": "Analiză și Tracking",
+          "description": "Google Analytics 4, obiective de conversie și heatmap-uri din prima zi.",
+          "details": "Configurare completă: evenimente GA4, Meta Pixel, obiective personalizate și integrare Hotjar.",
+          "deliverables": "Configurare GA4, Meta Pixel, Tracking obiective, Heatmap-uri"
+        },
+        "6": {
+          "title": "Optimizare SEO",
+          "description": "Meta tag-uri, date structurate și optimizare Core Web Vitals pentru clasament în căutare.",
+          "details": "SEO on-page complet: meta tag-uri, Open Graph, schema JSON-LD, optimizare imagini și viteză.",
+          "deliverables": "Meta tag-uri, Schema markup, Optimizare imagini, Optimizare viteză"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Construim Landing Page-ul Tău",
+      "steps": {
+        "0": {
+          "title": "Brief și Cercetare",
+          "description": "Studiem produsul, audiența și competitorii pentru a defini strategia de conversie."
+        },
+        "1": {
+          "title": "Wireframe și UX",
+          "description": "Proiectăm structura paginii și fluxul utilizatorului pentru conversii maxime."
+        },
+        "2": {
+          "title": "Design UI",
+          "description": "Creăm un design vizual unic în Figma, aliniat cu identitatea brandului tău."
+        },
+        "3": {
+          "title": "Dezvoltare",
+          "description": "Construim pagina cu Next.js, optimizată pentru viteză, SEO și performanță cross-device."
+        },
+        "4": {
+          "title": "Testare și Lansare",
+          "description": "Testăm pe toate dispozitivele, conectăm analytics și facem deploy în producție."
+        }
+      }
+    },
+    "tech": {
+      "label": "Tehnologii",
+      "title": "Stack-ul Tehnologic",
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "items": "Next.js, React, TypeScript, Tailwind CSS, Framer Motion"
+        },
+        "hosting": {
+          "title": "Hosting și CDN",
+          "items": "Vercel, Cloudflare, AWS"
+        },
+        "analytics": {
+          "title": "Analiză",
+          "items": "Google Analytics 4, Hotjar, Meta Pixel"
+        },
+        "tools": {
+          "title": "Instrumente",
+          "items": "Figma, GitHub, VS Code"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Landing Page",
+      "from": "de la",
+      "description": "Prețul final depinde de complexitatea designului și funcționalitățile necesare. Folosește calculatorul pentru o estimare precisă.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "conversions": "Rata medie de conversie pentru landing pages-urile noastre",
+      "seo": "Scor SEO Lighthouse din 100",
+      "speed": "Timp mediu de încărcare a paginii"
+    },
+    "cta": {
+      "title": "Gata să Lansezi Landing Page-ul?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceEcommerce": {
+    "seo": {
+      "title": "Creare Magazin Online | GoQode",
+      "description": "Dezvoltare magazin online de la €3,000. Plăți securizate, management produse și soluții scalabile. Solicită o ofertă.",
+      "keywords": "creare magazin online, dezvoltare magazin online, platforma ecommerce, magazin online profesional",
+      "ogTitle": "Creare Magazin Online — GoQode",
+      "ogDescription": "Magazin online puternic cu plăți securizate, management produse și design optimizat pentru conversii."
+    },
+    "hero": {
+      "title": "Magazin|Online",
+      "subtitle": "Magazine online puternice cu plăți securizate, management produse și design optimizat pentru vânzări. Construite să crească odată cu afacerea ta.",
+      "cta": "Creează Magazinul"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Pachet Magazin Online",
+      "items": {
+        "0": {
+          "title": "Catalog Produse",
+          "description": "Pagini produs atractive cu imagini, variante și descrieri.",
+          "details": "Carduri produs cu galerii, variante dimensiune/culoare, indicatori stoc și descrieri SEO.",
+          "deliverables": "Pagini produs, Galerii, Variante, Indicator stoc"
+        },
+        "1": {
+          "title": "Coș și Checkout",
+          "description": "Flux de checkout fluind multi-step care minimizează abandonul coșului.",
+          "details": "Coș optimizat cu checkout guest, autocomplete adresă și plată securizată multi-step.",
+          "deliverables": "Coș, Checkout, Guest checkout, Sumar comandă"
+        },
+        "2": {
+          "title": "Gateway Plăți",
+          "description": "Stripe, PayPal, Paynet sau Maib cu conformitate PCI completă.",
+          "details": "Integrare plăți securizată cu suport carduri, portofele digitale și chitanțe automate.",
+          "deliverables": "Stripe, PayPal, Paynet, Maib"
+        },
+        "3": {
+          "title": "Management Inventar",
+          "description": "Tracking stocuri în timp real cu alerte stoc scăzut și sincronizare automată.",
+          "details": "Sistem centralizat cu actualizări automate, alerte email și suport multi-depozit.",
+          "deliverables": "Tracking stocuri, Alerte, Auto-sincronizare, Rapoarte"
+        },
+        "4": {
+          "title": "Filtre și Căutare",
+          "description": "Filtrare avansată pe categorii, interval preț și căutare full-text.",
+          "details": "Navigare facetată cu filtre categorii, slider preț și căutare instant cu toleranță erori.",
+          "deliverables": "Filtre, Interval preț, Căutare full-text, Autocomplete"
+        },
+        "5": {
+          "title": "Promoții și Reduceri",
+          "description": "Coduri reducere, campanii sezoniere și reguli automate de discount.",
+          "details": "Motor promoții flexibil: reduceri procentuale/fixe, BOGO, comandă minimă și campanii limitate.",
+          "deliverables": "Coduri promo, Auto-aplicare, Campanii, BOGO"
+        },
+        "6": {
+          "title": "Recenzii și Rating-uri",
+          "description": "Sistem recenzii clienți cu rating stele și moderare admin.",
+          "details": "Recenzii verificate cu rating stele, upload foto, voturi și panou moderare.",
+          "deliverables": "Rating stele, Foto recenzii, Moderare, Verificare"
+        },
+        "7": {
+          "title": "Integrare Livrare",
+          "description": "Tarife livrare în timp real, tracking comenzi și suport multi-curier.",
+          "details": "Calcul automat prin API curier, numere tracking, notificări livrare și management retururi.",
+          "deliverables": "Calcul tarife, Tracking, Multi-curier, Retururi"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Construim Magazinul Tău Online",
+      "steps": {
+        "0": {
+          "title": "Brief și Strategie",
+          "description": "Analizăm produsele, piața și competitorii pentru arhitectura optimă a magazinului."
+        },
+        "1": {
+          "title": "UX și Arhitectură",
+          "description": "Proiectăm parcursul utilizatorului, structura catalogului și checkout-ul."
+        },
+        "2": {
+          "title": "Design UI",
+          "description": "Creăm un design de vitrină atrăgător care construiește încredere."
+        },
+        "3": {
+          "title": "Dezvoltare",
+          "description": "Construim magazinul cu tehnologii moderne, optimizat pentru viteză și securitate."
+        },
+        "4": {
+          "title": "Plăți și Integrări",
+          "description": "Conectăm gateway-uri plăți, API-uri livrare și servicii terțe."
+        },
+        "5": {
+          "title": "Testare și Lansare",
+          "description": "QA complet, testare încărcare și lansare cu monitorizare."
+        }
+      }
+    },
+    "tech": {
+      "label": "Tehnologii",
+      "title": "Stack-ul Tehnologic",
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "items": "Next.js, React, TypeScript, Tailwind CSS"
+        },
+        "backend": {
+          "title": "Backend și Plăți",
+          "items": "Node.js, Stripe API, PayPal SDK"
+        },
+        "database": {
+          "title": "Bază de Date",
+          "items": "PostgreSQL, Redis, Prisma ORM"
+        },
+        "infrastructure": {
+          "title": "Infrastructură",
+          "items": "Vercel, AWS S3, Cloudflare"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Magazin Online",
+      "from": "de la",
+      "description": "Prețul variază în funcție de numărul de produse, integrări și funcționalități custom.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "performance": "Scor Google PageSpeed",
+      "mobile": "Design responsive mobil",
+      "secure": "Plăți securizate și protecția datelor"
+    },
+    "cta": {
+      "title": "Gata să Lansezi Magazinul?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceCorporate": {
+    "seo": {
+      "title": "Creare Site de Prezentare | GoQode",
+      "description": "Dezvoltare site corporativ de la €1,500. CMS, blog, echipă și optimizare SEO. Începe astăzi.",
+      "keywords": "creare site de prezentare, site corporativ, site firma, dezvoltare site web profesional",
+      "ogTitle": "Creare Site Corporativ — GoQode",
+      "ogDescription": "Prezență digitală profesională: CMS, blog, portofoliu și optimizare SEO completă."
+    },
+    "hero": {
+      "title": "Site|Corporativ",
+      "subtitle": "Site-uri web profesionale cu management conținut, blog, echipă și optimizare SEO completă. Cartea ta de vizită digitală.",
+      "cta": "Obține Site-ul"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Pachet Site Corporativ",
+      "items": {
+        "0": {
+          "title": "CMS și Panou Admin",
+          "description": "Editor vizual de conținut pentru ca echipa ta să actualizeze site-ul fără dezvoltatori.",
+          "details": "Panou admin intuitiv cu editor drag-and-drop, mediatecă, programare publicări și roluri.",
+          "deliverables": "Editor vizual, Mediatecă, Programare, Roluri utilizator"
+        },
+        "1": {
+          "title": "Blog și Știri",
+          "description": "Articole cu categorii, tag-uri și SEO integrat pentru creștere trafic organic.",
+          "details": "Blog complet cu editor rich-text, taxonomie categorii/tag-uri, articole similare și sitemap automat.",
+          "deliverables": "Editor rich-text, Categorii, Tag-uri, Partajare socială"
+        },
+        "2": {
+          "title": "Director Echipă",
+          "description": "Profile profesionale ale membrilor echipei cu foto, funcții și contact.",
+          "details": "Secțiune dinamică cu profile, filtrare departamente, linkuri LinkedIn și management ușor.",
+          "deliverables": "Profile, Filtre departament, Linkuri contact, Panou admin"
+        },
+        "3": {
+          "title": "Portofoliu și Galerie",
+          "description": "Prezentare proiecte cu filtre, lightbox și pagini studiu de caz.",
+          "details": "Galerie cu filtre categorii, lightbox fullscreen și template-uri studiu de caz.",
+          "deliverables": "Galerie, Filtre, Lightbox, Studii de caz"
+        },
+        "4": {
+          "title": "Formulare Contact",
+          "description": "Mai multe formulare cu rutare pe departamente și notificări.",
+          "details": "Formulare per departament cu rutare automată, atașamente, integrare CRM și notificări.",
+          "deliverables": "Multi-formulare, Rutare, Integrare CRM, Notificări"
+        },
+        "5": {
+          "title": "Suport Multilingv",
+          "description": "Conținut în mai multe limbi cu detectare automată și rutare.",
+          "details": "Suport i18n complet: comutator limbi, autodetecție, URL-uri SEO per limbă și tag-uri hreflang.",
+          "deliverables": "Comutator, Autodetecție, SEO per limbă, hreflang"
+        },
+        "6": {
+          "title": "Optimizare SEO",
+          "description": "Meta tag-uri, sitemap XML și markup Schema.org pentru clasament mai bun.",
+          "details": "SEO on-page complet: management meta, sitemap automat, Schema markup și optimizare Core Web Vitals.",
+          "deliverables": "Meta tag-uri, Sitemap XML, Schema, Optimizare viteză"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Construim Site-ul Tău Corporativ",
+      "steps": {
+        "0": {
+          "title": "Brief și Strategie",
+          "description": "Definim poziționarea brandului, audiența țintă și strategia de conținut."
+        },
+        "1": {
+          "title": "Conținut și UX",
+          "description": "Planificăm structura site-ului, ierarhia paginilor și căile de navigare."
+        },
+        "2": {
+          "title": "Design UI",
+          "description": "Creăm o interfață profesională, aliniată brandului, cu layout-uri responsive."
+        },
+        "3": {
+          "title": "Dezvoltare și CMS",
+          "description": "Construim site-ul și configurăm sistemul de management conținut."
+        },
+        "4": {
+          "title": "Lansare și Training",
+          "description": "Facem deploy, instruim echipa pe CMS și furnizăm documentație."
+        }
+      }
+    },
+    "tech": {
+      "label": "Tehnologii",
+      "title": "Stack-ul Tehnologic",
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "items": "Next.js, React, TypeScript, Tailwind CSS"
+        },
+        "cms": {
+          "title": "CMS",
+          "items": "Sanity, Strapi, WordPress Headless"
+        },
+        "hosting": {
+          "title": "Hosting",
+          "items": "Vercel, Netlify, AWS"
+        },
+        "seo": {
+          "title": "Instrumente SEO",
+          "items": "Schema.org, Sitemap, Open Graph"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Site Corporativ",
+      "from": "de la",
+      "description": "Prețul depinde de numărul de pagini, complexitatea CMS și integrări. Calculatorul ajută cu o estimare precisă.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "traffic": "Creșterea traficului organic în 6 luni",
+      "seo": "Scor SEO Lighthouse din 100",
+      "languages": "Limbi suportate per proiect"
+    },
+    "cta": {
+      "title": "Gata pentru un Site Profesional?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceWebapp": {
+    "seo": {
+      "title": "Dezvoltare Aplicație Web | GoQode",
+      "description": "Dezvoltare aplicații web de la €5,000. Soluții full-stack cu autentificare, dashboarduri și integrări API. Începe proiectul.",
+      "keywords": "dezvoltare aplicatie web, aplicatie web la comanda, dezvoltare SaaS, platforma web, firma dezvoltare software",
+      "ogTitle": "Dezvoltare Aplicație Web — GoQode",
+      "ogDescription": "Aplicații web puternice cu autentificare, dashboarduri și integrări API."
+    },
+    "hero": {
+      "title": "Aplicație|Web",
+      "subtitle": "Aplicații web personalizate cu autentificare, panouri admin și integrări API. Soluții full-stack construite pentru sarcini reale.",
+      "cta": "Începe Proiectul"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Pachet Aplicație Web",
+      "items": {
+        "0": {
+          "title": "Autentificare Utilizatori",
+          "description": "Login securizat, înregistrare, recuperare parolă și management sesiuni.",
+          "details": "Sistem auth complet: email/parolă, OAuth, token-uri JWT, resetare parolă și sesiuni.",
+          "deliverables": "Login/Înregistrare, OAuth, Resetare parolă, Sesiuni"
+        },
+        "1": {
+          "title": "Panou Admin",
+          "description": "Prezentare date cu grafice, tabele și management utilizatori.",
+          "details": "Panou admin cu vizualizare date real-time, management utilizatori, loguri și monitorizare.",
+          "deliverables": "Grafice, Management utilizatori, Loguri, Monitorizare"
+        },
+        "2": {
+          "title": "Roluri și Permisiuni",
+          "description": "Control acces granular bazat pe roluri pentru diferite tipuri de utilizatori.",
+          "details": "Sistem RBAC flexibil cu roluri custom, grupuri permisiuni și control acces la resurse.",
+          "deliverables": "Roluri, Grupuri permisiuni, Control acces, Audit"
+        },
+        "3": {
+          "title": "Integrări API",
+          "description": "Conectare servicii terțe prin API-uri REST sau GraphQL.",
+          "details": "Strat API robust cu endpoint-uri REST/GraphQL, suport webhook-uri, rate limiting și documentație.",
+          "deliverables": "REST API, GraphQL, Webhook-uri, Documentație API"
+        },
+        "4": {
+          "title": "Sistem Notificări",
+          "description": "Email, in-app și push notifications pentru engagement utilizatori.",
+          "details": "Sistem multi-canal: template-uri email, centru notificări in-app, push și preferințe.",
+          "deliverables": "Email, In-app, Push, Preferințe"
+        },
+        "5": {
+          "title": "Export Date",
+          "description": "Export rapoarte în formate CSV, PDF și Excel.",
+          "details": "Sistem export flexibil: CSV formatat, rapoarte PDF stilizate și spreadsheet-uri Excel.",
+          "deliverables": "CSV, Rapoarte PDF, Excel, Export programat"
+        },
+        "6": {
+          "title": "Stocare Fișiere",
+          "description": "Upload securizat, stocare și management fișiere cu control acces.",
+          "details": "Stocare cloud cu drag-and-drop, validare tip fișier, scanare virus, CDN și permisiuni.",
+          "deliverables": "Upload, Stocare cloud, CDN, Control acces"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Construim Aplicația Ta Web",
+      "steps": {
+        "0": {
+          "title": "Descoperire și Arhitectură",
+          "description": "Mapăm cerințele, definim arhitectura și planificăm schema bazei de date."
+        },
+        "1": {
+          "title": "Cercetare UX",
+          "description": "Proiectăm fluxuri utilizator, wireframes și prototipuri interactive."
+        },
+        "2": {
+          "title": "Design UI",
+          "description": "Creăm o interfață curată, funcțională, focusată pe utilizabilitate."
+        },
+        "3": {
+          "title": "Backend și API",
+          "description": "Construim serverul, baza de date și API cu securitate și scalabilitate."
+        },
+        "4": {
+          "title": "Frontend și Integrare",
+          "description": "Dezvoltăm aplicația client-side și o conectăm la serviciile backend."
+        },
+        "5": {
+          "title": "Testare și Deploy",
+          "description": "Teste automatizate, audit securitate și deploy cu pipeline-uri CI/CD."
+        }
+      }
+    },
+    "tech": {
+      "label": "Tehnologii",
+      "title": "Stack-ul Tehnologic",
+      "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "items": "Next.js, React, TypeScript, Tailwind CSS"
+        },
+        "backend": {
+          "title": "Backend",
+          "items": "Node.js, Express, Fastify, GraphQL"
+        },
+        "database": {
+          "title": "Bază de Date",
+          "items": "PostgreSQL, Redis, MongoDB, Prisma"
+        },
+        "devops": {
+          "title": "DevOps",
+          "items": "Docker, CI/CD, AWS, Vercel"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Aplicație Web",
+      "from": "de la",
+      "description": "Prețul depinde de complexitatea funcționalităților, integrări și scală.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "uptime": "Disponibilitate garantată a aplicației",
+      "response": "Timp mediu de răspuns API",
+      "availability": "Disponibilitate non-stop"
+    },
+    "cta": {
+      "title": "Gata să Construiești Aplicația?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceMobile": {
+    "seo": {
+      "title": "Dezvoltare Aplicație Mobilă | GoQode",
+      "description": "Dezvoltare aplicații iOS și Android de la €8,000. React Native, notificări push, geolocalizare. Calculează costul.",
+      "keywords": "dezvoltare aplicatie mobila, creare aplicatie mobila, aplicatie iOS, aplicatie Android, React Native",
+      "ogTitle": "Dezvoltare Aplicație Mobilă — GoQode",
+      "ogDescription": "Calitate nativă pe iOS și Android cu React Native. De la concept la lansare în App Store."
+    },
+    "hero": {
+      "title": "Aplicație|Mobilă",
+      "subtitle": "Aplicații iOS și Android de calitate nativă cu push notifications, mod offline și experiență utilizator impecabilă. De la idee la App Store.",
+      "cta": "Construiește Aplicația"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Pachet Aplicație Mobilă",
+      "items": {
+        "0": {
+          "title": "Aplicație iOS",
+          "description": "Aplicație nativă sau cross-platform pentru iPhone și iPad.",
+          "details": "Aplicație iOS pregătită pentru App Store cu pattern-uri UI native și performanță optimizată.",
+          "deliverables": "Aplicație iOS, iPhone, iPad, Publicare App Store"
+        },
+        "1": {
+          "title": "Aplicație Android",
+          "description": "Aplicație nativă sau cross-platform pentru telefoane și tablete.",
+          "details": "Aplicație Android pregătită pentru Google Play cu Material Design și compatibilitate largă.",
+          "deliverables": "Aplicație Android, Telefoane, Tablete, Google Play"
+        },
+        "2": {
+          "title": "Notificări Push",
+          "description": "Mesaje push țintite cu programare și segmentare.",
+          "details": "Push rich cu imagini, deep link-uri, programare, A/B testing și analytics.",
+          "deliverables": "Rich push, Programare, Segmentare, Analytics"
+        },
+        "3": {
+          "title": "Geolocalizare",
+          "description": "Integrare hărți, tracking locație și căutare în apropiere.",
+          "details": "Hărți interactive cu markeri custom, tracking real-time, geofencing și căutare proximitate.",
+          "deliverables": "Hărți, Tracking, Geofencing, Căutare proximitate"
+        },
+        "4": {
+          "title": "Mod Offline",
+          "description": "Aplicația funcționează fără internet și sincronizează datele la reconectare.",
+          "details": "Stocare locală, sincronizare inteligentă, rezolvare conflicte și actualizări background.",
+          "deliverables": "Stocare locală, Sincronizare, Conflicte, Sistem coadă"
+        },
+        "5": {
+          "title": "Cumpărături In-App",
+          "description": "Abonamente sau cumpărături unice cu validare chitanță.",
+          "details": "Integrare Apple Pay și Google Pay cu management abonamente și analytics venituri.",
+          "deliverables": "Abonamente, Cumpărături unice, Validare, Tracking venituri"
+        },
+        "6": {
+          "title": "Login Social",
+          "description": "Autentificare rapidă prin Google, Apple și Facebook.",
+          "details": "Integrare OAuth cu Google, Apple Sign-In și Facebook Login pentru onboarding fără fricțiune.",
+          "deliverables": "Login Google, Apple Sign-In, Facebook, Sincronizare profil"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Construim Aplicația Ta Mobilă",
+      "steps": {
+        "0": {
+          "title": "Descoperire și Strategie",
+          "description": "Definim conceptul, utilizatorii țintă și setul de funcționalități MVP."
+        },
+        "1": {
+          "title": "Design UX/UI",
+          "description": "Proiectăm interfețe intuitive conform ghidurilor iOS și Android."
+        },
+        "2": {
+          "title": "Dezvoltare",
+          "description": "Construim aplicația cu React Native pentru performanță nativă pe ambele platforme."
+        },
+        "3": {
+          "title": "Backend și API",
+          "description": "Dezvoltăm infrastructura server, baza de date și stratul API."
+        },
+        "4": {
+          "title": "Testare QA",
+          "description": "Testăm pe dispozitive reale, teste automatizate și rezolvare edge cases."
+        },
+        "5": {
+          "title": "Lansare App Store",
+          "description": "Publicare în App Store și Google Play, optimizare și monitorizare."
+        }
+      }
+    },
+    "tech": {
+      "label": "Tehnologii",
+      "title": "Stack-ul Tehnologic",
+      "categories": {
+        "mobile": {
+          "title": "Mobile",
+          "items": "React Native, Expo, Swift, Kotlin"
+        },
+        "backend": {
+          "title": "Backend",
+          "items": "Node.js, Firebase, Supabase"
+        },
+        "storage": {
+          "title": "Stocare și CDN",
+          "items": "AWS S3, CloudFront, Cloud Storage"
+        },
+        "distribution": {
+          "title": "Distribuție",
+          "items": "App Store, Google Play, TestFlight"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Aplicație Mobilă",
+      "from": "de la",
+      "description": "Prețul depinde de numărul de platforme, funcționalități și complexitatea backend.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "platforms": "Platforme: iOS și Android dintr-o singură bază de cod",
+      "performance": "Performanță fluidă a interfeței",
+      "offline": "Suport offline când este necesar"
+    },
+    "cta": {
+      "title": "Gata să Construiești Aplicația?",
+      "button": "Discută Proiectul",
+      "contact_text": "Sau scrie-ne la"
+    }
+  },
+  "ServiceMarketing": {
+    "seo": {
+      "title": "Servicii Marketing Digital | GoQode",
+      "description": "Marketing digital de la €800/lună. SMM, Google Ads, SEO, content marketing și analiză. Crește-ți afacerea online.",
+      "keywords": "servicii marketing digital, promovare online, servicii SEO, publicitate online, agentie marketing digital",
+      "ogTitle": "Servicii Marketing Digital — GoQode",
+      "ogDescription": "Crește-ți afacerea cu SMM, Google Ads, SEO și strategii data-driven de marketing digital."
+    },
+    "hero": {
+      "title": "Marketing",
+      "subtitle": "Marketing digital data-driven cu rezultate reale. SMM, reclame targhetate, SEO și analiză — totul gestionat de o singură echipă.",
+      "cta": "Începe Promovarea"
+    },
+    "features": {
+      "label": "Ce Include",
+      "title": "Servicii Marketing",
+      "items": {
+        "0": {
+          "title": "SMM și Social Media",
+          "description": "Administrare conturi, plan conținut și publicare zilnică.",
+          "details": "SMM complet: calendar conținut, creare postări, community management și raportare.",
+          "deliverables": "Calendar conținut, Postări, Community, Rapoarte lunare"
+        },
+        "1": {
+          "title": "Publicitate Targhetată",
+          "description": "Campanii publicitare Facebook, Instagram și TikTok.",
+          "details": "Audiențe custom, creative testate A/B, retargeting și lookalike pentru ROAS maxim.",
+          "deliverables": "Campanii, Targeting, Retargeting, A/B testing"
+        },
+        "2": {
+          "title": "Google Ads",
+          "description": "Campanii search, display, remarketing și YouTube.",
+          "details": "Cercetare cuvinte cheie, copywriting reclame, optimizare biduri și tracking conversii.",
+          "deliverables": "Search ads, Display, Remarketing, YouTube"
+        },
+        "3": {
+          "title": "Promovare SEO",
+          "description": "Audit tehnic, optimizare on-page și link building.",
+          "details": "Strategie SEO completă: audit tehnic, mapare cuvinte cheie, optimizare conținut și link building.",
+          "deliverables": "Audit, Mapare cuvinte cheie, Optimizare, Link building"
+        },
+        "4": {
+          "title": "Content Marketing",
+          "description": "Articole blog, studii de caz și copywriting pentru trafic organic.",
+          "details": "Articole SEO, studii de caz, texte email și conținut social aliniat cu vocea brandului.",
+          "deliverables": "Articole, Studii de caz, Texte email, Conținut social"
+        },
+        "5": {
+          "title": "Email Marketing",
+          "description": "Campanii newsletter, secvențe drip și automatizare.",
+          "details": "Strategie email, design template-uri, campanii drip automate, segmentare și A/B testing.",
+          "deliverables": "Design newsletter, Campanii drip, Segmentare, Automatizare"
+        },
+        "6": {
+          "title": "Analiză și Raportare",
+          "description": "Dashboard-uri personalizate, tracking KPI și rapoarte lunare.",
+          "details": "Configurare GA4, dashboard-uri custom, tracking conversii, atribuire și rapoarte detaliate.",
+          "deliverables": "Dashboard-uri, Tracking KPI, Rapoarte lunare, Atribuire"
+        },
+        "7": {
+          "title": "Strategie de Brand",
+          "description": "Poziționare, ton comunicare și framework mesaje.",
+          "details": "Analiză competitivă, poziționare brand, ierarhie mesaje și piloni conținut.",
+          "deliverables": "Poziționare, Messaging, Piloni conținut, Ton comunicare"
+        }
+      }
+    },
+    "process": {
+      "label": "Procesul Nostru",
+      "title": "Cum Creștem Afacerea Ta",
+      "steps": {
+        "0": {
+          "title": "Audit și Strategie",
+          "description": "Analizăm marketingul actual, competitorii și definim obiective cu KPI măsurabili."
+        },
+        "1": {
+          "title": "Configurare Campanii",
+          "description": "Configurăm conturile publicitare, pixelii de tracking și parametrii targeting."
+        },
+        "2": {
+          "title": "Conținut și Lansare",
+          "description": "Creăm creative, landing pages și lansăm campaniile pe canale."
+        },
+        "3": {
+          "title": "Optimizare și Testare",
+          "description": "Teste A/B continue, optimizare biduri și rafinare targeting."
+        },
+        "4": {
+          "title": "Raportare și Scalare",
+          "description": "Rapoarte detaliate și scalarea strategiilor câștigătoare pentru ROI maxim."
+        }
+      }
+    },
+    "tech": {
+      "label": "Platforme",
+      "title": "Platforme și Instrumente",
+      "categories": {
+        "advertising": {
+          "title": "Publicitate",
+          "items": "Meta Ads, Google Ads, TikTok Ads"
+        },
+        "analytics": {
+          "title": "Analiză",
+          "items": "GA4, Hotjar, Semrush, Ahrefs"
+        },
+        "email": {
+          "title": "Email",
+          "items": "Mailchimp, SendGrid, Klaviyo"
+        },
+        "social": {
+          "title": "Social",
+          "items": "Buffer, Later, Hootsuite"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Prețuri",
+      "title": "Investiție Marketing",
+      "from": "de la",
+      "description": "Retainer lunar include strategie, execuție și raportare. Bugetul publicitar este separat.",
+      "cta": "Calculează Costul"
+    },
+    "results": {
+      "label": "Rezultate",
+      "title": "Ce Vei Obține",
+      "roas": "Returnare medie pe cheltuielile publicitare",
+      "cac": "Reducerea costului de achiziție a clienților",
+      "leads": "Creșterea medie a lead-urilor în 3 luni"
+    },
+    "cta": {
+      "title": "Gata să Crești Afacerea?",
+      "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
     }
   }

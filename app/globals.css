@@ -142,6 +142,31 @@ html.dark, .dark {
   display: none;
 }
 
+.scrollbar-lime {
+  scrollbar-width: thin;
+  scrollbar-color: #C9FD48 rgba(255, 255, 255, 0.08);
+}
+.scrollbar-lime::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-lime::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+.scrollbar-lime::-webkit-scrollbar-thumb {
+  background: #C9FD48;
+  border-radius: 9999px;
+}
+
+@media (prefers-color-scheme: light) {
+  .scrollbar-lime {
+    scrollbar-color: #C9FD48 rgba(0, 0, 0, 0.06);
+  }
+  .scrollbar-lime::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.06);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

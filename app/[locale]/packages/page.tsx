@@ -66,7 +66,7 @@ function PackagesSection() {
             stagger={0.03}
             threshold={0.1}
             triggerOnce={true}
-            triggerOnHover={true}
+            triggerOnHover={false}
             respectReducedMotion={true}
           />
           <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed mt-3 md:mt-[min(1vw,19px)]">

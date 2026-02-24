@@ -114,7 +114,7 @@ function SupportHero() {
           stagger={0.03}
           threshold={0.1}
           triggerOnce={true}
-          triggerOnHover={true}
+          triggerOnHover={false}
           respectReducedMotion={true}
         />
 

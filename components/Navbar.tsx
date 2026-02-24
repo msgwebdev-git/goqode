@@ -20,7 +20,14 @@ import {
   CalendarDays,
   Cog,
   Palette,
-  HeadphonesIcon
+  HeadphonesIcon,
+  Calculator,
+  FileText,
+  ShoppingCart,
+  Building2,
+  AppWindow,
+  Smartphone,
+  Megaphone,
 } from "lucide-react";
 import type { Locale } from "@/i18n/routing";
 
@@ -71,6 +78,15 @@ const solutions = [
   { key: "automation", href: "/automation", icon: Cog },
   { key: "branding", href: "/solutions/branding", icon: Palette },
   { key: "support", href: "/solutions/support", icon: HeadphonesIcon },
+] as const;
+
+const services = [
+  { key: "landing", href: "/services/landing-page-development", icon: FileText },
+  { key: "ecommerce", href: "/services/ecommerce-development", icon: ShoppingCart },
+  { key: "corporate", href: "/services/corporate-website", icon: Building2 },
+  { key: "webapp", href: "/services/web-application-development", icon: AppWindow },
+  { key: "mobile", href: "/services/mobile-app-development", icon: Smartphone },
+  { key: "marketing", href: "/services/digital-marketing", icon: Megaphone },
 ] as const;
 
 const navItems = [
@@ -172,7 +188,7 @@ export function Navbar() {
             {/* Solutions Mega Menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="relative flex items-center gap-1 px-4 py-2 text-sm font-medium uppercase tracking-wider text-foreground/70 rounded-full border border-black/20 dark:border-white/20 transition-all duration-300 hover:text-foreground hover:font-semibold hover:bg-background hover:shadow-sm cursor-pointer group">
+                <button className="relative flex items-center gap-1 px-4 py-2 text-sm font-medium uppercase tracking-wider text-foreground/70 rounded-full transition-all duration-300 hover:text-foreground hover:font-semibold hover:bg-background hover:shadow-sm cursor-pointer group">
                   {t("solutions")}
                   <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </button>
@@ -225,10 +241,56 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Packages — highlighted, after Solutions */}
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="relative flex items-center gap-1 px-4 py-2 text-sm font-medium uppercase tracking-wider text-foreground/70 rounded-full transition-all duration-300 hover:text-foreground hover:font-semibold hover:bg-background hover:shadow-sm cursor-pointer group">
+                  {t("services")}
+                  <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="start"
+                sideOffset={12}
+                className="w-[580px] p-0 bg-background/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl overflow-hidden"
+              >
+                <div className="grid grid-cols-2 gap-0">
+                  {services.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <DropdownMenuItem key={item.key} asChild className="p-0 focus:bg-transparent">
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "flex items-start gap-4 p-5 cursor-pointer transition-all duration-200 hover:bg-accent/50 group/item",
+                            index % 2 === 0 && index < services.length - 1 && "border-r border-border/30",
+                            index < services.length - 2 && "border-b border-border/30",
+                            index === services.length - 1 && services.length % 2 !== 0 && "col-span-2 border-t border-border/30"
+                          )}
+                        >
+                          <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-black/[0.06] dark:bg-white/[0.08] flex items-center justify-center group-hover/item:bg-black/[0.1] dark:group-hover/item:bg-white/[0.12] transition-all duration-200">
+                            <Icon className="h-5 w-5 text-muted-foreground group-hover/item:text-foreground transition-colors" />
+                          </div>
+                          <div className="flex flex-col gap-1 min-w-0">
+                            <span className="text-sm font-semibold text-foreground group-hover/item:text-foreground transition-colors">
+                              {t(`servicesMenu.${item.key}`)}
+                            </span>
+                            <span className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                              {t(`servicesMenu.${item.key}Desc`)}
+                            </span>
+                          </div>
+                        </Link>
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Packages — regular link */}
             <Link
               href="/packages"
-              className="relative px-4 py-2 text-sm font-semibold uppercase tracking-wider rounded-full bg-[#C9FD48] text-black transition-all duration-300 hover:bg-[#b8ec3d] hover:shadow-sm"
+              className="relative px-4 py-2 text-sm font-medium uppercase tracking-wider text-foreground/70 rounded-full transition-all duration-300 hover:text-foreground hover:font-semibold hover:bg-background hover:shadow-sm"
             >
               {t("packages")}
             </Link>
@@ -293,7 +355,14 @@ export function Navbar() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
-            {/* CTA Button - Desktop */}
+            {/* CTA Buttons - Desktop */}
+            <Link
+              href="/calculator"
+              className="hidden lg:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold text-sm transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10 group overflow-hidden"
+            >
+              <Calculator className="h-4 w-4" />
+              <span>{t("calculator")}</span>
+            </Link>
             <Link
               href="/contact"
               className="hidden lg:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d] hover:shadow-[0_0_20px_rgba(201,253,72,0.5)] group overflow-hidden"
@@ -428,6 +497,27 @@ export function Navbar() {
                 })}
               </div>
 
+              {/* Services */}
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                {t("services")}
+              </p>
+              <div className="flex flex-col gap-0">
+                {services.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-3 py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors group border-b border-border/30 last:border-b-0"
+                    >
+                      <Icon className="h-4 w-4 text-muted-foreground group-hover:text-[#C9FD48] transition-colors shrink-0" />
+                      <span>{t(`servicesMenu.${item.key}`)}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+
               {/* Packages — highlighted */}
               <Link
                 href="/packages"
@@ -453,7 +543,15 @@ export function Navbar() {
             </div>
 
             {/* Bottom bar */}
-            <div className="px-6 pb-8 pt-4 border-t border-border/50 space-y-4">
+            <div className="px-6 pb-8 pt-4 border-t border-border/50 space-y-3">
+              <Link
+                href="/calculator"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full h-12 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10"
+              >
+                <Calculator className="h-4 w-4" />
+                <span>{t("calculator")}</span>
+              </Link>
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}

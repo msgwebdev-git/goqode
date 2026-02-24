@@ -88,7 +88,7 @@ export function BlogSection() {
               stagger={0.03}
               threshold={0.1}
               triggerOnce={true}
-              triggerOnHover={true}
+              triggerOnHover={false}
               respectReducedMotion={true}
             />
             <div className="md:border-l-2 md:border-[#C9FD48] md:pl-[1.5vw]">

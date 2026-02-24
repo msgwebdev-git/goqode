@@ -5,6 +5,7 @@
     "about": "About",
     "contact": "Contact",
     "packages": "Packages & Pricing",
+    "calculator": "Calculator",
     "cta": "Let's talk",
     "language": "Language",
     "allSolutions": "All solutions",
@@ -23,6 +24,22 @@
       "brandingDesc": "Identity and visual style",
       "support": "Support",
       "supportDesc": "Technical support 24/7"
+    },
+    "services": "Services",
+    "allServices": "All Services",
+    "servicesMenu": {
+      "landing": "Landing Page",
+      "landingDesc": "High-converting landing pages",
+      "ecommerce": "E-commerce",
+      "ecommerceDesc": "Online store development",
+      "corporate": "Corporate Website",
+      "corporateDesc": "Professional business websites",
+      "webapp": "Web Application",
+      "webappDesc": "Custom web applications",
+      "mobile": "Mobile App",
+      "mobileDesc": "iOS and Android applications",
+      "marketing": "Marketing",
+      "marketingDesc": "Digital marketing and promotion"
     }
   },
   "Hero": {
@@ -85,48 +102,34 @@
     "description": "Real projects that helped our clients achieve their business goals",
     "viewAll": "View all cases",
     "viewProject": "View project",
+    "pageTitle": "Our Cases",
+    "pageDescription": "Explore our portfolio of successful digital projects across web, mobile, branding, and automation.",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterMobile": "Mobile",
+    "filterBranding": "Branding",
+    "filterPlatforms": "Platforms",
+    "backToCases": "Back to cases",
+    "visitSite": "Visit website",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "resultLabel": "Result",
+    "mobileVersion": "Mobile version",
+    "aboutLabel": "About the project",
+    "nextCase": "Next case",
+    "cta": {
+      "title": "Have a project in mind?",
+      "button": "Let's Talk",
+      "contactText": "Or email us at"
+    },
     "items": {
-      "0": {
-        "title": "goQode Project",
-        "description": "A comprehensive web solution built with modern technologies and best UX practices",
-        "challenge": "The client needed a high-performance, scalable digital product",
-        "solution": "Full-cycle development from design to deployment",
-        "result": "Successful launch"
-      },
-      "1": {
-        "title": "goQode Project",
-        "description": "Cross-platform mobile application with intuitive interface and seamless user experience",
-        "challenge": "Creating a product that works flawlessly on all devices",
-        "solution": "Modern tech stack with focus on performance and usability",
-        "result": "Successful launch"
-      },
-      "2": {
-        "title": "goQode Project",
-        "description": "Custom web application with advanced analytics and real-time data visualization",
-        "challenge": "Building a robust platform for data-driven decisions",
-        "solution": "Scalable architecture with optimized data processing",
-        "result": "Successful launch"
-      },
-      "3": {
-        "title": "goQode Project",
-        "description": "Complete brand identity and visual design system for a growing company",
-        "challenge": "Creating a distinctive and memorable brand presence",
-        "solution": "Strategic branding with comprehensive style guidelines",
-        "result": "Successful launch"
-      },
-      "4": {
-        "title": "goQode Project",
-        "description": "Digital event management platform with registration and ticketing system",
-        "challenge": "Streamlining the event experience for organizers and attendees",
-        "solution": "End-to-end event solution with modern integrations",
-        "result": "Successful launch"
-      },
-      "5": {
-        "title": "goQode Project",
-        "description": "Business process automation system with smart integrations and workflows",
-        "challenge": "Eliminating manual processes and improving operational efficiency",
-        "solution": "Custom automation with seamless system integration",
-        "result": "Successful launch"
+      "lineproduction": {
+        "title": "Line Production",
+        "description": "Corporate website for a video production studio from Moldova",
+        "about": "Line Production is one of Moldova's leading video production companies, working with major brands like Moldcell, MICB, and Ultra. They needed a website that matches the cinematic quality of their work — bold, dynamic, and visually striking. We created a dark-themed experience with smooth animations, an interactive portfolio carousel, and full-bleed video integration that immerses visitors from the first second.",
+        "challenge": "The old website didn't convey the scale and professionalism of the studio. Line Production needed a digital presence that reflects the cinematic quality of their video work — something dynamic, memorable, and visually powerful.",
+        "solution": "A dark-themed website with bold typography, smooth scroll-driven animations, and an interactive project carousel. The design puts video front and center with full-bleed imagery, autoplay sections, and seamless transitions between portfolio pieces.",
+        "result": "A modern, high-impact website that effectively showcases the studio's portfolio, attracts new clients from Moldova's top brands, and positions Line Production as the country's leading video production company. The site became their primary sales tool, driving direct inquiries through an immersive browsing experience."
       }
     }
   },
@@ -179,12 +182,33 @@
       "title": "Share your idea",
       "message": "EXPLAIN YOUR IDEA",
       "messagePlaceholder": "Describe your project or idea...",
-      "selectService": "Select a service:",
-      "services": {
-        "0": "Website",
-        "1": "Mobile App",
-        "2": "Branding",
-        "3": "Automation",
+      "selectSolution": "Select a solution:",
+      "solutions": {
+        "0": "Business Launch",
+        "1": "Sales Growth",
+        "2": "Online Platforms",
+        "3": "Event Solutions",
+        "4": "Automation",
+        "5": "Branding",
+        "6": "Support",
+        "7": "Let's discuss"
+      },
+      "selectServiceType": "Select a service:",
+      "serviceTypes": {
+        "0": "Landing Page",
+        "1": "E-commerce",
+        "2": "Corporate Website",
+        "3": "Web Application",
+        "4": "Mobile Application",
+        "5": "Digital Marketing",
+        "6": "Let's discuss"
+      },
+      "selectBudget": "Project budget:",
+      "budgets": {
+        "0": "< €1K",
+        "1": "€1K — €5K",
+        "2": "€5K — €15K",
+        "3": "€15K — €50K",
         "4": "Let's discuss"
       },
       "agree": "By sending this message I agree to share my personal information",
@@ -1087,6 +1111,398 @@
       }
     }
   },
+  "Calculator": {
+    "heading": "Calculate\nyour project\ncost.",
+    "estimate": "Estimated cost:",
+    "perMonth": "/mo",
+    "featuresCount": "selected",
+    "from": "from",
+    "to": "to",
+    "continue": "Next",
+    "back": "Back",
+    "submit": "Calculate",
+    "step1": {
+      "indicator": "1/4",
+      "title": "What do you need?",
+      "types": {
+        "0": "Landing Page",
+        "1": "E-commerce",
+        "2": "Corporate Website",
+        "3": "Web Application",
+        "4": "Mobile Application",
+        "5": "Branding",
+        "6": "Marketing"
+      }
+    },
+    "step2": {
+      "indicator": "2/4",
+      "title": "Design level",
+      "levels": {
+        "0": "Template",
+        "1": "Semi-custom",
+        "2": "Fully custom"
+      },
+      "descriptions": {
+        "0": "Pre-built design adapted to your content",
+        "1": "Custom layout with unique brand elements",
+        "2": "Unique design from scratch, every detail"
+      }
+    },
+    "step3": {
+      "indicator": "3/4",
+      "title": "Required features",
+      "recommended": "Rec",
+      "scopeTitle": "Project scope",
+      "categories": {
+        "0": { "designUx": "Design & UX", "leadCapture": "Lead Capture", "conversionTrust": "Conversion & Trust", "technical": "Technical" },
+        "1": { "storefront": "Storefront", "paymentsOrders": "Payments & Orders", "management": "Management", "growth": "Growth & Marketing" },
+        "2": { "contentManagement": "Content Management", "companyPages": "Company Pages", "communication": "Communication", "technical": "Technical" },
+        "3": { "authUsers": "Authentication & Users", "coreFeatures": "Core Features", "dataIntegration": "Data & Integration", "infrastructure": "Infrastructure" },
+        "4": { "platformBase": "Platform & Base", "coreFeatures": "Core Features", "advanced": "Advanced Features", "backendAnalytics": "Backend & Analytics" },
+        "5": { "coreIdentity": "Core Identity", "documentation": "Brand Documentation", "digitalAssets": "Digital Assets", "print": "Print Materials" },
+        "6": { "socialMedia": "Social Media", "paidAds": "Paid Advertising", "organicGrowth": "Organic Growth", "strategyAnalytics": "Strategy & Analytics" }
+      },
+      "scopes": {
+        "0": {
+          "sections": { "label": "Page sections", "standard": "5–7 sections", "extended": "8–12 sections", "complex": "13+ sections" },
+          "timeline": { "label": "Timeline", "standard": "Standard (3–4 weeks)", "rush": "Rush (1–2 weeks)" }
+        },
+        "1": {
+          "products": { "label": "Product count", "small": "Under 100", "medium": "100–1,000", "large": "1,000–10,000", "enterprise": "10,000+" },
+          "timeline": { "label": "Timeline", "standard": "Standard (6–10 weeks)", "rush": "Rush (3–5 weeks)" }
+        },
+        "2": {
+          "pages": { "label": "Unique pages", "small": "5–10 pages", "medium": "10–20 pages", "large": "20–40 pages", "enterprise": "40+ pages" },
+          "timeline": { "label": "Timeline", "standard": "Standard (4–6 weeks)", "rush": "Rush (2–3 weeks)" }
+        },
+        "3": {
+          "users": { "label": "Expected users", "startup": "Under 1,000", "growing": "1,000–10,000", "scale": "10,000–100,000", "enterprise": "100,000+" },
+          "timeline": { "label": "Timeline", "standard": "Standard (8–14 weeks)", "rush": "Rush (4–7 weeks)" }
+        },
+        "4": {
+          "platform": { "label": "Platform", "single": "One platform (iOS or Android)", "both": "Both iOS + Android" },
+          "screens": { "label": "Screen count", "simple": "5–10 screens", "moderate": "10–20 screens", "complex": "20–40 screens", "enterprise": "40+ screens" }
+        },
+        "5": {
+          "scope": { "label": "Brand scope", "startup": "New brand / Startup", "rebrand": "Rebrand existing company", "multibrand": "Multi-brand portfolio" },
+          "timeline": { "label": "Timeline", "standard": "Standard (3–5 weeks)", "rush": "Rush (1–2 weeks)" }
+        },
+        "6": {
+          "contract": { "label": "Contract duration", "short": "1–3 months", "medium": "3–6 months (−10%)", "long": "6–12 months (−20%)" }
+        }
+      },
+      "descriptions": {
+        "0": {
+          "animations": "Smooth scroll effects, hover transitions, page load animations",
+          "parallaxScrolling": "Layered depth effect on scroll for immersive experience",
+          "videoBackground": "Full-screen or section video backgrounds with fallback images",
+          "darkLightTheme": "Automatic theme switching with toggle button",
+          "contactForm": "Optimized form with validation and instant email delivery",
+          "emailCapture": "Email collection popup with timing triggers",
+          "chatWidget": "Live chat integration (Tawk.to, Crisp, etc.)",
+          "phoneCallback": "Request a callback form with scheduling",
+          "quizFunnel": "Interactive questionnaire that qualifies leads",
+          "socialProof": "Client testimonials, case study blocks, trust badges",
+          "faqSection": "Expandable FAQ accordion with structured data",
+          "pricingTable": "Interactive pricing comparison with feature highlights",
+          "countdown": "Urgency timer for limited offers or launches",
+          "abTesting": "Split testing setup for headlines, CTAs, layouts",
+          "analytics": "Google Analytics 4, Meta Pixel, conversion tracking",
+          "seo": "Meta tags, structured data, sitemap, Core Web Vitals",
+          "speedOptimization": "Image optimization, code splitting, lazy loading",
+          "cookieConsent": "GDPR-compliant cookie banner with preference management"
+        },
+        "1": {
+          "productCatalog": "Product grid with images, pricing, badges, quick info",
+          "filtersSearch": "Multi-facet filtering, instant search, sort options",
+          "productVariants": "Size, color, material selectors with stock tracking",
+          "productComparison": "Side-by-side product feature comparison table",
+          "quickView": "Product preview popup without page navigation",
+          "wishlist": "Save favorite items with persistent storage",
+          "cartCheckout": "Shopping cart with multi-step checkout flow",
+          "paymentGateway": "Stripe, PayPal, or other international payments",
+          "localPayments": "Paynet, Maib, and other local payment methods",
+          "orderTracking": "Real-time order status updates for customers",
+          "invoiceGeneration": "Automatic PDF invoice generation and delivery",
+          "inventory": "Stock tracking, low-stock alerts, warehouse sync",
+          "shipping": "Carrier integration, rate calculation, tracking",
+          "promoSystem": "Discount codes, flash sales, bundle offers",
+          "reviews": "Customer reviews with ratings and moderation",
+          "multiCurrency": "Automatic currency conversion with geo-detection",
+          "emailIntegration": "Mailchimp, SendGrid, or Klaviyo integration",
+          "abandonedCart": "Automatic email reminders for incomplete orders",
+          "seo": "Product schema, sitemap, meta optimization",
+          "analytics": "Enhanced e-commerce tracking, funnel analysis"
+        },
+        "2": {
+          "cms": "Content management system for easy page and content updates",
+          "blog": "Blog with categories, tags, author pages, and RSS feed",
+          "mediaGallery": "Photo and video gallery with lightbox and filtering",
+          "documentLibrary": "Downloadable files organized by categories",
+          "teamDirectory": "Team member profiles with photos and bios",
+          "portfolio": "Project showcase with filters, images, and case studies",
+          "companyTimeline": "Interactive company history and milestones",
+          "careers": "Job listing pages with application forms",
+          "clientLogos": "Client and partner logo grid with links",
+          "contactForms": "Multiple forms with department routing",
+          "mapIntegration": "Google Maps or Mapbox with custom markers",
+          "chatWidget": "Live chat integration for instant support",
+          "newsletter": "Email subscription form with list management",
+          "multilingual": "Full content translation for 2-3 languages",
+          "seo": "Technical SEO, meta management, structured data",
+          "accessibility": "WCAG 2.1 AA compliance for inclusive access",
+          "cookieConsent": "GDPR cookie banner with consent management"
+        },
+        "3": {
+          "auth": "Email/password, magic link, or SSO authentication",
+          "socialAuth": "Google, Apple, GitHub login integration",
+          "twoFactorAuth": "SMS or authenticator app 2FA security",
+          "rbac": "Role-based access control for multi-user systems",
+          "userProfiles": "User settings, avatar upload, preferences",
+          "adminDashboard": "Full admin panel with analytics and management",
+          "dataVisualization": "Interactive charts, graphs, and data tables",
+          "searchAndFilters": "Full-text search with faceted filtering",
+          "notifications": "In-app, email, and push notification system",
+          "realTimeUpdates": "Live data sync via WebSockets or SSE",
+          "apiIntegration": "REST or GraphQL API for third-party services",
+          "dataExport": "Export data to CSV, PDF, or Excel formats",
+          "fileStorage": "File upload with cloud storage (S3, Cloudflare R2)",
+          "crmIntegration": "HubSpot, Salesforce, or custom CRM sync",
+          "paymentIntegration": "Stripe, PayPal, or custom billing system",
+          "emailSystem": "Automated transactional emails (welcome, reset, etc.)",
+          "auditLog": "Track all user actions and system changes",
+          "backupRecovery": "Automated database backups with restore option",
+          "cicdPipeline": "Automated testing, build, and deployment pipeline"
+        },
+        "4": {
+          "ios": "Native iOS app for iPhone with App Store deployment",
+          "android": "Native Android app with Google Play deployment",
+          "tablet": "Optimized layouts for iPad and Android tablets",
+          "appStoreAssets": "Screenshots, descriptions, keywords for store listings",
+          "pushNotifications": "Targeted push notifications with scheduling",
+          "socialAuth": "Google, Apple, Facebook login integration",
+          "userProfiles": "User profiles with avatar, settings, preferences",
+          "onboarding": "Welcome screens introducing app features",
+          "deepLinking": "Direct links to specific app screens from web",
+          "geolocation": "GPS tracking, maps, location-based features",
+          "camera": "Photo/video capture with filters and editing",
+          "offlineMode": "Full app functionality without internet connection",
+          "inAppPayments": "Subscriptions and one-time in-app purchases",
+          "biometricAuth": "Face ID, Touch ID, fingerprint authentication",
+          "qrBarcode": "QR code and barcode scanning functionality",
+          "adminPanel": "Web-based admin panel for content and user management",
+          "analytics": "Firebase Analytics, crash reporting, user behavior tracking",
+          "chatMessaging": "Real-time messaging between users",
+          "contentFeed": "Social-style content feed with likes and comments",
+          "videoStreaming": "Video playback and live streaming integration"
+        },
+        "5": {
+          "logoSystem": "Primary logo, variations, monochrome, favicon",
+          "colorPalette": "Primary, secondary, accent colors with usage rules",
+          "typography": "Font selection, hierarchy, size scale definition",
+          "iconography": "Custom icon set matching brand personality",
+          "illustrations": "Brand-specific illustration style and assets",
+          "brandbook": "Complete brand guidelines document (40-60 pages)",
+          "brandGuidelines": "Quick reference card (4-8 pages) for teams",
+          "brandStrategy": "Market positioning, audience, tone of voice",
+          "namingTagline": "Brand naming options and tagline development",
+          "socialKit": "Templates for Instagram, Facebook, LinkedIn posts",
+          "emailSignature": "HTML email signature with brand elements",
+          "presentations": "PowerPoint/Keynote templates with brand styling",
+          "websiteMockups": "Key website page mockups showing brand in context",
+          "stationery": "Business cards, letterhead, envelopes design",
+          "packaging": "Product packaging and label design",
+          "signage": "Office signage, banners, trade show materials"
+        },
+        "6": {
+          "smm": "Content planning, posting, community engagement",
+          "contentCreation": "Graphics, reels, stories for social platforms",
+          "communityManagement": "Comment moderation, DM responses, engagement",
+          "influencerOutreach": "Influencer identification, outreach, campaigns",
+          "targetedAds": "Facebook & Instagram ad campaign management",
+          "googleAds": "Search, display, and shopping ad campaigns",
+          "youtubeAds": "Video ad campaigns on YouTube platform",
+          "tiktokAds": "TikTok ad campaign setup and optimization",
+          "retargeting": "Re-engage visitors who didn't convert",
+          "seoPromotion": "On-page SEO, link building, keyword tracking",
+          "contentMarketing": "Blog articles, guides, and thought leadership",
+          "emailMarketing": "Newsletter campaigns with automation flows",
+          "localSeo": "Google Business Profile, local citations, reviews",
+          "brandStrategy": "Brand positioning and marketing strategy",
+          "analyticsReporting": "Monthly KPI reports with actionable insights",
+          "competitorMonitoring": "Competitor activity tracking and analysis",
+          "conversionOptimization": "Landing page and funnel optimization",
+          "marketResearch": "Target audience and market opportunity analysis"
+        }
+      },
+      "features": {
+        "0": {
+          "animations": "Animations & Effects",
+          "parallaxScrolling": "Parallax Scrolling",
+          "videoBackground": "Video Background",
+          "darkLightTheme": "Dark / Light Mode",
+          "contactForm": "Contact Form",
+          "emailCapture": "Email Capture & Popup",
+          "chatWidget": "Live Chat Widget",
+          "phoneCallback": "Callback Request",
+          "quizFunnel": "Interactive Quiz / Funnel",
+          "socialProof": "Reviews & Social Proof",
+          "faqSection": "FAQ Section",
+          "pricingTable": "Pricing Table",
+          "countdown": "Countdown Timer",
+          "abTesting": "A/B Testing Setup",
+          "analytics": "Analytics & Tracking",
+          "seo": "SEO Optimization",
+          "speedOptimization": "Core Web Vitals Tuning",
+          "cookieConsent": "GDPR / Cookie Consent"
+        },
+        "1": {
+          "productCatalog": "Product Catalog",
+          "filtersSearch": "Filters & Search",
+          "productVariants": "Size / Color Variants",
+          "productComparison": "Product Comparison",
+          "quickView": "Quick View Modal",
+          "wishlist": "Wishlist / Favorites",
+          "cartCheckout": "Cart & Checkout",
+          "paymentGateway": "Payment Gateway (Stripe, PayPal)",
+          "localPayments": "Local Payments (Paynet, Maib)",
+          "orderTracking": "Order Tracking",
+          "invoiceGeneration": "Automatic Invoices",
+          "inventory": "Inventory Management",
+          "shipping": "Shipping Integration",
+          "promoSystem": "Promo Codes & Discounts",
+          "reviews": "Reviews & Ratings",
+          "multiCurrency": "Multi-Currency Support",
+          "emailIntegration": "Email Marketing Integration",
+          "abandonedCart": "Abandoned Cart Recovery",
+          "seo": "SEO Optimization",
+          "analytics": "E-commerce Analytics"
+        },
+        "2": {
+          "cms": "CMS / Admin Panel",
+          "blog": "Blog / News",
+          "mediaGallery": "Photo & Video Gallery",
+          "documentLibrary": "Document Library",
+          "teamDirectory": "Team Directory",
+          "portfolio": "Portfolio / Case Studies",
+          "companyTimeline": "Company Timeline",
+          "careers": "Careers & Job Listings",
+          "clientLogos": "Client Logos & Partners",
+          "contactForms": "Contact Forms",
+          "mapIntegration": "Interactive Map",
+          "chatWidget": "Live Chat Widget",
+          "newsletter": "Newsletter Subscription",
+          "multilingual": "Multilingual (2–3 languages)",
+          "seo": "SEO Optimization",
+          "accessibility": "WCAG Accessibility",
+          "cookieConsent": "GDPR / Cookie Consent"
+        },
+        "3": {
+          "auth": "User Authentication",
+          "socialAuth": "Social Login (Google / Apple)",
+          "twoFactorAuth": "Two-Factor Authentication",
+          "rbac": "Roles & Permissions",
+          "userProfiles": "User Profiles & Settings",
+          "adminDashboard": "Admin Dashboard",
+          "dataVisualization": "Charts & Visualization",
+          "searchAndFilters": "Advanced Search & Filters",
+          "notifications": "Notification System",
+          "realTimeUpdates": "Real-Time Updates (WebSockets)",
+          "apiIntegration": "API Integrations (REST / GraphQL)",
+          "dataExport": "Data Export (CSV, PDF, Excel)",
+          "fileStorage": "File Upload & Storage",
+          "crmIntegration": "CRM Integration",
+          "paymentIntegration": "Payment Processing",
+          "emailSystem": "Transactional Emails",
+          "auditLog": "Audit Log & Activity History",
+          "backupRecovery": "Backup & Recovery",
+          "cicdPipeline": "CI/CD & Deployment"
+        },
+        "4": {
+          "ios": "iOS Application",
+          "android": "Android Application",
+          "tablet": "Tablet Optimization",
+          "appStoreAssets": "App Store Assets & ASO",
+          "pushNotifications": "Push Notifications",
+          "socialAuth": "Social Login",
+          "userProfiles": "User Profiles & Settings",
+          "onboarding": "Onboarding Screens",
+          "deepLinking": "Deep Linking / Universal Links",
+          "geolocation": "Geolocation & Maps",
+          "camera": "Camera & Photo/Video",
+          "offlineMode": "Offline Mode & Sync",
+          "inAppPayments": "In-App Purchases",
+          "biometricAuth": "Biometric Auth (Face ID / Touch)",
+          "qrBarcode": "QR / Barcode Scanner",
+          "adminPanel": "Admin Panel / CMS",
+          "analytics": "Analytics & Crash Reporting",
+          "chatMessaging": "In-App Chat",
+          "contentFeed": "Content / Social Feed",
+          "videoStreaming": "Video Streaming"
+        },
+        "5": {
+          "logoSystem": "Logo System",
+          "colorPalette": "Color Palette & System",
+          "typography": "Typography System",
+          "iconography": "Custom Icon Set",
+          "illustrations": "Brand Illustrations",
+          "brandbook": "Brand Book",
+          "brandGuidelines": "Quick Brand Guidelines",
+          "brandStrategy": "Brand Strategy & Positioning",
+          "namingTagline": "Naming & Tagline",
+          "socialKit": "Social Media Kit",
+          "emailSignature": "Email Signature Design",
+          "presentations": "Presentation Templates",
+          "websiteMockups": "Website Design Mockups",
+          "stationery": "Business Cards & Stationery",
+          "packaging": "Packaging Design",
+          "signage": "Signage & Environmental"
+        },
+        "6": {
+          "smm": "SMM Management",
+          "contentCreation": "Visual Content Creation",
+          "communityManagement": "Community Management",
+          "influencerOutreach": "Influencer Collaboration",
+          "targetedAds": "Facebook & Instagram Ads",
+          "googleAds": "Google Ads (Search & Display)",
+          "youtubeAds": "YouTube Advertising",
+          "tiktokAds": "TikTok Advertising",
+          "retargeting": "Retargeting Campaigns",
+          "seoPromotion": "SEO Promotion",
+          "contentMarketing": "Blog & Content Marketing",
+          "emailMarketing": "Email Marketing & Automation",
+          "localSeo": "Local SEO / Google Maps",
+          "brandStrategy": "Brand Strategy",
+          "analyticsReporting": "Analytics & KPI Reporting",
+          "competitorMonitoring": "Competitor Monitoring",
+          "conversionOptimization": "Conversion Optimization",
+          "marketResearch": "Market Research"
+        }
+      }
+    },
+    "step4": {
+      "indicator": "4/4",
+      "title": "Contact details",
+      "name": "YOUR NAME",
+      "email": "EMAIL",
+      "phone": "PHONE (OPTIONAL)",
+      "description": "BRIEF PROJECT DESCRIPTION"
+    },
+    "result": {
+      "title": "Your estimate",
+      "summary": "Selected parameters:",
+      "projectType": "Project type",
+      "designLevel": "Design level",
+      "features": "Features",
+      "scope": "Project scope",
+      "discuss": "Discuss project",
+      "recalculate": "Recalculate"
+    },
+    "bottom": {
+      "project": "Or email us:",
+      "email": "hello@goqode.dev"
+    }
+  },
   "Packages": {
     "hero": {
       "title": "PACKAGES",
@@ -1171,6 +1587,525 @@
     "cta": {
       "title": "Ready to start?",
       "button": "Get in touch",
+      "contact_text": "Or email us at"
+    }
+  },
+  "ServiceLanding": {
+    "seo": {
+      "title": "Landing Page Development | GoQode",
+      "description": "Professional landing page development from €500. High-converting designs with modern tech stack. Get a free estimate today.",
+      "keywords": "landing page development, landing page design, custom landing page, hire landing page developer",
+      "ogTitle": "Landing Page Development — GoQode",
+      "ogDescription": "Turn visitors into customers with a high-converting landing page. Modern design, fast loading, SEO optimized."
+    },
+    "hero": {
+      "title": "Landing|Page",
+      "subtitle": "High-converting landing pages that turn visitors into customers. Modern design, blazing-fast performance, and SEO optimization included.",
+      "cta": "Order a Landing Page"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "Landing Page Package",
+      "items": {
+        "0": {
+          "title": "Animations & Effects",
+          "description": "Smooth scroll effects, hover transitions, and page load animations that guide users through the page.",
+          "details": "We add micro-interactions, parallax scrolling, and smooth transitions that keep visitors engaged without slowing down load time.",
+          "deliverables": "Scroll animations, Hover effects, Page transitions, Micro-interactions"
+        },
+        "1": {
+          "title": "Custom Contact Form",
+          "description": "Conversion-optimized contact form with validation and instant email delivery.",
+          "details": "Custom-built form with client-side validation, anti-spam protection, and automated email notifications to your inbox.",
+          "deliverables": "Form design, Validation, Email delivery, Anti-spam"
+        },
+        "2": {
+          "title": "A/B Testing Setup",
+          "description": "Test different layouts and copy variations to maximize your conversion rate.",
+          "details": "We set up split testing infrastructure so you can compare headlines, CTAs, and page layouts to find what converts best.",
+          "deliverables": "Test variants, Analytics tracking, Performance reports, Optimization"
+        },
+        "3": {
+          "title": "Email Capture System",
+          "description": "Newsletter signup with smart popups or inline forms to grow your email list.",
+          "details": "Exit-intent popups, scroll-triggered forms, and inline signup blocks connected to your email marketing platform.",
+          "deliverables": "Popup forms, Inline forms, Email integration, Automation"
+        },
+        "4": {
+          "title": "Social Proof & Testimonials",
+          "description": "Client reviews, trust badges, and key numbers that build credibility instantly.",
+          "details": "Strategically placed testimonials, partner logos, success metrics, and trust indicators that increase visitor confidence.",
+          "deliverables": "Testimonial blocks, Trust badges, Statistics counters, Logo carousel"
+        },
+        "5": {
+          "title": "Analytics & Tracking",
+          "description": "Google Analytics 4, conversion goals, and heatmap tracking from day one.",
+          "details": "Complete analytics setup including GA4 events, Meta Pixel, custom conversion goals, and Hotjar heatmap integration.",
+          "deliverables": "GA4 setup, Meta Pixel, Goal tracking, Heatmaps"
+        },
+        "6": {
+          "title": "SEO Optimization",
+          "description": "Meta tags, structured data, and Core Web Vitals optimization for search rankings.",
+          "details": "On-page SEO including meta titles, descriptions, Open Graph tags, JSON-LD schema, image optimization, and performance tuning.",
+          "deliverables": "Meta tags, Schema markup, Image optimization, Speed optimization"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Build Your Landing Page",
+      "steps": {
+        "0": { "title": "Brief & Research", "description": "We study your product, audience, and competitors to define the conversion strategy and key messaging." },
+        "1": { "title": "Wireframe & UX", "description": "We design the page structure and user flow optimized for maximum conversions." },
+        "2": { "title": "UI Design", "description": "We create a unique visual design aligned with your brand identity in Figma." },
+        "3": { "title": "Development", "description": "We build the page with Next.js, optimized for speed, SEO, and cross-device performance." },
+        "4": { "title": "Testing & Launch", "description": "We test on all devices, connect analytics, and deploy to production with zero downtime." }
+      }
+    },
+    "tech": {
+      "label": "Technologies",
+      "title": "Tech Stack We Use",
+      "categories": {
+        "frontend": { "title": "Frontend", "items": "Next.js, React, TypeScript, Tailwind CSS, Framer Motion" },
+        "hosting": { "title": "Hosting & CDN", "items": "Vercel, Cloudflare, AWS" },
+        "analytics": { "title": "Analytics", "items": "Google Analytics 4, Hotjar, Meta Pixel" },
+        "tools": { "title": "Tools", "items": "Figma, GitHub, VS Code" }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Landing Page Investment",
+      "from": "from",
+      "description": "Final price depends on design complexity and required features. Use our calculator for a precise estimate.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "conversions": "Average conversion rate for our landing pages",
+      "seo": "Lighthouse SEO score out of 100",
+      "speed": "Average page load time"
+    },
+    "cta": {
+      "title": "Ready to Launch Your Landing Page?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "ServiceEcommerce": {
+    "seo": {
+      "title": "E-commerce Website Development | GoQode",
+      "description": "Custom e-commerce development from €3,000. Secure payments, inventory management, and scalable online stores. Get a quote today.",
+      "keywords": "ecommerce website development, online store development, custom ecommerce, ecommerce development company",
+      "ogTitle": "E-commerce Development — GoQode",
+      "ogDescription": "Build a powerful online store with secure payments, inventory management, and conversion-optimized design."
+    },
+    "hero": {
+      "title": "Online|Store",
+      "subtitle": "Powerful online stores with secure payments, inventory management, and conversion-optimized design. Built to scale with your business.",
+      "cta": "Build Your Store"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "E-commerce Package",
+      "items": {
+        "0": {
+          "title": "Product Catalog",
+          "description": "Rich product pages with images, variants, pricing, and detailed descriptions.",
+          "details": "Beautiful product cards with image galleries, size/color variants, stock indicators, and SEO-optimized descriptions.",
+          "deliverables": "Product pages, Image galleries, Variants, Stock display"
+        },
+        "1": {
+          "title": "Cart & Checkout",
+          "description": "Smooth multi-step checkout flow designed to minimize cart abandonment.",
+          "details": "Optimized shopping cart with guest checkout, address autofill, order summary, and secure multi-step payment flow.",
+          "deliverables": "Shopping cart, Checkout flow, Guest checkout, Order summary"
+        },
+        "2": {
+          "title": "Payment Gateway",
+          "description": "Stripe, PayPal, Paynet, or Maib with full PCI compliance.",
+          "details": "Secure payment integration supporting credit cards, digital wallets, and automatic receipts.",
+          "deliverables": "Stripe, PayPal, Paynet, Maib"
+        },
+        "3": {
+          "title": "Inventory Management",
+          "description": "Real-time stock tracking with low-stock alerts and automatic sync.",
+          "details": "Centralized inventory system with automatic stock updates, low-stock email alerts, and multi-warehouse support.",
+          "deliverables": "Stock tracking, Low-stock alerts, Auto-sync, Reports"
+        },
+        "4": {
+          "title": "Filters & Search",
+          "description": "Advanced filtering by category, price range, and full-text product search.",
+          "details": "Faceted navigation with category filters, price sliders, attribute filters, and instant full-text search with typo tolerance.",
+          "deliverables": "Category filters, Price range, Full-text search, Autocomplete"
+        },
+        "5": {
+          "title": "Promo & Discounts",
+          "description": "Discount codes, seasonal sales, and automatic promotional rules.",
+          "details": "Flexible promotion engine supporting percentage/fixed discounts, BOGO offers, minimum order rules, and time-limited campaigns.",
+          "deliverables": "Promo codes, Auto-apply rules, Sale campaigns, BOGO offers"
+        },
+        "6": {
+          "title": "Reviews & Ratings",
+          "description": "Customer review system with star ratings and admin moderation.",
+          "details": "Verified purchase reviews with star ratings, photo uploads, helpful votes, and admin moderation dashboard.",
+          "deliverables": "Star ratings, Photo reviews, Moderation, Verified purchases"
+        },
+        "7": {
+          "title": "Shipping Integration",
+          "description": "Real-time shipping rates, order tracking, and multi-carrier support.",
+          "details": "Automated shipping calculations with carrier API integration, tracking numbers, delivery notifications, and returns management.",
+          "deliverables": "Rate calculation, Tracking, Multi-carrier, Returns"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Build Your Online Store",
+      "steps": {
+        "0": { "title": "Brief & Strategy", "description": "We analyze your products, market, and competitors to define the optimal store architecture." },
+        "1": { "title": "UX & Architecture", "description": "We design the user journey, category structure, and checkout flow for maximum conversions." },
+        "2": { "title": "UI Design", "description": "We create a visually stunning storefront design that builds trust and drives purchases." },
+        "3": { "title": "Development", "description": "We build the store with modern tech, optimized for speed, security, and scalability." },
+        "4": { "title": "Payments & Integrations", "description": "We connect payment gateways, shipping APIs, and third-party services." },
+        "5": { "title": "Testing & Launch", "description": "We run comprehensive QA, load testing, and launch with full monitoring in place." }
+      }
+    },
+    "tech": {
+      "label": "Technologies",
+      "title": "Tech Stack We Use",
+      "categories": {
+        "frontend": { "title": "Frontend", "items": "Next.js, React, TypeScript, Tailwind CSS" },
+        "backend": { "title": "Backend & Payments", "items": "Node.js, Stripe API, PayPal SDK" },
+        "database": { "title": "Database", "items": "PostgreSQL, Redis, Prisma ORM" },
+        "infrastructure": { "title": "Infrastructure", "items": "Vercel, AWS S3, Cloudflare" }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "E-commerce Investment",
+      "from": "from",
+      "description": "Price varies based on product count, integrations, and custom features. Use our calculator for a detailed estimate.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "performance": "Google PageSpeed score",
+      "mobile": "Mobile-responsive design",
+      "secure": "Secure payments and data protection"
+    },
+    "cta": {
+      "title": "Ready to Launch Your Store?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "ServiceCorporate": {
+    "seo": {
+      "title": "Corporate Website Development | GoQode",
+      "description": "Professional corporate website development from €1,500. CMS, blog, team pages, and SEO optimization. Get started today.",
+      "keywords": "corporate website development, business website design, company website, professional website development",
+      "ogTitle": "Corporate Website Development — GoQode",
+      "ogDescription": "Establish a professional digital presence with a custom corporate website featuring CMS, blog, and SEO."
+    },
+    "hero": {
+      "title": "Corporate|Website",
+      "subtitle": "Professional business websites with content management, blog, team pages, and full SEO optimization. Your digital business card.",
+      "cta": "Get Your Website"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "Corporate Website Package",
+      "items": {
+        "0": {
+          "title": "CMS & Admin Panel",
+          "description": "Visual content editor so your team can update the site without developers.",
+          "details": "Intuitive admin panel with drag-and-drop editor, media library, content scheduling, and role-based access control.",
+          "deliverables": "Visual editor, Media library, Content scheduling, User roles"
+        },
+        "1": {
+          "title": "Blog & News",
+          "description": "Articles with categories, tags, and built-in SEO for organic traffic growth.",
+          "details": "Full-featured blog with rich text editor, category/tag taxonomy, related posts, social sharing, and automatic sitemap updates.",
+          "deliverables": "Rich text editor, Categories, Tags, Social sharing"
+        },
+        "2": {
+          "title": "Team Directory",
+          "description": "Professional team member profiles with photos, roles, and contact info.",
+          "details": "Dynamic team section with member profiles, department filtering, LinkedIn links, and easy admin management.",
+          "deliverables": "Member profiles, Department filter, Contact links, Admin panel"
+        },
+        "3": {
+          "title": "Portfolio & Gallery",
+          "description": "Showcase your best projects with filters, lightbox, and case study pages.",
+          "details": "Project gallery with category filters, fullscreen lightbox, before/after sliders, and detailed case study templates.",
+          "deliverables": "Project gallery, Filters, Lightbox, Case studies"
+        },
+        "4": {
+          "title": "Contact Forms",
+          "description": "Multiple contact forms with smart routing and instant notifications.",
+          "details": "Department-specific forms with auto-routing, file attachments, anti-spam, CRM integration, and email notifications.",
+          "deliverables": "Multi-form system, Auto-routing, CRM integration, Notifications"
+        },
+        "5": {
+          "title": "Multilingual Support",
+          "description": "Content in multiple languages with automatic locale detection and routing.",
+          "details": "Full i18n support with language switcher, auto-detection, SEO-friendly URLs per locale, and hreflang tags.",
+          "deliverables": "Language switcher, Auto-detection, SEO per locale, hreflang"
+        },
+        "6": {
+          "title": "SEO Optimization",
+          "description": "Meta tags, XML sitemap, and Schema.org markup for better search rankings.",
+          "details": "Comprehensive on-page SEO including meta management, automatic sitemap, Schema markup, and Core Web Vitals optimization.",
+          "deliverables": "Meta management, XML sitemap, Schema markup, Speed optimization"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Build Your Corporate Website",
+      "steps": {
+        "0": { "title": "Brief & Strategy", "description": "We define your brand positioning, target audience, and content strategy." },
+        "1": { "title": "Content & UX", "description": "We plan the site structure, page hierarchy, and user navigation paths." },
+        "2": { "title": "UI Design", "description": "We design a professional, brand-aligned interface in Figma with responsive layouts." },
+        "3": { "title": "Development & CMS", "description": "We build the site and configure the content management system for easy updates." },
+        "4": { "title": "Launch & Training", "description": "We deploy the site, train your team on the CMS, and provide documentation." }
+      }
+    },
+    "tech": {
+      "label": "Technologies",
+      "title": "Tech Stack We Use",
+      "categories": {
+        "frontend": { "title": "Frontend", "items": "Next.js, React, TypeScript, Tailwind CSS" },
+        "cms": { "title": "CMS", "items": "Sanity, Strapi, WordPress Headless" },
+        "hosting": { "title": "Hosting", "items": "Vercel, Netlify, AWS" },
+        "seo": { "title": "SEO Tools", "items": "Schema.org, Sitemap, Open Graph" }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Corporate Website Investment",
+      "from": "from",
+      "description": "Price depends on page count, CMS complexity, and integrations. Use our calculator for an accurate estimate.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "traffic": "Organic traffic growth in 6 months",
+      "seo": "Lighthouse SEO score out of 100",
+      "languages": "Languages supported per project"
+    },
+    "cta": {
+      "title": "Ready for a Professional Website?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "ServiceWebapp": {
+    "seo": {
+      "title": "Web Application Development | GoQode",
+      "description": "Custom web application development from €5,000. Full-stack solutions with auth, dashboards, and API integrations. Start your project.",
+      "keywords": "web application development, custom web app, SaaS development, web app development company",
+      "ogTitle": "Web Application Development — GoQode",
+      "ogDescription": "Build powerful web applications with authentication, dashboards, and API integrations."
+    },
+    "hero": {
+      "title": "Web|Application",
+      "subtitle": "Custom web applications with authentication, admin dashboards, and API integrations. Full-stack solutions built to handle real workloads.",
+      "cta": "Start Your Project"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "Web Application Package",
+      "items": {
+        "0": {
+          "title": "User Authentication",
+          "description": "Secure login, registration, password recovery, and session management.",
+          "details": "Complete auth system with email/password, OAuth providers, JWT tokens, password reset flows, and session management.",
+          "deliverables": "Login/Register, OAuth, Password reset, Session management"
+        },
+        "1": {
+          "title": "Admin Dashboard",
+          "description": "Data overview with charts, tables, and user management capabilities.",
+          "details": "Feature-rich admin panel with real-time data visualization, user management, activity logs, and system health monitoring.",
+          "deliverables": "Data charts, User management, Activity logs, System monitoring"
+        },
+        "2": {
+          "title": "Roles & Permissions",
+          "description": "Granular role-based access control for different user types.",
+          "details": "Flexible RBAC system with custom roles, permission groups, resource-level access control, and audit trails.",
+          "deliverables": "Custom roles, Permission groups, Access control, Audit trails"
+        },
+        "3": {
+          "title": "API Integrations",
+          "description": "Connect third-party services via REST or GraphQL APIs.",
+          "details": "Robust API layer with REST/GraphQL endpoints, webhook support, rate limiting, and comprehensive documentation.",
+          "deliverables": "REST API, GraphQL, Webhooks, API documentation"
+        },
+        "4": {
+          "title": "Notification System",
+          "description": "Email, in-app, and push notifications to keep users engaged.",
+          "details": "Multi-channel notification system with email templates, in-app notification center, push notifications, and user preferences.",
+          "deliverables": "Email notifications, In-app alerts, Push notifications, Preferences"
+        },
+        "5": {
+          "title": "Data Export",
+          "description": "Export reports and data in CSV, PDF, and Excel formats.",
+          "details": "Flexible export system generating formatted CSV, styled PDF reports, and Excel spreadsheets with scheduled auto-exports.",
+          "deliverables": "CSV export, PDF reports, Excel files, Scheduled exports"
+        },
+        "6": {
+          "title": "File Storage",
+          "description": "Secure file upload, storage, and management with access control.",
+          "details": "Cloud file storage with drag-and-drop upload, file type validation, virus scanning, CDN delivery, and access permissions.",
+          "deliverables": "File upload, Cloud storage, CDN delivery, Access control"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Build Your Web Application",
+      "steps": {
+        "0": { "title": "Discovery & Architecture", "description": "We map your requirements, define the system architecture, and plan the database schema." },
+        "1": { "title": "UX Research", "description": "We design user flows, wireframes, and interactive prototypes for key features." },
+        "2": { "title": "UI Design", "description": "We create a clean, functional interface focused on usability and efficiency." },
+        "3": { "title": "Backend & API", "description": "We build the server, database, and API layer with security and scalability in mind." },
+        "4": { "title": "Frontend & Integration", "description": "We develop the client-side application and connect it to the backend services." },
+        "5": { "title": "Testing & Deploy", "description": "We run automated tests, security audits, and deploy with CI/CD pipelines." }
+      }
+    },
+    "tech": {
+      "label": "Technologies",
+      "title": "Tech Stack We Use",
+      "categories": {
+        "frontend": { "title": "Frontend", "items": "Next.js, React, TypeScript, Tailwind CSS" },
+        "backend": { "title": "Backend", "items": "Node.js, Express, Fastify, GraphQL" },
+        "database": { "title": "Database", "items": "PostgreSQL, Redis, MongoDB, Prisma" },
+        "devops": { "title": "DevOps", "items": "Docker, CI/CD, AWS, Vercel" }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Web Application Investment",
+      "from": "from",
+      "description": "Price depends on feature complexity, integrations, and user scale. Use our calculator for a detailed breakdown.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "uptime": "Guaranteed application uptime",
+      "response": "Average API response time",
+      "availability": "Available around the clock"
+    },
+    "cta": {
+      "title": "Ready to Build Your Web App?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    }
+  },
+  "ServiceMobile": {
+    "seo": {
+      "title": "Mobile App Development | GoQode",
+      "description": "iOS and Android app development from €8,000. Cross-platform with React Native. Push notifications, geolocation, and more.",
+      "keywords": "mobile app development, iOS app development, Android app development, cross-platform app, React Native development",
+      "ogTitle": "Mobile App Development — GoQode",
+      "ogDescription": "Build native-quality iOS and Android apps with React Native. From concept to App Store launch."
+    },
+    "hero": {
+      "title": "Mobile|App",
+      "subtitle": "Native-quality iOS and Android applications with push notifications, offline mode, and seamless user experience. From idea to App Store.",
+      "cta": "Build Your App"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "Mobile App Package",
+      "items": {
+        "0": {
+          "title": "iOS Application",
+          "description": "Native or cross-platform iOS app optimized for iPhone and iPad.",
+          "details": "App Store-ready iOS application with native UI patterns, gesture support, and optimized performance for all Apple devices.",
+          "deliverables": "iOS app, iPhone support, iPad support, App Store submission"
+        },
+        "1": {
+          "title": "Android Application",
+          "description": "Native or cross-platform Android app for phones and tablets.",
+          "details": "Google Play-ready Android application with Material Design, adaptive layouts, and backward compatibility.",
+          "deliverables": "Android app, Phone support, Tablet support, Play Store submission"
+        },
+        "2": {
+          "title": "Push Notifications",
+          "description": "Targeted push messages with scheduling and user segmentation.",
+          "details": "Rich push notifications with images, deep links, scheduling, A/B testing, and analytics for engagement tracking.",
+          "deliverables": "Rich push, Scheduling, Segmentation, Analytics"
+        },
+        "3": {
+          "title": "Geolocation",
+          "description": "Maps integration, location tracking, and nearby search functionality.",
+          "details": "Interactive maps with custom markers, real-time location tracking, geofencing, and proximity-based search features.",
+          "deliverables": "Maps, Location tracking, Geofencing, Nearby search"
+        },
+        "4": {
+          "title": "Offline Mode",
+          "description": "App works without internet and syncs data when connection is restored.",
+          "details": "Local data storage with smart sync, conflict resolution, background updates, and seamless online/offline transitions.",
+          "deliverables": "Local storage, Background sync, Conflict resolution, Queue system"
+        },
+        "5": {
+          "title": "In-App Purchases",
+          "description": "Subscription or one-time purchase flows with receipt validation.",
+          "details": "Apple Pay and Google Pay integration with subscription management, receipt validation, and revenue analytics.",
+          "deliverables": "Subscriptions, One-time purchases, Receipt validation, Revenue tracking"
+        },
+        "6": {
+          "title": "Social Login",
+          "description": "Quick sign-in via Google, Apple, and Facebook accounts.",
+          "details": "OAuth integration with Google, Apple Sign-In, and Facebook Login for frictionless onboarding with profile data sync.",
+          "deliverables": "Google login, Apple Sign-In, Facebook login, Profile sync"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Build Your Mobile App",
+      "steps": {
+        "0": { "title": "Discovery & Strategy", "description": "We define your app concept, target users, and core feature set for MVP." },
+        "1": { "title": "UX/UI Design", "description": "We design intuitive interfaces following iOS and Android design guidelines." },
+        "2": { "title": "Development", "description": "We build the app with React Native for native performance on both platforms." },
+        "3": { "title": "Backend & API", "description": "We develop the server infrastructure, database, and API layer." },
+        "4": { "title": "QA Testing", "description": "We test on real devices, run automated tests, and fix edge cases." },
+        "5": { "title": "App Store Launch", "description": "We handle App Store and Google Play submission, optimization, and monitoring." }
+      }
+    },
+    "tech": {
+      "label": "Technologies",
+      "title": "Tech Stack We Use",
+      "categories": {
+        "mobile": { "title": "Mobile", "items": "React Native, Expo, Swift, Kotlin" },
+        "backend": { "title": "Backend", "items": "Node.js, Firebase, Supabase" },
+        "storage": { "title": "Storage & CDN", "items": "AWS S3, CloudFront, Cloud Storage" },
+        "distribution": { "title": "Distribution", "items": "App Store, Google Play, TestFlight" }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Mobile App Investment",
+      "from": "from",
+      "description": "Price depends on platform count, features, and backend complexity. Use our calculator for an accurate estimate.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "platforms": "Platforms: iOS & Android from one codebase",
+      "performance": "Smooth UI performance",
+      "offline": "Offline support when needed"
+    },
+    "cta": {
+      "title": "Ready to Build Your App?",
+      "button": "Discuss Project",
       "contact_text": "Or email us at"
     }
   }
