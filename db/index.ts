@@ -5,12 +5,16 @@ import * as schema from "./schema";
 
 let _db: NeonHttpDatabase<typeof schema> | null = null;
 
+function getDb() {
+  if (!_db) {
+    const sql = neon(process.env.DATABASE_URL!);
+    _db = drizzle(sql, { schema });
+  }
+  return _db;
+}
+
 export const db = new Proxy({} as NeonHttpDatabase<typeof schema>, {
   get(_target, prop) {
-    if (!_db) {
-      const sql = neon(process.env.DATABASE_URL!);
-      _db = drizzle(sql, { schema });
-    }
-    return (_db as Record<string | symbol, unknown>)[prop];
+    return (getDb() as unknown as Record<string | symbol, unknown>)[prop];
   },
 });
