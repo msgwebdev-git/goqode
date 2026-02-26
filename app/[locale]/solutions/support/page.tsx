@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import {
   Phone,
   Mail,
@@ -101,21 +101,11 @@ function SupportHero() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex flex-col items-center gap-5 md:gap-8"
       >
-        <Shuffle
+        <SplitText
           text={t("hero.title")}
           tag="h1"
-          className="text-[12vw] md:text-[8vw] font-black leading-[0.9] tracking-tight text-foreground"
+          className="text-[12vw] md:text-[8vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
           textAlign="center"
-          shuffleDirection="right"
-          duration={0.35}
-          animationMode="evenodd"
-          shuffleTimes={1}
-          ease="power3.out"
-          stagger={0.03}
-          threshold={0.1}
-          triggerOnce={true}
-          triggerOnHover={false}
-          respectReducedMotion={true}
         />
 
         <motion.p
@@ -182,7 +172,7 @@ function ChannelsSection() {
               {t("channels.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.75rem,3rem] font-bold leading-[1.1] text-foreground">
             {t("channels.title")}
           </h2>
         </motion.div>
@@ -261,7 +251,7 @@ function ProcessSection() {
               {t("process.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>

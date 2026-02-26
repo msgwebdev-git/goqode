@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import CountUp from "@/components/CountUp";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import {
@@ -20,8 +20,6 @@ import {
   Server,
   BarChart3,
   Smartphone,
-  Code2,
-  GitBranch,
   Webhook,
   Bell,
   Search,
@@ -92,21 +90,11 @@ function PlatformsHero() {
           >
             {/* Title */}
             <motion.div variants={cardVariant}>
-              <Shuffle
+              <SplitText
                 text={t("hero.title")}
                 tag="h1"
-                className="text-[13vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
+                className="text-[13vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
                 textAlign="center"
-                shuffleDirection="right"
-                duration={0.35}
-                animationMode="evenodd"
-                shuffleTimes={1}
-                ease="power3.out"
-                stagger={0.03}
-                threshold={0.1}
-                triggerOnce={true}
-                triggerOnHover={false}
-                respectReducedMotion={true}
               />
             </motion.div>
 
@@ -265,21 +253,11 @@ function PlatformTypesSection() {
             </span>
           </div>
           <div className="flex flex-col gap-4 md:gap-[1.5vw]">
-            <Shuffle
+            <SplitText
               text={t("types.title")}
               tag="h2"
-              className="text-[13vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+              className="text-[13vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.03}
-              threshold={0.1}
-              triggerOnce={true}
-              triggerOnHover={false}
-              respectReducedMotion={true}
             />
             <div className="border-l-2 border-[#C9FD48] pl-4 md:pl-[1vw]">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
@@ -362,7 +340,7 @@ function FeaturesSection() {
               {t("features.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("features.title")}
           </h2>
         </div>
@@ -385,7 +363,7 @@ function FeaturesSection() {
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-zinc-900 dark:bg-zinc-800 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9FD48]" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-base md:text-[1.45vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-bold">
+                    <h3 className="text-base md:text-[1.45vw] font-semibold text-foreground leading-[1.1] transition-[font-weight] duration-300 ease-out group-hover:font-bold">
                       {t(`features.items.${feature.index}.title`)}
                     </h3>
                   </div>
@@ -459,7 +437,7 @@ function BentoGridSection() {
               {t("bento.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("bento.title")}
           </h2>
         </motion.div>
@@ -503,150 +481,6 @@ function BentoGridSection() {
                     </div>
                   )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-}
-
-// Tech Stack Section
-function TechStackSection() {
-  const t = useTranslations("Platforms");
-  const [openStack, setOpenStack] = useState<number | null>(0);
-
-  const technologies = {
-    frontend: [
-      { name: "React", icon: "https://svgl.app/library/react_dark.svg" },
-      { name: "Next.js", icon: "https://svgl.app/library/nextjs_icon_dark.svg" },
-      { name: "TypeScript", icon: "https://svgl.app/library/typescript.svg" },
-      { name: "Tailwind CSS", icon: "https://svgl.app/library/tailwindcss.svg" },
-    ],
-    backend: [
-      { name: "Node.js", icon: "https://svgl.app/library/nodejs.svg" },
-      { name: "Express.js", icon: "https://svgl.app/library/expressjs_dark.svg" },
-      { name: "Fastify", icon: "https://svgl.app/library/fastify_dark.svg" },
-      { name: "NestJS", icon: "https://svgl.app/library/nestjs.svg" },
-    ],
-    database: [
-      { name: "PostgreSQL", icon: "https://svgl.app/library/postgresql.svg" },
-      { name: "MongoDB", icon: "https://svgl.app/library/mongodb-icon-light.svg" },
-      { name: "MySQL", icon: "https://svgl.app/library/mysql-icon-light.svg" },
-      { name: "Redis", icon: "https://svgl.app/library/redis.svg" },
-      { name: "Supabase", icon: "https://svgl.app/library/supabase.svg" },
-      { name: "Firebase", icon: "https://svgl.app/library/firebase.svg" },
-    ],
-    devops: [
-      { name: "Docker", icon: "https://svgl.app/library/docker.svg" },
-      { name: "Kubernetes", icon: "https://svgl.app/library/kubernetes.svg" },
-      { name: "AWS", icon: "https://svgl.app/library/aws.svg" },
-      { name: "GitHub", icon: "https://svgl.app/library/github-light.svg" },
-    ],
-  };
-
-  const categories = [
-    { key: "frontend" as const, icon: Code2 },
-    { key: "backend" as const, icon: Server },
-    { key: "database" as const, icon: Database },
-    { key: "devops" as const, icon: GitBranch },
-  ];
-
-  return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={container}
-        className="w-full"
-      >
-        {/* Header */}
-        <motion.div variants={cardVariant} className="mb-6 md:mb-[2vw]">
-          <div className="flex items-center gap-2 md:gap-[0.4vw] mb-2 md:mb-[0.5vw]">
-            <div className="w-1.5 h-1.5 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />
-            <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
-              {t("stack.label")}
-            </span>
-          </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
-            {t("stack.title")}
-          </h2>
-        </motion.div>
-
-        {/* Mobile: Accordion */}
-        <div className="md:hidden">
-          {categories.map((category, idx) => {
-            const isOpen = openStack === idx;
-            return (
-              <motion.div key={category.key} variants={cardVariant} className="border-b border-zinc-200 dark:border-zinc-800">
-                <button
-                  onClick={() => setOpenStack(isOpen ? null : idx)}
-                  className="w-full py-4 flex items-center justify-between text-left"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center">
-                      <category.icon className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-sm font-semibold text-foreground">
-                      {t(`stack.categories.${category.key}.title`)}
-                    </h3>
-                  </div>
-                  <div className="w-8 h-8 flex items-center justify-center text-muted-foreground">
-                    <AnimatedPlusX isOpen={isOpen} />
-                  </div>
-                </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="flex flex-wrap gap-2 pb-4">
-                        {technologies[category.key].map((tech, i) => (
-                          <div
-                            key={i}
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
-                          >
-                            <img src={tech.icon} alt={tech.name} className="w-5 h-5" />
-                            <span className="text-xs font-medium text-foreground">{tech.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Desktop: Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-[1.5vw]">
-          {categories.map((category) => (
-            <motion.div key={category.key} variants={cardVariant}>
-              <div className="flex items-center gap-[0.5vw] mb-[0.8vw]">
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center">
-                  <category.icon className="w-5 h-5 text-[#C9FD48]" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-[1.1vw] font-semibold text-foreground">
-                  {t(`stack.categories.${category.key}.title`)}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-[0.4vw]">
-                {technologies[category.key].map((tech, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-1.5 px-[0.7vw] py-[0.3vw] rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
-                  >
-                    <img src={tech.icon} alt={tech.name} className="w-5 h-5" />
-                    <span className="clamp-[text,0.75rem,0.875rem] font-medium text-foreground">{tech.name}</span>
-                  </div>
-                ))}
               </div>
             </motion.div>
           ))}
@@ -748,7 +582,7 @@ function ProcessSection() {
               {t("process.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("process.title")}
           </h2>
         </motion.div>
@@ -847,7 +681,7 @@ function StatsSection() {
               {t("stats.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("stats.title")}
           </h2>
         </motion.div>
@@ -939,7 +773,6 @@ export default function PlatformsPage() {
       <FeaturesSection />
       <ProcessSection />
       <BentoGridSection />
-      <TechStackSection />
       <StatsSection />
       <PlatformsCTA />
     </main>

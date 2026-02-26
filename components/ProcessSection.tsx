@@ -124,15 +124,6 @@ function ProcessCard({
           }
         `}
       >
-        {/* Large step number background */}
-        <div
-          className={`
-            absolute -top-4 -right-4 text-[30vw] md:text-[12vw] font-black leading-none select-none pointer-events-none transition-colors duration-500
-            ${isActive ? "text-black/5" : "text-white/[0.02] dark:text-black/[0.02]"}
-          `}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col">
@@ -153,22 +144,6 @@ function ProcessCard({
             </motion.div>
           </div>
 
-          {/* Step indicator */}
-          <div className="flex items-center gap-3 mb-4">
-            <span
-              className={`
-                text-sm font-mono uppercase tracking-wider transition-colors duration-500
-                ${isActive ? "text-black/60" : "text-white/40 dark:text-black/40"}
-              `}
-            >
-              Step {String(index + 1).padStart(2, "0")}
-            </span>
-            {isPast && (
-              <span className="px-2 py-0.5 text-xs font-medium bg-emerald-500/20 text-emerald-500 rounded-full">
-                Done
-              </span>
-            )}
-          </div>
 
           {/* Title */}
           <motion.h3
@@ -302,10 +277,6 @@ function MobileProcessScroll({
             key={index}
             className="snap-start shrink-0 w-[80vw] relative rounded-2xl bg-zinc-900 dark:bg-zinc-100 p-5 overflow-hidden"
           >
-            {/* Step number bg */}
-            <div className="absolute -top-2 -right-2 text-[8rem] font-black leading-none text-white/5 dark:text-black/5 select-none pointer-events-none">
-              {String(index + 1).padStart(2, "0")}
-            </div>
 
             <div className="relative z-10">
               {/* Icon + Step */}
@@ -313,9 +284,6 @@ function MobileProcessScroll({
                 <div className="w-10 h-10 rounded-xl bg-[#C9FD48]/20 flex items-center justify-center text-[#C9FD48]">
                   <div className="w-5 h-5">{StepIcons[index]}</div>
                 </div>
-                <span className="text-xs font-mono text-white/40 dark:text-black/40 uppercase tracking-wider">
-                  Step {String(index + 1).padStart(2, "0")}
-                </span>
               </div>
 
               {/* Title */}

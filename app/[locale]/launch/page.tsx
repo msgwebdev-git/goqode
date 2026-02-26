@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import { Rocket, ArrowRight, Target, Users, TrendingUp } from "lucide-react";
 import CountUp from "@/components/CountUp";
 
@@ -68,23 +68,12 @@ function LaunchHero() {
         initial="hidden"
         animate="show"
       >
-        {/* Title with Shuffle animation */}
         <motion.div variants={itemVariant} className="w-full">
-          <Shuffle
+          <SplitText
             text={t("hero.title")}
             tag="h1"
-            className="text-[13vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
+            className="text-[13vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
             textAlign="center"
-            shuffleDirection="right"
-            duration={0.35}
-            animationMode="evenodd"
-            shuffleTimes={1}
-            ease="power3.out"
-            stagger={0.03}
-            threshold={0.1}
-            triggerOnce={true}
-            triggerOnHover={false}
-            respectReducedMotion={true}
           />
         </motion.div>
 
@@ -135,7 +124,7 @@ function SolutionOverview() {
               {t("overview.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("overview.title")}
           </h2>
         </div>
@@ -156,7 +145,7 @@ function SolutionOverview() {
                   className="w-full py-4 md:py-[1vw] flex items-center justify-between gap-3 md:gap-[0.8vw] text-left group"
                 >
                   {/* Title */}
-                  <h3 className="text-[6vw] md:text-[3.2vw] font-semibold text-foreground leading-tight transition-[font-weight] duration-300 ease-out group-hover:font-extrabold">
+                  <h3 className="text-[6vw] md:text-[3.2vw] font-semibold text-foreground leading-[1.1] transition-[font-weight] duration-300 ease-out group-hover:font-extrabold">
                     {t(`overview.steps.${index}.title`)}
                   </h3>
 
@@ -222,14 +211,14 @@ function ResultsSection() {
     },
     {
       icon: Users,
-      value: 30,
+      value: 15,
       suffix: "+",
       label: t("results.first_leads"),
     },
     {
       icon: TrendingUp,
-      value: 2,
-      suffix: "x",
+      value: 3,
+      suffix: "",
       label: t("results.conversion_growth"),
     },
   ];
@@ -251,7 +240,7 @@ function ResultsSection() {
               {t("results.label")}
             </span>
           </div>
-          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-tight text-foreground">
+          <h2 className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] text-foreground">
             {t("results.title")}
           </h2>
         </motion.div>

@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import { ArrowRight, Check, Star } from "lucide-react";
 
 /* ─── Animation variants ─────────────────────────────── */
@@ -53,21 +53,11 @@ function PackagesSection() {
       >
         {/* Title */}
         <motion.div variants={itemVariant} className="text-center mb-8 md:mb-[min(3vw,58px)]">
-          <Shuffle
+          <SplitText
             text={t("hero.title")}
             tag="h1"
-            className="text-[12vw] md:text-[min(8vw,153px)] font-black leading-[0.85] tracking-tighter text-foreground"
+            className="text-[12vw] md:text-[min(8vw,153px)] font-black leading-[1.1] tracking-tighter text-foreground uppercase"
             textAlign="center"
-            shuffleDirection="right"
-            duration={0.35}
-            animationMode="evenodd"
-            shuffleTimes={1}
-            ease="power3.out"
-            stagger={0.03}
-            threshold={0.1}
-            triggerOnce={true}
-            triggerOnHover={false}
-            respectReducedMotion={true}
           />
           <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed mt-3 md:mt-[min(1vw,19px)]">
             {t("hero.subtitle")}
@@ -144,13 +134,6 @@ function PackagesSection() {
                           }`}
                         >
                           €
-                        </span>
-                        <span
-                          className={`clamp-[text,0.875rem,0.8rem] ${
-                            isRecommended ? "text-zinc-500" : "text-muted-foreground"
-                          }`}
-                        >
-                          {t(`packages.${pkg.index}.period`)}
                         </span>
                       </>
                     )}

@@ -228,16 +228,6 @@ export function Navbar() {
                     );
                   })}
                 </div>
-                {/* Footer CTA */}
-                <div className="p-4 bg-accent/30 border-t border-border/30">
-                  <Link
-                    href="/solutions"
-                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-foreground text-background text-sm font-medium transition-all duration-200 hover:opacity-90 group/cta"
-                  >
-                    <span>{t("allSolutions")}</span>
-                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1" />
-                  </Link>
-                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 

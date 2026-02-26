@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "./Shuffle";
+import SplitText from "./SplitText";
 import Image from "next/image";
 
 const container = {
@@ -75,21 +75,11 @@ export function BlogSection() {
 
           {/* Title + Description grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[2vw] items-end">
-            <Shuffle
+            <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.03}
-              threshold={0.1}
-              triggerOnce={true}
-              triggerOnHover={false}
-              respectReducedMotion={true}
             />
             <div className="md:border-l-2 md:border-[#C9FD48] md:pl-[1.5vw]">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
@@ -124,7 +114,7 @@ export function BlogSection() {
                     {post.readTime} {t("readTime")}
                   </span>
                 </div>
-                <h3 className="text-[1.25vw] font-bold text-foreground leading-tight group-hover:underline decoration-[#C9FD48] decoration-2 underline-offset-4 transition-all duration-300 mb-[0.4vw] line-clamp-2">
+                <h3 className="text-[1.25vw] font-bold text-foreground leading-[1.1] group-hover:underline decoration-[#C9FD48] decoration-2 underline-offset-4 transition-all duration-300 mb-[0.4vw] line-clamp-2">
                   {t(`posts.${index}.title`)}
                 </h3>
                 <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed line-clamp-2">
@@ -160,7 +150,7 @@ export function BlogSection() {
                     {post.readTime} {t("readTime")}
                   </span>
                 </div>
-                <h3 className="text-base font-bold text-foreground leading-tight mb-1 line-clamp-2">
+                <h3 className="text-base font-bold text-foreground leading-[1.1] mb-1 line-clamp-2">
                   {t(`posts.${index}.title`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">

@@ -1,14 +1,21 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import Shuffle from "./Shuffle";
+import SplitText from "./SplitText";
 import { casesData, type CaseStudy } from "@/lib/cases-data";
+import { MacbookPro } from "@/components/ui/macbook-pro";
+import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
+
+const SCREEN = {
+  left: "11.46%",
+  top: "5.33%",
+  width: "77.11%",
+  height: "80.96%",
+};
 
 const container = {
   hidden: {},
@@ -30,230 +37,98 @@ const cardVariant = {
   },
 };
 
-interface CaseCardProps {
+/* ─── Bento Card (same style as /cases page) ── */
+
+function BentoCard({
+  caseItem,
+  title,
+  className = "",
+}: {
   caseItem: CaseStudy;
   title: string;
-  featured?: boolean;
-}
-
-function CaseCard({ caseItem, title, featured = false }: CaseCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  if (featured) {
-    return (
-      <motion.div
-        variants={cardVariant}
-        className="group relative w-full"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <Link href={`/cases/${caseItem.slug}`}>
-        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-zinc-900 dark:bg-zinc-100 transition-all duration-500 hover:shadow-2xl">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
-
-          {/* Case image */}
-          <motion.div
-            className="absolute inset-0"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <Image
-              src={caseItem.cardImage}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 100vw"
-            />
-          </motion.div>
-
-          {/* Hover overlay */}
-          <motion.div
-            className="absolute inset-0 bg-[#C9FD48]/10 z-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-          />
-
-          {/* Featured badge */}
-          <div className="absolute top-6 left-6 z-20">
-            <Badge className="bg-[#C9FD48] text-black hover:bg-[#C9FD48]/90 font-semibold">
-              Featured
-            </Badge>
-          </div>
-
-          {/* Year badge */}
-          <div className="absolute top-6 right-6 z-20">
-            <span className="text-white/60 font-mono text-sm">{caseItem.year}</span>
-          </div>
-
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {caseItem.tags.map((tag, index) => (
-                <Badge
-                  key={index}
-                  variant="outline"
-                  className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-            <h3 className="clamp-[text,1.5rem,3rem] font-bold text-white mb-2 leading-tight">
-              {title}
-            </h3>
-          </div>
-        </div>
-        </Link>
-      </motion.div>
-    );
-  }
-
+  className?: string;
+}) {
   return (
     <motion.div
       variants={cardVariant}
-      className="group relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`group cursor-pointer ${className}`}
     >
-      <Link href={`/cases/${caseItem.slug}`}>
-      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-
-        {/* Case image */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ scale: isHovered ? 1.05 : 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          <Image
-            src={caseItem.cardImage}
-            alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-        </motion.div>
-
-        {/* Hover overlay */}
-        <motion.div
-          className="absolute inset-0 bg-[#C9FD48]/10 z-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        />
-
-        {/* Year */}
-        <div className="absolute top-4 right-4 z-20">
-          <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
-        </div>
-
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {caseItem.tags.slice(0, 2).map((tag, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
+      <Link href={`/cases?case=${caseItem.slug}`} className="block h-full">
+        <div className="relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl p-6 pb-4 h-full flex flex-col">
+          {/* Mockups */}
+          <div className="flex items-center justify-center gap-2 flex-1">
+            {/* MacBook */}
+            <div className="relative flex-1 min-w-0">
+              <MacbookPro
+                width={650}
+                height={400}
+                className="w-full h-auto relative z-10"
+              />
+              <div
+                className="absolute overflow-hidden rounded-[0.5%] z-20"
+                style={{
+                  left: SCREEN.left,
+                  top: SCREEN.top,
+                  width: SCREEN.width,
+                  height: SCREEN.height,
+                }}
               >
-                {tag}
-              </Badge>
-            ))}
+                <Image
+                  src={caseItem.images[0]}
+                  alt={title}
+                  width={1440}
+                  height={900}
+                  className="w-full h-full object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+            {/* iPhone */}
+            {caseItem.images[1] && (
+              <div className="flex-shrink-0 w-[18%]">
+                <Iphone15Pro
+                  src={caseItem.images[1]}
+                  className="w-full h-auto"
+                />
+              </div>
+            )}
           </div>
-          <h3 className="clamp-[text,1rem,1.25rem] font-bold text-white mb-1 line-clamp-1">
-            {title}
-          </h3>
+
+          {/* Info */}
+          <div className="flex items-start justify-between gap-2 mt-4">
+            <div>
+              <div className="flex flex-wrap gap-1.5 mb-1">
+                {caseItem.tags.slice(0, 2).map((tag, i) => (
+                  <span
+                    key={i}
+                    className="text-[10px] font-semibold tracking-wide uppercase text-muted-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 className="clamp-[text,1rem,1.25rem] font-bold text-foreground leading-[1.1]">
+                {title}
+              </h3>
+            </div>
+            <span className="text-muted-foreground font-mono text-xs shrink-0 pt-4">
+              {caseItem.year}
+            </span>
+          </div>
         </div>
-      </div>
       </Link>
     </motion.div>
   );
 }
 
-// View All Card - styled like a case card
-function ViewAllCard({ text }: { text: string }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.div
-      variants={cardVariant}
-      className="group relative cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#C9FD48] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex items-center justify-center">
-        {/* Decorative circles */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%]"
-            animate={{ rotate: isHovered ? 180 : 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border-2 border-black/10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-black/10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border-2 border-black/10" />
-          </motion.div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center gap-4 p-6">
-          <motion.div
-            className="w-16 h-16 rounded-full bg-black flex items-center justify-center"
-            animate={{ scale: isHovered ? 1.1 : 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              animate={{ x: isHovered ? 4 : 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </motion.svg>
-          </motion.div>
-          <span className="text-black font-bold clamp-[text,1rem,1.25rem] text-center">
-            {text}
-          </span>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+/* ─── Cases Section ──────────────────────────── */
 
 export function CasesSection() {
   const t = useTranslations("Cases");
 
-  const featuredCase = casesData.find((c) => c.featured);
-  const otherCases = casesData.filter((c) => !c.featured);
-  const mobileCases = casesData.slice(0, 5);
-
-  // Refs for floating button visibility
-  const firstCaseRef = useRef<HTMLDivElement>(null);
-  const lastCaseRef = useRef<HTMLDivElement>(null);
-  const firstInView = useInView(firstCaseRef);
-  const lastInView = useInView(lastCaseRef, { amount: "all" });
-  const [showFloatingBtn, setShowFloatingBtn] = useState(false);
-
-  useEffect(() => {
-    if (lastInView) {
-      setShowFloatingBtn(false);
-    } else if (firstInView) {
-      setShowFloatingBtn(true);
-    } else {
-      setShowFloatingBtn(false);
-    }
-  }, [firstInView, lastInView]);
-
-  const getCaseTranslation = (slug: string, key: string) => {
-    return t(`items.${slug}.${key}`);
-  };
+  const bentoCases = casesData.slice(0, 5);
+  const getTitle = (slug: string) => t(`items.${slug}.title`);
 
   return (
     <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
@@ -274,21 +149,11 @@ export function CasesSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
-            <Shuffle
+            <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.03}
-              threshold={0.1}
-              triggerOnce={true}
-              triggerOnHover={false}
-              respectReducedMotion={true}
             />
             <div className="md:border-l-2 md:border-[#C9FD48] md:pl-8">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
@@ -298,106 +163,75 @@ export function CasesSection() {
           </div>
         </motion.div>
 
-        {/* Desktop: Featured + Grid */}
-        <div className="hidden md:block">
-          {featuredCase && (
-            <div className="mb-6 md:mb-8">
-              <CaseCard
-                caseItem={featuredCase}
-                title={getCaseTranslation(featuredCase.slug, "title")}
-                featured
-              />
-            </div>
+        {/* Desktop Bento Grid */}
+        <div className="hidden md:grid grid-cols-3 gap-4 md:gap-5 auto-rows-[1fr]">
+          {/* Row 1: 3 square cards */}
+          {bentoCases[0] && (
+            <BentoCard
+              caseItem={bentoCases[0]}
+              title={getTitle(bentoCases[0].slug)}
+            />
           )}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {otherCases.map((caseItem) => (
-              <CaseCard
-                key={caseItem.slug}
-                caseItem={caseItem}
-                title={getCaseTranslation(caseItem.slug, "title")}
-              />
-            ))}
-            <ViewAllCard text={t("viewAll")} />
-          </div>
-        </div>
+          {bentoCases[1] && (
+            <BentoCard
+              caseItem={bentoCases[1]}
+              title={getTitle(bentoCases[1].slug)}
+            />
+          )}
+          {bentoCases[2] && (
+            <BentoCard
+              caseItem={bentoCases[2]}
+              title={getTitle(bentoCases[2].slug)}
+            />
+          )}
 
-        {/* Mobile: Compact list */}
-        <motion.div
-          className="md:hidden flex flex-col"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
-          }}
-        >
-          {mobileCases.map((caseItem, i) => (
-            <motion.div
-              key={caseItem.slug}
-              ref={i === 0 ? firstCaseRef : i === 4 ? lastCaseRef : undefined}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] } },
-              }}
-              className="mb-4"
-            >
-              <Link href={`/cases/${caseItem.slug}`}>
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-                  <Image
-                    src={caseItem.cardImage}
-                    alt={getCaseTranslation(caseItem.slug, "title")}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                  />
-                  <div className="absolute top-4 right-4 z-20">
-                    <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-                    <div className="flex flex-wrap gap-1.5 mb-2">
-                      {caseItem.tags.slice(0, 2).map((tag, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="outline"
-                          className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
-                        >
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <h3 className="text-lg font-bold text-white leading-tight line-clamp-1">
-                      {getCaseTranslation(caseItem.slug, "title")}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+          {/* Row 2: 2 cards + CTA */}
+          {bentoCases[3] && (
+            <BentoCard
+              caseItem={bentoCases[3]}
+              title={getTitle(bentoCases[3].slug)}
+            />
+          )}
+          {bentoCases[4] && (
+            <BentoCard
+              caseItem={bentoCases[4]}
+              title={getTitle(bentoCases[4].slug)}
+            />
+          )}
 
-      {/* Floating bottom button - mobile only */}
-      <AnimatePresence>
-        {showFloatingBtn && (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="md:hidden fixed bottom-6 left-6 right-6 z-50"
-          >
+          {/* CTA card */}
+          <motion.div variants={cardVariant}>
             <Link
               href="/cases"
-              className="flex items-center justify-center gap-2 h-14 w-full rounded-full bg-[#C9FD48] text-black font-semibold text-base shadow-[0_8px_30px_rgba(201,253,72,0.4)] active:scale-[0.98] transition-transform"
+              className="group flex flex-col items-center justify-center h-full rounded-2xl bg-[#C9FD48] transition-all duration-300 hover:shadow-[0_0_40px_rgba(201,253,72,0.4)] hover:scale-[1.02]"
             >
-              <span>{t("viewAll")}</span>
-              <ArrowRight className="h-4 w-4" />
+              <span className="clamp-[text,1.125rem,1.5rem] font-bold text-black mb-3">
+                {t("viewAll")}
+              </span>
+              <ArrowRight className="w-6 h-6 text-black transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+
+        {/* Mobile: stacked cards */}
+        <div className="md:hidden flex flex-col gap-4">
+          {bentoCases.slice(0, 4).map((caseItem) => (
+            <BentoCard
+              key={caseItem.slug}
+              caseItem={caseItem}
+              title={getTitle(caseItem.slug)}
+            />
+          ))}
+
+          <Link
+            href="/cases"
+            className="flex items-center justify-center gap-2 h-14 rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.4)]"
+          >
+            {t("viewAll")}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -437,6 +437,7 @@ type StepDef =
   | { type: "designLevel" }
   | { type: "scope" }
   | { type: "features"; categoryIndex: number }
+  | { type: "adBudget" }
   | { type: "contact" };
 
 function buildSteps(config: CalculatorConfig, projectType: string | null): StepDef[] {
@@ -451,6 +452,9 @@ function buildSteps(config: CalculatorConfig, projectType: string | null): StepD
   }
   const cats = config.categorizedFeatures[projectType] || [];
   cats.forEach((_, i) => steps.push({ type: "features", categoryIndex: i }));
+  if (projectType === "6") {
+    steps.push({ type: "adBudget" });
+  }
   steps.push({ type: "contact" });
   return steps;
 }
@@ -475,6 +479,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     designLevel: null as string | null,
     scopeModifiers: {} as Record<string, string>,
     features: [] as string[],
+    adBudget: null as string | null,
     name: "",
     email: "",
     phone: "",
@@ -533,7 +538,9 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
 
     const subject = `Calculator: ${projectLabel} — ${form.name}`;
     const monthlySuffix = isMonthly ? t("perMonth") : "";
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nProject Type: ${projectLabel}\nDesign Level: ${designLabel}\n\nScope:\n${scopeLines}\n\nFeatures:\n${featureLabels}\n\nEstimate: €${priceMin.toLocaleString()} — €${priceMax.toLocaleString()}${monthlySuffix}\n\nDescription: ${form.description}`;
+    const adBudgetLabel = form.adBudget ? t(`adBudget.options.${form.adBudget}`) : "";
+    const adBudgetLine = adBudgetLabel ? `\nAd Budget: ${adBudgetLabel}` : "";
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nProject Type: ${projectLabel}\nDesign Level: ${designLabel}\n\nScope:\n${scopeLines}\n\nFeatures:\n${featureLabels}${adBudgetLine}\n\nEstimate: €${priceMin.toLocaleString()} — €${priceMax.toLocaleString()}${monthlySuffix}\n\nDescription: ${form.description}`;
     window.location.href = `mailto:hello@goqode.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setTimeout(() => setSubmitted(true), 400);
@@ -545,6 +552,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
       designLevel: null,
       scopeModifiers: {},
       features: [],
+      adBudget: null,
       name: "",
       email: "",
       phone: "",
@@ -811,6 +819,56 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
                   />
                 );
               })}
+            </div>
+
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <NextButton />
+            </div>
+          </motion.div>
+        );
+      }
+
+      case "adBudget": {
+        const budgetOptions = ["under300", "300to500", "500to1000", "1000to2000", "over2000"];
+        return (
+          <motion.div
+            key="adBudget"
+            custom={direction}
+            variants={stepVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
+            className="flex flex-col gap-8"
+          >
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
+                {indicator}
+              </p>
+              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
+                {t("adBudget.title")}
+              </h2>
+              <p className="clamp-[text,0.875rem,1rem] text-muted-foreground mt-2">
+                {t("adBudget.subtitle")}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {budgetOptions.map((opt) => (
+                <button
+                  key={opt}
+                  type="button"
+                  onClick={() => setForm((p) => ({ ...p, adBudget: opt }))}
+                  className={`px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
+                    form.adBudget === opt
+                      ? "bg-[#C9FD48] text-black"
+                      : "bg-zinc-100 dark:bg-zinc-800 text-foreground hover:bg-zinc-200 dark:hover:bg-zinc-700"
+                  }`}
+                >
+                  {t(`adBudget.options.${opt}`)}
+                </button>
+              ))}
             </div>
 
             <div className="flex items-center gap-3">

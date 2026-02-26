@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import CountUp from "@/components/CountUp";
 import {
   Palette,
@@ -55,21 +55,11 @@ function BrandingHero() {
         animate="show"
       >
         <motion.div variants={itemVariant} className="w-full">
-          <Shuffle
+          <SplitText
             text={t("hero.title")}
             tag="h1"
-            className="text-[12vw] md:text-[12vw] font-black leading-[0.85] tracking-tighter text-foreground"
+            className="text-[12vw] md:text-[12vw] font-black leading-[1.1] tracking-tighter text-foreground uppercase"
             textAlign="center"
-            shuffleDirection="right"
-            duration={0.35}
-            animationMode="evenodd"
-            shuffleTimes={1}
-            ease="power3.out"
-            stagger={0.03}
-            threshold={0.1}
-            triggerOnce={true}
-            triggerOnHover={false}
-            respectReducedMotion={true}
           />
         </motion.div>
 
@@ -129,7 +119,7 @@ function BrandSystemSection() {
               {t("system.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-white">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-white">
             {t("system.title")}
           </h2>
         </motion.div>
@@ -250,7 +240,7 @@ function ComparisonSection() {
               {t("comparison.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-foreground">
             {t("comparison.title")}
           </h2>
         </motion.div>
@@ -366,7 +356,7 @@ function DeliverablesSection() {
               {t("deliverables.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-foreground">
             {t("deliverables.title")}
           </h2>
         </motion.div>
@@ -436,7 +426,7 @@ function FeaturesSection() {
               {t("features.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-foreground">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-foreground">
             {t("features.title")}
           </h2>
         </motion.div>
@@ -513,7 +503,7 @@ function StatsSection() {
               {t("stats.label")}
             </span>
           </div>
-          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-tight text-white">
+          <h2 className="clamp-[text,1.5rem,3rem] font-bold leading-[1.1] text-white">
             {t("stats.title")}
           </h2>
         </motion.div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
-import Shuffle from "./Shuffle";
+import SplitText from "./SplitText";
 
 const SOLUTION_LINKS = [
   "/launch",
@@ -324,7 +324,7 @@ function Card4({ solution, task, result }: { solution: string; task: string; res
                   </div>
                   <div>
                     <div className="text-[clamp(5px,1.2vw,7px)] text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">Event</div>
-                    <div className="text-[clamp(8px,2vw,12px)] font-bold text-white dark:text-black leading-tight">Tech Summit</div>
+                    <div className="text-[clamp(8px,2vw,12px)] font-bold text-white dark:text-black leading-[1.1]">Tech Summit</div>
                   </div>
                 </div>
                 <div className="flex gap-[10%] text-[clamp(5px,1.1vw,7px)]">
@@ -713,21 +713,11 @@ export function SolutionsSection() {
 
           {/* Title + Description grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
-            <Shuffle
+            <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.03}
-              threshold={0.1}
-              triggerOnce={true}
-              triggerOnHover={false}
-              respectReducedMotion={true}
             />
             <div className="md:border-l-2 md:border-[#C9FD48] md:pl-8">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
@@ -774,7 +764,7 @@ export function SolutionsSection() {
                     <span className="text-sm font-medium text-zinc-400 dark:text-[#C9FD48] shrink-0">
                       0{i + 1}
                     </span>
-                    <h3 className="text-[1.5rem] font-bold text-foreground leading-tight">
+                    <h3 className="text-[1.5rem] font-bold text-foreground leading-[1.1]">
                       {item.solution}
                     </h3>
                   </div>

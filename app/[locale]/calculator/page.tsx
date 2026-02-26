@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic";
 
 const getCachedData = unstable_cache(getCalculatorData, ["calc-config"], {
   tags: ["calc-config"],
+  revalidate: 3600,
 });
 
 export default async function CalculatorPage() {

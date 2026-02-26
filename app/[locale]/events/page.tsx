@@ -5,7 +5,6 @@ import EventsHero from "@/components/events/EventsHero";
 import { EventFlowSection } from "@/components/events/EventFlowSection";
 import { SolutionsShowcase } from "@/components/events/SolutionsShowcase";
 import { EventProcessSection } from "@/components/events/EventProcessSection";
-import { EventResultsSection } from "@/components/events/EventResultsSection";
 import { EventCTASection } from "@/components/events/EventCTASection";
 
 const Lanyard = dynamic(() => import("@/components/events/Lanyard"), {
@@ -34,9 +33,6 @@ export default function EventsPage() {
 
       {/* Process Section - How we work */}
       <EventProcessSection />
-
-      {/* Tech Stack Section */}
-      <EventResultsSection />
 
       {/* CTA Section */}
       <EventCTASection />

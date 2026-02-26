@@ -1,14 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useSearchParams, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
-import { casesData, filterMap } from "@/lib/cases-data";
+import SplitText from "@/components/SplitText";
+import { casesData, filterMap, type CaseStudy } from "@/lib/cases-data";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { MacbookPro } from "@/components/ui/macbook-pro";
+import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
+
+const SCREEN = {
+  left: "11.46%",
+  top: "5.33%",
+  width: "77.11%",
+  height: "80.96%",
+};
 
 /* ─── Animation variants ─────────────────────────────── */
 
@@ -53,21 +68,11 @@ function CasesHero() {
         </motion.div>
 
         <motion.div variants={itemVariant}>
-          <Shuffle
+          <SplitText
             text={t("pageTitle")}
             tag="h1"
-            className="text-[12vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+            className="text-[12vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
             textAlign="left"
-            shuffleDirection="right"
-            duration={0.35}
-            animationMode="evenodd"
-            shuffleTimes={1}
-            ease="power3.out"
-            stagger={0.03}
-            threshold={0.1}
-            triggerOnce={true}
-            triggerOnHover={false}
-            respectReducedMotion={true}
           />
         </motion.div>
 
@@ -128,10 +133,12 @@ function CaseCardFeatured({
   caseItem,
   title,
   description,
+  onOpen,
 }: {
-  caseItem: (typeof casesData)[0];
+  caseItem: CaseStudy;
   title: string;
   description: string;
+  onOpen: () => void;
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -139,67 +146,66 @@ function CaseCardFeatured({
     <motion.div
       variants={itemVariant}
       layout
-      className="group relative w-full"
+      className="group relative w-full cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onOpen}
     >
-      <Link href={`/cases/${caseItem.slug}`}>
-        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-zinc-900 transition-all duration-500 hover:shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-zinc-900 transition-all duration-500 hover:shadow-2xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
-          <motion.div
-            className="absolute inset-0"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <Image
-              src={caseItem.cardImage}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-          </motion.div>
-
-          <motion.div
-            className="absolute inset-0 bg-[#C9FD48]/10 z-[5]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
+        <motion.div
+          className="absolute inset-0"
+          animate={{ scale: isHovered ? 1.05 : 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Image
+            src={caseItem.cardImage}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
           />
+        </motion.div>
 
-          <div className="absolute top-6 left-6 z-20">
-            <Badge className="bg-[#C9FD48] text-black hover:bg-[#C9FD48]/90 font-semibold">
-              Featured
-            </Badge>
-          </div>
+        <motion.div
+          className="absolute inset-0 bg-[#C9FD48]/10 z-[5]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        />
 
-          <div className="absolute top-6 right-6 z-20">
-            <span className="text-white/60 font-mono text-sm">{caseItem.year}</span>
-          </div>
-
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {caseItem.tags.map((tag, index) => (
-                <Badge
-                  key={index}
-                  variant="outline"
-                  className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-            <h3 className="clamp-[text,1.5rem,3rem] font-bold text-white mb-2 leading-tight">
-              {title}
-            </h3>
-            <p className="clamp-[text,0.875rem,1.125rem] text-white/70 leading-relaxed line-clamp-2 md:w-2/3">
-              {description}
-            </p>
-          </div>
+        <div className="absolute top-6 left-6 z-20">
+          <Badge className="bg-[#C9FD48] text-black hover:bg-[#C9FD48]/90 font-semibold">
+            Featured
+          </Badge>
         </div>
-      </Link>
+
+        <div className="absolute top-6 right-6 z-20">
+          <span className="text-white/60 font-mono text-sm">{caseItem.year}</span>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {caseItem.tags.map((tag, index) => (
+              <Badge
+                key={index}
+                variant="outline"
+                className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          <h3 className="clamp-[text,1.5rem,3rem] font-bold text-white mb-2 leading-[1.1]">
+            {title}
+          </h3>
+          <p className="clamp-[text,0.875rem,1.125rem] text-white/70 leading-relaxed line-clamp-2 md:w-2/3">
+            {description}
+          </p>
+        </div>
+      </div>
     </motion.div>
   );
 }
@@ -209,111 +215,234 @@ function CaseCardFeatured({
 function CaseCardRegular({
   caseItem,
   title,
+  onOpen,
 }: {
-  caseItem: (typeof casesData)[0];
+  caseItem: CaseStudy;
   title: string;
+  onOpen: () => void;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
       variants={itemVariant}
       layout
-      className="group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="group cursor-pointer"
+      onClick={onOpen}
     >
-      <Link href={`/cases/${caseItem.slug}`}>
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-
-          <motion.div
-            className="absolute inset-0"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            <Image
-              src={caseItem.cardImage}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      <div className="relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl p-6 pb-4">
+        {/* Mockups */}
+        <div className="flex items-center justify-center gap-2 mb-4 aspect-[16/10]">
+          {/* MacBook */}
+          <div className="relative flex-1 min-w-0">
+            <MacbookPro
+              width={650}
+              height={400}
+              className="w-full h-auto relative z-10"
             />
-          </motion.div>
-
-          <motion.div
-            className="absolute inset-0 bg-[#C9FD48]/10 z-[5]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-          />
-
-          <div className="absolute top-4 right-4 z-20">
-            <span className="text-white/50 font-mono text-xs">{caseItem.year}</span>
+            <div
+              className="absolute overflow-hidden rounded-[0.5%] z-20"
+              style={{
+                left: SCREEN.left,
+                top: SCREEN.top,
+                width: SCREEN.width,
+                height: SCREEN.height,
+              }}
+            >
+              <Image
+                src={caseItem.images[0]}
+                alt={title}
+                width={1440}
+                height={900}
+                className="w-full h-full object-cover object-top"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-            <div className="flex flex-wrap gap-1.5 mb-2">
+          {/* iPhone */}
+          {caseItem.images[1] && (
+            <div className="flex-shrink-0 w-[18%]">
+              <Iphone15Pro
+                src={caseItem.images[1]}
+                className="w-full h-auto"
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Info */}
+        <div className="flex items-start justify-between gap-2">
+          <div>
+            <div className="flex flex-wrap gap-1.5 mb-1">
               {caseItem.tags.slice(0, 2).map((tag, index) => (
-                <Badge
+                <span
                   key={index}
-                  variant="outline"
-                  className="border-white/20 text-white/80 text-xs bg-white/5 backdrop-blur-sm"
+                  className="text-[10px] font-semibold tracking-wide uppercase text-muted-foreground"
                 >
                   {tag}
-                </Badge>
+                </span>
               ))}
             </div>
-            <h3 className="clamp-[text,1rem,1.25rem] font-bold text-white leading-tight line-clamp-1">
+            <h3 className="clamp-[text,1rem,1.25rem] font-bold text-foreground leading-[1.1] min-h-[2.5em]">
               {title}
             </h3>
           </div>
+          <span className="text-muted-foreground font-mono text-xs shrink-0 pt-5">{caseItem.year}</span>
         </div>
-      </Link>
+      </div>
     </motion.div>
+  );
+}
+
+/* ─── Case Detail Sheet Content ──────────────────────── */
+
+function CaseDetailSheet({ caseItem }: { caseItem: CaseStudy }) {
+  const t = useTranslations("Cases");
+  const slug = caseItem.slug;
+
+  const aboutBlocks = [
+    { labelKey: "challengeLabel" as const, textSuffix: "challenge", num: "01" },
+    { labelKey: "solutionLabel" as const, textSuffix: "solution", num: "02" },
+    { labelKey: "resultLabel" as const, textSuffix: "result", num: "03" },
+  ];
+
+  return (
+    <div className="flex flex-col gap-8 md:gap-12 pb-12 px-3 md:px-0 w-full md:w-[1200px] md:mx-auto">
+      {/* Title + meta */}
+      <div>
+        <h2 className="clamp-[text,2rem,4rem] font-black leading-[1.05] tracking-tight text-foreground uppercase">
+          {t(`items.${slug}.title`)}
+        </h2>
+        <div className="flex flex-wrap items-center gap-3 mt-3">
+          {caseItem.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase border border-zinc-300 dark:border-zinc-700 text-muted-foreground"
+            >
+              {tag}
+            </span>
+          ))}
+          <span className="text-muted-foreground font-mono clamp-[text,0.75rem,0.875rem]">
+            {caseItem.year}
+          </span>
+        </div>
+        <p className="mt-4 clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed md:w-2/3">
+          {t(`items.${slug}.description`)}
+        </p>
+        {caseItem.url && (
+          <a
+            href={caseItem.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 mt-4 h-12 px-8 rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02]"
+          >
+            {t("visitSite")}
+            <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        )}
+      </div>
+
+      {/* MacBook + iPhone mockups */}
+      <div className="flex items-end justify-center gap-3 md:gap-6 mx-auto" style={{ maxWidth: "850px" }}>
+        {/* MacBook */}
+        <div className="relative flex-1 min-w-0">
+          <MacbookPro
+            width={650}
+            height={400}
+            className="w-full h-auto relative z-10"
+          />
+          <div
+            className="absolute overflow-hidden rounded-[0.5%] z-20"
+            style={{
+              left: SCREEN.left,
+              top: SCREEN.top,
+              width: SCREEN.width,
+              height: SCREEN.height,
+            }}
+          >
+            <Image
+              src={caseItem.images[0]}
+              alt={t(`items.${slug}.title`)}
+              width={1440}
+              height={900}
+              className="w-full h-full object-cover object-top"
+              sizes="70vw"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* iPhone */}
+        {caseItem.images[1] && (
+          <div className="flex-shrink-0 w-[18%]">
+            <Iphone15Pro
+              src={caseItem.images[1]}
+              className="w-full h-auto"
+            />
+          </div>
+        )}
+      </div>
+
+      {/* About: Challenge / Solution / Result */}
+      <div>
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-2 h-2 rounded-full bg-[#C9FD48]" />
+          <span className="clamp-[text,0.75rem,0.875rem] font-medium text-muted-foreground uppercase tracking-wider">
+            {t("aboutLabel")}
+          </span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {aboutBlocks.map((block) => (
+            <div key={block.labelKey} className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <span className="text-zinc-900 dark:text-[#C9FD48] font-mono text-sm">{block.num}</span>
+                <div className="h-px flex-1 bg-zinc-200 dark:bg-zinc-800" />
+              </div>
+              <h4 className="clamp-[text,1rem,1.125rem] font-bold text-foreground">
+                {t(block.labelKey)}
+              </h4>
+              <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed">
+                {t(`items.${slug}.${block.textSuffix}`)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
   );
 }
 
 /* ─── Cases Grid ──────────────────────────────────────── */
 
-function CasesGrid({ filteredCases }: { filteredCases: typeof casesData }) {
+function CasesGrid({
+  filteredCases,
+  onOpenCase,
+  activeFilter,
+}: {
+  filteredCases: typeof casesData;
+  onOpenCase: (slug: string) => void;
+  activeFilter: string;
+}) {
   const t = useTranslations("Cases");
 
-  const featuredCase = filteredCases.find((c) => c.featured);
-  const otherCases = filteredCases.filter((c) => !c.featured);
-
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] pb-12 md:pb-16">
       <motion.div
+        key={activeFilter}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
+        animate="show"
         variants={container}
-        className="w-full"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
       >
-        {featuredCase && (
-          <div className="mb-6 md:mb-8">
-            <CaseCardFeatured
-              caseItem={featuredCase}
-              title={t(`items.${featuredCase.slug}.title`)}
-              description={t(`items.${featuredCase.slug}.description`)}
-            />
-          </div>
-        )}
-
         <AnimatePresence mode="popLayout">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
-          >
-            {otherCases.map((caseItem) => (
-              <CaseCardRegular
-                key={caseItem.slug}
-                caseItem={caseItem}
-                title={t(`items.${caseItem.slug}.title`)}
-              />
-            ))}
-          </motion.div>
+          {filteredCases.map((caseItem) => (
+            <CaseCardRegular
+              key={caseItem.slug}
+              caseItem={caseItem}
+              title={t(`items.${caseItem.slug}.title`)}
+              onOpen={() => onOpenCase(caseItem.slug)}
+            />
+          ))}
         </AnimatePresence>
       </motion.div>
     </section>
@@ -373,6 +502,24 @@ function CasesCTA() {
 
 export default function CasesPage() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  const openSlug = searchParams.get("case");
+
+  const setOpenSlug = useCallback(
+    (slug: string | null) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (slug) {
+        params.set("case", slug);
+      } else {
+        params.delete("case");
+      }
+      const qs = params.toString();
+      window.history.pushState(null, "", qs ? `${pathname}?${qs}` : pathname);
+    },
+    [searchParams, pathname]
+  );
 
   const filteredCases =
     activeFilter === "all"
@@ -381,12 +528,41 @@ export default function CasesPage() {
           c.tags.some((tag) => filterMap[activeFilter]?.includes(tag))
         );
 
+  const openCase = openSlug
+    ? casesData.find((c) => c.slug === openSlug) ?? null
+    : null;
+
   return (
     <main className="min-h-screen w-full">
       <CasesHero />
-      <CasesFilterBar activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-      <CasesGrid filteredCases={filteredCases} />
+      {/* <CasesFilterBar activeFilter={activeFilter} onFilterChange={setActiveFilter} /> */}
+      <CasesGrid filteredCases={filteredCases} onOpenCase={setOpenSlug} activeFilter={activeFilter} />
       <CasesCTA />
+
+      {/* Case Detail Sheet */}
+      <Sheet open={!!openCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
+        <SheetContent
+          side="bottom"
+          className="h-[92vh] rounded-t-[2rem] border-t-0 overflow-y-auto p-0 [&>button]:hidden"
+        >
+          <SheetTitle className="sr-only">
+            {openCase ? openCase.slug : "Case"}
+          </SheetTitle>
+
+          {/* Custom close button */}
+          <div className="sticky top-0 z-50 flex justify-center pt-3 pb-2">
+            <button
+              onClick={() => setOpenSlug(null)}
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-200/80 dark:bg-zinc-800/80 backdrop-blur-sm text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X className="w-3.5 h-3.5" />
+              Закрыть
+            </button>
+          </div>
+
+          {openCase && <CaseDetailSheet caseItem={openCase} />}
+        </SheetContent>
+      </Sheet>
     </main>
   );
 }

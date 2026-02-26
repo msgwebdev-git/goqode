@@ -46,7 +46,7 @@
     "subtitle": "We develop. We automate. We promote",
     "description": "We create websites, web applications, and digital solutions that help businesses grow. From design to development to marketing — we handle the full cycle.",
     "cta": "Let's talk",
-    "ctaSecondary": "View packages"
+    "ctaSecondary": "Price calculator"
   },
   "Solutions": {
     "title": "Solutions",
@@ -103,7 +103,7 @@
     "viewAll": "View all cases",
     "viewProject": "View project",
     "pageTitle": "Our Cases",
-    "pageDescription": "Explore our portfolio of successful digital projects across web, mobile, branding, and automation.",
+    "pageDescription": "Our portfolio of delivered projects: corporate websites, web apps, event platforms and 3D development.",
     "filterAll": "All",
     "filterWeb": "Web",
     "filterMobile": "Mobile",
@@ -123,6 +123,38 @@
       "contactText": "Or email us at"
     },
     "items": {
+      "standup-live": {
+        "title": "Standup Live",
+        "description": "Paid live streaming platform for a concert with access payments and content protection",
+        "about": "For standup show organizers, we built a paid online streaming platform. Viewers purchase access, log in, and watch the concert in real time through a secure video player. A recording is available after the broadcast.",
+        "challenge": "The organizers needed their own streaming platform where viewers pay for access to a live broadcast. It was critical to protect content from recording and unauthorized distribution, support promo codes, and handle traffic under load.",
+        "solution": "A web application with Supabase authentication, MAIB payments, live streaming via Castr (HLS), a secure video player with watermark, countdown timer before the show, promo codes, and post-broadcast recording access. An admin panel for managing streams and users.",
+        "result": "A successful online concert broadcast with hundreds of paying viewers. Content protection prevented piracy. Promo codes and a free access system supported marketing efforts. The platform ran smoothly throughout the entire broadcast."
+      },
+      "povestea-de-iarna": {
+        "title": "Povestea de Iarnă",
+        "description": "Ticketing system for a 1,700-seat winter show with venue map, payments, and access control",
+        "about": "Povestea de Iarnă is a large-scale winter show for which we built a digital ticketing system. A 1,700-seat venue required a precise seating map with zones and rows, a smooth purchasing flow, and reliable QR-based access control at the gates.",
+        "challenge": "The organizers needed their own ticketing platform without third-party commissions. A 1,700-seat hall with multiple pricing zones required a clear visual map for seat selection, instant payment processing, and automated ticket delivery.",
+        "solution": "We built a web platform with a detailed SVG venue layout, a streamlined ticket purchase flow, MAIB card payment integration, instant PDF ticket generation with QR codes and email delivery. The admin panel includes sales analytics and zone-based pricing controls.",
+        "result": "Organizers gained full control over ticket sales with no intermediaries. Attendees pick seats and receive tickets in seconds. QR verification at the entrance ensured fast and secure admission. Real-time analytics enabled flexible pricing and capacity management."
+      },
+      "voievod": {
+        "title": "Voievod",
+        "description": "Ticket sales platform with interactive arena map, online payments, and QR scanning",
+        "about": "Voievod is a rock opera choreographic show at Arena Chișinău. The event needed a full-featured ticket sales platform with seat selection on an interactive map, online payments, PDF ticket generation with QR codes, and a scanning system at the entrance.",
+        "challenge": "A large-scale arena show required a system that lets viewers pick specific seats across 16 zones, pay online, and receive tickets instantly. An admin panel with sales analytics, pricing management, and ticket verification at the gate was essential.",
+        "solution": "A web application with an interactive SVG arena map (zoom/pan, real-time seat statuses), MAIB payment integration, auto-generated PDF tickets with QR codes, email delivery, Telegram notifications, and a full admin panel with dashboard, zone analytics, VIP invitation management, and refunds.",
+        "result": "A fully autonomous platform: viewers select seats, pay, and receive tickets without operator involvement. QR scanning at the entrance eliminates counterfeits. The admin panel with sales charts and zone analytics gave organizers complete control over the event."
+      },
+      "egotax": {
+        "title": "EgoTax",
+        "description": "B2B platform for an accounting company with online calculator, payments, and admin panel",
+        "about": "EgoTax is an accounting company from Moldova with 7+ years of experience and 500+ clients. They needed a digital platform that automates service cost calculations, accepts online payments, and manages requests through an admin panel with real-time analytics.",
+        "challenge": "The company handled all inquiries and calculations manually — via phone calls and spreadsheets. Clients couldn't quickly estimate service costs, and payments were only accepted in cash or by bank transfer. A full-featured digital platform was needed.",
+        "solution": "A web application with an advanced cost calculator (7 business forms, 9 activity types, 40+ parameters), online payments via MAIB, and an admin panel with transaction management, refunds, dynamic pricing, and user roles. Telegram and email notifications for instant response.",
+        "result": "A fully automated cycle from cost estimation to payment. Clients independently calculate costs and pay online. The admin panel with analytics and data export reduced request processing time and increased the conversion rate from inquiries to payments."
+      },
       "lineproduction": {
         "title": "Line Production",
         "description": "Corporate website for a video production studio from Moldova",
@@ -130,6 +162,54 @@
         "challenge": "The old website didn't convey the scale and professionalism of the studio. Line Production needed a digital presence that reflects the cinematic quality of their video work — something dynamic, memorable, and visually powerful.",
         "solution": "A dark-themed website with bold typography, smooth scroll-driven animations, and an interactive project carousel. The design puts video front and center with full-bleed imagery, autoplay sections, and seamless transitions between portfolio pieces.",
         "result": "A modern, high-impact website that effectively showcases the studio's portfolio, attracts new clients from Moldova's top brands, and positions Line Production as the country's leading video production company. The site became their primary sales tool, driving direct inquiries through an immersive browsing experience."
+      },
+      "artgarage": {
+        "title": "Art Garage",
+        "description": "Corporate website for a full-cycle creative advertising agency from Moldova",
+        "about": "Art Garage is a creative advertising agency from Chișinău with over 10 years of experience, 500+ completed projects and its own production facility. They needed a modern website to showcase their full range of services — outdoor and interior advertising, POS materials, printing, installations, and 2D/3D design — and to attract new B2B clients.",
+        "challenge": "Art Garage had no website that reflected the scale of their capabilities. With 150+ clients including Kaufland, Moldinconbank, and Cricova, they needed a digital platform to present their portfolio, services, and expertise in a structured and professional way.",
+        "solution": "A bilingual website (RO/RU) with a service catalog, filterable portfolio with 100+ works across 12 categories, interactive design section, FAQ, and a streamlined contact flow. The dark theme with accent colors emphasizes the visual nature of their work.",
+        "result": "A professional digital presence that systematizes all services and projects in one place, simplifies client inquiries with structured service pages, and strengthens Art Garage's position as a leading full-cycle advertising agency in Moldova."
+      },
+      "cong-2025": {
+        "title": "National Oncology Congress",
+        "description": "Official website for the 6th National Oncology Congress of Moldova with online registration and bilingual support",
+        "about": "The 6th National Oncology Congress is the largest professional medical event in Moldova, bringing together oncologists, surgeons, radiologists, and healthcare specialists. The conference takes place October 9–10, 2025 at Radisson Blu Leogrand Hotel in Chișinău and grants participants 15 CME accreditation points.",
+        "challenge": "The organizing committee needed a professional digital platform to inform attendees about the program, manage online registrations across four participant categories with tiered pricing, and present the event in both English and Romanian for international reach.",
+        "solution": "A bilingual website (EN/RO) featuring a detailed scientific program covering 10+ oncology disciplines, a registration system with category-based pricing and early-bird discounts, interactive 3D elements, sponsor showcase, and a clean medical-grade design that reflects the prestige of the event.",
+        "result": "A centralized information hub that streamlines the registration process for doctors, students, nurses and non-members, clearly communicates the congress program and logistics, and elevates the event's digital presence on an international level."
+      },
+      "examen": {
+        "title": "Examen Festival",
+        "description": "Website for an electronic music festival in Moldova featuring custom 3D animation and a built-in ticket sales system",
+        "about": "Examen is a conceptual electronic music festival in Moldova celebrating youth, courage and ambitions. The second edition (Summer 2024) needed a bold digital identity that matched the energy of the event — with immersive 3D visuals, festival branding, and a seamless path to purchase tickets.",
+        "challenge": "A standard event page wouldn't do justice to Examen's aesthetic. The team needed a site that felt like the festival itself — dark, immersive, and visually explosive — while also handling the practical side: ticket sales, lineup presentation, and social engagement.",
+        "solution": "A custom-built website with an animated 3D neon figure in the hero section, glitch-style typography, a scrolling marquee, an embedded aftermovie from the 2023 edition, and a dedicated ticket subdomain (tickets.examen.wtf). The dark aesthetic with neon pink accents captures the raw energy of the festival.",
+        "result": "A digital experience that matches the festival's identity — immersive and memorable — while driving ticket sales and building the Examen brand ahead of each new edition."
+      },
+      "msprod": {
+        "title": "MS-PROD",
+        "description": "Corporate website for a technical event production company with 15+ years of experience and 1100+ events delivered",
+        "about": "MS-PROD is a professional technical production company based in Chișinău, specializing in comprehensive technical support for events of any scale — from corporate conferences to large-scale concerts. With 15+ years of experience, the company provides lighting, sound, stage structures, and engineering services backed by top-tier equipment from world-renowned brands.",
+        "challenge": "MS-PROD needed a website that communicated the breadth and quality of their services to potential clients, showcased their impressive portfolio of major events, and made it easy to initiate a project inquiry — all while reflecting the bold, high-energy nature of the live events industry.",
+        "solution": "We built a corporate website that positions MS-PROD as a premium partner rather than just a vendor. The design language was crafted to reflect the intensity of live production — authoritative, bold, and confident. A clear service breakdown helps clients quickly understand what they're getting, while the project portfolio with major artist names builds instant credibility. A transparent 6-step process section answers the key client question: what does working with you actually look like?",
+        "result": "A professional online presence that clearly positions MS-PROD as a premium technical production partner, showcases their portfolio to high-profile clients, and drives project inquiries through clear CTAs and an authoritative brand image."
+      },
+      "dj-voting": {
+        "title": "DJ Voting App",
+        "description": "Real-time voting platform for DJ competitions with QR-code access, anti-fraud protection, and live results screens",
+        "about": "A web application built for DJ events where the audience votes for their favorite DJs across two rounds. The platform handles the full competition flow — from QR-code-gated voting to live results displayed on screens — with anti-fraud measures and a full admin panel to control the process.",
+        "challenge": "Live audience voting is notoriously easy to exploit. The client needed a system that felt fast and frictionless for guests scanning QR codes, while preventing duplicate votes, supporting two competition rounds, and giving the organizer full real-time control over the event flow.",
+        "solution": "We built a Next.js app backed by Supabase with real-time subscriptions. Votes are protected by FingerprintJS to prevent duplicates without requiring accounts. Round 1 collects votes from all DJs, then the top two advance to Round 2. Separate results screens update live for the audience, while the admin panel lets organizers start/stop rounds, reset data, and monitor progress in real time.",
+        "result": "A smooth, fraud-resistant voting experience that kept the audience engaged throughout the event. The organizer had full control from the admin panel, and the live results screens created a genuinely exciting moment when the winner was revealed."
+      },
+      "epc": {
+        "title": "EPC Summit Moldova",
+        "description": "Frontend development of the official website for the 2nd European Political Community Summit at Castel Mimi",
+        "about": "The European Political Community (EPC) Summit is a pan-European political platform bringing together leaders from 47 countries. Moldova hosted the second summit on June 1, 2023 at the historic Castel Mimi winery — one of the most significant political events in the country's history.",
+        "challenge": "The project required frontend development under tight deadlines for a high-profile international event. The website needed to convey diplomatic gravitas, work flawlessly across all devices, and handle heavy media content — all while meeting the visual standards of a state-level event.",
+        "solution": "We developed the full frontend: responsive layouts for the summit program, About Moldova, Castel Mimi history, news hub, video gallery, and registration pages. Custom animations, optimized responsive images for all breakpoints, and polished UI components ensured a premium feel that matched the scale of the event.",
+        "result": "A performant, fully responsive event portal that supported 47 participating nations, handled media and registration flows seamlessly, and contributed to elevating Moldova's international image during a landmark European summit."
       }
     }
   },
@@ -238,6 +318,12 @@
       "title": "Contact"
     },
     "rights": "All rights reserved."
+  },
+  "AboutPage": {
+    "subtitle": "About the company",
+    "statsTitle": "Numbers speak for themselves",
+    "advantagesTitle": "Why choose us",
+    "clientsTitle": "Technologies & Partners"
   },
   "Clients": {
     "title": "Trusted by",
@@ -396,8 +482,8 @@
       "label": "Results",
       "title": "What You'll Achieve",
       "digital_presence": "Complete digital presence from day one",
-      "first_leads": "First leads in the first month",
-      "conversion_growth": "Conversion increase vs industry average"
+      "first_leads": "Leads in the first month after launch",
+      "conversion_growth": "Sales channels connected from day one"
     },
     "cta": {
       "title": "Ready to Launch?",
@@ -504,7 +590,7 @@
     },
     "features": {
       "label": "Capabilities",
-      "title": "Why Clients Choose Us",
+      "title": "Technology & Standards",
       "items": {
         "0": {
           "title": "Scalability",
@@ -1123,7 +1209,7 @@
     "submit": "Calculate",
     "step1": {
       "indicator": "1/4",
-      "title": "What do you need?",
+      "title": "Choose project type",
       "types": {
         "0": "Landing Page",
         "1": "E-commerce",
@@ -1169,7 +1255,7 @@
         },
         "1": {
           "products": { "label": "Product count", "small": "Under 100", "medium": "100–1,000", "large": "1,000–10,000", "enterprise": "10,000+" },
-          "timeline": { "label": "Timeline", "standard": "Standard (6–10 weeks)", "rush": "Rush (3–5 weeks)" }
+          "timeline": { "label": "Timeline", "standard": "Standard (3–5 months)", "rush": "Rush (2–3 months)" }
         },
         "2": {
           "pages": { "label": "Unique pages", "small": "5–10 pages", "medium": "10–20 pages", "large": "20–40 pages", "enterprise": "40+ pages" },
@@ -1478,6 +1564,17 @@
           "conversionOptimization": "Conversion Optimization",
           "marketResearch": "Market Research"
         }
+      }
+    },
+    "adBudget": {
+      "title": "Advertising budget",
+      "subtitle": "How much are you willing to spend on paid advertising per month? (Facebook, Google Ads, TikTok, etc.)",
+      "options": {
+        "under300": "Under €300",
+        "300to500": "€300 – €500",
+        "500to1000": "€500 – €1,000",
+        "1000to2000": "€1,000 – €2,000",
+        "over2000": "Over €2,000"
       }
     },
     "step4": {

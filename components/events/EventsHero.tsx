@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import { CalendarDays, ArrowRight } from "lucide-react";
 
 const container = {
@@ -39,21 +39,11 @@ export default function EventsHero() {
       >
         {/* Title */}
         <motion.div variants={itemVariant} className="w-full">
-          <Shuffle
+          <SplitText
             text={t("hero.title")}
             tag="h1"
-            className="text-[11vw] md:text-[10vw] font-black leading-[0.9] tracking-tight text-foreground"
+            className="text-[11vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
             textAlign="center"
-            shuffleDirection="right"
-            duration={0.35}
-            animationMode="evenodd"
-            shuffleTimes={1}
-            ease="power3.out"
-            stagger={0.03}
-            threshold={0.1}
-            triggerOnce={true}
-            triggerOnHover={false}
-            respectReducedMotion={true}
           />
         </motion.div>
 

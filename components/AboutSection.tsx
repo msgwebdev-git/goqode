@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import ScrollReveal from "./ScrollReveal";
 import CountUp from "./CountUp";
-import Shuffle from "./Shuffle";
+import SplitText from "./SplitText";
 
 // Placeholder client logos - replace with real logos later
 const clientLogos = [
@@ -146,7 +146,7 @@ const cardVariant = {
 
 const stats = [
   { id: "experience", value: 30, suffix: "+" },
-  { id: "projects", value: 150, suffix: "+" },
+  { id: "projects", value: 35, suffix: "+" },
   { id: "industries", value: 12, suffix: "+" },
 ];
 
@@ -167,21 +167,11 @@ export function AboutSection() {
         className="mb-4 md:mb-[1.5vw] text-center"
       >
         {/* Title */}
-        <Shuffle
+        <SplitText
           text={t("title")}
           tag="h2"
-          className="text-[14vw] md:text-[7vw] font-black leading-[0.9] tracking-tight text-foreground"
+          className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
           textAlign="center"
-          shuffleDirection="right"
-          duration={0.35}
-          animationMode="evenodd"
-          shuffleTimes={1}
-          ease="power3.out"
-          stagger={0.03}
-          threshold={0.1}
-          triggerOnce={true}
-          triggerOnHover={false}
-          respectReducedMotion={true}
         />
       </motion.div>
 

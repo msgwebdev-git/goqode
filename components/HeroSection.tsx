@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import TrueFocus from "@/components/TrueFocus";
 import { motion } from "framer-motion";
 import { ArrowRight, Tag } from "lucide-react";
@@ -44,21 +44,11 @@ export function HeroSection() {
         <div className="flex flex-col items-center clamp-[gap,8,16] w-full">
           {/* Title */}
           <motion.div variants={item} className="w-full">
-            <Shuffle
+            <SplitText
               text="We build bold digital"
               tag="h1"
-              className="w-full text-[12vw] md:text-[10vw] font-black leading-none tracking-tight text-foreground font-sans"
+              className="w-full text-[12vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase"
               textAlign="center"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.03}
-              threshold={0.1}
-              triggerOnce={true}
-              triggerOnHover={false}
-              respectReducedMotion={true}
             />
           </motion.div>
 
@@ -102,7 +92,7 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#C9FD48] to-[#a8e824] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
           <Link
-            href="/packages"
+            href="/calculator"
             className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 text-foreground font-medium clamp-[text,0.875rem,1rem] transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/15 hover:border-black/20 dark:hover:border-white/30 hover:scale-[1.02] w-full sm:w-auto"
           >
             <Tag className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />

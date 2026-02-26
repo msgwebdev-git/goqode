@@ -31,11 +31,11 @@ const itemVariant = {
 };
 
 const flowSteps = [
-  { icon: Globe, color: "from-blue-500 to-cyan-500" },
-  { icon: QrCode, color: "from-violet-500 to-purple-500" },
-  { icon: ScanLine, color: "from-emerald-500 to-green-500" },
-  { icon: BarChart3, color: "from-orange-500 to-amber-500" },
-  { icon: FileCheck, color: "from-pink-500 to-rose-500" },
+  { icon: Globe },
+  { icon: QrCode },
+  { icon: ScanLine },
+  { icon: BarChart3 },
+  { icon: FileCheck },
 ];
 
 // Animated connection line between steps
@@ -58,14 +58,12 @@ function ConnectionLine({ delay }: { delay: number }) {
 // Flow step card
 function FlowStep({
   icon: Icon,
-  color,
   title,
   description,
   index,
   isLast,
 }: {
   icon: typeof Globe;
-  color: string;
   title: string;
   description: string;
   index: number;
@@ -77,25 +75,10 @@ function FlowStep({
         variants={itemVariant}
         className="group relative flex flex-col items-center"
       >
-        {/* Pulse ring animation */}
         <div className="relative">
-          <motion.div
-            className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${color} opacity-20 blur-xl`}
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              delay: index * 0.5,
-            }}
-          />
-
           {/* Icon container */}
-          <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl bg-white border-2 border-zinc-200 shadow-md flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-[#C9FD48] group-hover:shadow-lg group-hover:shadow-[#C9FD48]/20">
-            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${color} opacity-5 group-hover:opacity-15 transition-opacity duration-300`} />
-            <Icon className="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-zinc-700 group-hover:text-zinc-900 transition-colors" strokeWidth={1.5} />
+          <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl bg-white border-2 border-zinc-200 shadow-md flex items-center justify-center">
+            <Icon className="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-zinc-700" strokeWidth={1.5} />
           </div>
 
           {/* Step number badge */}
@@ -154,7 +137,6 @@ export function EventFlowSection() {
               <FlowStep
                 key={index}
                 icon={step.icon}
-                color={step.color}
                 title={t(`flow.steps.${index}.title`)}
                 description={t(`flow.steps.${index}.description`)}
                 index={index}
@@ -167,7 +149,6 @@ export function EventFlowSection() {
               <FlowStep
                 key={index}
                 icon={step.icon}
-                color={step.color}
                 title={t(`flow.steps.${index}.title`)}
                 description={t(`flow.steps.${index}.description`)}
                 index={index}

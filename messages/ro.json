@@ -46,7 +46,7 @@
     "subtitle": "Dezvoltăm. Automatizăm. Promovăm",
     "description": "Creăm site-uri, aplicații web și soluții digitale care ajută afacerile să crească. De la design la dezvoltare și marketing — ne ocupăm de ciclul complet.",
     "cta": "Hai să discutăm",
-    "ctaSecondary": "Vezi pachetele"
+    "ctaSecondary": "Calculator de prețuri"
   },
   "Solutions": {
     "title": "Soluții",
@@ -103,7 +103,7 @@
     "viewAll": "Vezi toate cazurile",
     "viewProject": "Vezi proiectul",
     "pageTitle": "Cazurile noastre",
-    "pageDescription": "Explorați portofoliul nostru de proiecte digitale de succes: web, mobile, branding și automatizare.",
+    "pageDescription": "Portofoliul proiectelor livrate: site-uri corporative, aplicații web, platforme de evenimente și dezvoltare 3D.",
     "filterAll": "Toate",
     "filterWeb": "Web",
     "filterMobile": "Mobile",
@@ -115,18 +115,101 @@
     "solutionLabel": "Soluție",
     "resultLabel": "Rezultat",
     "mobileVersion": "Versiunea mobilă",
+    "aboutLabel": "Despre proiect",
+    "nextCase": "Următorul caz",
     "cta": {
       "title": "Ai un proiect în minte?",
       "button": "Hai să discutăm",
       "contactText": "Sau scrie-ne la"
     },
     "items": {
+      "standup-live": {
+        "title": "Standup Live",
+        "description": "Platformă de streaming live cu plată pentru acces la concert și protecția conținutului",
+        "about": "Pentru organizatorii unui spectacol de standup, am creat o platformă de streaming online cu plată. Spectatorii cumpără accesul, se autentifică și urmăresc concertul în timp real printr-un player video securizat. După transmisie, înregistrarea rămâne disponibilă.",
+        "challenge": "Organizatorii aveau nevoie de propria platformă de streaming unde spectatorii plătesc pentru accesul la transmisia live. Era esențial să se protejeze conținutul de înregistrare și distribuire neautorizată, să se suporte coduri promoționale și să se asigure stabilitatea sub sarcină.",
+        "solution": "O aplicație web cu autentificare Supabase, plăți MAIB, streaming live prin Castr (HLS), player video securizat cu watermark, cronometru invers înainte de spectacol, coduri promoționale și acces la înregistrare după transmisie. Panou de administrare pentru gestionarea streamurilor și utilizatorilor.",
+        "result": "O transmisie online de succes a concertului cu sute de spectatori plătitori. Protecția conținutului a prevenit pirateria. Codurile promoționale și sistemul de acces gratuit au susținut eforturile de marketing. Platforma a funcționat stabil pe toată durata transmisiei."
+      },
+      "povestea-de-iarna": {
+        "title": "Povestea de Iarnă",
+        "description": "Sistem de bilete pentru un spectacol de iarnă cu 1 700 locuri, hartă a sălii, plăți și control acces",
+        "about": "Povestea de Iarnă este un spectacol de iarnă de amploare pentru care am creat un sistem digital de bilete. O sală de 1 700 locuri a necesitat o hartă precisă cu zone și rânduri, un proces fluent de cumpărare și un control fiabil al accesului prin coduri QR.",
+        "challenge": "Organizatorii aveau nevoie de o platformă proprie de bilete fără comisioanele serviciilor terțe. O sală de 1 700 locuri cu mai multe zone de prețuri necesita o hartă vizuală clară pentru selectarea locurilor, procesarea instantanee a plăților și livrarea automată a biletelor.",
+        "solution": "Am dezvoltat o platformă web cu schema SVG detaliată a sălii, un flux simplificat de achiziție, integrare plăți MAIB, generare instantanee de bilete PDF cu coduri QR și livrare pe email. Panoul de administrare include analitica vânzărilor și controlul prețurilor pe zone.",
+        "result": "Organizatorii au obținut control total asupra vânzărilor fără intermediari. Spectatorii selectează locurile și primesc biletele în câteva secunde. Verificarea QR la intrare a asigurat un acces rapid și securizat. Analitica în timp real a permis gestionarea flexibilă a prețurilor și capacității."
+      },
+      "voievod": {
+        "title": "Voievod",
+        "description": "Platformă de vânzare bilete cu hartă interactivă a arenei, plăți online și scanare QR",
+        "about": "Voievod este un spectacol de rock operă coregrafică la Arena Chișinău. Evenimentul avea nevoie de o platformă completă de vânzare bilete cu selecția locurilor pe o hartă interactivă, plăți online, generarea biletelor PDF cu coduri QR și un sistem de scanare la intrare.",
+        "challenge": "Un spectacol de anvergură la arenă necesita un sistem care permite spectatorilor să aleagă locuri specifice din 16 zone, să plătească online și să primească biletele instantaneu. Era esențial un panou de administrare cu analitica vânzărilor, gestionarea prețurilor și verificarea biletelor la intrare.",
+        "solution": "O aplicație web cu hartă SVG interactivă a arenei (zoom/pan, statusuri în timp real), integrare plăți MAIB, generare automată de bilete PDF cu coduri QR, livrare email, notificări Telegram și un panou complet de administrare cu dashboard, analitica pe zone, gestionarea invitațiilor VIP și rambursări.",
+        "result": "O platformă complet autonomă: spectatorii selectează locurile, plătesc și primesc biletele fără implicarea operatorului. Scanarea QR la intrare elimină falsurile. Panoul de administrare cu grafice de vânzări și analitica pe zone a oferit organizatorilor control complet asupra evenimentului."
+      },
+      "egotax": {
+        "title": "EgoTax",
+        "description": "Platformă B2B pentru o companie de contabilitate cu calculator online, plăți și panou de administrare",
+        "about": "EgoTax este o companie de contabilitate din Moldova cu peste 7 ani de experiență și 500+ clienți. Aveau nevoie de o platformă digitală care automatizează calculul costurilor serviciilor, acceptă plăți online și gestionează cererile printr-un panou de administrare cu analiză în timp real.",
+        "challenge": "Compania gestiona toate cererile și calculele manual — prin apeluri telefonice și tabele. Clienții nu puteau estima rapid costul serviciilor, iar plățile erau acceptate doar în numerar sau prin transfer bancar. Era nevoie de o platformă digitală completă.",
+        "solution": "O aplicație web cu un calculator avansat de costuri (7 forme juridice, 9 tipuri de activitate, 40+ parametri), plăți online prin MAIB, și un panou de administrare cu gestionarea tranzacțiilor, rambursări, prețuri dinamice și roluri de utilizatori. Notificări Telegram și email pentru reacție instantanee.",
+        "result": "Un ciclu complet automatizat de la estimarea costurilor la plată. Clienții calculează independent costurile și plătesc online. Panoul de administrare cu analiză și export de date a redus timpul de procesare a cererilor și a crescut rata de conversie din cereri în plăți."
+      },
       "lineproduction": {
         "title": "Line Production",
         "description": "Site corporativ pentru un studio de producție video din Moldova cu design cinematic îndrăzneț, interacțiuni animate și o vitrină a proiectelor",
+        "about": "Line Production este una dintre companiile de top din Moldova în producția video, colaborând cu branduri precum Moldcell, MICB și Ultra. Aveau nevoie de un site care să reflecte calitatea cinematografică a lucrărilor lor. Am creat o experiență cu temă întunecată, animații fluide, un carusel interactiv de portofoliu și integrare video full-bleed.",
         "challenge": "Line Production avea nevoie de un site care să reflecte calitatea lucrărilor lor video — cinematic, dinamic și memorabil. Site-ul vechi nu transmitea amploarea și profesionalismul studioului",
         "solution": "Am dezvoltat un site cu temă întunecată, tipografie boldă, animații fluide și un carusel interactiv de proiecte. Designul subliniază natura vizuală a afacerii cu imagini full-bleed și integrare video",
         "result": "Un site modern și de impact care prezintă eficient portofoliul studioului, atrage clienți noi precum Moldcell, MICB și Ultra, și consolidează brandul Line Production ca lider în producția video din Moldova"
+      },
+      "artgarage": {
+        "title": "Art Garage",
+        "description": "Site corporativ pentru o agenție creativă de publicitate full-cycle din Moldova",
+        "about": "Art Garage este o agenție creativă de publicitate din Chișinău cu peste 10 ani de experiență, 500+ proiecte realizate și producție proprie. Aveau nevoie de un site modern pentru a prezenta gama completă de servicii — publicitate exterioară și interioară, materiale POS, tipografie, instalații și design 2D/3D — și pentru a atrage noi clienți B2B.",
+        "challenge": "Art Garage nu avea un site care să reflecte amploarea capacităților lor. Cu peste 150 de clienți, inclusiv Kaufland, Moldinconbank și Cricova, aveau nevoie de o platformă digitală pentru prezentarea structurată și profesională a portofoliului, serviciilor și expertizei.",
+        "solution": "Un site bilingv (RO/RU) cu catalog de servicii, portofoliu filtrabil cu peste 100 de lucrări în 12 categorii, secțiune interactivă de design, FAQ și un flux simplificat de contact. Tema întunecată cu culori de accent subliniază natura vizuală a activității lor.",
+        "result": "O prezență digitală profesională care sistematizează toate serviciile și proiectele într-un singur loc, simplifică solicitările clienților prin pagini structurate de servicii și consolidează poziția Art Garage ca agenție lider de publicitate full-cycle din Moldova."
+      },
+      "cong-2025": {
+        "title": "Congresul Național de Oncologie",
+        "description": "Site-ul oficial al celui de-al VI-lea Congres Național de Oncologie din Moldova cu înregistrare online și suport bilingv",
+        "about": "Al VI-lea Congres Național de Oncologie este cel mai mare eveniment medical profesional din Moldova, reunind oncologi, chirurgi, radiologi și specialiști din domeniul sănătății. Conferința are loc pe 9–10 octombrie 2025 la Radisson Blu Leogrand Hotel din Chișinău și oferă participanților 15 puncte de acreditare CME.",
+        "challenge": "Comitetul organizatoric avea nevoie de o platformă digitală profesională pentru informarea participanților despre program, gestionarea înregistrărilor online în patru categorii cu prețuri diferențiate și prezentarea evenimentului în engleză și română pentru audiență internațională.",
+        "solution": "Un site bilingv (EN/RO) cu un program științific detaliat ce acoperă 10+ discipline oncologice, sistem de înregistrare cu prețuri pe categorii și reduceri early-bird, elemente interactive 3D, prezentarea sponsorilor și un design medical curat care reflectă prestigiul evenimentului.",
+        "result": "Un hub informațional centralizat care simplifică procesul de înregistrare pentru medici, studenți, asistente și non-membri, comunică clar programul congresului și logistica, și ridică prezența digitală a evenimentului la nivel internațional."
+      },
+      "examen": {
+        "title": "Examen Festival",
+        "description": "Site pentru un festival de muzică electronică din Moldova cu animație 3D personalizată și sistem integrat de vânzare a biletelor",
+        "about": "Examen este un festival conceptual de muzică electronică din Moldova care celebrează tinerețea, curajul și ambițiile. A doua ediție (vara 2024) avea nevoie de o identitate digitală îndrăzneață, la înălțimea energiei evenimentului — cu vizuale 3D imersive, branding de festival și o cale simplă spre achiziția biletelor.",
+        "challenge": "O pagină standard de eveniment nu ar fi reflectat estetica Examen. Echipa avea nevoie de un site care să simtă ca festivalul însuși — întunecat, imersiv și exploziv vizual — gestionând totodată aspectele practice: vânzarea biletelor, prezentarea lineup-ului și implicarea pe rețelele sociale.",
+        "solution": "Un site construit personalizat cu o figură neon 3D animată în secțiunea hero, tipografie în stil glitch, un banner derulant, un aftermovie încorporat din ediția 2023 și un subdomeniu dedicat biletelor (tickets.examen.wtf). Estetica întunecată cu accente roz neon captează energia brută a festivalului.",
+        "result": "O experiență digitală care corespunde identității festivalului — imersivă și memorabilă — stimulând vânzările de bilete și consolidând brandul Examen înaintea fiecărei noi ediții."
+      },
+      "msprod": {
+        "title": "MS-PROD",
+        "description": "Site corporativ pentru o companie de producție tehnică a evenimentelor cu 15+ ani de experiență și 1100+ evenimente livrate",
+        "about": "MS-PROD este o companie profesionistă de producție tehnică din Chișinău, specializată în suport tehnic complet pentru evenimente de orice amploare — de la conferințe corporative la concerte de mari dimensiuni. Cu 15+ ani de experiență, compania oferă servicii de iluminat, sunet, structuri de scenă și inginerie, utilizând echipamente de top de la branduri mondiale de renume.",
+        "challenge": "MS-PROD avea nevoie de un site care să comunice amploarea și calitatea serviciilor lor potențialilor clienți, să prezinte impresionantul portofoliu de evenimente majore și să faciliteze inițierea unui proiect — reflectând totodată natura îndrăzneață și energică a industriei evenimentelor live.",
+        "solution": "Am construit un site corporativ care poziționează MS-PROD nu doar ca un furnizor, ci ca un partener premium. Limbajul de design a fost creat pentru a reflecta intensitatea producției live — autoritar, îndrăzneț și încrezător. O structură clară a serviciilor îi ajută pe clienți să înțeleagă rapid ce primesc, iar portofoliul cu nume de artiști importanți construiește instant credibilitate. O secțiune transparentă cu 6 etape de lucru răspunde la întrebarea cheie a clientului: cum arată concret colaborarea cu voi?",
+        "result": "O prezență online profesională care poziționează clar MS-PROD ca partener premium de producție tehnică, prezintă portofoliul clienților importanți și generează cereri de proiecte prin CTA-uri clare și o imagine de brand autoritară."
+      },
+      "dj-voting": {
+        "title": "DJ Voting App",
+        "description": "Platformă de votare în timp real pentru competiții DJ cu acces prin cod QR, protecție anti-fraudă și ecrane de rezultate live",
+        "about": "O aplicație web construită pentru evenimente DJ unde publicul votează pentru DJ-ii preferați în două runde. Platforma gestionează întregul flux al competiției — de la votarea prin cod QR la rezultatele afișate live pe ecrane — cu măsuri anti-fraudă și un panou de administrare complet pentru controlul procesului.",
+        "challenge": "Votul live al publicului este ușor de exploatat. Clientul avea nevoie de un sistem rapid și fluid pentru oaspeții care scanează coduri QR, care să prevină voturile duplicate, să susțină două runde de competiție și să ofere organizatorului control complet în timp real.",
+        "solution": "Am construit o aplicație Next.js bazată pe Supabase cu subscripții în timp real. Voturile sunt protejate de FingerprintJS pentru a preveni duplicatele fără a necesita conturi. Runda 1 colectează voturi pentru toți DJ-ii, apoi primii doi avansează în Runda 2. Ecrane separate de rezultate se actualizează live pentru public, iar panoul de administrare permite organizatorilor să pornească/oprească rundele, să reseteze datele și să monitorizeze progresul în timp real.",
+        "result": "O experiență de votare fluidă și rezistentă la fraudă, care a menținut publicul angajat pe tot parcursul evenimentului. Organizatorul a avut control complet din panoul de administrare, iar ecranele cu rezultate live au creat un moment cu adevărat captivant la dezvăluirea câștigătorului."
+      },
+      "epc": {
+        "title": "EPC Summit Moldova",
+        "description": "Dezvoltare frontend a site-ului oficial al celui de-al II-lea Summit al Comunității Politice Europene la Castel Mimi",
+        "about": "Summitul Comunității Politice Europene (EPC) este o platformă politică paneuropeană care reunește lideri din 47 de țări. Moldova a găzduit al doilea summit pe 1 iunie 2023 la istorica cramă Castel Mimi — unul dintre cele mai semnificative evenimente politice din istoria țării.",
+        "challenge": "Proiectul a necesitat dezvoltare frontend în termene strânse pentru un eveniment internațional de cel mai înalt nivel. Site-ul trebuia să transmită gravitate diplomatică, să funcționeze impecabil pe toate dispozitivele și să gestioneze conținut media bogat — respectând standardele vizuale ale unui eveniment de stat.",
+        "solution": "Am dezvoltat întregul frontend: layout-uri responsive pentru programul summitului, secțiunea despre Moldova, istoria Castel Mimi, hub de știri, galerie video și pagini de înregistrare. Animații personalizate, imagini responsive optimizate pentru toate rezoluțiile și componente UI rafinate au asigurat o experiență premium pe măsura evenimentului.",
+        "result": "Un portal de eveniment performant și complet responsiv care a deservit 47 de națiuni participante, a gestionat fluxurile media și de înregistrare fără probleme și a contribuit la consolidarea imaginii internaționale a Moldovei în cadrul unui summit european de referință."
       }
     }
   },
@@ -235,6 +318,12 @@
       "title": "Contact"
     },
     "rights": "Toate drepturile rezervate."
+  },
+  "AboutPage": {
+    "subtitle": "Despre companie",
+    "statsTitle": "Cifrele vorbesc de la sine",
+    "advantagesTitle": "De ce ne aleg clienții",
+    "clientsTitle": "Tehnologii și parteneri"
   },
   "Clients": {
     "title": "Au încredere în noi",
@@ -409,8 +498,8 @@
       "label": "Rezultate",
       "title": "Ce vei obține",
       "digital_presence": "Prezență digitală completă din prima zi",
-      "first_leads": "Primele lead-uri în prima lună",
-      "conversion_growth": "Creșterea conversiei față de media pieței"
+      "first_leads": "Lead-uri în prima lună după lansare",
+      "conversion_growth": "Canale de vânzări conectate din prima zi"
     },
     "cta": {
       "title": "Gata de lansare?",
@@ -517,7 +606,7 @@
     },
     "features": {
       "label": "Capabilități",
-      "title": "De ce clienții ne aleg",
+      "title": "Tehnologii și standarde",
       "items": {
         "0": {
           "title": "Scalabilitate",
@@ -1298,7 +1387,7 @@
     "submit": "Calculează",
     "step1": {
       "indicator": "1/4",
-      "title": "Ce ai nevoie?",
+      "title": "Alegeți tipul proiectului",
       "types": {
         "0": "Landing Page",
         "1": "Magazin Online",
@@ -1396,8 +1485,8 @@
           },
           "timeline": {
             "label": "Termen",
-            "standard": "Standard (6–10 săptămâni)",
-            "rush": "Urgent (3–5 săptămâni)"
+            "standard": "Standard (3–5 luni)",
+            "rush": "Urgent (2–3 luni)"
           }
         },
         "2": {
@@ -1751,6 +1840,17 @@
           "conversionOptimization": "Optimizare Conversie",
           "marketResearch": "Cercetare Piață"
         }
+      }
+    },
+    "adBudget": {
+      "title": "Buget publicitar",
+      "subtitle": "Cât sunteți dispus să cheltuiți pe publicitate plătită pe lună? (Facebook, Google Ads, TikTok etc.)",
+      "options": {
+        "under300": "Sub €300",
+        "300to500": "€300 – €500",
+        "500to1000": "€500 – €1.000",
+        "1000to2000": "€1.000 – €2.000",
+        "over2000": "Peste €2.000"
       }
     },
     "step4": {

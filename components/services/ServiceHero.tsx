@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import Shuffle from "@/components/Shuffle";
+import SplitText from "@/components/SplitText";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { container, itemVariant } from "./serviceAnimations";
 
@@ -12,23 +12,9 @@ interface ServiceHeroProps {
   icon: LucideIcon;
 }
 
-const shuffleProps = {
-  shuffleDirection: "right" as const,
-  duration: 0.35,
-  animationMode: "evenodd" as const,
-  shuffleTimes: 1,
-  ease: "power3.out",
-  stagger: 0.03,
-  threshold: 0.1,
-  triggerOnce: true,
-  triggerOnHover: false,
-  respectReducedMotion: true,
-};
-
 export function ServiceHero({ namespace, icon: Icon }: ServiceHeroProps) {
   const t = useTranslations(namespace);
-  const title = t("hero.title");
-  const lines = title.includes("|") ? title.split("|") : [title];
+  const title = t("hero.title").replace(/\|/g, "\n");
 
   return (
     <section className="w-full min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
@@ -39,16 +25,12 @@ export function ServiceHero({ namespace, icon: Icon }: ServiceHeroProps) {
         animate="show"
       >
         <motion.div variants={itemVariant} className="w-full">
-          {lines.map((line, i) => (
-            <Shuffle
-              key={i}
-              text={line}
-              tag={i === 0 ? "h1" : "div"}
-              className="text-[13vw] md:text-[10vw] font-black leading-[0.9] text-foreground"
-              textAlign="center"
-              {...shuffleProps}
-            />
-          ))}
+          <SplitText
+            text={title}
+            tag="h1"
+            className="text-[10vw] md:text-[7vw] font-black leading-[1.1] text-foreground uppercase"
+            textAlign="center"
+          />
         </motion.div>
 
         <motion.p
