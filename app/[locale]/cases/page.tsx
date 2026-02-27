@@ -16,7 +16,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { MacbookPro } from "@/components/ui/macbook-pro";
-import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
+import { Iphone } from "@/components/ui/iphone";
 
 const SCREEN = {
   left: "11.46%",
@@ -231,40 +231,16 @@ function CaseCardRegular({
       <div className="relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl p-6 pb-4">
         {/* Mockups */}
         <div className="flex items-center justify-center gap-2 mb-4 aspect-[16/10]">
-          {/* MacBook */}
           <div className="relative flex-1 min-w-0">
-            <MacbookPro
-              width={650}
-              height={400}
-              className="w-full h-auto relative z-10"
-            />
-            <div
-              className="absolute overflow-hidden rounded-[0.5%] z-20"
-              style={{
-                left: SCREEN.left,
-                top: SCREEN.top,
-                width: SCREEN.width,
-                height: SCREEN.height,
-              }}
-            >
-              <Image
-                src={caseItem.images[0]}
-                alt={title}
-                width={1440}
-                height={900}
-                className="w-full h-full object-cover object-top"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
+            <MacbookPro width={650} height={400} className="w-full h-auto relative z-10" />
+            <div className="absolute overflow-hidden rounded-[0.5%] z-20" style={{ left: SCREEN.left, top: SCREEN.top, width: SCREEN.width, height: SCREEN.height }}>
+              <Image src={caseItem.images[0]} alt={title} width={1440} height={900} className="w-full h-full object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
             </div>
           </div>
 
-          {/* iPhone */}
           {caseItem.images[1] && (
-            <div className="flex-shrink-0 w-[18%]">
-              <Iphone15Pro
-                src={caseItem.images[1]}
-                className="w-full h-auto"
-              />
+            <div className="flex-shrink-0 w-[13%]">
+              <Iphone src={caseItem.images[1]} className="w-full h-auto" />
             </div>
           )}
         </div>
@@ -298,16 +274,6 @@ function CaseCardRegular({
 function CaseDetailSheet({ caseItem }: { caseItem: CaseStudy }) {
   const t = useTranslations("Cases");
   const slug = caseItem.slug;
-
-  /* Defer heavy content (SVG mockups, images) until after the sheet slide animation (~500ms) */
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      const timer = setTimeout(() => setReady(true), 350);
-      return () => clearTimeout(timer);
-    });
-    return () => cancelAnimationFrame(id);
-  }, []);
 
   const aboutBlocks = [
     { labelKey: "challengeLabel" as const, textSuffix: "challenge", num: "01" },
@@ -351,49 +317,21 @@ function CaseDetailSheet({ caseItem }: { caseItem: CaseStudy }) {
         )}
       </div>
 
-      {/* MacBook + iPhone mockups — deferred to avoid jank during slide animation */}
-      {ready ? (
-        <div className="flex items-end justify-center gap-3 md:gap-6 mx-auto" style={{ maxWidth: "850px" }}>
-          {/* MacBook */}
-          <div className="relative flex-1 min-w-0">
-            <MacbookPro
-              width={650}
-              height={400}
-              className="w-full h-auto relative z-10"
-            />
-            <div
-              className="absolute overflow-hidden rounded-[0.5%] z-20"
-              style={{
-                left: SCREEN.left,
-                top: SCREEN.top,
-                width: SCREEN.width,
-                height: SCREEN.height,
-              }}
-            >
-              <Image
-                src={caseItem.images[0]}
-                alt={t(`items.${slug}.title`)}
-                width={1440}
-                height={900}
-                className="w-full h-full object-cover object-top"
-                sizes="70vw"
-              />
-            </div>
+      {/* MacBook + iPhone mockups */}
+      <div className="flex items-end justify-center gap-3 md:gap-6 w-[82%] mx-auto">
+        <div className="relative flex-1 min-w-0">
+          <MacbookPro width={650} height={400} className="w-full h-auto relative z-10" />
+          <div className="absolute overflow-hidden rounded-[0.5%] z-20" style={{ left: SCREEN.left, top: SCREEN.top, width: SCREEN.width, height: SCREEN.height }}>
+            <Image src={caseItem.images[0]} alt={t(`items.${slug}.title`)} width={1440} height={900} className="w-full h-full object-cover object-top" sizes="70vw" />
           </div>
-
-          {/* iPhone */}
-          {caseItem.images[1] && (
-            <div className="flex-shrink-0 w-[18%]">
-              <Iphone15Pro
-                src={caseItem.images[1]}
-                className="w-full h-auto"
-              />
-            </div>
-          )}
         </div>
-      ) : (
-        <div className="aspect-[16/10] w-full rounded-2xl bg-zinc-100 dark:bg-zinc-900 animate-pulse" style={{ maxWidth: "850px", margin: "0 auto" }} />
-      )}
+
+        {caseItem.images[1] && (
+          <div className="flex-shrink-0 w-[18%]">
+            <Iphone src={caseItem.images[1]} className="w-full h-auto" />
+          </div>
+        )}
+      </div>
 
       {/* About: Challenge / Solution / Result */}
       <div>

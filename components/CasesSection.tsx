@@ -2,13 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import SplitText from "./SplitText";
 import { casesData, type CaseStudy } from "@/lib/cases-data";
 import { MacbookPro } from "@/components/ui/macbook-pro";
-import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
+import { Iphone } from "@/components/ui/iphone";
+import Image from "next/image";
 
 const SCREEN = {
   left: "11.46%",
@@ -57,40 +57,16 @@ function BentoCard({
         <div className="relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl p-6 pb-4 h-full flex flex-col">
           {/* Mockups */}
           <div className="flex items-center justify-center gap-2 flex-1">
-            {/* MacBook */}
             <div className="relative flex-1 min-w-0">
-              <MacbookPro
-                width={650}
-                height={400}
-                className="w-full h-auto relative z-10"
-              />
-              <div
-                className="absolute overflow-hidden rounded-[0.5%] z-20"
-                style={{
-                  left: SCREEN.left,
-                  top: SCREEN.top,
-                  width: SCREEN.width,
-                  height: SCREEN.height,
-                }}
-              >
-                <Image
-                  src={caseItem.images[0]}
-                  alt={title}
-                  width={1440}
-                  height={900}
-                  className="w-full h-full object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+              <MacbookPro width={650} height={400} className="w-full h-auto relative z-10" />
+              <div className="absolute overflow-hidden rounded-[0.5%] z-20" style={{ left: SCREEN.left, top: SCREEN.top, width: SCREEN.width, height: SCREEN.height }}>
+                <Image src={caseItem.images[0]} alt={title} width={1440} height={900} className="w-full h-full object-cover object-top" sizes="(max-width: 640px) 100vw, 50vw" />
               </div>
             </div>
 
-            {/* iPhone */}
             {caseItem.images[1] && (
               <div className="flex-shrink-0 w-[18%]">
-                <Iphone15Pro
-                  src={caseItem.images[1]}
-                  className="w-full h-auto"
-                />
+                <Iphone src={caseItem.images[1]} className="w-full h-auto" />
               </div>
             )}
           </div>

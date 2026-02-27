@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { MacbookPro } from "@/components/ui/macbook-pro";
-import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
+import { Iphone } from "@/components/ui/iphone";
 
 /*
   MacbookPro SVG screen area (from viewBox 0 0 650 400):
@@ -120,7 +120,7 @@ export function MacBookMockup({
 
             {/* iPhone — next to MacBook, aligned to bottom */}
             <div className="relative flex-shrink-0 hidden lg:block" style={{ width: "22vw", maxWidth: "320px" }}>
-              <Iphone15Pro
+              <Iphone
                 src={mobileScreenshot}
                 className="w-full h-auto"
               />
