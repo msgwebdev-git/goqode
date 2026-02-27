@@ -7,6 +7,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing ?tag= param" }, { status: 400 });
   }
 
-  await revalidateTag(tag);
+  revalidateTag(tag, "default");
   return NextResponse.json({ revalidated: true, tag, now: Date.now() });
 }
