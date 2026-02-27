@@ -1,20 +1,20 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight, ExternalLink, X } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import SplitText from "@/components/SplitText";
 import { casesData, filterMap, type CaseStudy } from "@/lib/cases-data";
 import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-} from "@/components/ui/sheet";
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+} from "@/components/ui/drawer";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { Iphone15Pro } from "@/components/ui/iphone-15-pro";
 
@@ -552,30 +552,16 @@ export default function CasesPage() {
       <CasesGrid filteredCases={filteredCases} onOpenCase={setOpenSlug} activeFilter={activeFilter} />
       <CasesCTA />
 
-      {/* Case Detail Sheet */}
-      <Sheet open={!!openCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
-        <SheetContent
-          side="bottom"
-          className="h-[92vh] rounded-t-[2rem] border-t-0 overflow-y-auto p-0 [&>button]:hidden"
-        >
-          <SheetTitle className="sr-only">
+      {/* Case Detail Drawer (Vaul — optimised for mobile) */}
+      <Drawer open={!!openCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
+        <DrawerContent className="h-[92vh] overflow-y-auto p-0 max-w-none rounded-t-[2rem]">
+          <DrawerTitle className="sr-only">
             {openCase ? openCase.slug : "Case"}
-          </SheetTitle>
-
-          {/* Custom close button */}
-          <div className="sticky top-0 z-50 flex justify-center pt-3 pb-2">
-            <button
-              onClick={() => setOpenSlug(null)}
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <X className="w-3.5 h-3.5" />
-              Закрыть
-            </button>
-          </div>
+          </DrawerTitle>
 
           {openCase && <CaseDetailSheet caseItem={openCase} />}
-        </SheetContent>
-      </Sheet>
+        </DrawerContent>
+      </Drawer>
     </main>
   );
 }
