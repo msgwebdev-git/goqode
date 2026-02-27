@@ -2,12 +2,24 @@ import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { getAlternates, getLocalizedUrl, getOgLocale } from "@/lib/metadata-helpers";
 import type { Locale } from "@/i18n/routing";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/HeroSection";
-import { SolutionsSection } from "@/components/SolutionsSection";
-import { ProcessSection } from "@/components/ProcessSection";
-import { CasesSection } from "@/components/CasesSection";
-import { BlogSection } from "@/components/BlogSection";
-import { AboutSection } from "@/components/AboutSection";
+
+const SolutionsSection = dynamic(
+  () => import("@/components/SolutionsSection").then((m) => ({ default: m.SolutionsSection }))
+);
+const ProcessSection = dynamic(
+  () => import("@/components/ProcessSection").then((m) => ({ default: m.ProcessSection }))
+);
+const CasesSection = dynamic(
+  () => import("@/components/CasesSection").then((m) => ({ default: m.CasesSection }))
+);
+const AboutSection = dynamic(
+  () => import("@/components/AboutSection").then((m) => ({ default: m.AboutSection }))
+);
+const BlogSection = dynamic(
+  () => import("@/components/BlogSection").then((m) => ({ default: m.BlogSection }))
+);
 
 export async function generateMetadata({
   params,
