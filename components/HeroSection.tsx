@@ -2,9 +2,22 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import SplitText from "@/components/SplitText";
-import TrueFocus from "@/components/TrueFocus";
+import dynamic from "next/dynamic";
 import { ArrowRight, Tag } from "lucide-react";
+
+/* Lazy-load animation-heavy components — removes GSAP & motion/react from initial bundle */
+const SplitText = dynamic(() => import("@/components/SplitText"), {
+  ssr: false,
+  loading: () => (
+    <h1 className="w-full text-[12vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase split-parent block whitespace-pre-line text-center">
+      We build bold digital
+    </h1>
+  ),
+});
+
+const TrueFocus = dynamic(() => import("@/components/TrueFocus"), {
+  ssr: false,
+});
 
 export function HeroSection() {
   const t = useTranslations("Hero");

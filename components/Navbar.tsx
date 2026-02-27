@@ -6,12 +6,10 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   Sun,
   Moon,
   Globe,
-  ChevronRight,
   ArrowRight,
   ChevronDown,
   Rocket,
@@ -31,38 +29,8 @@ import {
 } from "lucide-react";
 import type { Locale } from "@/i18n/routing";
 
-const navContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const navItem = {
-  hidden: { opacity: 0, y: -10 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.4, 0.25, 1] as const,
-    },
-  },
-};
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -143,8 +111,6 @@ export function Navbar() {
     );
   };
 
-  const currentLocaleData = locales.find((l) => l.code === currentLocale);
-
   return (
     <>
     <header
@@ -156,14 +122,9 @@ export function Navbar() {
       )}
     >
       <nav className="w-full px-6 md:clamp-[px,12,24]">
-        <motion.div
-          className="flex h-16 w-full items-center justify-between"
-          variants={navContainer}
-          initial="hidden"
-          animate="show"
-        >
+        <div className="flex h-16 w-full items-center justify-between">
           {/* Logo */}
-          <motion.div variants={navItem}>
+          <div className="nav-fade-in [animation-delay:50ms]">
             <Link href="/" className="flex-shrink-0 relative z-10 block">
             {mounted ? (
               <Image
@@ -182,12 +143,11 @@ export function Navbar() {
               <div className="h-8 w-28 bg-muted rounded animate-pulse" />
             )}
             </Link>
-          </motion.div>
+          </div>
 
           {/* Desktop Navigation */}
-          <motion.div
-            variants={navItem}
-            className="hidden xl:flex items-center gap-1 p-1 rounded-full bg-black/[0.03] dark:bg-white/[0.05] backdrop-blur-sm border border-black/[0.05] dark:border-white/[0.1]"
+          <div
+            className="hidden xl:flex items-center gap-1 p-1 rounded-full bg-black/[0.03] dark:bg-white/[0.05] backdrop-blur-sm border border-black/[0.05] dark:border-white/[0.1] nav-fade-in [animation-delay:150ms]"
           >
             {/* Solutions Mega Menu */}
             <DropdownMenu>
@@ -299,10 +259,10 @@ export function Navbar() {
                 {t(item.key)}
               </Link>
             ))}
-          </motion.div>
+          </div>
 
           {/* Right Side Actions */}
-          <motion.div variants={navItem} className="flex items-center gap-2">
+          <div className="flex items-center gap-2 nav-fade-in [animation-delay:250ms]">
             {/* Language Switcher — desktop only */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -380,258 +340,241 @@ export function Navbar() {
               aria-label="Toggle menu"
             >
               <div className="relative w-[22px] h-[18px]">
-                <motion.span
-                  className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center"
+                <span
+                  className={cn(
+                    "absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center transition-all duration-[350ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+                    menuOpen ? "translate-y-[8px] rotate-45" : "translate-y-0 rotate-0"
+                  )}
                   style={{ top: 0 }}
-                  animate={menuOpen ? { y: 8, rotate: 45 } : { y: 0, rotate: 0 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                 />
-                <motion.span
-                  className="absolute left-0 w-[70%] h-[2px] bg-foreground rounded-full"
+                <span
+                  className={cn(
+                    "absolute left-0 w-[70%] h-[2px] bg-foreground rounded-full transition-all duration-[250ms]",
+                    menuOpen ? "opacity-0 translate-x-3" : "opacity-100 translate-x-0"
+                  )}
                   style={{ top: 8 }}
-                  animate={menuOpen ? { opacity: 0, x: 12 } : { opacity: 1, x: 0 }}
-                  transition={{ duration: 0.25 }}
                 />
-                <motion.span
-                  className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center"
+                <span
+                  className={cn(
+                    "absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center transition-all duration-[350ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+                    menuOpen ? "-translate-y-[8px] -rotate-45" : "translate-y-0 rotate-0"
+                  )}
                   style={{ top: 16 }}
-                  animate={menuOpen ? { y: -8, rotate: -45 } : { y: 0, rotate: 0 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                 />
               </div>
             </button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </nav>
 
     </header>
 
-    {/* Mobile Menu Overlay — outside header stacking context */}
-    <AnimatePresence>
-      {menuOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+    {/* Mobile Menu Overlay — always mounted, CSS transitions */}
+    <div
+      className={cn(
+        "fixed inset-0 bg-black/50 transition-opacity duration-[250ms]",
+        menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+      )}
+      style={{ zIndex: 55 }}
+      onClick={() => setMenuOpen(false)}
+    />
+    <div
+      className={cn(
+        "fixed inset-y-0 right-0 w-full bg-background shadow-2xl flex flex-col pt-16 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
+        menuOpen ? "translate-x-0" : "translate-x-full"
+      )}
+      style={{ zIndex: 56 }}
+    >
+      {/* Top bar — logo + close */}
+      <div className="absolute top-0 left-0 right-0 h-16 px-6 flex items-center justify-between">
+        {mounted && (
+          <Image
+            src={resolvedTheme === "dark" ? "/goqode-dark.svg" : "/goqode-white.svg"}
+            alt="GoQode"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+          />
+        )}
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => { setMenuOpen(false); setLangDrawerOpen(true); }}
+            className="flex items-center justify-center h-8 px-2.5 rounded-full border border-border/50 text-xs font-semibold text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
+          >
+            {currentLocale.toUpperCase()}
+          </button>
+          <button
             onClick={() => setMenuOpen(false)}
-            className="fixed inset-0 bg-black/50"
-            style={{ zIndex: 55 }}
-          />
-          <motion.div
-            initial={{ transform: "translateX(100%)" }}
-            animate={{ transform: "translateX(0%)" }}
-            exit={{ transform: "translateX(100%)" }}
-            transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            style={{ willChange: "transform", zIndex: 56 }}
-            className="fixed inset-y-0 right-0 w-full bg-background shadow-2xl flex flex-col pt-16"
+            className="flex items-center justify-center w-10 h-10 cursor-pointer"
+            aria-label="Close menu"
           >
-            {/* Top bar — logo + close */}
-            <div className="absolute top-0 left-0 right-0 h-16 px-6 flex items-center justify-between">
-              {mounted && (
-                <Image
-                  src={resolvedTheme === "dark" ? "/goqode-dark.svg" : "/goqode-white.svg"}
-                  alt="GoQode"
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto"
-                />
+            <div className="relative w-[22px] h-[18px]">
+              <span
+                className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center translate-y-[8px] rotate-45"
+                style={{ top: 0 }}
+              />
+              <span
+                className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center -translate-y-[8px] -rotate-45"
+                style={{ top: 16 }}
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Scrollable nav content */}
+      <div className="flex-1 overflow-y-auto px-6 pt-6">
+        {/* Solutions — priority */}
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+          {t("solutions")}
+        </p>
+        <div className="flex flex-col gap-0">
+          {solutions.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors group border-b border-border/30 last:border-b-0"
+              >
+                <Icon className="h-4 w-4 text-muted-foreground group-hover:text-[#C9FD48] transition-colors shrink-0" />
+                <span>{t(`solutionsMenu.${item.key}`)}</span>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Services */}
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+          {t("services")}
+        </p>
+        <div className="flex flex-col gap-0">
+          {services.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-3 py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors group border-b border-border/30 last:border-b-0"
+              >
+                <Icon className="h-4 w-4 text-muted-foreground group-hover:text-[#C9FD48] transition-colors shrink-0" />
+                <span>{t(`servicesMenu.${item.key}`)}</span>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Packages — highlighted */}
+        <Link
+          href="/packages"
+          onClick={() => setMenuOpen(false)}
+          className="mt-4 flex items-center justify-center gap-2 w-full h-11 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d]"
+        >
+          {t("packages")}
+        </Link>
+
+        {/* Other nav links */}
+        <div className="mt-6 pt-6 border-t border-border/50 flex flex-col gap-0">
+          {navItems.map((item) => (
+            <Link
+              key={item.key}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors"
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="px-6 pb-8 pt-4 border-t border-border/50 space-y-3">
+        <Link
+          href="/calculator"
+          onClick={() => setMenuOpen(false)}
+          className="flex items-center justify-center gap-2 w-full h-12 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10"
+        >
+          <Calculator className="h-4 w-4" />
+          <span>{t("calculator")}</span>
+        </Link>
+        <Link
+          href="/contact"
+          onClick={() => setMenuOpen(false)}
+          className="flex items-center justify-center gap-2 w-full h-12 rounded-full bg-[#C9FD48] text-black font-semibold transition-all duration-300 hover:bg-[#b8ec3d]"
+        >
+          <span>{t("cta")}</span>
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+        <div className="flex items-center justify-center">
+          <button
+            onClick={() =>
+              mounted && setTheme(resolvedTheme === "light" ? "dark" : "light")
+            }
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground transition-colors border border-border/50"
+          >
+            {mounted && (
+              resolvedTheme === "light" ? (
+                <>
+                  <Moon className="h-3.5 w-3.5" />
+                  <span>Dark mode</span>
+                </>
+              ) : (
+                <>
+                  <Sun className="h-3.5 w-3.5" />
+                  <span>Light mode</span>
+                </>
+              )
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* Language Drawer — always mounted, CSS transitions */}
+    <div
+      className={cn(
+        "fixed inset-0 bg-black/50 transition-opacity duration-200",
+        langDrawerOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+      )}
+      style={{ zIndex: 60 }}
+      onClick={() => setLangDrawerOpen(false)}
+    />
+    <div
+      className={cn(
+        "fixed bottom-0 left-0 right-0 bg-background rounded-t-2xl transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
+        langDrawerOpen ? "translate-y-0" : "translate-y-full"
+      )}
+      style={{ zIndex: 61 }}
+    >
+      <div className="flex justify-center pt-3 pb-2">
+        <div className="w-10 h-1 rounded-full bg-muted-foreground/20" />
+      </div>
+      <div className="px-6 pb-8 pt-2">
+        <div className="flex flex-col gap-1">
+          {locales.map((locale) => (
+            <button
+              key={locale.code}
+              onClick={() => {
+                handleLocaleChange(locale.code);
+                setLangDrawerOpen(false);
+              }}
+              className={cn(
+                "flex items-center gap-3 py-3.5 px-4 rounded-xl transition-colors text-left cursor-pointer",
+                currentLocale === locale.code
+                  ? "bg-foreground text-background"
+                  : "hover:bg-accent"
               )}
-              <div className="flex items-center gap-1">
-                <button
-                  onClick={() => { setMenuOpen(false); setLangDrawerOpen(true); }}
-                  className="flex items-center justify-center h-8 px-2.5 rounded-full border border-border/50 text-xs font-semibold text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
-                >
-                  {currentLocale.toUpperCase()}
-                </button>
-              <button
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center w-10 h-10 cursor-pointer"
-                aria-label="Close menu"
-              >
-              <div className="relative w-[22px] h-[18px]">
-                <motion.span
-                  className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center"
-                  style={{ top: 0 }}
-                  animate={{ y: 8, rotate: 45 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                />
-                <motion.span
-                  className="absolute left-0 w-full h-[2px] bg-foreground rounded-full origin-center"
-                  style={{ top: 16 }}
-                  animate={{ y: -8, rotate: -45 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-                />
-              </div>
+            >
+              <span className="text-lg">{locale.flag}</span>
+              <span className="font-medium text-sm">{locale.label}</span>
             </button>
-            </div>
-            </div>
-
-            {/* Scrollable nav content */}
-            <div className="flex-1 overflow-y-auto px-6 pt-6">
-              {/* Solutions — priority */}
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                {t("solutions")}
-              </p>
-              <div className="flex flex-col gap-0">
-                {solutions.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.key}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors group border-b border-border/30 last:border-b-0"
-                    >
-                      <Icon className="h-4 w-4 text-muted-foreground group-hover:text-[#C9FD48] transition-colors shrink-0" />
-                      <span>{t(`solutionsMenu.${item.key}`)}</span>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Services */}
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
-                {t("services")}
-              </p>
-              <div className="flex flex-col gap-0">
-                {services.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.key}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors group border-b border-border/30 last:border-b-0"
-                    >
-                      <Icon className="h-4 w-4 text-muted-foreground group-hover:text-[#C9FD48] transition-colors shrink-0" />
-                      <span>{t(`servicesMenu.${item.key}`)}</span>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Packages — highlighted */}
-              <Link
-                href="/packages"
-                onClick={() => setMenuOpen(false)}
-                className="mt-4 flex items-center justify-center gap-2 w-full h-11 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d]"
-              >
-                {t("packages")}
-              </Link>
-
-              {/* Other nav links */}
-              <div className="mt-6 pt-6 border-t border-border/50 flex flex-col gap-0">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="py-3 text-lg font-semibold text-foreground hover:text-[#C9FD48] transition-colors"
-                  >
-                    {t(item.key)}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom bar */}
-            <div className="px-6 pb-8 pt-4 border-t border-border/50 space-y-3">
-              <Link
-                href="/calculator"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full h-12 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10"
-              >
-                <Calculator className="h-4 w-4" />
-                <span>{t("calculator")}</span>
-              </Link>
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full h-12 rounded-full bg-[#C9FD48] text-black font-semibold transition-all duration-300 hover:bg-[#b8ec3d]"
-              >
-                <span>{t("cta")}</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <div className="flex items-center justify-center">
-                <button
-                  onClick={() =>
-                    mounted && setTheme(resolvedTheme === "light" ? "dark" : "light")
-                  }
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-muted-foreground hover:text-foreground transition-colors border border-border/50"
-                >
-                  {mounted && (
-                    resolvedTheme === "light" ? (
-                      <>
-                        <Moon className="h-3.5 w-3.5" />
-                        <span>Dark mode</span>
-                      </>
-                    ) : (
-                      <>
-                        <Sun className="h-3.5 w-3.5" />
-                        <span>Light mode</span>
-                      </>
-                    )
-                  )}
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
-
-    {/* Language Drawer — outside header stacking context */}
-    <AnimatePresence>
-      {langDrawerOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setLangDrawerOpen(false)}
-            className="fixed inset-0 bg-black/50"
-            style={{ zIndex: 60 }}
-          />
-          <motion.div
-            initial={{ transform: "translateY(100%)" }}
-            animate={{ transform: "translateY(0%)" }}
-            exit={{ transform: "translateY(100%)" }}
-            transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            style={{ willChange: "transform", zIndex: 61 }}
-            className="fixed bottom-0 left-0 right-0 bg-background rounded-t-2xl"
-          >
-            <div className="flex justify-center pt-3 pb-2">
-              <div className="w-10 h-1 rounded-full bg-muted-foreground/20" />
-            </div>
-            <div className="px-6 pb-8 pt-2">
-              <div className="flex flex-col gap-1">
-                {locales.map((locale) => (
-                  <button
-                    key={locale.code}
-                    onClick={() => {
-                      handleLocaleChange(locale.code);
-                      setLangDrawerOpen(false);
-                    }}
-                    className={cn(
-                      "flex items-center gap-3 py-3.5 px-4 rounded-xl transition-colors text-left cursor-pointer",
-                      currentLocale === locale.code
-                        ? "bg-foreground text-background"
-                        : "hover:bg-accent"
-                    )}
-                  >
-                    <span className="text-lg">{locale.flag}</span>
-                    <span className="font-medium text-sm">{locale.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+          ))}
+        </div>
+      </div>
+    </div>
     </>
   );
 }
