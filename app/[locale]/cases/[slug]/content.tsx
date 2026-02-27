@@ -5,7 +5,6 @@ import { CaseHero } from "@/components/cases/CaseHero";
 import { MacBookMockup } from "@/components/cases/MacBookMockup";
 import { CaseAbout } from "@/components/cases/CaseAbout";
 import { CaseNextCard } from "@/components/cases/CaseNextCard";
-import { CaseCTA } from "@/components/cases/CaseCTA";
 
 export default function CaseDetailContent({ slug }: { slug: string }) {
   const caseData = getCaseBySlug(slug)!;
@@ -25,7 +24,6 @@ export default function CaseDetailContent({ slug }: { slug: string }) {
       />
       <CaseAbout slug={slug} />
       {showNextCase && <CaseNextCard nextCase={nextCase} />}
-      <CaseCTA />
     </main>
   );
 }

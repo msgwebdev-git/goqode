@@ -45,7 +45,7 @@ export function CaseNextCard({ nextCase }: { nextCase: CaseStudy }) {
         </motion.div>
 
         <motion.div variants={item}>
-          <Link href={`/cases/${nextCase.slug}`} className="group block">
+          <Link href={{ pathname: "/cases/[slug]", params: { slug: nextCase.slug } }} className="group block">
             <div className="relative w-full aspect-[21/9] rounded-2xl md:rounded-3xl overflow-hidden bg-zinc-900">
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
               <Image

@@ -302,22 +302,43 @@
     },
     "bottom": {
       "project": "Începe un proiect:",
-      "email": "hello@goqode.dev"
+      "email": "hello@goqode.agency"
     }
   },
   "Footer": {
     "description": "Creăm soluții digitale care ajută afacerile să crească. De la design la dezvoltare și marketing.",
-    "nav": {
-      "title": "Navigare",
-      "solutions": "Soluții",
-      "cases": "Cazuri",
+    "solutions": {
+      "title": "Soluții",
+      "launch": "Lansare afaceri",
+      "growth": "Creșterea vânzărilor",
+      "platforms": "Platforme online",
+      "events": "Soluții event",
+      "branding": "Branding",
+      "automation": "Automatizare",
+      "support": "Suport"
+    },
+    "services": {
+      "title": "Servicii",
+      "landing": "Landing Page",
+      "ecommerce": "Magazin online",
+      "corporate": "Site corporativ",
+      "webapp": "Aplicație web",
+      "mobile": "Aplicație mobilă",
+      "marketing": "Marketing"
+    },
+    "company": {
+      "title": "Companie",
       "about": "Despre noi",
+      "cases": "Cazuri",
+      "packages": "Pachete și prețuri",
+      "calculator": "Calculator",
       "contact": "Contact"
     },
     "contact": {
       "title": "Contact"
     },
-    "rights": "Toate drepturile rezervate."
+    "rights": "Toate drepturile rezervate.",
+    "cta": "Discutați un proiect"
   },
   "AboutPage": {
     "subtitle": "Despre companie",
@@ -1871,9 +1892,19 @@
       "discuss": "Discută proiectul",
       "recalculate": "Recalculează"
     },
+    "thankYou": {
+      "title": "Mulțumim, cererea a fost trimisă!",
+      "subtitle": "Vă vom contacta în curând pentru a discuta detaliile proiectului.",
+      "estimate": "Estimarea ta",
+      "adBudget": "Buget publicitar",
+      "description": "Descrierea proiectului",
+      "newCalculation": "Calcul nou",
+      "copyLink": "Copiază linkul",
+      "copied": "Copiat"
+    },
     "bottom": {
       "project": "Sau scrie-ne:",
-      "email": "hello@goqode.dev"
+      "email": "hello@goqode.agency"
     }
   },
   "Packages": {
@@ -2076,7 +2107,7 @@
       "label": "Prețuri",
       "title": "Investiție Landing Page",
       "from": "de la",
-      "description": "Prețul final depinde de complexitatea designului și funcționalitățile necesare. Folosește calculatorul pentru o estimare precisă.",
+      "description": "Prețul final depinde de complexitatea designului și funcționalitățile necesare. Calculează o estimare aproximativă în calculator.",
       "cta": "Calculează Costul"
     },
     "results": {
@@ -2090,6 +2121,27 @@
       "title": "Gata să Lansezi Landing Page-ul?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Ce este un landing page și de ce am nevoie de unul?",
+          "answer": "Un landing page este un site focalizat pe o singură pagină, conceput pentru a converti vizitatorii în lead-uri sau clienți. Este ideal pentru campanii publicitare, lansări de produse și promoții."
+        },
+        "1": {
+          "question": "Cât de repede puteți construi un landing page?",
+          "answer": "Majoritatea landing page-urilor sunt gata în 1-3 săptămâni. Putem livra mai rapid pentru campanii urgente cu opțiunea de livrare expresă."
+        },
+        "2": {
+          "question": "Landing page-ul va funcționa cu campaniile mele publicitare?",
+          "answer": "Da, configurăm Google Analytics, Meta Pixel și urmărirea conversiilor pentru a putea măsura ROI-ul din fiecare campanie publicitară."
+        },
+        "3": {
+          "question": "Pot testa A/B diferite versiuni?",
+          "answer": "Putem configura testare A/B pentru titluri, CTA-uri și layout-uri pentru a găsi versiunea cu cea mai mare rată de conversie."
+        }
+      }
     }
   },
   "ServiceEcommerce": {
@@ -2229,6 +2281,27 @@
       "title": "Gata să Lansezi Magazinul?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Ce platformă e-commerce folosiți?",
+          "answer": "Construim soluții e-commerce personalizate folosind Next.js cu CMS headless sau integrăm cu Shopify. Alegerea depinde de dimensiunea catalogului, buget și cerințe specifice."
+        },
+        "1": {
+          "question": "Puteți integra gateway-uri de plată?",
+          "answer": "Da, integrăm Stripe, PayPal și furnizori locali de plăți. Configurăm și fluxuri de checkout securizate cu SSL și conformitate PCI."
+        },
+        "2": {
+          "question": "Cum gestionați inventarul produselor?",
+          "answer": "Configurăm sisteme de gestionare a inventarului care urmăresc nivelurile stocului, trimit alerte de stoc scăzut și se pot sincroniza cu ERP-ul sau software-ul de depozit existent."
+        },
+        "3": {
+          "question": "Oferiți analiză și raportare?",
+          "answer": "Fiecare site e-commerce include un dashboard cu analiză vânzări, urmărirea conversiilor, date despre comportamentul clienților și integrare cu Google Analytics 4."
+        }
+      }
     }
   },
   "ServiceCorporate": {
@@ -2344,7 +2417,7 @@
       "label": "Prețuri",
       "title": "Investiție Site Corporativ",
       "from": "de la",
-      "description": "Prețul depinde de numărul de pagini, complexitatea CMS și integrări. Calculatorul ajută cu o estimare precisă.",
+      "description": "Prețul depinde de numărul de pagini, complexitatea CMS și integrări. Calculează o estimare aproximativă în calculator.",
       "cta": "Calculează Costul"
     },
     "results": {
@@ -2358,6 +2431,27 @@
       "title": "Gata pentru un Site Profesional?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Cât durează dezvoltarea unui site corporativ?",
+          "answer": "Un site corporativ tipic durează 4-8 săptămâni de la design până la lansare, în funcție de complexitate, numărul de pagini și disponibilitatea conținutului."
+        },
+        "1": {
+          "question": "Pot actualiza conținutul site-ului singur?",
+          "answer": "Da, fiecare site corporativ include un panou admin CMS intuitiv unde echipa ta poate edita texte, imagini și pagini fără ajutorul dezvoltatorilor."
+        },
+        "2": {
+          "question": "Oferiți găzduire și întreținere?",
+          "answer": "Implementăm pe platforme performante precum Vercel sau AWS și oferim pachete de întreținere care includ actualizări, backup-uri și suport."
+        },
+        "3": {
+          "question": "Site-ul este optimizat pentru motoarele de căutare?",
+          "answer": "Absolut. Implementăm SEO complet incluzând meta tag-uri, date structurate, sitemap XML, optimizarea Core Web Vitals și suport hreflang multilingv."
+        }
+      }
     }
   },
   "ServiceWebapp": {
@@ -2491,6 +2585,27 @@
       "title": "Gata să Construiești Aplicația?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Ce tipuri de aplicații web construiți?",
+          "answer": "Construim platforme SaaS, dashboard-uri, sisteme CRM, sisteme de rezervări, instrumente interne și aplicații de business personalizate folosind React și Next.js."
+        },
+        "1": {
+          "question": "Cum asigurați securitatea aplicației?",
+          "answer": "Urmăm cele mai bune practici de securitate OWASP, implementăm autentificare cu JWT/OAuth, criptăm datele în tranzit și în repaus și realizăm audituri de securitate."
+        },
+        "2": {
+          "question": "Puteți integra cu sistemele noastre existente?",
+          "answer": "Da, construim API-uri RESTful și GraphQL pentru integrare cu orice software existent — CRM, ERP, sisteme de plăți și servicii terțe."
+        },
+        "3": {
+          "question": "Oferiți suport continuu după lansare?",
+          "answer": "Oferim pachete de întreținere care includ rezolvarea bug-urilor, actualizări de funcționalități, monitorizarea performanței și suport 24/7 pentru probleme critice."
+        }
+      }
     }
   },
   "ServiceMobile": {
@@ -2624,6 +2739,27 @@
       "title": "Gata să Construiești Aplicația?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Construiți aplicații native sau cross-platform?",
+          "answer": "Construim în principal aplicații cross-platform folosind React Native, care oferă performanță nativă pe iOS și Android dintr-o singură bază de cod, reducând costul și timpul de lansare."
+        },
+        "1": {
+          "question": "Cât durează dezvoltarea unei aplicații mobile?",
+          "answer": "O aplicație mobilă tipică durează 8-16 săptămâni în funcție de complexitate. Aplicațiile simple pot fi gata în 6 săptămâni, iar platformele complexe pot dura 4-6 luni."
+        },
+        "2": {
+          "question": "Vă ocupați de trimiterea în App Store și Play Store?",
+          "answer": "Da, gestionăm întregul proces de trimitere inclusiv capturi de ecran, descrieri, conformitatea cu ghidurile magazinelor și rezolvarea oricăror probleme de recenzie."
+        },
+        "3": {
+          "question": "Poate funcționa aplicația offline?",
+          "answer": "Putem implementa funcționalitate offline cu cache local de date și sincronizare în fundal, astfel încât aplicația să rămână utilă chiar și fără conexiune la internet."
+        }
+      }
     }
   },
   "ServiceMarketing": {
@@ -2759,6 +2895,152 @@
       "title": "Gata să Crești Afacerea?",
       "button": "Discută Proiectul",
       "contact_text": "Sau scrie-ne la"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "items": {
+        "0": {
+          "question": "Ce servicii de marketing digital sunt incluse?",
+          "answer": "Pachetele noastre de marketing digital includ SMM și gestionarea rețelelor sociale, publicitate targhetată pe Meta și TikTok, campanii Google Ads, promovare SEO, content marketing, email marketing, analiză și strategie de brand. Puteți alege servicii individuale sau un pachet complet."
+        },
+        "1": {
+          "question": "Cât durează până apar rezultatele?",
+          "answer": "Publicitatea plătită (Google Ads, Meta Ads) poate aduce primele rezultate în 1-2 săptămâni. SEO necesită de obicei 3-6 luni pentru o creștere organică semnificativă. În medie, clienții noștri observă o creștere de 150% a lead-urilor în primele 3 luni de colaborare."
+        },
+        "2": {
+          "question": "Cât costă marketingul digital?",
+          "answer": "Retainerul nostru lunar pornește de la €500 și include strategie, execuție și raportare. Bugetul publicitar este separat și depinde de obiectivele și piața dumneavoastră. Recomandăm să începeți cu un buget de test și să scalați pe baza datelor de performanță."
+        },
+        "3": {
+          "question": "Cum măsurați și raportați rezultatele?",
+          "answer": "Configurăm GA4, tracking de conversii și dashboard-uri personalizate din prima zi. Primiți rapoarte lunare detaliate cu KPI, ROAS, cost per lead și recomandări acționabile. De asemenea, oferim acces în timp real la dashboard-urile campaniilor."
+        }
+      }
     }
+  },
+  "Seo": {
+    "home": {
+      "title": "GoQode — Dezvoltare Web & Soluții Digitale în Moldova",
+      "description": "GoQode creează site-uri web, aplicații web, aplicații mobile și soluții de marketing digital pentru afaceri din Moldova, România și Europa. Dezvoltare full-cycle de la design la lansare.",
+      "keywords": "dezvoltare web Moldova, soluții digitale, creare site web, dezvoltare aplicații mobile, GoQode, agenție web Moldova, dezvoltare e-commerce",
+      "ogTitle": "GoQode — Dezvoltare Web & Soluții Digitale",
+      "ogDescription": "Dezvoltare web full-cycle, aplicații mobile, e-commerce și marketing digital. De la concept la lansare."
+    },
+    "about": {
+      "title": "Despre GoQode — Agenție Digitală în Moldova",
+      "description": "GoQode este o agenție de dezvoltare digitală cu peste 30 de ani experiență combinată, 35+ proiecte livrate în 12+ industrii. Construim site-uri, aplicații și produse digitale.",
+      "keywords": "agenție GoQode, echipă dezvoltare web, agenție digitală Moldova, despre GoQode",
+      "ogTitle": "Despre GoQode — Echipa & Povestea Noastră",
+      "ogDescription": "Agenție de dezvoltare digitală cu peste 30 de ani experiență și 35+ proiecte de succes în 12+ industrii."
+    },
+    "contact": {
+      "title": "Contactează GoQode — Consultație Gratuită",
+      "description": "Contactează GoQode pentru o consultație gratuită. Dezvoltare web, aplicații mobile, marketing digital — te ajutăm să alegi soluția potrivită pentru afacerea ta.",
+      "keywords": "contact GoQode, consultație gratuită, cerere dezvoltare web, estimare proiect",
+      "ogTitle": "Contactează GoQode — Hai să Discutăm Proiectul Tău",
+      "ogDescription": "Obține o consultație gratuită pentru proiectul tău de dezvoltare web, aplicație mobilă sau marketing digital."
+    },
+    "cases": {
+      "title": "Portofoliu & Studii de Caz | GoQode",
+      "description": "Explorează portofoliul GoQode de proiecte de dezvoltare web, aplicații mobile și marketing digital. Rezultate reale pentru afaceri reale din diverse industrii.",
+      "keywords": "portofoliu dezvoltare web, studii de caz, proiecte GoQode, exemple site-uri, portofoliu dezvoltare",
+      "ogTitle": "Lucrările Noastre — Portofoliu GoQode",
+      "ogDescription": "Vezi cele mai recente proiecte de dezvoltare web, aplicații și marketing digital cu rezultate reale."
+    },
+    "launch": {
+      "title": "Lansare Afacere Online — De la Zero la Prime Vânzări | GoQode",
+      "description": "Lansează-ți afacerea online cu GoQode. Creăm brandul, construim site-ul și setăm marketingul — tot ce ai nevoie pentru primii clienți și vânzări.",
+      "keywords": "lansare afacere online, site startup, primul site web, lansare brand, prezență digitală, GoQode lansare",
+      "ogTitle": "Lansare Afacere — GoQode",
+      "ogDescription": "De la zero la prime vânzări. Construim brandul, site-ul și marketingul pentru lansarea afacerii tale online."
+    },
+    "growth": {
+      "title": "Creștere Vânzări & Optimizare Conversii | GoQode",
+      "description": "Crește-ți vânzările cu GoQode. Optimizăm conversiile, reducem costurile de achiziție și scalăm marketingul digital pentru ROI maxim.",
+      "keywords": "creștere vânzări, optimizare conversii, marketing digital, creștere lead-uri, optimizare ROI, GoQode creștere",
+      "ogTitle": "Soluții Creștere Vânzări — GoQode",
+      "ogDescription": "Optimizează conversiile și scalează marketingul. Creștere medie 150% a conversiilor, reducere 40% a costurilor."
+    },
+    "platforms": {
+      "title": "Dezvoltare Platforme Online — SaaS, Marketplace-uri, Dashboard-uri | GoQode",
+      "description": "Construiește platforme online personalizate cu GoQode. Aplicații SaaS, marketplace-uri, dashboard-uri admin — arhitectură scalabilă cu garanție 99% uptime.",
+      "keywords": "dezvoltare SaaS, dezvoltare marketplace, platformă online, dashboard personalizat, platformă web, GoQode platforme",
+      "ogTitle": "Dezvoltare Platforme Online — GoQode",
+      "ogDescription": "Dezvoltare SaaS, marketplace și dashboard personalizat. Arhitectură scalabilă, 99% uptime."
+    },
+    "events": {
+      "title": "Soluții Evenimente — Platforme de Înregistrare & Management | GoQode",
+      "description": "Soluții digitale pentru evenimente de la GoQode. Sisteme de înregistrare, management bilete, site-uri evenimente și infrastructură digitală on-site.",
+      "keywords": "platformă management evenimente, sistem înregistrare evenimente, site evenimente, evenimente digitale, GoQode evenimente",
+      "ogTitle": "Soluții Evenimente — GoQode",
+      "ogDescription": "Platforme personalizate de înregistrare, ticketing și management pentru conferințe, festivaluri și evenimente corporative."
+    },
+    "automation": {
+      "title": "Automatizare Procese de Afaceri | GoQode",
+      "description": "Automatizează procesele de afaceri cu GoQode. Integrări CRM, automatizare workflow, chatboți și conexiuni API care economisesc 70% din timpul muncii manuale.",
+      "keywords": "automatizare afaceri, automatizare workflow, integrare CRM, optimizare procese, chatboți, GoQode automatizare",
+      "ogTitle": "Automatizare Afaceri — GoQode",
+      "ogDescription": "Automatizează workflow-uri, integrează CRM-uri și optimizează procese. Economisește 70% din munca manuală."
+    },
+    "branding": {
+      "title": "Branding & Identitate Vizuală | GoQode",
+      "description": "Servicii profesionale de branding de la GoQode. Design logo, brand book, sisteme de culori, tipografie și identitate vizuală completă pentru afacerea ta.",
+      "keywords": "servicii branding, design logo, identitate brand, identitate vizuală, brand book, GoQode branding",
+      "ogTitle": "Branding & Identitate — GoQode",
+      "ogDescription": "Branding profesional: logo, brand book, sistem de culori și identitate vizuală completă pentru afacerea ta."
+    },
+    "support": {
+      "title": "Suport Tehnic 24/7 | GoQode",
+      "description": "Suport tehnic 24/7 pentru site-ul și aplicațiile tale web de la GoQode. Monitorizare, remediere erori, actualizări și îmbunătățire continuă.",
+      "keywords": "suport site web, suport tehnic, mentenanță web, suport 24/7, GoQode suport",
+      "ogTitle": "Suport Tehnic 24/7 — GoQode",
+      "ogDescription": "Suport 24/7 pentru site-uri și aplicații. Monitorizare, actualizări, remediere erori și îmbunătățire continuă."
+    },
+    "packages": {
+      "title": "Pachete & Prețuri | GoQode",
+      "description": "Prețuri transparente pentru servicii de dezvoltare web, design și marketing. Alege pachetul potrivit pentru obiectivele și bugetul afacerii tale.",
+      "keywords": "prețuri dezvoltare web, pachete site web, cost dezvoltare, prețuri GoQode, dezvoltare web accesibilă",
+      "ogTitle": "Pachete & Prețuri — GoQode",
+      "ogDescription": "Prețuri transparente pentru dezvoltare web. Alege pachetul potrivit pentru obiectivele și bugetul tău."
+    },
+    "calculator": {
+      "title": "Calculator Cost Proiect | GoQode",
+      "description": "Calculează costul proiectului tău de dezvoltare web instant. Selectează funcționalități, amploare și timeline pentru o estimare precisă.",
+      "keywords": "calculator dezvoltare web, estimare cost proiect, calculator preț site, cost dezvoltare",
+      "ogTitle": "Calculator Cost Proiect — GoQode",
+      "ogDescription": "Obține o estimare instantanee pentru proiectul tău de dezvoltare web. Selectează funcționalități și obține prețul."
+    }
+  },
+  "NotFound": {
+    "message": "Pagina nu a fost găsită",
+    "goHome": "Acasă"
+  },
+  "JsonLd": {
+    "home": "Acasă",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "cases": "Cazuri",
+    "launch": "Lansare",
+    "growth": "Creștere",
+    "platforms": "Platforme",
+    "events": "Evenimente",
+    "automation": "Automatizare",
+    "branding": "Branding",
+    "support": "Suport",
+    "packages": "Pachete",
+    "services": "Servicii",
+    "corporateWebsite": "Dezvoltare site corporativ",
+    "landingPage": "Dezvoltare landing page",
+    "ecommerce": "Dezvoltare e-commerce",
+    "webApp": "Dezvoltare aplicații web",
+    "mobileApp": "Dezvoltare aplicații mobile",
+    "digitalMarketing": "Marketing digital",
+    "corporateWebsitePackages": "Pachete site corporativ",
+    "landingPagePackages": "Pachete landing page",
+    "ecommercePackages": "Pachete e-commerce",
+    "webAppPackages": "Pachete aplicații web",
+    "mobileAppPackages": "Pachete aplicații mobile",
+    "marketingPackages": "Pachete marketing",
+    "orgDescription": "Dezvoltare web, aplicații mobile, e-commerce, marketing digital și soluții de automatizare pentru afaceri din Moldova, România și Europa."
   }
 }

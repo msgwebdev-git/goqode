@@ -7,8 +7,8 @@ import {
   ServiceProcess,
   ServicePricing,
   ServiceResults,
+  ServiceFAQ,
   type ResultStat,
-  ServiceCTA,
 } from "@/components/services";
 
 const NAMESPACE = "ServiceMobile";
@@ -27,7 +27,7 @@ export default function MobileContent() {
       <ServiceProcess namespace={NAMESPACE} stepsCount={6} />
       <ServicePricing namespace={NAMESPACE} basePrice="8,000" isMonthly={false} calculatorTypeIndex="4" />
       <ServiceResults namespace={NAMESPACE} results={results} />
-      <ServiceCTA namespace={NAMESPACE} />
+      <ServiceFAQ namespace={NAMESPACE} />
     </>
   );
 }

@@ -5,6 +5,8 @@ import {
   integer,
   boolean,
   real,
+  text,
+  timestamp,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 
@@ -72,4 +74,26 @@ export const scopeModifierOptions = pgTable("scope_modifier_options", {
   value: varchar("value", { length: 100 }).notNull(),
   multiplier: real("multiplier").notNull(),
   sortOrder: integer("sort_order").default(0).notNull(),
+});
+
+export const submissions = pgTable("submissions", {
+  id: serial("id").primaryKey(),
+  source: varchar("source", { length: 20 }).notNull(),
+  name: varchar("name", { length: 200 }).notNull(),
+  email: varchar("email", { length: 200 }).notNull(),
+  phone: varchar("phone", { length: 50 }),
+  message: text("message"),
+  projectType: varchar("project_type", { length: 50 }),
+  designLevel: varchar("design_level", { length: 50 }),
+  features: text("features"),
+  scopeModifiers: text("scope_modifiers"),
+  adBudget: varchar("ad_budget", { length: 50 }),
+  priceMin: integer("price_min"),
+  priceMax: integer("price_max"),
+  isMonthly: boolean("is_monthly").default(false),
+  solutions: text("solutions"),
+  serviceTypes: text("service_types"),
+  budget: varchar("budget", { length: 100 }),
+  labels: text("labels"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });

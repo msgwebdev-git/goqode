@@ -38,6 +38,7 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
   const t = useTranslations("Cases");
 
   const img = (name: string) => `/cases/${slug}/${name}`;
+  const title = t(`items.${slug}.title`);
 
   return (
     <section className="w-full clamp-[px,12,24] pt-24 md:pt-28 clamp-[pb,24,48]">
@@ -109,7 +110,7 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
         >
           <Image
             src={img("line.jpg")}
-            alt="Hero section"
+            alt={`${title} — desktop preview`}
             width={1440}
             height={900}
             className="w-full h-full object-cover object-top"
@@ -125,7 +126,7 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
         >
           <Image
             src={img("linemob.jpg")}
-            alt="Mobile version"
+            alt={`${title} — mobile version`}
             width={390}
             height={844}
             className="w-full h-full object-cover object-top"
@@ -135,47 +136,22 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
         </motion.div>
 
         {/* Section screenshots row */}
-        <motion.div
-          variants={cell}
-          className="rounded-2xl overflow-hidden"
-        >
-          <Image
-            src={img("line.jpg")}
-            alt="Section"
-            width={1440}
-            height={900}
-            className="w-full h-full object-cover object-center"
-            sizes="25vw"
-          />
-        </motion.div>
-
-        <motion.div
-          variants={cell}
-          className="rounded-2xl overflow-hidden"
-        >
-          <Image
-            src={img("line.jpg")}
-            alt="Section"
-            width={1440}
-            height={900}
-            className="w-full h-full object-cover object-center"
-            sizes="25vw"
-          />
-        </motion.div>
-
-        <motion.div
-          variants={cell}
-          className="rounded-2xl overflow-hidden"
-        >
-          <Image
-            src={img("line.jpg")}
-            alt="Section"
-            width={1440}
-            height={900}
-            className="w-full h-full object-cover object-center"
-            sizes="25vw"
-          />
-        </motion.div>
+        {[1, 2, 3].map((n) => (
+          <motion.div
+            key={n}
+            variants={cell}
+            className="rounded-2xl overflow-hidden"
+          >
+            <Image
+              src={img("line.jpg")}
+              alt={`${title} — section ${n}`}
+              width={1440}
+              height={900}
+              className="w-full h-full object-cover object-center"
+              sizes="25vw"
+            />
+          </motion.div>
+        ))}
 
         {/* Challenge / Solution / Result cards */}
         {aboutBlocks.map((block) => (
@@ -205,7 +181,7 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
         >
           <Image
             src={img("line.jpg")}
-            alt="Section"
+            alt={`${title} — footer section`}
             width={1440}
             height={900}
             className="w-full h-full object-cover object-center"

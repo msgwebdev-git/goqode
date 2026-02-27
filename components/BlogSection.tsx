@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Link } from "@/i18n/navigation";
+import NextLink from "next/link";
 import SplitText from "./SplitText";
 import Image from "next/image";
 
@@ -74,14 +74,14 @@ export function BlogSection() {
           </div>
 
           {/* Title + Description grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[2vw] items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-[2vw] items-end">
             <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
+              className="text-[14vw] lg:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
             />
-            <div className="md:border-l-2 md:border-[#C9FD48] md:pl-[1.5vw]">
+            <div className="lg:border-l-2 lg:border-[#C9FD48] lg:pl-[1.5vw]">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
                 {t("description")}
               </p>
@@ -90,14 +90,14 @@ export function BlogSection() {
         </motion.div>
 
         {/* Blog Posts — mobile: horizontal scroll, desktop: grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-[1.5vw]">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-[1.5vw]">
           {blogPosts.map((post, index) => (
             <motion.article
               key={post.id}
               variants={cardVariant}
               className="group h-full"
             >
-              <Link href={`/blog/${post.slug}`} className="block">
+              <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-[0.8vw] bg-zinc-100 dark:bg-zinc-900">
                   <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center">
                     <svg className="w-[2vw] h-[2vw] text-zinc-400 dark:text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,13 +120,13 @@ export function BlogSection() {
                 <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed line-clamp-2">
                   {t(`posts.${index}.excerpt`)}
                 </p>
-              </Link>
+              </NextLink>
             </motion.article>
           ))}
         </div>
 
         {/* Mobile: horizontal scroll */}
-        <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6" style={{ WebkitOverflowScrolling: "touch", scrollPaddingLeft: "24px" }}>
+        <div className="lg:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6" style={{ WebkitOverflowScrolling: "touch", scrollPaddingLeft: "24px" }}>
           <div className="shrink-0 w-6" />
           {blogPosts.map((post, index) => (
             <motion.article
@@ -134,7 +134,7 @@ export function BlogSection() {
               variants={cardVariant}
               className="group shrink-0 w-[75vw] snap-start"
             >
-              <Link href={`/blog/${post.slug}`} className="block">
+              <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[3/2] rounded-2xl overflow-hidden mb-3 bg-zinc-100 dark:bg-zinc-900">
                   <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center">
                     <svg className="w-6 h-6 text-zinc-400 dark:text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -156,7 +156,7 @@ export function BlogSection() {
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {t(`posts.${index}.excerpt`)}
                 </p>
-              </Link>
+              </NextLink>
             </motion.article>
           ))}
           <div className="shrink-0 w-6" />
@@ -164,7 +164,7 @@ export function BlogSection() {
 
         {/* View All Button */}
         <motion.div variants={cardVariant} className="mt-8 md:mt-[2.5vw] text-center">
-          <Link
+          <NextLink
             href="/blog"
             className="inline-flex items-center gap-2 md:gap-[0.4vw] px-6 py-3 md:px-[1.5vw] md:py-[0.8vw] rounded-full border-2 border-foreground text-foreground font-semibold text-sm md:clamp-[text,0.875rem,1rem] transition-all duration-300 hover:bg-foreground hover:text-background"
           >
@@ -172,7 +172,7 @@ export function BlogSection() {
             <svg className="w-4 h-4 md:w-[1vw] md:h-[1vw]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </Link>
+          </NextLink>
         </motion.div>
       </motion.div>
     </section>

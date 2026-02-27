@@ -1,41 +1,57 @@
-"use client";
+import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
+import { getAlternates, getLocalizedUrl, getOgLocale } from "@/lib/metadata-helpers";
+import type { Locale } from "@/i18n/routing";
+import EventsContent from "./content";
 
-import dynamic from "next/dynamic";
-import EventsHero from "@/components/events/EventsHero";
-import { EventFlowSection } from "@/components/events/EventFlowSection";
-import { SolutionsShowcase } from "@/components/events/SolutionsShowcase";
-import { EventProcessSection } from "@/components/events/EventProcessSection";
-import { EventCTASection } from "@/components/events/EventCTASection";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Seo" });
 
-const Lanyard = dynamic(() => import("@/components/events/Lanyard"), {
-  ssr: false,
-});
+  return {
+    title: t("events.title"),
+    description: t("events.description"),
+    keywords: t("events.keywords"),
+    openGraph: {
+      title: t("events.ogTitle"),
+      description: t("events.ogDescription"),
+      type: "website",
+      url: await getLocalizedUrl("/events", locale as Locale),
+      siteName: "GoQode",
+      locale: getOgLocale(locale as Locale),
+    },
+    alternates: await getAlternates("/events", locale as Locale),
+  };
+}
 
-export default function EventsPage() {
+async function BreadcrumbJsonLd({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "JsonLd" });
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("home"), item: await getLocalizedUrl("/", locale as Locale) },
+      { "@type": "ListItem", position: 2, name: t("events"), item: await getLocalizedUrl("/events", locale as Locale) },
+    ],
+  };
   return (
-    <main className="min-h-screen w-full">
-      {/* Hero Section with 3D Lanyard */}
-      <div className="relative">
-        <EventsHero />
-        <div className="absolute inset-0 z-20 pointer-events-none hidden md:block">
-          <div className="pointer-events-auto">
-            <Lanyard />
-          </div>
-        </div>
-      </div>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+    />
+  );
+}
 
-      {/* Flow Section - Visual process */}
-      <EventFlowSection />
-
-      {/* Solutions Showcase - All 5 solutions with parallax */}
-      <SolutionsShowcase />
-
-
-      {/* Process Section - How we work */}
-      <EventProcessSection />
-
-      {/* CTA Section */}
-      <EventCTASection />
-    </main>
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return (
+    <>
+      <BreadcrumbJsonLd locale={locale} />
+      <EventsContent />
+    </>
   );
 }

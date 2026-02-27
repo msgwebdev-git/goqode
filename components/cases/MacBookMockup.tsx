@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { MacbookPro } from "@/components/ui/macbook-pro";
 import { Iphone } from "@/components/ui/iphone";
 
@@ -30,6 +31,8 @@ export function MacBookMockup({
   mobileScreenshot,
   slug,
 }: MacBookMockupProps) {
+  const t = useTranslations("Cases");
+  const title = t(`items.${slug}.title`);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const screenRef = useRef<HTMLDivElement>(null);
@@ -106,7 +109,7 @@ export function MacBookMockup({
                     <Image
                       key={src}
                       src={src}
-                      alt={`Section ${i + 1}`}
+                      alt={`${title} — section ${i + 1}`}
                       width={1440}
                       height={900}
                       className="w-full h-auto block"
@@ -134,7 +137,7 @@ export function MacBookMockup({
         <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/20">
           <Image
             src={`/cases/${slug}/line.jpg`}
-            alt="Desktop preview"
+            alt={`${title} — desktop preview`}
             width={1440}
             height={900}
             className="w-full h-auto"

@@ -53,7 +53,7 @@ function BentoCard({
       variants={cardVariant}
       className={`group cursor-pointer ${className}`}
     >
-      <Link href={`/cases?case=${caseItem.slug}`} className="block h-full">
+      <Link href={{ pathname: "/cases", query: { case: caseItem.slug } }} className="block h-full">
         <div className="relative rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl p-6 pb-4 h-full flex flex-col">
           {/* Mockups */}
           <div className="flex items-center justify-center gap-2 flex-1">
@@ -124,14 +124,14 @@ export function CasesSection() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-end">
             <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
+              className="text-[14vw] lg:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
             />
-            <div className="md:border-l-2 md:border-[#C9FD48] md:pl-8">
+            <div className="lg:border-l-2 lg:border-[#C9FD48] lg:pl-8">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
                 {t("description")}
               </p>
@@ -140,7 +140,7 @@ export function CasesSection() {
         </motion.div>
 
         {/* Desktop Bento Grid */}
-        <div className="hidden md:grid grid-cols-3 gap-4 md:gap-5 auto-rows-[1fr]">
+        <div className="hidden lg:grid grid-cols-3 gap-4 lg:gap-5 auto-rows-[1fr]">
           {/* Row 1: 3 square cards */}
           {bentoCases[0] && (
             <BentoCard
@@ -190,7 +190,7 @@ export function CasesSection() {
         </div>
 
         {/* Mobile: stacked cards */}
-        <div className="md:hidden flex flex-col gap-4">
+        <div className="lg:hidden flex flex-col gap-4">
           {bentoCases.slice(0, 4).map((caseItem) => (
             <BentoCard
               key={caseItem.slug}

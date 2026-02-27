@@ -7,8 +7,8 @@ import {
   ServiceProcess,
   ServicePricing,
   ServiceResults,
+  ServiceFAQ,
   type ResultStat,
-  ServiceCTA,
 } from "@/components/services";
 
 const NAMESPACE = "ServiceMarketing";
@@ -27,7 +27,7 @@ export default function MarketingContent() {
       <ServiceProcess namespace={NAMESPACE} stepsCount={5} />
       <ServicePricing namespace={NAMESPACE} basePrice="500" isMonthly={true} calculatorTypeIndex="6" />
       <ServiceResults namespace={NAMESPACE} results={results} />
-      <ServiceCTA namespace={NAMESPACE} />
+      <ServiceFAQ namespace={NAMESPACE} count={4} />
     </>
   );
 }

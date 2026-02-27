@@ -302,22 +302,43 @@
     },
     "bottom": {
       "project": "Start a project:",
-      "email": "hello@goqode.dev"
+      "email": "hello@goqode.agency"
     }
   },
   "Footer": {
     "description": "We create digital solutions that help businesses grow. From design to development and marketing.",
-    "nav": {
-      "title": "Navigation",
-      "solutions": "Solutions",
-      "cases": "Cases",
+    "solutions": {
+      "title": "Solutions",
+      "launch": "Business Launch",
+      "growth": "Sales Growth",
+      "platforms": "Online Platforms",
+      "events": "Event Solutions",
+      "branding": "Branding",
+      "automation": "Automation",
+      "support": "Support"
+    },
+    "services": {
+      "title": "Services",
+      "landing": "Landing Page",
+      "ecommerce": "E-commerce",
+      "corporate": "Corporate Website",
+      "webapp": "Web Application",
+      "mobile": "Mobile App",
+      "marketing": "Marketing"
+    },
+    "company": {
+      "title": "Company",
       "about": "About",
+      "cases": "Cases",
+      "packages": "Packages & Pricing",
+      "calculator": "Calculator",
       "contact": "Contact"
     },
     "contact": {
       "title": "Contact"
     },
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "cta": "Discuss a project"
   },
   "AboutPage": {
     "subtitle": "About the company",
@@ -1595,9 +1616,19 @@
       "discuss": "Discuss project",
       "recalculate": "Recalculate"
     },
+    "thankYou": {
+      "title": "Thank you, your request has been sent!",
+      "subtitle": "We will contact you shortly to discuss the project details.",
+      "estimate": "Your estimate",
+      "adBudget": "Ad budget",
+      "description": "Project description",
+      "newCalculation": "New calculation",
+      "copyLink": "Copy link",
+      "copied": "Copied"
+    },
     "bottom": {
       "project": "Or email us:",
-      "email": "hello@goqode.dev"
+      "email": "hello@goqode.agency"
     }
   },
   "Packages": {
@@ -1773,7 +1804,7 @@
       "label": "Pricing",
       "title": "Landing Page Investment",
       "from": "from",
-      "description": "Final price depends on design complexity and required features. Use our calculator for a precise estimate.",
+      "description": "Final price depends on design complexity and required features. Get a rough estimate with our calculator.",
       "cta": "Calculate Cost"
     },
     "results": {
@@ -1787,6 +1818,27 @@
       "title": "Ready to Launch Your Landing Page?",
       "button": "Discuss Project",
       "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "What is a landing page and why do I need one?",
+          "answer": "A landing page is a focused single-page website designed to convert visitors into leads or customers. It's ideal for ad campaigns, product launches, and promotions."
+        },
+        "1": {
+          "question": "How quickly can you build a landing page?",
+          "answer": "Most landing pages are ready in 1-3 weeks. We can deliver faster for urgent campaigns with a rush delivery option."
+        },
+        "2": {
+          "question": "Will the landing page work with my ad campaigns?",
+          "answer": "Yes, we set up Google Analytics, Meta Pixel, and conversion tracking so you can measure ROI from every ad campaign that drives traffic to your landing page."
+        },
+        "3": {
+          "question": "Can I A/B test different versions?",
+          "answer": "We can set up A/B testing for headlines, CTAs, and layouts so you can find the highest-converting version of your landing page."
+        }
+      }
     }
   },
   "ServiceEcommerce": {
@@ -1882,7 +1934,7 @@
       "label": "Pricing",
       "title": "E-commerce Investment",
       "from": "from",
-      "description": "Price varies based on product count, integrations, and custom features. Use our calculator for a detailed estimate.",
+      "description": "Price varies based on product count, integrations, and custom features. Get a rough estimate with our calculator.",
       "cta": "Calculate Cost"
     },
     "results": {
@@ -1896,6 +1948,27 @@
       "title": "Ready to Launch Your Store?",
       "button": "Discuss Project",
       "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "Which e-commerce platform do you use?",
+          "answer": "We build custom e-commerce solutions using Next.js with headless CMS or integrate with Shopify. The choice depends on your catalog size, budget, and specific requirements."
+        },
+        "1": {
+          "question": "Can you integrate payment gateways?",
+          "answer": "Yes, we integrate Stripe, PayPal, and local payment providers. We also set up secure checkout flows with SSL and PCI compliance."
+        },
+        "2": {
+          "question": "How do you handle product inventory?",
+          "answer": "We set up inventory management systems that track stock levels, send low-stock alerts, and can sync with your existing ERP or warehouse management software."
+        },
+        "3": {
+          "question": "Do you provide analytics and reporting?",
+          "answer": "Every e-commerce site includes a dashboard with sales analytics, conversion tracking, customer behavior data, and integration with Google Analytics 4."
+        }
+      }
     }
   },
   "ServiceCorporate": {
@@ -1984,7 +2057,7 @@
       "label": "Pricing",
       "title": "Corporate Website Investment",
       "from": "from",
-      "description": "Price depends on page count, CMS complexity, and integrations. Use our calculator for an accurate estimate.",
+      "description": "Price depends on page count, CMS complexity, and integrations. Get a rough estimate with our calculator.",
       "cta": "Calculate Cost"
     },
     "results": {
@@ -1998,6 +2071,27 @@
       "title": "Ready for a Professional Website?",
       "button": "Discuss Project",
       "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "How long does it take to develop a corporate website?",
+          "answer": "A typical corporate website takes 4-8 weeks from design to launch, depending on complexity, number of pages, and content readiness."
+        },
+        "1": {
+          "question": "Can I update the website content myself?",
+          "answer": "Yes, every corporate website we build includes an intuitive CMS admin panel where your team can edit text, images, and pages without developer help."
+        },
+        "2": {
+          "question": "Do you provide hosting and maintenance?",
+          "answer": "We deploy on high-performance platforms like Vercel or AWS and offer ongoing maintenance packages including updates, backups, and support."
+        },
+        "3": {
+          "question": "Is the website optimized for search engines?",
+          "answer": "Absolutely. We implement comprehensive SEO including meta tags, structured data, XML sitemaps, Core Web Vitals optimization, and multilingual hreflang support."
+        }
+      }
     }
   },
   "ServiceWebapp": {
@@ -2087,7 +2181,7 @@
       "label": "Pricing",
       "title": "Web Application Investment",
       "from": "from",
-      "description": "Price depends on feature complexity, integrations, and user scale. Use our calculator for a detailed breakdown.",
+      "description": "Price depends on feature complexity, integrations, and user scale. Get a rough estimate with our calculator.",
       "cta": "Calculate Cost"
     },
     "results": {
@@ -2101,6 +2195,27 @@
       "title": "Ready to Build Your Web App?",
       "button": "Discuss Project",
       "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "What types of web applications do you build?",
+          "answer": "We build SaaS platforms, dashboards, CRM systems, booking systems, internal tools, and custom business applications using React and Next.js."
+        },
+        "1": {
+          "question": "How do you ensure application security?",
+          "answer": "We follow OWASP security best practices, implement authentication with JWT/OAuth, encrypt data in transit and at rest, and conduct security audits."
+        },
+        "2": {
+          "question": "Can you integrate with our existing systems?",
+          "answer": "Yes, we build RESTful and GraphQL APIs to integrate with any existing software — CRM, ERP, payment systems, and third-party services."
+        },
+        "3": {
+          "question": "Do you offer ongoing support after launch?",
+          "answer": "We provide maintenance packages including bug fixes, feature updates, performance monitoring, and 24/7 support for critical issues."
+        }
+      }
     }
   },
   "ServiceMobile": {
@@ -2190,7 +2305,7 @@
       "label": "Pricing",
       "title": "Mobile App Investment",
       "from": "from",
-      "description": "Price depends on platform count, features, and backend complexity. Use our calculator for an accurate estimate.",
+      "description": "Price depends on platform count, features, and backend complexity. Get a rough estimate with our calculator.",
       "cta": "Calculate Cost"
     },
     "results": {
@@ -2204,6 +2319,308 @@
       "title": "Ready to Build Your App?",
       "button": "Discuss Project",
       "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "Do you build native or cross-platform apps?",
+          "answer": "We primarily build cross-platform apps using React Native, which delivers native performance on both iOS and Android from a single codebase, reducing cost and time to market."
+        },
+        "1": {
+          "question": "How long does mobile app development take?",
+          "answer": "A typical mobile app takes 8-16 weeks depending on complexity. Simple apps can be ready in 6 weeks, while complex platforms may take 4-6 months."
+        },
+        "2": {
+          "question": "Do you handle App Store and Play Store submission?",
+          "answer": "Yes, we manage the entire submission process including screenshots, descriptions, compliance with store guidelines, and resolving any review issues."
+        },
+        "3": {
+          "question": "Can the app work offline?",
+          "answer": "We can implement offline functionality with local data caching and background sync, so your app remains useful even without an internet connection."
+        }
+      }
     }
+  },
+  "ServiceMarketing": {
+    "seo": {
+      "title": "Digital Marketing Services | GoQode",
+      "description": "Digital marketing from €500/month. SMM, Google Ads, SEO, content marketing and analytics. Grow your business online.",
+      "keywords": "digital marketing services, online promotion, SEO services, online advertising, digital marketing agency",
+      "ogTitle": "Digital Marketing Services — GoQode",
+      "ogDescription": "Grow your business with SMM, Google Ads, SEO and data-driven digital marketing strategies."
+    },
+    "hero": {
+      "title": "Marketing",
+      "subtitle": "Data-driven digital marketing with real results. SMM, targeted ads, SEO and analytics — all managed by a single team.",
+      "cta": "Start Promotion"
+    },
+    "features": {
+      "label": "What's Included",
+      "title": "Marketing Services",
+      "items": {
+        "0": {
+          "title": "SMM & Social Media",
+          "description": "Account management, content planning and daily publishing.",
+          "details": "Full SMM: content calendar, post creation, community management and reporting.",
+          "deliverables": "Content calendar, Posts, Community, Monthly reports"
+        },
+        "1": {
+          "title": "Targeted Advertising",
+          "description": "Ad campaigns on Facebook, Instagram and TikTok.",
+          "details": "Custom audiences, A/B tested creatives, retargeting and lookalike audiences for maximum ROAS.",
+          "deliverables": "Campaigns, Targeting, Retargeting, A/B testing"
+        },
+        "2": {
+          "title": "Google Ads",
+          "description": "Search, display, remarketing and YouTube campaigns.",
+          "details": "Keyword research, ad copywriting, bid optimization and conversion tracking.",
+          "deliverables": "Search ads, Display, Remarketing, YouTube"
+        },
+        "3": {
+          "title": "SEO Promotion",
+          "description": "Technical audit, on-page optimization and link building.",
+          "details": "Complete SEO strategy: technical audit, keyword mapping, content optimization and link building.",
+          "deliverables": "Audit, Keyword mapping, Optimization, Link building"
+        },
+        "4": {
+          "title": "Content Marketing",
+          "description": "Blog articles, case studies and copywriting for organic traffic.",
+          "details": "SEO articles, case studies, email copy and social content aligned with your brand voice.",
+          "deliverables": "Articles, Case studies, Email copy, Social content"
+        },
+        "5": {
+          "title": "Email Marketing",
+          "description": "Newsletter campaigns, drip sequences and automation.",
+          "details": "Email strategy, template design, automated drip campaigns, segmentation and A/B testing.",
+          "deliverables": "Newsletter design, Drip campaigns, Segmentation, Automation"
+        },
+        "6": {
+          "title": "Analytics & Reporting",
+          "description": "Custom dashboards, KPI tracking and monthly reports.",
+          "details": "GA4 setup, custom dashboards, conversion tracking, attribution and detailed monthly reports.",
+          "deliverables": "Dashboards, KPI tracking, Monthly reports, Attribution"
+        },
+        "7": {
+          "title": "Brand Strategy",
+          "description": "Positioning, communication tone and messaging framework.",
+          "details": "Competitive analysis, brand positioning, message hierarchy and content pillars.",
+          "deliverables": "Positioning, Messaging, Content pillars, Tone of voice"
+        }
+      }
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "How We Grow Your Business",
+      "steps": {
+        "0": {
+          "title": "Audit & Strategy",
+          "description": "We analyze your current marketing, competitors and define goals with measurable KPIs."
+        },
+        "1": {
+          "title": "Campaign Setup",
+          "description": "We set up ad accounts, tracking pixels and targeting parameters."
+        },
+        "2": {
+          "title": "Content & Launch",
+          "description": "We create creatives, landing pages and launch campaigns across channels."
+        },
+        "3": {
+          "title": "Optimization & Testing",
+          "description": "Continuous A/B testing, bid optimization and targeting refinement."
+        },
+        "4": {
+          "title": "Reporting & Scaling",
+          "description": "Detailed reports and scaling winning strategies for maximum ROI."
+        }
+      }
+    },
+    "tech": {
+      "label": "Platforms",
+      "title": "Platforms & Tools",
+      "categories": {
+        "advertising": {
+          "title": "Advertising",
+          "items": "Meta Ads, Google Ads, TikTok Ads"
+        },
+        "analytics": {
+          "title": "Analytics",
+          "items": "GA4, Hotjar, Semrush, Ahrefs"
+        },
+        "email": {
+          "title": "Email",
+          "items": "Mailchimp, SendGrid, Klaviyo"
+        },
+        "social": {
+          "title": "Social",
+          "items": "Buffer, Later, Hootsuite"
+        }
+      }
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Marketing Investment",
+      "from": "from",
+      "description": "Monthly retainer includes strategy, execution and reporting. Ad budget is separate.",
+      "cta": "Calculate Cost"
+    },
+    "results": {
+      "label": "Results",
+      "title": "What You'll Achieve",
+      "roas": "Average return on ad spend",
+      "cac": "Reduction in customer acquisition cost",
+      "leads": "Average lead growth in 3 months"
+    },
+    "cta": {
+      "title": "Ready to Grow Your Business?",
+      "button": "Discuss Project",
+      "contact_text": "Or email us at"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "0": {
+          "question": "What digital marketing services are included?",
+          "answer": "Our digital marketing packages include SMM and social media management, targeted advertising on Meta and TikTok, Google Ads campaigns, SEO promotion, content marketing, email marketing, analytics and brand strategy. You can choose individual services or a comprehensive package."
+        },
+        "1": {
+          "question": "How long until I see results?",
+          "answer": "Paid advertising (Google Ads, Meta Ads) can deliver first results within 1-2 weeks. SEO typically takes 3-6 months for significant organic growth. On average, our clients see a 150% increase in leads within the first 3 months of working together."
+        },
+        "2": {
+          "question": "How much does digital marketing cost?",
+          "answer": "Our monthly retainer starts from €500 and includes strategy, execution and reporting. The ad budget is separate and depends on your goals and market. We recommend starting with a test budget and scaling based on performance data."
+        },
+        "3": {
+          "question": "How do you measure and report results?",
+          "answer": "We set up GA4, conversion tracking and custom dashboards from day one. You receive detailed monthly reports with KPIs, ROAS, cost per lead, and actionable recommendations. We also provide real-time access to campaign dashboards."
+        }
+      }
+    }
+  },
+  "Seo": {
+    "home": {
+      "title": "GoQode — Web Development & Digital Solutions in Moldova",
+      "description": "GoQode creates websites, web applications, mobile apps and digital marketing solutions for businesses in Moldova, Romania and Europe. Full-cycle development from design to launch.",
+      "keywords": "web development Moldova, digital solutions, website development, mobile app development, GoQode, web agency Moldova, e-commerce development",
+      "ogTitle": "GoQode — Web Development & Digital Solutions",
+      "ogDescription": "Full-cycle web development, mobile apps, e-commerce and digital marketing. From concept to launch."
+    },
+    "about": {
+      "title": "About GoQode — Digital Agency in Moldova",
+      "description": "GoQode is a digital development agency with 30+ years of combined experience, 35+ delivered projects across 12+ industries. We build websites, apps and digital products.",
+      "keywords": "GoQode agency, web development team, digital agency Moldova, about GoQode",
+      "ogTitle": "About GoQode — Our Team & Story",
+      "ogDescription": "Digital development agency with 30+ years of experience and 35+ successful projects across 12+ industries."
+    },
+    "contact": {
+      "title": "Contact GoQode — Get a Free Consultation",
+      "description": "Get in touch with GoQode for a free project consultation. Web development, mobile apps, digital marketing — we'll help you choose the right solution for your business.",
+      "keywords": "contact GoQode, free consultation, web development inquiry, project estimate",
+      "ogTitle": "Contact GoQode — Let's Discuss Your Project",
+      "ogDescription": "Get a free consultation for your web development, mobile app or digital marketing project."
+    },
+    "cases": {
+      "title": "Portfolio & Case Studies | GoQode",
+      "description": "Explore GoQode's portfolio of web development, mobile apps and digital marketing projects. Real results for real businesses across multiple industries.",
+      "keywords": "web development portfolio, case studies, GoQode projects, website examples, development portfolio",
+      "ogTitle": "Our Work — GoQode Portfolio",
+      "ogDescription": "See our latest web development, app and digital marketing projects with real business results."
+    },
+    "launch": {
+      "title": "Business Launch Solutions — From Zero to First Sales | GoQode",
+      "description": "Launch your business online with GoQode. We create your brand, build your website and set up marketing — everything you need to get your first customers and sales.",
+      "keywords": "business launch online, startup website, first website, brand launch, digital presence, GoQode launch",
+      "ogTitle": "Business Launch — GoQode",
+      "ogDescription": "From zero to first sales. We build your brand, website and marketing to launch your business online."
+    },
+    "growth": {
+      "title": "Sales Growth & Conversion Optimization | GoQode",
+      "description": "Grow your sales with GoQode. We optimize conversions, reduce acquisition costs and scale your digital marketing for maximum ROI.",
+      "keywords": "sales growth, conversion optimization, digital marketing, increase leads, ROI optimization, GoQode growth",
+      "ogTitle": "Sales Growth Solutions — GoQode",
+      "ogDescription": "Optimize conversions and scale your marketing. 150% average conversion increase, 40% cost reduction."
+    },
+    "platforms": {
+      "title": "Online Platform Development — SaaS, Marketplaces, Dashboards | GoQode",
+      "description": "Build custom online platforms with GoQode. SaaS applications, marketplaces, admin dashboards — scalable architecture with 99% uptime guarantee.",
+      "keywords": "SaaS development, marketplace development, online platform, custom dashboard, web platform, GoQode platforms",
+      "ogTitle": "Online Platform Development — GoQode",
+      "ogDescription": "Custom SaaS, marketplace and dashboard development. Scalable architecture, 99% uptime."
+    },
+    "events": {
+      "title": "Event Solutions — Registration & Management Platforms | GoQode",
+      "description": "Digital event solutions by GoQode. Custom registration systems, ticket management, event websites and on-site digital infrastructure.",
+      "keywords": "event management platform, event registration system, event website, digital events, GoQode events",
+      "ogTitle": "Event Solutions — GoQode",
+      "ogDescription": "Custom event registration, ticketing and management platforms for conferences, festivals and corporate events."
+    },
+    "automation": {
+      "title": "Business Process Automation | GoQode",
+      "description": "Automate your business processes with GoQode. CRM integrations, workflow automation, chatbots and API connections that save 70% of manual work time.",
+      "keywords": "business automation, workflow automation, CRM integration, process optimization, chatbots, GoQode automation",
+      "ogTitle": "Business Automation — GoQode",
+      "ogDescription": "Automate workflows, integrate CRMs and optimize processes. Save 70% of manual work time."
+    },
+    "branding": {
+      "title": "Branding & Visual Identity | GoQode",
+      "description": "Professional branding services by GoQode. Logo design, brand book, color systems, typography and complete visual identity for your business.",
+      "keywords": "branding services, logo design, brand identity, visual identity, brand book, GoQode branding",
+      "ogTitle": "Branding & Identity — GoQode",
+      "ogDescription": "Professional branding: logo, brand book, color system and complete visual identity for your business."
+    },
+    "support": {
+      "title": "Technical Support 24/7 | GoQode",
+      "description": "24/7 technical support for your website and web applications by GoQode. Monitoring, bug fixes, updates and continuous improvement.",
+      "keywords": "website support, technical support, web maintenance, 24/7 support, GoQode support",
+      "ogTitle": "Technical Support 24/7 — GoQode",
+      "ogDescription": "24/7 website and application support. Monitoring, updates, bug fixes and continuous improvement."
+    },
+    "packages": {
+      "title": "Packages & Pricing | GoQode",
+      "description": "Transparent pricing for web development, design and marketing services. Choose a package that fits your business goals and budget.",
+      "keywords": "web development pricing, website packages, development cost, GoQode pricing, affordable web development",
+      "ogTitle": "Packages & Pricing — GoQode",
+      "ogDescription": "Transparent web development pricing. Choose a package that fits your goals and budget."
+    },
+    "calculator": {
+      "title": "Project Cost Calculator | GoQode",
+      "description": "Calculate the cost of your web development project instantly. Select features, scope and timeline to get an accurate estimate.",
+      "keywords": "web development calculator, project cost estimate, website price calculator, development cost",
+      "ogTitle": "Project Cost Calculator — GoQode",
+      "ogDescription": "Get an instant estimate for your web development project. Select features and get pricing."
+    }
+  },
+  "NotFound": {
+    "message": "Page not found",
+    "goHome": "Go Home"
+  },
+  "JsonLd": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "cases": "Cases",
+    "launch": "Launch",
+    "growth": "Growth",
+    "platforms": "Platforms",
+    "events": "Events",
+    "automation": "Automation",
+    "branding": "Branding",
+    "support": "Support",
+    "packages": "Packages",
+    "services": "Services",
+    "corporateWebsite": "Corporate Website Development",
+    "landingPage": "Landing Page Development",
+    "ecommerce": "E-commerce Development",
+    "webApp": "Web Application Development",
+    "mobileApp": "Mobile App Development",
+    "digitalMarketing": "Digital Marketing",
+    "corporateWebsitePackages": "Corporate Website Packages",
+    "landingPagePackages": "Landing Page Packages",
+    "ecommercePackages": "E-commerce Packages",
+    "webAppPackages": "Web Application Packages",
+    "mobileAppPackages": "Mobile App Packages",
+    "marketingPackages": "Marketing Packages",
+    "orgDescription": "Web development, mobile apps, e-commerce, digital marketing and automation solutions for businesses in Moldova, Romania and Europe."
   }
 }

@@ -76,8 +76,8 @@ const solutions = [
   { key: "platforms", href: "/platforms", icon: Globe2 },
   { key: "events", href: "/events", icon: CalendarDays },
   { key: "automation", href: "/automation", icon: Cog },
-  { key: "branding", href: "/solutions/branding", icon: Palette },
-  { key: "support", href: "/solutions/support", icon: HeadphonesIcon },
+  { key: "branding", href: "/branding", icon: Palette },
+  { key: "support", href: "/support", icon: HeadphonesIcon },
 ] as const;
 
 const services = [
@@ -136,7 +136,11 @@ export function Navbar() {
   }, [menuOpen, langDrawerOpen]);
 
   const handleLocaleChange = (locale: Locale) => {
-    router.replace(pathname, { locale });
+    router.replace(
+      // @ts-expect-error -- pathname + params always match for the current route
+      { pathname, params },
+      { locale }
+    );
   };
 
   const currentLocaleData = locales.find((l) => l.code === currentLocale);
@@ -165,8 +169,8 @@ export function Navbar() {
               <Image
                 src={
                   resolvedTheme === "dark"
-                    ? "/goQode - dark.svg"
-                    : "/goQode - white.svg"
+                    ? "/goqode-dark.svg"
+                    : "/goqode-white.svg"
                 }
                 alt="GoQode"
                 width={120}
@@ -183,7 +187,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <motion.div
             variants={navItem}
-            className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-black/[0.03] dark:bg-white/[0.05] backdrop-blur-sm border border-black/[0.05] dark:border-white/[0.1]"
+            className="hidden xl:flex items-center gap-1 p-1 rounded-full bg-black/[0.03] dark:bg-white/[0.05] backdrop-blur-sm border border-black/[0.05] dark:border-white/[0.1]"
           >
             {/* Solutions Mega Menu */}
             <DropdownMenu>
@@ -302,7 +306,7 @@ export function Navbar() {
             {/* Language Switcher — desktop only */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="cursor-pointer hidden lg:inline-flex">
+                <Button variant="ghost" size="icon" className="cursor-pointer hidden xl:inline-flex">
                   <Globe className="h-5 w-5" />
                   <span className="sr-only">Switch language</span>
                 </Button>
@@ -328,7 +332,7 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="cursor-pointer hidden lg:inline-flex"
+              className="cursor-pointer hidden xl:inline-flex"
               onClick={() =>
                 mounted && setTheme(resolvedTheme === "light" ? "dark" : "light")
               }
@@ -348,14 +352,14 @@ export function Navbar() {
             {/* CTA Buttons - Desktop */}
             <Link
               href="/calculator"
-              className="hidden lg:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold text-sm transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10 group overflow-hidden"
+              className="hidden xl:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full border border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold text-sm transition-all duration-300 hover:bg-zinc-900/5 dark:hover:bg-[#C9FD48]/10 group overflow-hidden"
             >
               <Calculator className="h-4 w-4" />
               <span>{t("calculator")}</span>
             </Link>
             <Link
               href="/contact"
-              className="hidden lg:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d] hover:shadow-[0_0_20px_rgba(201,253,72,0.5)] group overflow-hidden"
+              className="hidden xl:inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-[#C9FD48] text-black font-semibold text-sm transition-all duration-300 hover:bg-[#b8ec3d] hover:shadow-[0_0_20px_rgba(201,253,72,0.5)] group overflow-hidden"
             >
               <span className="transition-transform duration-300 group-hover:-translate-x-1">{t("cta")}</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -364,7 +368,7 @@ export function Navbar() {
             {/* Mobile Language Button */}
             <button
               onClick={() => setLangDrawerOpen(true)}
-              className="lg:hidden flex items-center justify-center h-8 px-2.5 rounded-full border border-border/50 text-xs font-semibold text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
+              className="xl:hidden flex items-center justify-center h-8 px-2.5 rounded-full border border-border/50 text-xs font-semibold text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
             >
               {currentLocale.toUpperCase()}
             </button>
@@ -372,7 +376,7 @@ export function Navbar() {
             {/* Mobile Burger Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden relative z-10 w-10 h-10 flex items-center justify-center cursor-pointer"
+              className="xl:hidden relative z-10 w-10 h-10 flex items-center justify-center cursor-pointer"
               aria-label="Toggle menu"
             >
               <div className="relative w-[22px] h-[18px]">
@@ -427,7 +431,7 @@ export function Navbar() {
             <div className="absolute top-0 left-0 right-0 h-16 px-6 flex items-center justify-between">
               {mounted && (
                 <Image
-                  src={resolvedTheme === "dark" ? "/goQode - dark.svg" : "/goQode - white.svg"}
+                  src={resolvedTheme === "dark" ? "/goqode-dark.svg" : "/goqode-white.svg"}
                   alt="GoQode"
                   width={120}
                   height={40}

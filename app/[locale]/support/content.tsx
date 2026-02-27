@@ -315,46 +315,6 @@ function ProcessSection() {
 }
 
 /* ═══════════════════════════════════════════════════════
-   8. CTA SECTION — Text-swap with lime card
-   ═══════════════════════════════════════════════════════ */
-
-function SupportCTA() {
-  const t = useTranslations("Support");
-
-  return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
-      <Link href="/contact" className="block group">
-        <div className="relative rounded-2xl md:rounded-3xl bg-[#C9FD48] overflow-hidden py-6 md:py-8 transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#C9FD48]/40 hover:brightness-105">
-          <span className="block text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase text-center transition-all duration-300 ease-out group-hover:-translate-y-full group-hover:opacity-0 relative z-10">
-            {t("cta.title")}
-          </span>
-          <span className="absolute inset-0 flex items-center justify-center text-[5.5vw] md:text-[4vw] lg:text-[3vw] font-black text-black uppercase translate-y-full opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 z-10">
-            <span className="flex items-center gap-3">
-              {t("cta.button")}
-              <ArrowRight className="w-[4vw] md:w-[3vw] lg:w-[2vw] h-[4vw] md:h-[3vw] lg:h-[2vw] min-w-6 min-h-6" />
-            </span>
-          </span>
-        </div>
-      </Link>
-
-      {/* Contact */}
-      <div className="mt-4 md:mt-8 text-center">
-        <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
-          {t("cta.contact_text")}{" "}
-          <a
-            href="mailto:hello@goqode.dev"
-            className="text-zinc-900 dark:text-[#C9FD48] font-medium hover:underline transition-colors"
-          >
-            hello@goqode.dev
-          </a>
-        </p>
-      </div>
-
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════════════════ */
 
@@ -363,7 +323,6 @@ export default function SupportPage() {
     <main className="min-h-screen w-full">
       <SupportHero />
       <ProcessSection />
-      <SupportCTA />
     </main>
   );
 }

@@ -12,9 +12,9 @@ const SOLUTION_LINKS = [
   "/growth",
   "/platforms",
   "/events",
-  "/solutions/branding",
+  "/branding",
   "/automation",
-  "/solutions/support",
+  "/support",
 ] as const;
 
 const container = {
@@ -83,18 +83,7 @@ function Card1({ solution, task, result }: { solution: string; task: string; res
         </motion.div>
 
         <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
-          <h3 className="text-2xl md:text-4xl font-bold text-black mb-3 md:mb-4">{solution}</h3>
-          <div className="flex flex-wrap gap-2 md:gap-3 mb-3 md:mb-4">
-            {task.split(", ").map((item, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 md:px-6 md:py-3 bg-black/90 text-white text-sm md:text-lg font-medium rounded-full"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          <p className="text-black/80 font-semibold text-base md:text-xl">{result}</p>
+          <h3 className="text-2xl md:text-4xl font-bold text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -191,9 +180,7 @@ function Card2({ solution, task, result }: { solution: string; task: string; res
 
         {/* Text content - fixed at bottom */}
         <div className="mt-3 md:mt-4 flex-shrink-0">
-          <h3 className="clamp-[text,1.125rem,1.75rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,1rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-semibold clamp-[text,0.75rem,1rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.75rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -287,9 +274,7 @@ function Card3({ solution, task, result }: { solution: string; task: string; res
         </div>
 
         <div className="flex-shrink-0 mt-4">
-          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,0.875rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-medium clamp-[text,0.75rem,0.875rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -375,9 +360,7 @@ function Card4({ solution, task, result }: { solution: string; task: string; res
         </div>
 
         <div className="flex-shrink-0 mt-4">
-          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,0.875rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-medium clamp-[text,0.75rem,0.875rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -501,9 +484,7 @@ function Card5({ solution, task, result }: { solution: string; task: string; res
         </div>
 
         <div className="flex-shrink-0 mt-4 relative z-10">
-          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,1rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-medium clamp-[text,0.75rem,1rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -579,9 +560,7 @@ function Card6({ solution, task, result }: { solution: string; task: string; res
         </div>
 
         <div className="flex-shrink-0 mt-4 z-10">
-          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,0.875rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-medium clamp-[text,0.75rem,0.875rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -674,9 +653,7 @@ function Card7({ solution, task, result }: { solution: string; task: string; res
         </div>
 
         <div className="flex-shrink-0 mt-4 z-10">
-          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black mb-1">{solution}</h3>
-          <p className="text-white/50 dark:text-black/50 clamp-[text,0.75rem,0.875rem] mb-1">{task}</p>
-          <p className="text-white/70 dark:text-black/70 font-medium clamp-[text,0.75rem,0.875rem]">{result}</p>
+          <h3 className="clamp-[text,1.125rem,1.5rem] font-bold text-white dark:text-black">{solution}</h3>
         </div>
       </div>
     </motion.div>
@@ -712,14 +689,14 @@ export function SolutionsSection() {
           </div>
 
           {/* Title + Description grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-end">
             <SplitText
               text={t("title")}
               tag="h2"
-              className="text-[14vw] md:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
+              className="text-[14vw] lg:text-[7vw] font-black leading-[1.1] tracking-tight text-foreground uppercase"
               textAlign="left"
             />
-            <div className="md:border-l-2 md:border-[#C9FD48] md:pl-8">
+            <div className="lg:border-l-2 lg:border-[#C9FD48] lg:pl-8">
               <p className="clamp-[text,1rem,1.25rem] text-muted-foreground leading-relaxed">
                 {t("description")}
               </p>
@@ -729,7 +706,7 @@ export function SolutionsSection() {
 
         {/* Mobile layout - minimal text list */}
         <motion.div
-          className="md:hidden flex flex-col"
+          className="lg:hidden flex flex-col"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
@@ -768,9 +745,6 @@ export function SolutionsSection() {
                       {item.solution}
                     </h3>
                   </div>
-                  <p className="text-base text-muted-foreground mt-1 pl-8">
-                    {item.task}
-                  </p>
                 </div>
                 <ArrowRight className="h-5 w-5 text-muted-foreground shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" />
               </Link>
@@ -779,38 +753,34 @@ export function SolutionsSection() {
         </motion.div>
 
         {/* Desktop layout - structured rows with explicit aspect ratios */}
-        <div className="hidden md:flex flex-col gap-8">
+        <div className="hidden lg:flex flex-col gap-8">
           {/* Row 1-2: Card1 (2x2) + Card2 (2x1) + Card3 & Card4 (1x1 each) */}
           <div className="grid grid-cols-4 gap-8" style={{ aspectRatio: '4/2' }}>
-            {/* Card1 - spans 2 cols, 2 rows */}
-            <div className="col-span-2 row-span-2">
+            <Link href={SOLUTION_LINKS[0]} className="col-span-2 row-span-2">
               <Card1 solution={items[0].solution} task={items[0].task} result={items[0].result} />
-            </div>
-            {/* Card2 - spans 2 cols, 1 row */}
-            <div className="col-span-2">
+            </Link>
+            <Link href={SOLUTION_LINKS[1]} className="col-span-2">
               <Card2 solution={items[1].solution} task={items[1].task} result={items[1].result} />
-            </div>
-            {/* Card3 - 1x1 */}
-            <div className="col-span-1">
+            </Link>
+            <Link href={SOLUTION_LINKS[2]} className="col-span-1">
               <Card3 solution={items[2].solution} task={items[2].task} result={items[2].result} />
-            </div>
-            {/* Card4 - 1x1 */}
-            <div className="col-span-1">
+            </Link>
+            <Link href={SOLUTION_LINKS[3]} className="col-span-1">
               <Card4 solution={items[3].solution} task={items[3].task} result={items[3].result} />
-            </div>
+            </Link>
           </div>
 
           {/* Row 3: Card6 (1x1) + Card5 (2x1) + Card7 (1x1) */}
           <div className="grid grid-cols-4 gap-8" style={{ aspectRatio: '4/1' }}>
-            <div className="col-span-1">
+            <Link href={SOLUTION_LINKS[4]} className="col-span-1">
               <Card6 solution={items[4].solution} task={items[4].task} result={items[4].result} />
-            </div>
-            <div className="col-span-2">
+            </Link>
+            <Link href={SOLUTION_LINKS[5]} className="col-span-2">
               <Card5 solution={items[5].solution} task={items[5].task} result={items[5].result} />
-            </div>
-            <div className="col-span-1">
+            </Link>
+            <Link href={SOLUTION_LINKS[6]} className="col-span-1">
               <Card7 solution={items[6].solution} task={items[6].task} result={items[6].result} />
-            </div>
+            </Link>
           </div>
         </div>
       </motion.div>

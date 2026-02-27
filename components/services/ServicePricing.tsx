@@ -59,7 +59,7 @@ export function ServicePricing({ namespace, basePrice, isMonthly, calculatorType
           </div>
 
           <Link
-            href={`/calculator?type=${calculatorTypeIndex}`}
+            href={{ pathname: "/calculator", query: { type: calculatorTypeIndex } }}
             className="group inline-flex items-center justify-center gap-2 h-12 sm:h-14 px-8 md:px-[1.5vw] rounded-full border-2 border-zinc-900 dark:border-[#C9FD48] text-zinc-900 dark:text-[#C9FD48] font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:bg-zinc-900 hover:text-white dark:hover:bg-[#C9FD48] dark:hover:text-black shrink-0"
           >
             <Calculator className="h-4 w-4" />

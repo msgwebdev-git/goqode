@@ -249,7 +249,7 @@ function MobileProcessScroll({
   const progress = steps.length > 1 ? mobileStep / (steps.length - 1) : 0;
 
   return (
-    <section className="md:hidden w-full py-12">
+    <section className="lg:hidden w-full py-12">
       {/* Header */}
       <div className="px-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
@@ -358,7 +358,7 @@ function MobileCTASection() {
   const t = useTranslations("Process");
 
   return (
-    <section className="md:hidden w-full px-6 pb-12">
+    <section className="lg:hidden w-full px-6 pb-12">
       <div className="bg-[#C9FD48] rounded-2xl p-8 text-center text-black">
         <h2 className="text-2xl font-bold mb-3">
           {t("cta.title")}
@@ -418,7 +418,7 @@ export function ProcessSection() {
       {/* Desktop: Sticky Horizontal Scroll */}
       <section
         ref={containerRef}
-        className="hidden md:block relative h-[300vh]"
+        className="hidden lg:block relative h-[300vh]"
       >
         <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
           {/* Header */}

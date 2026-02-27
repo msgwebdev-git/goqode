@@ -57,10 +57,10 @@ export function EventCTASection() {
           <p className="clamp-[text,0.875rem,1rem] text-muted-foreground">
             {t("cta.contactText")}{" "}
             <a
-              href="mailto:hello@goqode.dev"
+              href="mailto:hello@goqode.agency"
               className="text-zinc-900 dark:text-[#C9FD48] font-medium hover:underline transition-colors"
             >
-              hello@goqode.dev
+              hello@goqode.agency
             </a>
           </p>
         </motion.div>

@@ -4,10 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
-import { ArrowRight, ArrowLeft, Check, Copy, CheckCircle } from "lucide-react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { ArrowRight, ArrowLeft, Check, Copy, Loader2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { CalculatorConfig } from "@/lib/calculator-queries";
+import { submitCalculator } from "@/app/actions/submit";
 
 /* ─── Helper: flatten features ───────────────────────── */
 
@@ -465,6 +466,7 @@ function buildSteps(config: CalculatorConfig, projectType: string | null): StepD
 
 export function CalculatorClient({ config }: { config: CalculatorConfig }) {
   const t = useTranslations("Calculator");
+  const router = useRouter();
 
   const searchParams = useSearchParams();
   const initialType = searchParams.get("type");
@@ -472,7 +474,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
 
   const [stepIdx, setStepIdx] = useState(validInitialType ? 1 : 0);
   const [direction, setDirection] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [form, setForm] = useState({
     projectType: validInitialType,
@@ -509,41 +511,54 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     }
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
-    const projectLabel = form.projectType !== null ? t(`step1.types.${form.projectType}`) : "";
-    const designLabel = form.designLevel !== null ? t(`step2.levels.${form.designLevel}`) : "";
-
-    const scopeLines = (config.scopeModifiers[form.projectType!] || [])
-      .map((mod) => {
-        const val = form.scopeModifiers[mod.key];
-        if (!val) return null;
-        const label = t(`step3.scopes.${form.projectType}.${mod.key}.label`);
-        const valueLabel = t(`step3.scopes.${form.projectType}.${mod.key}.${val}`);
-        return `${label}: ${valueLabel}`;
-      })
-      .filter(Boolean)
-      .join("\n");
+    setLoading(true);
 
     const allFeatures = getAllFeatures(config.categorizedFeatures, form.projectType!);
-    const featureLabels = form.features
-      .map((f) => {
-        const feat = allFeatures.find((ft) => ft.key === f);
-        const suffix = isMonthly ? t("perMonth") : "";
-        const price = feat ? ` (€${feat.price[0]} — €${feat.price[1]}${suffix})` : "";
-        return `- ${t(`step3.features.${form.projectType}.${f}`)}${price}`;
-      })
-      .join("\n");
 
-    const subject = `Calculator: ${projectLabel} — ${form.name}`;
-    const monthlySuffix = isMonthly ? t("perMonth") : "";
-    const adBudgetLabel = form.adBudget ? t(`adBudget.options.${form.adBudget}`) : "";
-    const adBudgetLine = adBudgetLabel ? `\nAd Budget: ${adBudgetLabel}` : "";
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nProject Type: ${projectLabel}\nDesign Level: ${designLabel}\n\nScope:\n${scopeLines}\n\nFeatures:\n${featureLabels}${adBudgetLine}\n\nEstimate: €${priceMin.toLocaleString()} — €${priceMax.toLocaleString()}${monthlySuffix}\n\nDescription: ${form.description}`;
-    window.location.href = `mailto:hello@goqode.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const result = await submitCalculator({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      description: form.description,
+      projectType: form.projectType!,
+      designLevel: form.designLevel,
+      features: form.features,
+      scopeModifiers: form.scopeModifiers,
+      adBudget: form.adBudget,
+      priceMin,
+      priceMax,
+      isMonthly,
+      labels: {
+        projectType: form.projectType !== null ? t(`step1.types.${form.projectType}`) : "",
+        designLevel: form.designLevel !== null ? t(`step2.levels.${form.designLevel}`) : "",
+        scopeModifiers: (config.scopeModifiers[form.projectType!] || [])
+          .map((mod) => {
+            const val = form.scopeModifiers[mod.key];
+            if (!val) return null;
+            return {
+              label: t(`step3.scopes.${form.projectType}.${mod.key}.label`),
+              value: t(`step3.scopes.${form.projectType}.${mod.key}.${val}`),
+            };
+          })
+          .filter((x): x is { label: string; value: string } => x !== null),
+        features: form.features.map((f) => {
+          const feat = allFeatures.find((ft) => ft.key === f);
+          return {
+            name: t(`step3.features.${form.projectType}.${f}`),
+            priceMin: feat?.price[0] ?? 0,
+            priceMax: feat?.price[1] ?? 0,
+          };
+        }),
+        adBudget: form.adBudget ? t(`adBudget.options.${form.adBudget}`) : "",
+      },
+    });
 
-    setTimeout(() => setSubmitted(true), 400);
+    setLoading(false);
+    if (result.success && "id" in result) {
+      router.push(`/calculator/thank-you?id=${result.id}`);
+    }
   }
 
   function reset() {
@@ -560,7 +575,6 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     });
     setStepIdx(0);
     setDirection(-1);
-    setSubmitted(false);
   }
 
   const step1Valid = form.projectType !== null;
@@ -583,13 +597,17 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     <motion.button
       type={isSubmit ? "submit" : "button"}
       onClick={isSubmit ? undefined : goNext}
-      disabled={disabled}
+      disabled={disabled || (isSubmit && loading)}
       whileHover={!disabled ? { scale: 1.02 } : {}}
       whileTap={!disabled ? { scale: 0.98 } : {}}
       className="group inline-flex items-center gap-3 h-14 px-8 rounded-full bg-[#C9FD48] text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#b8ec3a] disabled:opacity-40 disabled:pointer-events-none"
     >
       <span className="tracking-widest uppercase">{isSubmit ? t("submit") : t("continue")}</span>
-      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+      {isSubmit && loading ? (
+        <Loader2 className="w-4 h-4 animate-spin" />
+      ) : (
+        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+      )}
     </motion.button>
   );
 
@@ -597,6 +615,25 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
   function renderStep() {
     const def = currentStep;
     const indicator = `${stepIdx + 1}/${totalSteps}`;
+    const projectLabel = form.projectType ? t(`step1.types.${form.projectType}`) : null;
+
+    const stepHeader = (title: string) => (
+      <div>
+        <div className="flex items-center gap-3 mb-3">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
+            {indicator}
+          </p>
+          {def.type !== "projectType" && projectLabel && (
+            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#C9FD48] bg-zinc-950 dark:bg-zinc-800 px-2.5 py-1 rounded-full">
+              {projectLabel}
+            </span>
+          )}
+        </div>
+        <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
+          {title}
+        </h2>
+      </div>
+    );
 
     switch (def.type) {
       case "projectType":
@@ -611,14 +648,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="flex flex-col gap-8"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t("step1.title")}
-              </h2>
-            </div>
+            {stepHeader(t("step1.title"))}
 
             <div className="flex flex-wrap gap-2">
               {config.projectTypeKeys.map((key) => {
@@ -664,14 +694,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="flex flex-col gap-8"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t("step2.title")}
-              </h2>
-            </div>
+            {stepHeader(t("step2.title"))}
 
             <div className="flex flex-col gap-3">
               {config.designLevelKeys.map((key) => {
@@ -708,14 +731,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="flex flex-col gap-8"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t("step3.scopeTitle")}
-              </h2>
-            </div>
+            {stepHeader(t("step3.scopeTitle"))}
 
             <div className="flex flex-col gap-5">
               {(config.scopeModifiers[form.projectType!] || []).map((mod) => (
@@ -760,14 +776,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="flex flex-col gap-6"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t(`step3.categories.${form.projectType}.${category.categoryKey}`)}
-              </h2>
-            </div>
+            {stepHeader(t(`step3.categories.${form.projectType}.${category.categoryKey}`))}
 
             {/* Desktop: scrollable container. Mobile: flat list */}
             <div className="hidden lg:block">
@@ -842,17 +851,10 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="flex flex-col gap-8"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t("adBudget.title")}
-              </h2>
-              <p className="clamp-[text,0.875rem,1rem] text-muted-foreground mt-2">
-                {t("adBudget.subtitle")}
-              </p>
-            </div>
+            {stepHeader(t("adBudget.title"))}
+            <p className="clamp-[text,0.875rem,1rem] text-muted-foreground -mt-6">
+              {t("adBudget.subtitle")}
+            </p>
 
             <div className="flex flex-wrap gap-2">
               {budgetOptions.map((opt) => (
@@ -892,14 +894,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
             onSubmit={handleSubmit}
             className="flex flex-col gap-8"
           >
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 mb-3">
-                {indicator}
-              </p>
-              <h2 className="clamp-[text,1.5rem,2.5rem] font-bold leading-tight text-foreground">
-                {t("step4.title")}
-              </h2>
-            </div>
+            {stepHeader(t("step4.title"))}
 
             <div className="flex flex-col gap-8">
               <UnderlineInput
@@ -937,14 +932,14 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     }
   }
 
-  const showBottomBar = priceMin > 0 && !submitted;
+  const showBottomBar = priceMin > 0 && !loading;
 
   return (
   <>
     <main className="w-full min-h-[100dvh] flex flex-col lg:flex-row">
       {/* ── LEFT SIDE — Dark panel ── */}
       {/* Mobile: compact header. Desktop: full side panel */}
-      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between clamp-[px,12,24] py-6 lg:clamp-[py,24,48] lg:min-h-[100dvh] overflow-hidden">
+      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between px-4 lg:clamp-[px,12,24] py-6 lg:clamp-[py,24,48] lg:min-h-[100dvh] overflow-hidden">
         {/* Subtle gradient glow */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -971,7 +966,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
           </h1>
 
           {/* Progress bar — desktop only */}
-          {!submitted && (
+          {!loading && (
             <div className="hidden lg:flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-500">
@@ -990,7 +985,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
           )}
 
           {/* Mobile progress bar — compact inline */}
-          {!submitted && (
+          {!loading && (
             <div className="flex lg:hidden items-center gap-3">
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-500 shrink-0">
                 {stepIdx + 1}/{totalSteps}
@@ -1007,7 +1002,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
           )}
 
           {/* Live price estimate — desktop only (mobile uses sticky bottom bar) */}
-          {priceMin > 0 && !submitted && (
+          {priceMin > 0 && !loading && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1052,112 +1047,10 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
       </div>
 
       {/* ── RIGHT SIDE — Steps panel ── */}
-      <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-900 flex flex-col justify-start pt-6 lg:pt-36 clamp-[px,12,24] clamp-[py,24,48] pb-28 lg:pb-12 min-h-[50vh] lg:min-h-[100dvh] relative">
+      <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-900 flex flex-col justify-start pt-6 lg:pt-36 px-4 lg:clamp-[px,12,24] py-6 lg:py-12 pb-28 lg:pb-12 min-h-[50vh] lg:min-h-[100dvh] relative">
         <div className="w-full lg:max-w-lg lg:mx-0 lg:ml-[10%] relative overflow-hidden">
           <AnimatePresence mode="popLayout" custom={direction}>
-            {submitted ? (
-              /* ── Result state ── */
-              <motion.div
-                key="result"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                className="flex flex-col gap-8 py-6"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-20 h-20 rounded-full bg-[#C9FD48]/15 border-2 border-[#C9FD48]/30 flex items-center justify-center"
-                >
-                  <CheckCircle className="w-10 h-10 text-[#C9FD48]" />
-                </motion.div>
-
-                <div>
-                  <h2 className="clamp-[text,1.5rem,2.5rem] font-bold text-foreground mb-2">
-                    {t("result.title")}
-                  </h2>
-                  <div className="text-[#C9FD48] text-3xl lg:text-4xl font-black tabular-nums">
-                    <CountUp target={priceMin} prefix="€" /> — <CountUp target={priceMax} prefix="€" />
-                    {isMonthly && <span className="text-zinc-500 text-xl font-medium ml-1">{t("perMonth")}</span>}
-                  </div>
-                </div>
-
-                {/* Summary */}
-                <div className="flex flex-col gap-3">
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400">
-                    {t("result.summary")}
-                  </p>
-                  <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                    {form.projectType !== null && (
-                      <div className="flex justify-between">
-                        <span>{t("result.projectType")}</span>
-                        <span className="font-medium text-foreground">{t(`step1.types.${form.projectType}`)}</span>
-                      </div>
-                    )}
-                    {form.designLevel !== null && (
-                      <div className="flex justify-between">
-                        <span>{t("result.designLevel")}</span>
-                        <span className="font-medium text-foreground">{t(`step2.levels.${form.designLevel}`)}</span>
-                      </div>
-                    )}
-                    {(config.scopeModifiers[form.projectType!] || []).map((mod) => {
-                      const val = form.scopeModifiers[mod.key];
-                      if (!val) return null;
-                      return (
-                        <div key={mod.key} className="flex justify-between">
-                          <span>{t(`step3.scopes.${form.projectType}.${mod.key}.label`)}</span>
-                          <span className="font-medium text-foreground">
-                            {t(`step3.scopes.${form.projectType}.${mod.key}.${val}`)}
-                          </span>
-                        </div>
-                      );
-                    })}
-                    {form.features.length > 0 && (
-                      <div className="flex flex-col gap-2">
-                        <span className="text-sm text-muted-foreground">{t("result.features")}</span>
-                        <div className="flex flex-col gap-1.5">
-                          {form.features.map((f) => {
-                            const featureData = getAllFeatures(config.categorizedFeatures, form.projectType!).find((ft) => ft.key === f);
-                            return (
-                              <div key={f} className="flex justify-between items-center text-sm">
-                                <span className="text-foreground font-medium">
-                                  {t(`step3.features.${form.projectType}.${f}`)}
-                                </span>
-                                {featureData && (
-                                  <span className="text-xs text-zinc-400 tabular-nums shrink-0 ml-3">
-                                    €{featureData.price[0]} — €{featureData.price[1]}{isMonthly ? t("perMonth") : ""}
-                                  </span>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex flex-col gap-3">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center justify-center gap-3 h-14 px-8 rounded-full bg-[#C9FD48] text-black font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#b8ec3a]"
-                  >
-                    <span className="tracking-widest uppercase">{t("result.discuss")}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                  <button
-                    onClick={reset}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
-                  >
-                    {t("result.recalculate")}
-                  </button>
-                </div>
-              </motion.div>
-            ) : (
-              renderStep()
-            )}
+            {renderStep()}
           </AnimatePresence>
         </div>
       </div>
