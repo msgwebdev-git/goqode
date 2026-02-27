@@ -157,7 +157,7 @@ export function EventResultsSection() {
   const [openStack, setOpenStack] = useState<number | null>(0);
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/50">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32] bg-zinc-50 dark:bg-zinc-900/50">
       <motion.div
         initial="hidden"
         whileInView="show"

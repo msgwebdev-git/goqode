@@ -61,7 +61,7 @@ function GrowthHero() {
   const t = useTranslations("Growth");
 
   return (
-    <section className="w-full min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full flex flex-col items-center px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-6">
       <motion.div
         className="flex flex-col items-center gap-5 md:gap-[1.5vw] text-center w-full"
         variants={container}
@@ -114,7 +114,7 @@ function SolutionOverview() {
   };
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-4 md:pt-[1.2vw]">
         {/* Left Column - Title */}
         <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-5 lg:mb-0 lg:pr-[2vw]">
@@ -224,7 +224,7 @@ function ResultsSection() {
   ];
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32] bg-zinc-50 dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"

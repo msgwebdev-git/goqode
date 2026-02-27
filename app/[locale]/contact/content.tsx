@@ -225,7 +225,7 @@ export default function ContactPage() {
   return (
     <main className="w-full min-h-[100dvh] flex flex-col lg:flex-row">
       {/* ── LEFT SIDE — Dark panel with heading ── */}
-      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between clamp-[px,12,24] clamp-[py,24,48] min-h-[40vh] lg:min-h-[100dvh] overflow-hidden">
+      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between clamp-[px,12,24] clamp-[py,16,32] min-h-[40vh] lg:min-h-[100dvh] overflow-hidden">
         {/* Subtle gradient glow */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -262,7 +262,7 @@ export default function ContactPage() {
       </div>
 
       {/* ── RIGHT SIDE — Form panel ── */}
-      <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-950 flex flex-col justify-center clamp-[px,12,24] clamp-[py,24,48] min-h-[60vh] lg:min-h-[100dvh] relative">
+      <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-950 flex flex-col justify-center clamp-[px,12,24] clamp-[py,16,32] min-h-[60vh] lg:min-h-[100dvh] relative">
         <div className="w-full max-w-lg mx-auto lg:mx-0 lg:ml-[10%]">
           <AnimatePresence mode="wait" custom={direction}>
             {submitted ? (

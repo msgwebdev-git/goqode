@@ -45,7 +45,7 @@ function PackagesSection() {
   const t = useTranslations("Packages");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] pt-28 md:pt-36 pb-8 md:pb-[min(3vw,58px)]">
+    <section className="w-full px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-8 md:pb-[min(3vw,58px)]">
       <motion.div
         variants={container}
         initial="hidden"

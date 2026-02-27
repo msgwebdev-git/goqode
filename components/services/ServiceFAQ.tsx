@@ -17,7 +17,7 @@ export function ServiceFAQ({ namespace, count = 4 }: ServiceFAQProps) {
   const t = useTranslations(namespace);
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full clamp-[px,12,24] clamp-[py,16,32]">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center gap-2 md:gap-[0.4vw] mb-4 md:mb-[1.5vw]">
           <div className="w-2 h-2 md:w-[0.5vw] md:h-[0.5vw] rounded-full bg-[#C9FD48]" />

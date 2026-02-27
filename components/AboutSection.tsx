@@ -39,7 +39,7 @@ export function AboutSection() {
   const t = useTranslations("About");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       {/* Section Header */}
       <motion.div
         initial="hidden"

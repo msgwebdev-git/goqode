@@ -47,7 +47,7 @@ function BrandingHero() {
   const t = useTranslations("Branding");
 
   return (
-    <section className="w-full min-h-[60vh] md:min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24]">
+    <section className="w-full flex flex-col items-center px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-6">
       <motion.div
         className="flex flex-col items-center gap-5 md:gap-[2vw] text-center w-full"
         variants={container}
@@ -104,7 +104,7 @@ function BrandSystemSection() {
   return (
     <section
       ref={ref}
-      className="w-full bg-zinc-950 px-6 md:clamp-[px,12,24] clamp-[py,24,48]"
+      className="w-full bg-zinc-950 px-6 md:clamp-[px,12,24] clamp-[py,16,32]"
     >
       <motion.div
         initial="hidden"
@@ -226,7 +226,7 @@ function ComparisonSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -342,7 +342,7 @@ function DeliverablesSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -413,7 +413,7 @@ function FeaturesSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section ref={ref} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -489,7 +489,7 @@ function StatsSection() {
   return (
     <section
       ref={ref}
-      className="w-full bg-zinc-950 px-6 md:clamp-[px,12,24] clamp-[py,24,48]"
+      className="w-full bg-zinc-950 px-6 md:clamp-[px,12,24] clamp-[py,16,32]"
     >
       <motion.div
         initial="hidden"

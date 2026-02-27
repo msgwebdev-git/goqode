@@ -236,7 +236,7 @@ function PlatformTypesSection() {
   ];
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -330,7 +330,7 @@ function FeaturesSection() {
   };
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <div className="flex flex-col lg:flex-row border-t border-zinc-200 dark:border-zinc-800 pt-4 md:pt-[1.2vw]">
         {/* Left Column - Title */}
         <div className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start mb-5 lg:mb-0 lg:pr-[2vw]">
@@ -421,7 +421,7 @@ function BentoGridSection() {
   ];
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -566,7 +566,7 @@ function ProcessSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section ref={sectionRef} className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -665,7 +665,7 @@ function StatsSection() {
   ];
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"

@@ -41,7 +41,7 @@ export function CaseHero({ slug, caseData }: CaseHeroProps) {
   const title = t(`items.${slug}.title`);
 
   return (
-    <section className="w-full clamp-[px,12,24] pt-24 md:pt-28 clamp-[pb,24,48]">
+    <section className="w-full clamp-[px,12,24] pt-18 md:pt-20 clamp-[pb,24,48]">
       {/* Back link */}
       <motion.div
         initial={{ opacity: 0 }}

@@ -41,7 +41,7 @@ export function EventProcessSection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"

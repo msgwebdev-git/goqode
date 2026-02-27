@@ -13,7 +13,7 @@ export function ServiceTechStack({ namespace, categories }: ServiceTechStackProp
   const t = useTranslations(namespace);
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"

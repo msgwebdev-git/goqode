@@ -94,7 +94,7 @@ function SupportHero() {
   const t = useTranslations("Support");
 
   return (
-    <section className="w-full min-h-[60vh] md:min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24]">
+    <section className="w-full flex flex-col items-center px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-6">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -157,7 +157,7 @@ function ChannelsSection() {
   ];
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full clamp-[px,12,24] clamp-[py,16,32]">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -236,7 +236,7 @@ function ProcessSection() {
   const t = useTranslations("Support");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-900/30">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32] bg-zinc-50 dark:bg-zinc-900/30">
       <motion.div
         initial="hidden"
         whileInView="show"

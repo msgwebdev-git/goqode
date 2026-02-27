@@ -9,7 +9,7 @@ import { ArrowRight, Tag } from "lucide-react";
 const SplitText = dynamic(() => import("@/components/SplitText"), {
   ssr: false,
   loading: () => (
-    <h1 className="w-full text-[12vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase split-parent block whitespace-pre-line text-center">
+    <h1 className="w-full text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase text-center opacity-0">
       We build bold digital
     </h1>
   ),
@@ -31,7 +31,7 @@ export function HeroSection() {
             <h1 className="md:hidden w-full text-[12vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase text-center">
               We build bold digital
             </h1>
-            <div className="hidden md:block hero-fade-up [animation-delay:100ms]">
+            <div className="hidden md:block">
               <SplitText
                 text="We build bold digital"
                 tag="h1"

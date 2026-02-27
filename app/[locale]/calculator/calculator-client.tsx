@@ -939,7 +939,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
     <main className="w-full min-h-[100dvh] flex flex-col lg:flex-row">
       {/* ── LEFT SIDE — Dark panel ── */}
       {/* Mobile: compact header. Desktop: full side panel */}
-      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between px-4 lg:clamp-[px,12,24] py-6 lg:clamp-[py,24,48] lg:min-h-[100dvh] overflow-hidden">
+      <div className="relative w-full lg:w-[45%] bg-zinc-950 flex flex-col justify-between px-4 lg:clamp-[px,12,24] py-6 lg:clamp-[py,16,32] lg:min-h-[100dvh] overflow-hidden">
         {/* Subtle gradient glow */}
         <div
           className="absolute inset-0 pointer-events-none"

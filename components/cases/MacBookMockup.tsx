@@ -133,7 +133,7 @@ export function MacBookMockup({
       </section>
 
       {/* Mobile: static screenshot */}
-      <section className="md:hidden w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <section className="md:hidden w-full clamp-[px,12,24] clamp-[py,16,32]">
         <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/20">
           <Image
             src={`/cases/${slug}/line.jpg`}

@@ -17,7 +17,7 @@ export function ServiceHero({ namespace, icon: Icon }: ServiceHeroProps) {
   const title = t("hero.title").replace(/\|/g, "\n");
 
   return (
-    <section className="w-full min-h-[60vh] md:min-h-[80vh] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24] clamp-[py,24,48]">
+    <section className="w-full flex flex-col items-center px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-6">
       <motion.div
         className="flex flex-col items-center gap-5 md:gap-[1.5vw] text-center w-full"
         variants={container}

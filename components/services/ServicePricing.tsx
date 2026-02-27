@@ -17,7 +17,7 @@ export function ServicePricing({ namespace, basePrice, isMonthly, calculatorType
   const t = useTranslations(namespace);
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] bg-zinc-50 dark:bg-zinc-950">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32] bg-zinc-50 dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"

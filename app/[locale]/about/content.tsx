@@ -51,7 +51,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen w-full">
       {/* ── Hero Section ── */}
-      <section className="w-full min-h-[70vh] md:min-h-[80vh] flex flex-col items-center justify-center clamp-[px,12,24] clamp-[py,24,48]">
+      <section className="w-full flex flex-col items-center clamp-[px,12,24] pt-18 md:pt-20 pb-4 md:pb-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Stats Section ── */}
-      <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <section className="w-full clamp-[px,12,24] clamp-[py,16,24]">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Advantages Section ── */}
-      <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <section className="w-full clamp-[px,12,24] clamp-[py,16,24]">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Client Logos Section ── */}
-      <section className="w-full clamp-[px,12,24] clamp-[py,24,48]">
+      <section className="w-full clamp-[px,12,24] clamp-[py,16,24]">
         <motion.div
           initial="hidden"
           whileInView="show"

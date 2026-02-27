@@ -95,7 +95,7 @@ export function EventServicesSection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full clamp-[px,12,24] clamp-[py,24,48] bg-white dark:bg-zinc-950">
+    <section className="w-full clamp-[px,12,24] clamp-[py,16,32] bg-white dark:bg-zinc-950">
       <motion.div
         initial="hidden"
         whileInView="show"

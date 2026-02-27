@@ -53,7 +53,7 @@ function CasesHero() {
   const t = useTranslations("Cases");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] pt-28 md:pt-36 pb-6">
+    <section className="w-full px-6 md:clamp-[px,12,24] pt-18 md:pt-20 pb-6">
       <motion.div
         className="flex flex-col gap-5 md:gap-6 w-full"
         variants={container}

@@ -200,7 +200,7 @@ export default function ProcessSteps() {
   return (
     <section
       ref={containerRef}
-      className="w-full clamp-[px,12,24] clamp-[py,24,48]"
+      className="w-full clamp-[px,12,24] clamp-[py,16,32]"
     >
       {/* Section Header */}
       <motion.div

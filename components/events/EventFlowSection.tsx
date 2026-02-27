@@ -108,7 +108,7 @@ export function EventFlowSection() {
   const t = useTranslations("Events");
 
   return (
-    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,24,48] overflow-hidden bg-zinc-50/50 dark:bg-transparent">
+    <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32] overflow-hidden bg-zinc-50/50 dark:bg-transparent">
       <motion.div
         initial="hidden"
         whileInView="show"
