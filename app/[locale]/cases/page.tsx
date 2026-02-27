@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -299,6 +299,16 @@ function CaseDetailSheet({ caseItem }: { caseItem: CaseStudy }) {
   const t = useTranslations("Cases");
   const slug = caseItem.slug;
 
+  /* Defer heavy content (SVG mockups, images) until after the sheet slide animation (~500ms) */
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      const timer = setTimeout(() => setReady(true), 350);
+      return () => clearTimeout(timer);
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const aboutBlocks = [
     { labelKey: "challengeLabel" as const, textSuffix: "challenge", num: "01" },
     { labelKey: "solutionLabel" as const, textSuffix: "solution", num: "02" },
@@ -341,46 +351,49 @@ function CaseDetailSheet({ caseItem }: { caseItem: CaseStudy }) {
         )}
       </div>
 
-      {/* MacBook + iPhone mockups */}
-      <div className="flex items-end justify-center gap-3 md:gap-6 mx-auto" style={{ maxWidth: "850px" }}>
-        {/* MacBook */}
-        <div className="relative flex-1 min-w-0">
-          <MacbookPro
-            width={650}
-            height={400}
-            className="w-full h-auto relative z-10"
-          />
-          <div
-            className="absolute overflow-hidden rounded-[0.5%] z-20"
-            style={{
-              left: SCREEN.left,
-              top: SCREEN.top,
-              width: SCREEN.width,
-              height: SCREEN.height,
-            }}
-          >
-            <Image
-              src={caseItem.images[0]}
-              alt={t(`items.${slug}.title`)}
-              width={1440}
-              height={900}
-              className="w-full h-full object-cover object-top"
-              sizes="70vw"
-              priority
+      {/* MacBook + iPhone mockups — deferred to avoid jank during slide animation */}
+      {ready ? (
+        <div className="flex items-end justify-center gap-3 md:gap-6 mx-auto" style={{ maxWidth: "850px" }}>
+          {/* MacBook */}
+          <div className="relative flex-1 min-w-0">
+            <MacbookPro
+              width={650}
+              height={400}
+              className="w-full h-auto relative z-10"
             />
+            <div
+              className="absolute overflow-hidden rounded-[0.5%] z-20"
+              style={{
+                left: SCREEN.left,
+                top: SCREEN.top,
+                width: SCREEN.width,
+                height: SCREEN.height,
+              }}
+            >
+              <Image
+                src={caseItem.images[0]}
+                alt={t(`items.${slug}.title`)}
+                width={1440}
+                height={900}
+                className="w-full h-full object-cover object-top"
+                sizes="70vw"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* iPhone */}
-        {caseItem.images[1] && (
-          <div className="flex-shrink-0 w-[18%]">
-            <Iphone15Pro
-              src={caseItem.images[1]}
-              className="w-full h-auto"
-            />
-          </div>
-        )}
-      </div>
+          {/* iPhone */}
+          {caseItem.images[1] && (
+            <div className="flex-shrink-0 w-[18%]">
+              <Iphone15Pro
+                src={caseItem.images[1]}
+                className="w-full h-auto"
+              />
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="aspect-[16/10] w-full rounded-2xl bg-zinc-100 dark:bg-zinc-900 animate-pulse" style={{ maxWidth: "850px", margin: "0 auto" }} />
+      )}
 
       {/* About: Challenge / Solution / Result */}
       <div>
@@ -553,7 +566,7 @@ export default function CasesPage() {
           <div className="sticky top-0 z-50 flex justify-center pt-3 pb-2">
             <button
               onClick={() => setOpenSlug(null)}
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-200/80 dark:bg-zinc-800/80 backdrop-blur-sm text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <X className="w-3.5 h-3.5" />
               Закрыть
