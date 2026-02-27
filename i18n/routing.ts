@@ -75,6 +75,11 @@ export const routing = defineRouting({
       en: "/calculator/thank-you",
       ru: "/kalkulyator/spasibo",
     },
+    "/contact/thank-you": {
+      ro: "/contact/multumim",
+      en: "/contact/thank-you",
+      ru: "/kontakty/spasibo",
+    },
     "/blog": {
       ro: "/blog",
       en: "/blog",

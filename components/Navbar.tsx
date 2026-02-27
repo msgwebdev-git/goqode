@@ -95,11 +95,23 @@ export function Navbar() {
   React.useEffect(() => {
     if (menuOpen || langDrawerOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.inset = "0";
+      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.inset = "";
+      document.body.style.touchAction = "";
     }
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.inset = "";
+      document.body.style.touchAction = "";
     };
   }, [menuOpen, langDrawerOpen]);
 
@@ -428,7 +440,7 @@ export function Navbar() {
       </div>
 
       {/* Scrollable nav content */}
-      <div className="flex-1 overflow-y-auto px-6 pt-6">
+      <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-6" style={{ touchAction: "pan-y" }}>
         {/* Solutions — priority */}
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
           {t("solutions")}

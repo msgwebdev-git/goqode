@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ArrowRight, ArrowLeft, Check, Copy, CheckCircle, Loader2 } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, Copy, Loader2 } from "lucide-react";
 import { submitContact } from "@/app/actions/submit";
 
 /* ─── Constants ──────────────────────────────────────── */
@@ -165,10 +166,10 @@ const stepVariants = {
 
 export default function ContactPage() {
   const t = useTranslations("Contact");
+  const router = useRouter();
 
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [form, setForm] = useState({
@@ -208,15 +209,8 @@ export default function ContactPage() {
 
     setLoading(false);
     if (result.success) {
-      setSubmitted(true);
+      router.push("/contact/thank-you");
     }
-  }
-
-  function reset() {
-    setForm({ name: "", email: "", phone: "", message: "", solutions: [], serviceTypes: [], budget: "", agreed: true });
-    setStep(1);
-    setDirection(-1);
-    setSubmitted(false);
   }
 
   const step1Valid = form.name.trim() !== "" && form.email.trim() !== "";
@@ -265,37 +259,7 @@ export default function ContactPage() {
       <div className="w-full lg:w-[55%] bg-white dark:bg-zinc-950 flex flex-col justify-center clamp-[px,12,24] clamp-[py,16,32] min-h-[60vh] lg:min-h-[100dvh] relative">
         <div className="w-full max-w-lg mx-auto lg:mx-0 lg:ml-[10%]">
           <AnimatePresence mode="wait" custom={direction}>
-            {submitted ? (
-              /* ── Success state ── */
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                className="flex flex-col items-center justify-center text-center gap-6 py-12"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-20 h-20 rounded-full bg-[#C9FD48]/15 border-2 border-[#C9FD48]/30 flex items-center justify-center"
-                >
-                  <CheckCircle className="w-10 h-10 text-[#C9FD48]" />
-                </motion.div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                  {t("success.title")}
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  {t("success.subtitle")}
-                </p>
-                <button
-                  onClick={reset}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
-                >
-                  {t("success.sendAnother")}
-                </button>
-              </motion.div>
-            ) : step === 1 ? (
+            {step === 1 ? (
               /* ── Step 1: Contact details ── */
               <motion.div
                 key="step1"
