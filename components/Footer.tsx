@@ -78,7 +78,7 @@ export function Footer() {
       <div className="px-6 md:clamp-[px,12,24] pt-16 pb-12 md:pt-24 md:pb-16">
         <Link href="/contact" className="group block">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="w-full text-[12vw] md:text-[9vw] font-black leading-[0.9] tracking-tight uppercase text-white">
+            <h2 className="w-full text-[10vw] md:text-[7vw] font-black leading-[0.9] tracking-tight uppercase text-white">
               <span className="inline-flex items-center justify-between w-full">
                 <span className="text-[#C9FD48]">{t("cta")}</span>
                 <ArrowUpRight className="w-[7vw] md:w-[5vw] h-[7vw] md:h-[5vw] text-[#C9FD48] transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-2 shrink-0" />

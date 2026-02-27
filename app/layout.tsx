@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US", "ru_RU"],
     siteName: "GoQode",
     url: "https://goqode.agency",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "GoQode — We build bold digital",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@goqode",
     creator: "@goqode",
+    images: ["/og.jpg"],
   },
   category: "technology",
   robots: {
