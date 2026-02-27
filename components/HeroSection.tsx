@@ -26,18 +26,23 @@ export function HeroSection() {
     <section className="w-full h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-6 md:clamp-[px,12,24]">
       <div className="flex flex-col items-center clamp-[gap,16,32]">
         <div className="flex flex-col items-center clamp-[gap,8,16] w-full">
-          {/* Title */}
-          <div className="w-full hero-fade-up [animation-delay:100ms]">
-            <SplitText
-              text="We build bold digital"
-              tag="h1"
-              className="w-full text-[12vw] md:text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase"
-              textAlign="center"
-            />
+          {/* Title — static on mobile, GSAP SplitText on desktop */}
+          <div className="w-full">
+            <h1 className="md:hidden w-full text-[12vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase text-center">
+              We build bold digital
+            </h1>
+            <div className="hidden md:block hero-fade-up [animation-delay:100ms]">
+              <SplitText
+                text="We build bold digital"
+                tag="h1"
+                className="w-full text-[10vw] font-black leading-[1.1] tracking-tight text-foreground font-sans uppercase"
+                textAlign="center"
+              />
+            </div>
           </div>
 
-          {/* Subtitle */}
-          <div className="hero-fade-up [animation-delay:250ms]">
+          {/* Subtitle — min-h reserves space while TrueFocus loads (ssr:false) to prevent CLS */}
+          <div className="hero-fade-up [animation-delay:250ms] min-h-[10rem] sm:min-h-[3rem] flex items-center">
             <TrueFocus
               sentence={t("subtitle")}
               separator=". "

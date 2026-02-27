@@ -126,22 +126,22 @@ export function Navbar() {
           {/* Logo */}
           <div className="nav-fade-in [animation-delay:50ms]">
             <Link href="/" className="flex-shrink-0 relative z-10 block">
-            {mounted ? (
               <Image
-                src={
-                  resolvedTheme === "dark"
-                    ? "/goqode-dark.svg"
-                    : "/goqode-white.svg"
-                }
+                src="/goqode-white.svg"
                 alt="GoQode"
                 width={120}
                 height={40}
-                className="h-8 w-auto"
+                className="h-8 w-auto dark:hidden"
                 priority
               />
-            ) : (
-              <div className="h-8 w-28 bg-muted rounded animate-pulse" />
-            )}
+              <Image
+                src="/goqode-dark.svg"
+                alt="GoQode"
+                width={120}
+                height={40}
+                className="h-8 w-auto hidden dark:block"
+                priority
+              />
             </Link>
           </div>
 
@@ -387,15 +387,20 @@ export function Navbar() {
     >
       {/* Top bar — logo + close */}
       <div className="absolute top-0 left-0 right-0 h-16 px-6 flex items-center justify-between">
-        {mounted && (
           <Image
-            src={resolvedTheme === "dark" ? "/goqode-dark.svg" : "/goqode-white.svg"}
+            src="/goqode-white.svg"
             alt="GoQode"
             width={120}
             height={40}
-            className="h-8 w-auto"
+            className="h-8 w-auto dark:hidden"
           />
-        )}
+          <Image
+            src="/goqode-dark.svg"
+            alt="GoQode"
+            width={120}
+            height={40}
+            className="h-8 w-auto hidden dark:block"
+          />
         <div className="flex items-center gap-1">
           <button
             onClick={() => { setMenuOpen(false); setLangDrawerOpen(true); }}

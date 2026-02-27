@@ -179,8 +179,10 @@ html.dark, .dark {
   }
 }
 
-.nav-fade-in {
-  animation: nav-fade-in 0.4s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+@media (min-width: 1280px) {
+  .nav-fade-in {
+    animation: nav-fade-in 0.4s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+  }
 }
 
 /* Hero entrance animation — CSS-only, no JS dependency */
