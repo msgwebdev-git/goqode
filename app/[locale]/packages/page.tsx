@@ -115,7 +115,7 @@ function PackagesSection() {
                     ) : (
                       <>
                         <span
-                          className={`clamp-[text,0.875rem,0.875rem] font-medium ${
+                          className={`text-sm font-medium ${
                             isRecommended ? "text-zinc-500" : "text-muted-foreground"
                           }`}
                         >
@@ -129,7 +129,7 @@ function PackagesSection() {
                           {t(`packages.${pkg.index}.price`)}
                         </span>
                         <span
-                          className={`clamp-[text,0.875rem,0.875rem] font-medium ${
+                          className={`text-sm font-medium ${
                             isRecommended ? "text-zinc-500" : "text-muted-foreground"
                           }`}
                         >
