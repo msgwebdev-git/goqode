@@ -5,7 +5,7 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import SplitText from "@/components/SplitText";
@@ -553,13 +553,26 @@ export default function CasesPage() {
       <CasesCTA />
 
       {/* Case Detail Drawer (Vaul — optimised for mobile) */}
-      <Drawer open={!!openCase} onOpenChange={(open) => !open && setOpenSlug(null)}>
-        <DrawerContent className="h-[92vh] overflow-y-auto p-0 max-w-none rounded-t-[2rem]">
+      <Drawer open={!!openCase} onOpenChange={(open) => !open && setOpenSlug(null)} handleOnly>
+        <DrawerContent className="h-[92vh] p-0 max-w-none rounded-t-[2rem]">
           <DrawerTitle className="sr-only">
             {openCase ? openCase.slug : "Case"}
           </DrawerTitle>
 
-          {openCase && <CaseDetailSheet caseItem={openCase} />}
+          {/* Close button */}
+          <div className="sticky top-0 z-50 flex justify-center pt-1 pb-2">
+            <button
+              onClick={() => setOpenSlug(null)}
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X className="w-3.5 h-3.5" />
+              Закрыть
+            </button>
+          </div>
+
+          <div className="flex-1 overflow-y-auto">
+            {openCase && <CaseDetailSheet caseItem={openCase} />}
+          </div>
         </DrawerContent>
       </Drawer>
     </main>
