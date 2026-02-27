@@ -395,16 +395,105 @@
     },
     "posts": {
       "0": {
-        "title": "Tendințe în Web Design 2025",
-        "excerpt": "Ce soluții vizuale vor domina anul viitor și cum să le aplici în proiectele tale"
+        "title": "Creare landing page în Moldova: ghid complet și onest",
+        "excerpt": "Ce influențează real conversia, cât costă dezvoltarea unui landing page în Chișinău și cum să nu pierzi bugetul pe șabloane inutile"
       },
       "1": {
-        "title": "Optimizarea Performanței Next.js",
-        "excerpt": "Sfaturi practice pentru accelerarea încărcării și îmbunătățirea Core Web Vitals"
+        "title": "Cât costă un site în Moldova în 2026: prețuri reale",
+        "excerpt": "Analiza costurilor pentru landing page, site corporativ și magazin online. Comparație freelancer vs studio, costuri ascunse și cum să economisești"
       },
       "2": {
-        "title": "IA în Dezvoltarea Web",
-        "excerpt": "Cum inteligența artificială schimbă abordarea creării site-urilor și aplicațiilor"
+        "title": "5 semne că site-ul tău are nevoie de redesign",
+        "excerpt": "Cum să înțelegi că site-ul a îmbătrânit și alungă clienții. Checklist rapid de la GoQode"
+      }
+    },
+    "articleLabels": {
+      "shareTitle": "Distribuie articolul",
+      "readAlso": "Citește și",
+      "backToBlog": "Înapoi la blog",
+      "publishedOn": "Publicat pe",
+      "tableOfContents": "Cuprins"
+    }
+  },
+  "BlogPost_sozdanie-lendinga-Moldova-polnoe-rukovodstvo": {
+    "meta": {
+      "title": "Creare landing page în Moldova — ghid complet 2026",
+      "description": "Dezvoltare landing page în Chișinău: cost, termene, structura paginii de vânzare. Ghid onest de la echipa GoQode pentru afaceri din Moldova."
+    },
+    "title": "Creare landing page în Moldova: ghid complet și onest",
+    "intro": "Dacă te-ai gândit să creezi un landing page pentru afacerea ta din Moldova — cel mai probabil ești deja sătul de răspunsurile standard de genul «landing page-ul este un site de o singură pagină care vinde». Mulțumim, asta deja o știm. Hai să înțelegem ce contează cu adevărat, pe exemple concrete și fără apă de marketing.",
+    "sections": {
+      "why": {
+        "title": "De ce ai nevoie de un landing page dacă ai Instagram",
+        "content": "Sincer? Instagramul e bun. Dar are un dezavantaj mare: nu controlezi funnel-ul. Omul a intrat, a dat scroll, a văzut o pisică la prietenă — și a plecat.\n\nLanding page-ul e teritoriul tău. Aici conduci clientul de mână: de la titlu până la butonul «Lasă o cerere». Fără distrageri, fără feed de recomandări.\n\nLa GoQode lucrăm cu afaceri din Chișinău și Moldova și vedem aceeași imagine: compania cheltuie 500–1000€ pe lună pe reclamă Facebook și trimite traficul pe profilul de Instagram. Conversia — 1–2%. Același trafic pe un landing page normal dă 5–8%. Matematica e simplă."
+      },
+      "structure": {
+        "title": "Structura unui landing page care chiar funcționează",
+        "content": "Uită de «12 blocuri obligatorii ale landing page-ului» din articolele din 2018. Structura depinde de produsul și audiența ta. Dar sunt lucruri care funcționează aproape întotdeauna:",
+        "list": [
+          "Primul ecran — ofertă concretă. Nu «cele mai bune soluții pentru afacerea ta», ci «Livrare apă în Chișinău în 40 de minute. Prima sticlă — gratis». Omul trebuie să înțeleagă în 3 secunde ce oferi.",
+          "Dovada socială lângă ofertă. Nu la sfârșitul paginii unde nimeni nu o vede, ci direct sub titlu. «150+ clienți în Chișinău» sau logo-uri reale ale companiilor.",
+          "O singură acțiune țintă. Nu «sunați / scrieți pe WhatsApp / lăsați cerere / abonați-vă». Un buton. Un obiectiv.",
+          "Blocul «cum funcționează» din 3–4 pași. Oamenii se tem de necunoscut. Arată că procesul e simplu.",
+          "Cazuri reale sau recenzii. Nu «Vasile P., director». Ci rezultate concrete."
+        ]
+      },
+      "mistakes": {
+        "title": "5 greșeli care distrug conversia landing page-ului",
+        "content": "În peste 30 de proiecte am văzut de toate. Iată topul a ceea ce strică garantat rezultatul:",
+        "items": [
+          {
+            "subtitle": "Șablon Tilda gratuit",
+            "text": "Nu, Tilda nu e un lucru rău. Dar când proprietarul unui service auto din Chișinău ia un șablon de fitness club și doar schimbă textul — asta nu funcționează. Șablonul nu ține cont de audiența ta, de produsul tău, de funnel-ul tău."
+          },
+          {
+            "subtitle": "Viteza de încărcare > 3 secunde",
+            "text": "În Moldova internetul mobil e bun, dar nu peste tot. Dacă landing page-ul tău se încarcă 5 secunde din cauza imaginilor neoptimizate — 53% din oameni pur și simplu vor închide tab-ul."
+          },
+          {
+            "subtitle": "Formular cu 10 câmpuri",
+            "text": "Nume, telefon, email, companie, funcție, buget... Stop. Pentru primul contact e suficient numele și telefonul. Fiecare câmp în plus reduce conversia cu 10–15%."
+          },
+          {
+            "subtitle": "Fără versiune mobilă (da, în 2026)",
+            "text": "70% din traficul din Moldova este mobil. Dacă landing page-ul tău nu e adaptat pentru telefon — pierzi 7 din 10 clienți potențiali."
+          },
+          {
+            "subtitle": "Text despre nimic",
+            "text": "«Suntem o companie în dezvoltare dinamică cu abordare individuală». Asta literalmente nu înseamnă nimic. Scrie concret: ce faci, pentru cine, ce rezultat."
+          }
+        ]
+      },
+      "cost": {
+        "title": "Cât costă crearea unui landing page în Moldova",
+        "content": "Hai fără trucuri. Piața din Chișinău e variată:\n\n— Freelancer pe 999.md: 100–300€. Vei primi un șablon cu textul tău.\n\n— Studio web de nivel mediu: 500–1500€. Deja va fi un design normal, layout responsive, optimizare SEO de bază.\n\n— Dezvoltare profesională (ceea ce facem noi): 690–2000€. Design individual, structură optimizată pentru conversie, optimizarea vitezei, analiză, testare A/B.\n\nÎntrebarea principală nu e «cât costă landing page-ul», ci «cât îți va aduce». Un landing page de 200€ cu conversie de 1% și unul de 1000€ cu conversie de 5% — diferența nu e de 800€, ci de zeci de clienți lunar."
+      },
+      "seo": {
+        "title": "SEO pentru landing page: are sens?",
+        "content": "Răspuns scurt — da, dar cu nuanțe.\n\nLanding page-ul e o singură pagină. Nu va ranka pentru 500 de cuvinte cheie. Dar pentru 5–10 interogări țintă — absolut.\n\nPentru afaceri din Moldova acest lucru e deosebit de relevant: competiția în Google pe interogări în română și rusă e de câteva ori mai mică decât în România sau Rusia."
+      },
+      "tech": {
+        "title": "Pe ce să faci landing page: constructoare vs dezvoltare",
+        "content": "Tilda, Wix, WordPress — toate au avantajele lor. Dar există realitatea obiectivă:\n\nConstructoarele sunt potrivite dacă:\n— Ai nevoie de un landing page «pentru ieri» pentru a testa o idee\n— Bugetul e sub 200€\n\nDezvoltarea profesională e necesară dacă:\n— Investești în reclamă de la 300€/lună și fiecare procent de conversie contează\n— E nevoie de animație unică, structură nestandardizată\n— Viteza de încărcare e importantă\n— E nevoie de integrare cu CRM, mesageri, sisteme de plată"
+      },
+      "checklist": {
+        "title": "Checklist înainte de lansarea landing page-ului",
+        "content": "Înainte de a porni reclama, verifică:",
+        "list": [
+          "Landing page-ul se încarcă în < 3 secunde pe mobil",
+          "Formularul funcționează și cererile ajung (verifică tu însuți!)",
+          "Textul e înțeles de o persoană care vede afacerea ta prima dată",
+          "Pe mobil totul se apasă, se citește, se scrollează",
+          "Analitica e instalată: Google Analytics, Facebook Pixel",
+          "Există pagină de mulțumire după trimiterea formularului",
+          "Datele de contact sunt actuale",
+          "Site-ul funcționează pe HTTPS",
+          "Meta-tagurile sunt completate (title, description)"
+        ]
+      },
+      "conclusion": {
+        "title": "Pe scurt",
+        "content": "Crearea unui landing page nu e magie. E muncă concretă: cercetarea audienței, structură corectă, text normal, încărcare rapidă și optimizare constantă.\n\nDacă ești în Moldova și te gândești la un landing page pentru afacerea ta — suntem mereu bucuroși să discutăm. Fără vânzări agresive, doar o conversație despre ce va funcționa real în cazul tău."
       }
     }
   },
@@ -3009,6 +3098,13 @@
       "keywords": "calculator dezvoltare web, estimare cost proiect, calculator preț site, cost dezvoltare",
       "ogTitle": "Calculator Cost Proiect — GoQode",
       "ogDescription": "Obține o estimare instantanee pentru proiectul tău de dezvoltare web. Selectează funcționalități și obține prețul."
+    },
+    "blog": {
+      "title": "Blog GoQode — Articole despre dezvoltare web și digital",
+      "description": "Articole despre dezvoltare web, design, costul site-urilor și tendințe digitale. Ghiduri utile de la echipa GoQode pentru afaceri din Moldova.",
+      "keywords": "blog dezvoltare web, articole despre site-uri, blog digital Moldova, GoQode blog",
+      "ogTitle": "Blog GoQode — Articole despre dezvoltare web",
+      "ogDescription": "Articole utile despre crearea site-urilor, costul dezvoltării și tendințe digitale pentru afaceri din Moldova."
     }
   },
   "NotFound": {
@@ -3041,6 +3137,165 @@
     "webAppPackages": "Pachete aplicații web",
     "mobileAppPackages": "Pachete aplicații mobile",
     "marketingPackages": "Pachete marketing",
-    "orgDescription": "Dezvoltare web, aplicații mobile, e-commerce, marketing digital și soluții de automatizare pentru afaceri din Moldova, România și Europa."
+    "orgDescription": "Dezvoltare web, aplicații mobile, e-commerce, marketing digital și soluții de automatizare pentru afaceri din Moldova, România și Europa.",
+    "blog": "Blog"
+  },
+  "BlogPost_skolko-stoit-sait-v-Moldova-2026": {
+    "meta": {
+      "title": "Cât costă un site în Moldova în 2026 — prețuri, termene, nuanțe",
+      "description": "Prețuri reale pentru dezvoltarea site-urilor în Moldova: landing page, site corporativ, magazin online. Comparație freelancer vs studio, costuri ascunse, sfaturi de economisire."
+    },
+    "title": "Cât costă un site în Moldova în 2026",
+    "intro": "«Cât costă un site?» — această întrebare o auzim în fiecare săptămână. Și de fiecare dată răspunsul este: depinde de sarcină. Sună ca o scuză, dar este adevărat. Diferența dintre un landing de €500 și un magazin online de €5 000 este ca între reparația unei băi și construcția unei case. În acest articol vom analiza totul în detaliu: ce tipuri de site-uri există, cât costă real dezvoltarea în Moldova, de ce depinde prețul și cum să nu plătiți în plus.",
+    "sections": {
+      "types": {
+        "title": "Tipuri de site-uri și costul lor în Moldova",
+        "content": "Înainte de a vorbi despre prețuri, să stabilim ce tip de site aveți nevoie. Acesta este primul factor care determină bugetul.",
+        "items": {
+          "0": {
+            "subtitle": "Landing page (site de o pagină)",
+            "text": "O singură pagină cu un scop clar — a vinde un serviciu, a colecta cereri, a prezenta un produs. Termen de dezvoltare: 1–3 săptămâni. Cost în Moldova: €300–1 500. Un landing simplu pe template costă €300–500. Design individual cu animații și integrare CRM — €800–1 500."
+          },
+          "1": {
+            "subtitle": "Site corporativ",
+            "text": "Site cu mai multe pagini: despre noi, servicii, portofoliu, contacte, blog. Termen: 3–6 săptămâni. Cost: €800–3 000. Depinde de numărul de pagini, complexitatea designului și necesitatea unui panou de administrare."
+          },
+          "2": {
+            "subtitle": "Magazin online",
+            "text": "Catalog de produse, coș, plată, cont personal, integrare cu sisteme de plată și livrare. Termen: 4–10 săptămâni. Cost: €1 500–5 000. Variația principală se datorează numărului de produse, integrărilor și funcționalităților. Un magazin cu 50 de produse și unul cu 5 000 sunt proiecte diferite."
+          },
+          "3": {
+            "subtitle": "Aplicație web",
+            "text": "CRM, platformă SaaS, serviciu de rezervare, cont personal cu logică de business. Termen: 2–6 luni. Cost: €3 000–15 000+. Aici totul este individual. Fiecare proiect este ca un produs nou care trebuie proiectat, dezvoltat și testat."
+          }
+        }
+      },
+      "factors": {
+        "title": "De ce depinde prețul unui site",
+        "content": "Costul nu este un număr aleatoriu. În spatele fiecărei cifre stau ore concrete de muncă ale designerului, dezvoltatorului și managerului. Iată factorii principali:",
+        "list": {
+          "0": "Complexitatea designului — soluție pe template sau UI/UX individual cu prototipare. Diferența poate fi de 2–3 ori",
+          "1": "Numărul de pagini și tipuri de conținut — fiecare template unic de pagină este o muncă separată de design și programare",
+          "2": "Funcționalitatea — un formular de contact costă €50, iar un sistem de plată online cu integrare — €500+",
+          "3": "Responsivitatea — site-ul trebuie să arate bine pe telefon, tabletă și desktop. Nu este un bonus, ci o parte obligatorie a dezvoltării",
+          "4": "CMS și platforma — WordPress este mai ieftin la lansare, dar mai scump la mentenanță. Dezvoltarea custom — invers",
+          "5": "Conținutul — texte, fotografii, video. Dacă nu aveți conținut gata, aveți nevoie de copywriter și fotograf",
+          "6": "Integrările — CRM, sisteme de plată, servicii de email, analitică. Fiecare integrare este o sarcină separată",
+          "7": "Optimizarea SEO — baza tehnică pentru promovarea în motoarele de căutare. Fără ea, site-ul pur și simplu nu va fi găsit"
+        }
+      },
+      "comparison": {
+        "title": "Freelancer, studio sau constructor: ce să alegeți",
+        "content": "Același site poate fi comandat la un freelancer, la un studio sau asamblat singur pe un constructor. Rezultatul va fi diferit.",
+        "items": {
+          "0": {
+            "subtitle": "Constructor (Wix, Tilda, Squarespace)",
+            "text": "Cost: €0–200 + abonament €10–30/lună. Potrivit pentru: carte de vizită, landing simplu, testarea unei idei. Avantaje — rapid și ieftin. Dezavantaje — design limitat, probleme cu SEO, dependență de platformă. Dacă afacerea crește, constructorul devine rapid strâmt."
+          },
+          "1": {
+            "subtitle": "Freelancer",
+            "text": "Cost: €200–2 000. Potrivit pentru: landing-uri, site-uri mici cu specificații clare. Avantaje — mai ieftin decât un studio, program flexibil. Dezavantaje — o singură persoană nu poate fi simultan designer, dezvoltator și marketer. Risc: dacă freelancerul dispare — proiectul se blochează."
+          },
+          "2": {
+            "subtitle": "Studio web",
+            "text": "Cost: €500–5 000+. Potrivit pentru: orice proiecte, mai ales când termenele și calitatea sunt importante. Avantaje — echipă de specialiști, garanții, suport după lansare. Dezavantaje — mai scump decât un freelancer. Dar prețul este justificat: plătiți pentru proces, nu doar pentru cod."
+          },
+          "3": {
+            "subtitle": "Echipă internă (in-house)",
+            "text": "Cost: de la €2 000/lună în salarii. Potrivit pentru: companii mari cu necesitate constantă de dezvoltare. Avantaje — control total, iterații rapide. Dezavantaje — scump, greu de găsit specialiști buni în Moldova."
+          }
+        }
+      },
+      "hidden": {
+        "title": "Costuri ascunse de care se uită",
+        "content": "Un site nu este o achiziție unică. După lansare încep cheltuielile regulate care trebuie incluse în buget:",
+        "list": {
+          "0": "Domeniu — €10–15 pe an. Adresa site-ului dumneavoastră pe internet. Un nume simplu în zona .md costă de la €10",
+          "1": "Hosting — €3–50 pe lună. Depinde de trafic și tipul site-ului. Un magazin online necesită mai multe resurse decât o carte de vizită",
+          "2": "Certificat SSL — €0–50 pe an. Protecția datelor și pictograma lacătului în browser. Multe hosting-uri oferă gratuit Let's Encrypt",
+          "3": "Suport tehnic — €50–200 pe lună. Actualizări, corectarea bug-urilor, monitorizarea funcționării. Puteți să nu plătiți constant, ci să apelați la necesitate",
+          "4": "Actualizarea conținutului — €0–500 pe lună. Produse noi, articole, promoții. Dacă aveți CMS — puteți face singuri",
+          "5": "Promovare SEO — €200–1 000 pe lună. Fără promovare, site-ul va fi pe pagina 10 a Google. Aceasta este o muncă separată și constantă"
+        }
+      },
+      "timeline": {
+        "title": "Cum influențează termenele costul",
+        "content": "«Trebuie ieri» — cea mai scumpă frază din dezvoltarea web. Urgența crește costul cu 30–50%. Și nu este vorba de lăcomie — pentru a accelera lucrul, studiourile atrag specialiști suplimentari și reorganizează programul.\n\nTermene reale pentru Moldova:\n• Landing page — 1–3 săptămâni\n• Site corporativ — 3–6 săptămâni\n• Magazin online — 4–10 săptămâni\n• Aplicație web — 2–6 luni\n\nSfat: începeți să vă gândiți la site din timp. Un proiect făcut fără grabă iese întotdeauna mai bine și mai ieftin. Echipa are timp să gândească fiecare detaliu, în loc să rezolve probleme din mers."
+      },
+      "save": {
+        "title": "Cum să economisiți fără a pierde calitatea",
+        "content": "Poți și trebuie să economisești la site. Dar inteligent. Iată metode verificate:",
+        "list": {
+          "0": "Pregătiți un brief clar — cu cât descrieți mai precis sarcina, cu atât mai puține iterații și corecturi. Iar corecturile costă timp și bani",
+          "1": "Furnizați conținutul din timp — texte, fotografii, logouri. Când studioul așteaptă materiale de la client, proiectul stagnează și termenele cresc",
+          "2": "Începeți cu MVP — lansați versiunea de bază a site-ului și îmbunătățiți pe baza datelor reale. Nu trebuie să fie perfect din prima",
+          "3": "Alegeți tehnologii moderne — Next.js, React, headless CMS. Mai scumpe la start, dar mai ieftine la mentenanță și scalare",
+          "4": "Gândiți pe termen lung — un site ieftin care trebuie refăcut peste un an costă mai mult decât un site de calitate de la început",
+          "5": "Renunțați la extra — 80% din funcționalități nu sunt folosite la etapa de lansare. Concentrați-vă pe esențial, restul adăugați mai târziu"
+        }
+      },
+      "checklist": {
+        "title": "Checklist înainte de a comanda un site",
+        "content": "Înainte de a contacta un studio sau freelancer, pregătiți răspunsuri la aceste întrebări:",
+        "list": {
+          "0": "Care este scopul site-ului? Vânzări, cereri, imagine, informare?",
+          "1": "Cine este publicul țintă? Vârsta, interesele, cum vor ajunge pe site",
+          "2": "Ce site-uri ale concurenților vă plac și de ce anume?",
+          "3": "Aveți conținut gata — texte, fotografii, logo?",
+          "4": "Ce buget sunteți dispuși să alocați? Este mai bine să menționați limitele de la început",
+          "5": "Aveți nevoie de suport după lansare?",
+          "6": "În ce limbi va fi site-ul?",
+          "7": "Ce integrări sunt necesare — CRM, analitică, sisteme de plată?"
+        }
+      },
+      "conclusion": {
+        "title": "Concluzie",
+        "content": "Costul unui site în Moldova în 2026 — de la €300 pentru un landing simplu până la €15 000+ pentru o aplicație web complexă. Cel mai important — să nu alergați după prețuri mici și să nu plătiți în plus pentru funcționalități inutile. Stabiliți scopul, pregătiți materialele și alegeți un partener în care aveți încredere."
+      }
+    }
+  },
+  "BlogPost_5-priznakov-chto-sajtu-nuzhen-redizajn": {
+    "meta": {
+      "title": "5 semne că site-ul tău are nevoie de redesign — GoQode",
+      "description": "Cum să înțelegi că site-ul tău a îmbătrânit: încărcare lentă, design neresponsiv, conversie scăzută. Checklist pentru afaceri din Moldova."
+    },
+    "title": "5 semne că site-ului tău îi trebuie un redesign",
+    "intro": "Un site nu este ceva ce faci o dată și uiți de el. Tehnologiile se schimbă, așteptările utilizatorilor cresc, iar Google își actualizează constant algoritmii. Dacă nu ți-ai actualizat site-ul de 2–3 ani, cel mai probabil el deja lucrează împotriva ta. Iată cinci semnale că e timpul să acționezi.",
+    "sections": {
+      "signs": {
+        "title": "Semne că site-ul a îmbătrânit",
+        "content": "Verifică site-ul tău după aceste puncte. Dacă se potrivesc cel puțin două — e timpul să te gândești la un redesign.",
+        "items": {
+          "0": {
+            "subtitle": "Site-ul arată prost pe telefon",
+            "text": "Peste 70% din traficul din Moldova vine de pe mobil. Dacă site-ul tău nu este responsiv, pierzi majoritatea vizitatorilor. Google de asemenea plasează site-urile mobile mai sus în rezultate."
+          },
+          "1": {
+            "subtitle": "Paginile se încarcă mai mult de 3 secunde",
+            "text": "Fiecare secundă suplimentară de încărcare înseamnă minus 7% din conversie. Site-urile vechi pe CMS-uri grele se încarcă adesea în 5–8 secunde. Tehnologiile moderne rezolvă această problemă."
+          },
+          "2": {
+            "subtitle": "Designul arată ca din 2018",
+            "text": "Fonturi mici, elemente aglomerate, fotografii de stoc. Utilizatorii nu au încredere subconștient în site-urile învechite — dacă site-ul arată vechi, afacerea pare și ea depășită."
+          },
+          "3": {
+            "subtitle": "Conversia scade sau stagnează",
+            "text": "Trafic există, dar cereri nu. Adesea problema nu este în publicitate, ci în site: navigație confuză, CTA slab, lipsa elementelor de încredere. Un redesign axat pe UX poate crește conversia de 2–3 ori."
+          },
+          "4": {
+            "subtitle": "Site-ul este greu de actualizat",
+            "text": "Pentru a schimba un text sau a adăuga un produs, trebuie să suni dezvoltatorul și să aștepți o săptămână. CMS-urile moderne și soluțiile headless permit afacerii să gestioneze conținutul singură în câteva minute."
+          }
+        }
+      },
+      "action": {
+        "title": "Ce să faci mai departe",
+        "content": "Redesign-ul nu înseamnă doar «a face mai frumos». Este o oportunitate de a reconsidera structura, de a îmbunătăți parcursul utilizatorului și de a conecta instrumente moderne de analitică. Începe cu un audit: verifică viteza prin Google PageSpeed, analizează comportamentul utilizatorilor în analitică, compară site-ul tău cu concurenții. Dacă imaginea este tristă — e momentul să apelezi la profesioniști."
+      },
+      "conclusion": {
+        "title": "Concluzie",
+        "content": "Un site învechit nu este doar inestetic. Înseamnă clienți pierduți, poziții joase în Google și bani cheltuiți pe publicitate degeaba. Vestea bună: redesign-ul nu trebuie neapărat să fie scump sau să dureze luni. Uneori sunt suficiente îmbunătățiri punctuale pentru a da o nouă viață site-ului."
+      }
+    }
   }
 }

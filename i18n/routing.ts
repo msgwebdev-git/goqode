@@ -75,6 +75,16 @@ export const routing = defineRouting({
       en: "/calculator/thank-you",
       ru: "/kalkulyator/spasibo",
     },
+    "/blog": {
+      ro: "/blog",
+      en: "/blog",
+      ru: "/blog",
+    },
+    "/blog/[slug]": {
+      ro: "/blog/[slug]",
+      en: "/blog/[slug]",
+      ru: "/blog/[slug]",
+    },
     "/services/corporate-website": {
       ro: "/servicii/site-corporativ",
       en: "/services/corporate-website",

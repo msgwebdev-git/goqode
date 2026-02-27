@@ -26,28 +26,27 @@ const cardVariant = {
   },
 };
 
-// Placeholder blog posts
 const blogPosts = [
   {
     id: "1",
-    slug: "web-design-trends-2025",
-    image: "/blog/post-1.jpg",
-    category: "design",
-    readTime: 5,
+    slug: "sozdanie-lendinga-Moldova-polnoe-rukovodstvo",
+    image: "/blog/landingmoldova.jpeg",
+    category: "development",
+    readTime: 12,
   },
   {
     id: "2",
-    slug: "nextjs-performance-optimization",
-    image: "/blog/post-2.jpg",
+    slug: "skolko-stoit-sait-v-Moldova-2026",
+    image: "/blog/money.jpg",
     category: "development",
-    readTime: 8,
+    readTime: 15,
   },
   {
     id: "3",
-    slug: "ai-in-web-development",
-    image: "/blog/post-3.jpg",
-    category: "technology",
-    readTime: 6,
+    slug: "5-priznakov-chto-sajtu-nuzhen-redizajn",
+    image: "/blog/rebranding.jpg",
+    category: "design",
+    readTime: 4,
   },
 ];
 
@@ -99,11 +98,7 @@ export function BlogSection() {
             >
               <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-[0.8vw] bg-zinc-100 dark:bg-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center">
-                    <svg className="w-[2vw] h-[2vw] text-zinc-400 dark:text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
+                  <Image src={post.image} alt={t(`posts.${index}.title`)} fill className="object-cover" sizes="33vw" />
                   <div className="absolute inset-0 bg-[#C9FD48]/0 group-hover:bg-[#C9FD48]/10 transition-colors duration-300" />
                 </div>
                 <div className="flex items-center gap-[0.5vw] mb-[0.5vw]">
@@ -136,11 +131,7 @@ export function BlogSection() {
             >
               <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[3/2] rounded-2xl overflow-hidden mb-3 bg-zinc-100 dark:bg-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-zinc-400 dark:text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
+                  <Image src={post.image} alt={t(`posts.${index}.title`)} fill className="object-cover" sizes="75vw" />
                 </div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="text-[0.625rem] font-semibold uppercase tracking-wider text-black bg-[#C9FD48] px-2 py-0.5 rounded-full">
