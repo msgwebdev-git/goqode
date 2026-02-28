@@ -66,7 +66,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:clamp-[gap,12,16] w-full sm:w-auto hero-fade-up [animation-delay:400ms]">
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden w-full sm:w-auto"
+            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-[#C9FD48] text-black font-semibold clamp-[text,0.875rem,1rem] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,253,72,0.5)] hover:scale-[1.02] overflow-hidden w-full sm:w-auto whitespace-nowrap"
           >
             <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-0.5">
               {t("cta")}
@@ -76,7 +76,7 @@ export function HeroSection() {
           </Link>
           <Link
             href="/calculator"
-            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 text-foreground font-medium clamp-[text,0.875rem,1rem] transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/15 hover:border-black/20 dark:hover:border-white/30 hover:scale-[1.02] w-full sm:w-auto"
+            className="group relative inline-flex items-center justify-center gap-2 h-12 sm:h-14 clamp-[px,24,32] rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-sm border border-black/10 dark:border-white/20 text-foreground font-medium clamp-[text,0.875rem,1rem] transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/15 hover:border-black/20 dark:hover:border-white/30 hover:scale-[1.02] w-full sm:w-auto whitespace-nowrap"
           >
             <Tag className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
             <span>{t("ctaSecondary")}</span>

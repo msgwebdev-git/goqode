@@ -43,12 +43,10 @@ export function ChatWidget() {
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
 
-  // Track visual viewport for mobile keyboard handling
-  const [vvHeight, setVvHeight] = useState<number | null>(null);
-  const [vvOffsetTop, setVvOffsetTop] = useState(0);
-
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef<string>("");
+  const panelRef = useRef<HTMLDivElement>(null);
+  const vvCleanupRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -66,24 +64,48 @@ export function ChatWidget() {
     return () => mql.removeEventListener("change", handler);
   }, []);
 
-  // Track visualViewport on mobile to handle keyboard properly
+  // Mobile: track visualViewport to handle keyboard.
+  // Delayed start so the open animation isn't affected.
   useEffect(() => {
     if (!isMobile || !isOpen) return;
 
     const vv = window.visualViewport;
     if (!vv) return;
 
+    let rafId: number;
     const update = () => {
-      setVvHeight(vv.height);
-      setVvOffsetTop(vv.offsetTop);
+      const el = panelRef.current;
+      if (!el) return;
+      el.style.height = `${vv.height}px`;
+      el.style.top = `${vv.offsetTop}px`;
     };
 
-    update();
-    vv.addEventListener("resize", update);
-    vv.addEventListener("scroll", update);
+    // Start tracking after open animation finishes (300ms)
+    const timer = setTimeout(() => {
+      update();
+      const onViewport = () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(update);
+      };
+      vv.addEventListener("resize", onViewport);
+      vv.addEventListener("scroll", onViewport);
+
+      vvCleanupRef.current = () => {
+        vv.removeEventListener("resize", onViewport);
+        vv.removeEventListener("scroll", onViewport);
+        cancelAnimationFrame(rafId);
+      };
+    }, 350);
+
     return () => {
-      vv.removeEventListener("resize", update);
-      vv.removeEventListener("scroll", update);
+      clearTimeout(timer);
+      vvCleanupRef.current?.();
+      vvCleanupRef.current = null;
+      const el = panelRef.current;
+      if (el) {
+        el.style.height = "";
+        el.style.top = "";
+      }
     };
   }, [isMobile, isOpen]);
 
@@ -161,22 +183,112 @@ export function ChatWidget() {
 
   if (!mounted) return null;
 
-  // On mobile, use visualViewport dimensions so the chat
-  // stays within the visible area even when the keyboard is open
-  const mobileStyle =
-    isMobile && isOpen
-      ? {
-          position: "fixed" as const,
-          top: vvOffsetTop,
-          left: 0,
-          width: "100%",
-          height: vvHeight ?? "100dvh",
-        }
-      : undefined;
+  /* ── Shared chat content ────────────────────────────── */
+  const chatContent = (
+    <>
+      {/* Header */}
+      <div className="flex shrink-0 items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
+        <div>
+          <p className="text-sm font-semibold text-black dark:text-zinc-50">
+            {t("title")}
+          </p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            {t("subtitle")}
+          </p>
+        </div>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 cursor-pointer"
+        >
+          <X className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Body */}
+      {!hasName ? (
+        <form
+          onSubmit={handleNameSubmit}
+          className="flex flex-1 flex-col items-center justify-center gap-4 px-6"
+        >
+          <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+            {t("namePrompt")}
+          </p>
+          <Input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder={t("namePlaceholder")}
+            maxLength={200}
+            autoFocus
+          />
+          <Button
+            type="submit"
+            className="w-full cursor-pointer"
+            disabled={!name.trim()}
+          >
+            {t("startChat")}
+          </Button>
+        </form>
+      ) : (
+        <>
+          {/* Messages */}
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-3">
+            {messages.length === 0 && (
+              <p className="text-center text-xs text-zinc-400 dark:text-zinc-500 pt-8">
+                {t("emptyState")}
+              </p>
+            )}
+            {messages.map((msg) => (
+              <div
+                key={msg.id}
+                className={`flex ${
+                  msg.sender === "USER" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
+                    msg.sender === "USER"
+                      ? "bg-foreground text-background"
+                      : "bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100"
+                  }`}
+                >
+                  {msg.text}
+                </div>
+              </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Input */}
+          <form
+            onSubmit={handleSend}
+            className="flex shrink-0 items-center gap-2 border-t border-zinc-200 px-4 py-3 dark:border-zinc-800"
+          >
+            <Input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={t("messagePlaceholder")}
+              maxLength={2000}
+              disabled={isSending}
+              autoFocus
+              className="h-11"
+            />
+            <Button
+              type="submit"
+              size="icon"
+              disabled={!input.trim() || isSending}
+              className="cursor-pointer"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </form>
+        </>
+      )}
+    </>
+  );
 
   return (
     <>
-      {/* Floating button */}
+      {/* ── Floating button ─────────────────────────────── */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
@@ -192,132 +304,35 @@ export function ChatWidget() {
         )}
       </AnimatePresence>
 
-      {/* Chat panel */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={
-              isMobile
-                ? { y: "100%" }
-                : { opacity: 0, y: 20, scale: 0.95 }
-            }
-            animate={
-              isMobile ? { y: 0 } : { opacity: 1, y: 0, scale: 1 }
-            }
-            exit={
-              isMobile
-                ? { y: "100%" }
-                : { opacity: 0, y: 20, scale: 0.95 }
-            }
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className={
-              isMobile
-                ? "fixed inset-0 z-50 flex flex-col bg-white dark:bg-zinc-950"
-                : "fixed bottom-6 right-6 z-50 flex h-[480px] w-[360px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
-            }
-            style={mobileStyle}
-          >
-            {/* Header */}
-            <div className="flex shrink-0 items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
-              <div>
-                <p className="text-sm font-semibold text-black dark:text-zinc-50">
-                  {t("title")}
-                </p>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  {t("subtitle")}
-                </p>
-              </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 cursor-pointer"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+      {/* ── Mobile panel — pure CSS transition (no framer-motion) ── */}
+      {isMobile && (
+        <div
+          ref={panelRef}
+          aria-hidden={!isOpen}
+          className={`fixed inset-0 z-50 flex flex-col bg-white dark:bg-zinc-950
+            will-change-transform transition-transform duration-300 ease-out
+            ${isOpen ? "translate-y-0" : "translate-y-full pointer-events-none"}`}
+        >
+          {chatContent}
+        </div>
+      )}
 
-            {/* Body */}
-            {!hasName ? (
-              <form
-                onSubmit={handleNameSubmit}
-                className="flex flex-1 flex-col items-center justify-center gap-4 px-6"
-              >
-                <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
-                  {t("namePrompt")}
-                </p>
-                <Input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder={t("namePlaceholder")}
-                  maxLength={200}
-                  autoFocus
-                />
-                <Button
-                  type="submit"
-                  className="w-full cursor-pointer"
-                  disabled={!name.trim()}
-                >
-                  {t("startChat")}
-                </Button>
-              </form>
-            ) : (
-              <>
-                {/* Messages */}
-                <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 space-y-3">
-                  {messages.length === 0 && (
-                    <p className="text-center text-xs text-zinc-400 dark:text-zinc-500 pt-8">
-                      {t("emptyState")}
-                    </p>
-                  )}
-                  {messages.map((msg) => (
-                    <div
-                      key={msg.id}
-                      className={`flex ${
-                        msg.sender === "USER"
-                          ? "justify-end"
-                          : "justify-start"
-                      }`}
-                    >
-                      <div
-                        className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
-                          msg.sender === "USER"
-                            ? "bg-foreground text-background"
-                            : "bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100"
-                        }`}
-                      >
-                        {msg.text}
-                      </div>
-                    </div>
-                  ))}
-                  <div ref={messagesEndRef} />
-                </div>
-
-                {/* Input */}
-                <form
-                  onSubmit={handleSend}
-                  className="flex shrink-0 items-center gap-2 border-t border-zinc-200 px-4 py-3 dark:border-zinc-800"
-                >
-                  <Input
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder={t("messagePlaceholder")}
-                    maxLength={2000}
-                    disabled={isSending}
-                    autoFocus
-                  />
-                  <Button
-                    type="submit"
-                    size="icon"
-                    disabled={!input.trim() || isSending}
-                    className="cursor-pointer"
-                  >
-                    <Send className="h-4 w-4" />
-                  </Button>
-                </form>
-              </>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* ── Desktop panel — framer-motion ───────────────── */}
+      {!isMobile && (
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="fixed bottom-6 right-6 z-50 flex h-[480px] w-[360px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+            >
+              {chatContent}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </>
   );
 }
