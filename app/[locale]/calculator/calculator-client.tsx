@@ -7,8 +7,8 @@ import { useTranslations } from "next-intl";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArrowRight, ArrowLeft, Check, Copy, Loader2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import type { CalculatorConfig } from "@/lib/calculator-queries";
-import { submitCalculator } from "@/app/actions/submit";
+import type { CalculatorConfig } from "@/lib/calculator-api";
+import { submitCalculatorForm } from "@/lib/calculator-api";
 
 /* ─── Helper: flatten features ───────────────────────── */
 
@@ -517,7 +517,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
 
     const allFeatures = getAllFeatures(config.categorizedFeatures, form.projectType!);
 
-    const result = await submitCalculator({
+    const result = await submitCalculatorForm({
       name: form.name,
       email: form.email,
       phone: form.phone,

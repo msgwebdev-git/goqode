@@ -22,22 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  updateProjectType,
-  updateDesignLevel,
-  addFeatureCategory,
-  updateFeatureCategory,
-  deleteFeatureCategory,
-  addFeature,
-  updateFeature,
-  deleteFeature,
-  addScopeModifier,
-  updateScopeModifier,
-  deleteScopeModifier,
-  addScopeModifierOption,
-  updateScopeModifierOption,
-  deleteScopeModifierOption,
-} from "./actions";
+import * as api from "@/lib/calculator-api";
 
 // ─── Human-readable labels for keys ─────────────────
 
@@ -109,6 +94,7 @@ type ScopeModifierOption = {
 };
 
 type Props = {
+  token: string;
   projectTypes: ProjectType[];
   designLevels: DesignLevel[];
   featureCategories: FeatureCategory[];
@@ -145,6 +131,8 @@ function EditableCell({
 // ═══════════════════════════════════════════════════════
 
 export function AdminClient(props: Props) {
+  const { token } = props;
+
   return (
     <div className="max-w-6xl">
       <h2 className="text-2xl font-bold mb-6 text-foreground">Calculator Config</h2>
@@ -157,16 +145,17 @@ export function AdminClient(props: Props) {
         </TabsList>
 
         <TabsContent value="projectTypes">
-          <ProjectTypesTab data={props.projectTypes} />
+          <ProjectTypesTab data={props.projectTypes} token={token} />
         </TabsContent>
         <TabsContent value="designLevels">
-          <DesignLevelsTab data={props.designLevels} />
+          <DesignLevelsTab data={props.designLevels} token={token} />
         </TabsContent>
         <TabsContent value="features">
           <FeaturesTab
             projectTypes={props.projectTypes}
             categories={props.featureCategories}
             features={props.features}
+            token={token}
           />
         </TabsContent>
         <TabsContent value="scope">
@@ -174,6 +163,7 @@ export function AdminClient(props: Props) {
             projectTypes={props.projectTypes}
             modifiers={props.scopeModifiers}
             options={props.scopeModifierOptions}
+            token={token}
           />
         </TabsContent>
       </Tabs>
@@ -183,7 +173,7 @@ export function AdminClient(props: Props) {
 
 // ─── Project Types Tab ──────────────────────────────
 
-function ProjectTypesTab({ data }: { data: ProjectType[] }) {
+function ProjectTypesTab({ data, token }: { data: ProjectType[]; token: string }) {
   const [rows, setRows] = useState(data);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -196,7 +186,7 @@ function ProjectTypesTab({ data }: { data: ProjectType[] }) {
 
   function save(row: ProjectType) {
     startTransition(async () => {
-      await updateProjectType(row.id, {
+      await api.updateProjectType(token, row.id, {
         basePriceMin: Number(row.basePriceMin),
         basePriceMax: Number(row.basePriceMax),
         isMonthly: row.isMonthly,
@@ -281,7 +271,7 @@ function ProjectTypesTab({ data }: { data: ProjectType[] }) {
 
 // ─── Design Levels Tab ──────────────────────────────
 
-function DesignLevelsTab({ data }: { data: DesignLevel[] }) {
+function DesignLevelsTab({ data, token }: { data: DesignLevel[]; token: string }) {
   const [rows, setRows] = useState(data);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -294,7 +284,7 @@ function DesignLevelsTab({ data }: { data: DesignLevel[] }) {
 
   function save(row: DesignLevel) {
     startTransition(async () => {
-      await updateDesignLevel(row.id, {
+      await api.updateDesignLevel(token, row.id, {
         multiplier: Number(row.multiplier),
         sortOrder: Number(row.sortOrder),
       });
@@ -357,10 +347,12 @@ function FeaturesTab({
   projectTypes,
   categories,
   features: allFeatures,
+  token,
 }: {
   projectTypes: ProjectType[];
   categories: FeatureCategory[];
   features: Feature[];
+  token: string;
 }) {
   const [selectedPT, setSelectedPT] = useState(projectTypes[0]?.key || "");
   const [catRows, setCatRows] = useState(categories);
@@ -384,7 +376,7 @@ function FeaturesTab({
   function handleAddCategory() {
     if (!newCatKey.trim()) return;
     startTransition(async () => {
-      const row = await addFeatureCategory({
+      const row = await api.addFeatureCategory(token, {
         projectTypeKey: selectedPT,
         categoryKey: newCatKey.trim(),
         sortOrder: ptCategories.length,
@@ -397,7 +389,7 @@ function FeaturesTab({
 
   function handleUpdateCategory(cat: FeatureCategory) {
     startTransition(async () => {
-      await updateFeatureCategory(cat.id, {
+      await api.updateFeatureCategory(token, cat.id, {
         categoryKey: cat.categoryKey,
         sortOrder: cat.sortOrder,
       });
@@ -408,7 +400,7 @@ function FeaturesTab({
   function handleDeleteCategory(id: number) {
     if (!confirm("Delete this category and all its features?")) return;
     startTransition(async () => {
-      await deleteFeatureCategory(id);
+      await api.deleteFeatureCategory(token, id);
       setCatRows((prev) => prev.filter((c) => c.id !== id));
       setFeatRows((prev) => prev.filter((f) => f.categoryId !== id));
       refresh();
@@ -420,7 +412,7 @@ function FeaturesTab({
     if (!newFeat.key.trim()) return;
     startTransition(async () => {
       const catFeats = featRows.filter((f) => f.categoryId === categoryId);
-      const row = await addFeature({
+      const row = await api.addFeature(token, {
         categoryId,
         key: newFeat.key.trim(),
         priceMin: Number(newFeat.priceMin),
@@ -437,7 +429,7 @@ function FeaturesTab({
 
   function handleUpdateFeature(feat: Feature) {
     startTransition(async () => {
-      await updateFeature(feat.id, {
+      await api.updateFeature(token, feat.id, {
         key: feat.key,
         priceMin: Number(feat.priceMin),
         priceMax: Number(feat.priceMax),
@@ -451,7 +443,7 @@ function FeaturesTab({
   function handleDeleteFeature(id: number) {
     if (!confirm("Delete this feature?")) return;
     startTransition(async () => {
-      await deleteFeature(id);
+      await api.deleteFeature(token, id);
       setFeatRows((prev) => prev.filter((f) => f.id !== id));
       refresh();
     });
@@ -667,10 +659,12 @@ function ScopeTab({
   projectTypes,
   modifiers,
   options: allOptions,
+  token,
 }: {
   projectTypes: ProjectType[];
   modifiers: ScopeModifier[];
   options: ScopeModifierOption[];
+  token: string;
 }) {
   const [selectedPT, setSelectedPT] = useState(projectTypes[0]?.key || "");
   const [modRows, setModRows] = useState(modifiers);
@@ -694,7 +688,7 @@ function ScopeTab({
   function handleAddModifier() {
     if (!newModKey.trim()) return;
     startTransition(async () => {
-      const row = await addScopeModifier({
+      const row = await api.addScopeModifier(token, {
         projectTypeKey: selectedPT,
         key: newModKey.trim(),
         sortOrder: ptModifiers.length,
@@ -707,7 +701,7 @@ function ScopeTab({
 
   function handleUpdateModifier(mod: ScopeModifier) {
     startTransition(async () => {
-      await updateScopeModifier(mod.id, { key: mod.key, sortOrder: mod.sortOrder });
+      await api.updateScopeModifier(token, mod.id, { key: mod.key, sortOrder: mod.sortOrder });
       refresh();
     });
   }
@@ -715,7 +709,7 @@ function ScopeTab({
   function handleDeleteModifier(id: number) {
     if (!confirm("Delete this modifier and all its options?")) return;
     startTransition(async () => {
-      await deleteScopeModifier(id);
+      await api.deleteScopeModifier(token, id);
       setModRows((prev) => prev.filter((m) => m.id !== id));
       setOptRows((prev) => prev.filter((o) => o.scopeModifierId !== id));
       refresh();
@@ -727,7 +721,7 @@ function ScopeTab({
     if (!newOpt.value.trim()) return;
     startTransition(async () => {
       const modOpts = optRows.filter((o) => o.scopeModifierId === modifierId);
-      const row = await addScopeModifierOption({
+      const row = await api.addScopeModifierOption(token, {
         scopeModifierId: modifierId,
         value: newOpt.value.trim(),
         multiplier: Number(newOpt.multiplier),
@@ -742,7 +736,7 @@ function ScopeTab({
 
   function handleUpdateOption(opt: ScopeModifierOption) {
     startTransition(async () => {
-      await updateScopeModifierOption(opt.id, {
+      await api.updateScopeModifierOption(token, opt.id, {
         value: opt.value,
         multiplier: Number(opt.multiplier),
         sortOrder: Number(opt.sortOrder),
@@ -754,7 +748,7 @@ function ScopeTab({
   function handleDeleteOption(id: number) {
     if (!confirm("Delete this option?")) return;
     startTransition(async () => {
-      await deleteScopeModifierOption(id);
+      await api.deleteScopeModifierOption(token, id);
       setOptRows((prev) => prev.filter((o) => o.id !== id));
       refresh();
     });

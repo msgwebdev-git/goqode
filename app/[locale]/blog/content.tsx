@@ -5,12 +5,15 @@ import { Link } from "@/i18n/navigation";
 import NextLink from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
 import Image from "next/image";
-import { getAllPosts } from "@/content/blog/posts";
 import SplitText from "@/components/SplitText";
+import type { BlogPostListItem } from "@/lib/blog-api";
 
-export default function BlogContent() {
+interface Props {
+  posts: BlogPostListItem[];
+}
+
+export default function BlogContent({ posts }: Props) {
   const t = useTranslations("Blog");
-  const posts = getAllPosts();
 
   return (
     <main className="w-full pt-18 md:pt-20">
@@ -51,7 +54,7 @@ export default function BlogContent() {
       {/* Posts grid */}
       <section className="w-full px-6 md:clamp-[px,12,24] pb-12 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[1.5vw]">
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <NextLink
               key={post.slug}
               href={`/blog/${post.slug}`}
@@ -61,7 +64,7 @@ export default function BlogContent() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 lg:mb-[0.8vw] bg-zinc-100 dark:bg-zinc-900">
                 <Image
                   src={post.image}
-                  alt={t(`posts.${index}.title`)}
+                  alt={post.title}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -85,12 +88,12 @@ export default function BlogContent() {
 
               {/* Title */}
               <h2 className="clamp-[text,1.125rem,1.5rem] font-bold text-foreground leading-[1.2] group-hover:underline decoration-[#C9FD48] decoration-2 underline-offset-4 transition-all duration-300 mb-1.5 lg:mb-[0.3vw] line-clamp-2">
-                {t(`posts.${index}.title`)}
+                {post.title}
               </h2>
 
               {/* Excerpt */}
               <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed line-clamp-2">
-                {t(`posts.${index}.excerpt`)}
+                {post.excerpt}
               </p>
             </NextLink>
           ))}

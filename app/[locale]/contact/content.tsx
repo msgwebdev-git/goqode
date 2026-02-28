@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ArrowRight, ArrowLeft, Check, Copy, Loader2 } from "lucide-react";
-import { submitContact } from "@/app/actions/submit";
+import { submitContactForm } from "@/lib/calculator-api";
 
 /* ─── Constants ──────────────────────────────────────── */
 
@@ -197,7 +197,7 @@ export default function ContactPage() {
     e.preventDefault();
     setLoading(true);
 
-    const result = await submitContact({
+    const result = await submitContactForm({
       name: form.name,
       email: form.email,
       phone: form.phone,

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { getAlternates, getLocalizedUrl, getOgLocale } from "@/lib/metadata-helpers";
 import type { Locale } from "@/i18n/routing";
+import { getBlogPosts } from "@/lib/blog-api";
 import BlogContent from "./content";
 
 export async function generateMetadata({
@@ -48,10 +49,12 @@ async function BreadcrumbJsonLd({ locale }: { locale: string }) {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const { data: posts } = await getBlogPosts(locale);
+
   return (
     <>
       <BreadcrumbJsonLd locale={locale} />
-      <BlogContent />
+      <BlogContent posts={posts} />
     </>
   );
 }

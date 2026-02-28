@@ -17,9 +17,7 @@ const CasesSection = dynamic(
 const AboutSection = dynamic(
   () => import("@/components/AboutSection").then((m) => ({ default: m.AboutSection }))
 );
-const BlogSection = dynamic(
-  () => import("@/components/BlogSection").then((m) => ({ default: m.BlogSection }))
-);
+import { BlogSectionWrapper } from "@/components/BlogSectionWrapper";
 
 export async function generateMetadata({
   params,
@@ -161,7 +159,7 @@ export default async function Home({
       <ProcessSection />
       <CasesSection />
       <AboutSection />
-      <BlogSection />
+      <BlogSectionWrapper locale={locale} />
     </main>
   );
 }

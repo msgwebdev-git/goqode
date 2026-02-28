@@ -1,17 +1,12 @@
 import { Metadata } from "next";
-import { db } from "@/db";
-import { submissions } from "@/db/schema";
-import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { ThankYouClient } from "./thank-you-client";
-import { getCalculatorData } from "@/lib/calculator-queries";
+import { getCalculatorConfig, getSubmissionById } from "@/lib/calculator-api";
 
 export const metadata: Metadata = {
   title: "Thank You",
   robots: { index: false, follow: false },
 };
-
-export const dynamic = "force-dynamic";
 
 export default async function ThankYouPage({
   searchParams,
@@ -24,15 +19,10 @@ export default async function ThankYouPage({
   const numId = parseInt(id, 10);
   if (isNaN(numId)) notFound();
 
-  const [row] = await db
-    .select()
-    .from(submissions)
-    .where(eq(submissions.id, numId))
-    .limit(1);
-
+  const row = await getSubmissionById(numId);
   if (!row || row.source !== "calculator") notFound();
 
-  const config = await getCalculatorData();
+  const config = await getCalculatorConfig();
 
   const features: string[] = row.features ? JSON.parse(row.features) : [];
   const scopeModifiers: Record<string, string> = row.scopeModifiers

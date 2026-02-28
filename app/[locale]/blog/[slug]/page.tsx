@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { getAlternates, getLocalizedUrl, getOgLocale } from "@/lib/metadata-helpers";
 import type { Locale } from "@/i18n/routing";
-import { getPostBySlug } from "@/content/blog/posts";
+import { getBlogPost } from "@/lib/blog-api";
 import { notFound } from "next/navigation";
 import BlogArticle from "./article";
 
@@ -12,17 +12,15 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getBlogPost(slug, locale);
   if (!post) return {};
 
-  const t = await getTranslations({ locale, namespace: `BlogPost_${slug}` });
-
   return {
-    title: t("meta.title"),
-    description: t("meta.description"),
+    title: post.meta.title,
+    description: post.meta.description,
     openGraph: {
-      title: t("meta.title"),
-      description: t("meta.description"),
+      title: post.meta.title,
+      description: post.meta.description,
       type: "article",
       url: await getLocalizedUrl(`/blog/${slug}`, locale as Locale),
       siteName: "GoQode",
@@ -33,9 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { locale, slug } = await params;
+  const post = await getBlogPost(slug, locale);
   if (!post) notFound();
 
-  return <BlogArticle slug={slug} post={post} />;
+  return <BlogArticle post={post} />;
 }

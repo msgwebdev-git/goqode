@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         hostname: "svgl.app",
         pathname: "/library/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/dbn0xvxtv/**",
+      },
     ],
   },
   async headers() {

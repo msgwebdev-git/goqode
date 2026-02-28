@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Trash2 } from "lucide-react";
-import { deleteSubmission } from "./actions";
+import { deleteAdminSubmission } from "@/lib/calculator-api";
 
 type Submission = {
   id: number;
@@ -22,18 +22,19 @@ type Submission = {
   solutions: string | null;
   serviceTypes: string | null;
   budget: string | null;
-  createdAt: Date;
+  createdAt: string;
 };
 
-export function SubmissionsClient({ submissions }: { submissions: Submission[] }) {
+export function SubmissionsClient({ submissions, token }: { submissions: Submission[]; token: string }) {
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [deletingId, setDeletingId] = useState<number | null>(null);
 
   async function handleDelete(id: number) {
     if (!confirm("Удалить заявку?")) return;
     setDeletingId(id);
-    await deleteSubmission(id);
+    await deleteAdminSubmission(token, id);
     setDeletingId(null);
+    window.location.reload();
   }
 
   if (submissions.length === 0) {

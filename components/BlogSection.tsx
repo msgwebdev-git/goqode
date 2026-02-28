@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import NextLink from "next/link";
 import SplitText from "./SplitText";
 import Image from "next/image";
+import type { BlogPostListItem } from "@/lib/blog-api";
 
 const container = {
   hidden: {},
@@ -26,32 +27,15 @@ const cardVariant = {
   },
 };
 
-const blogPosts = [
-  {
-    id: "1",
-    slug: "sozdanie-lendinga-Moldova-polnoe-rukovodstvo",
-    image: "/blog/landingmoldova.jpeg",
-    category: "development",
-    readTime: 12,
-  },
-  {
-    id: "2",
-    slug: "skolko-stoit-sait-v-Moldova-2026",
-    image: "/blog/money.jpg",
-    category: "development",
-    readTime: 15,
-  },
-  {
-    id: "3",
-    slug: "5-priznakov-chto-sajtu-nuzhen-redizajn",
-    image: "/blog/rebranding.jpg",
-    category: "design",
-    readTime: 4,
-  },
-];
+interface Props {
+  posts?: BlogPostListItem[];
+}
 
-export function BlogSection() {
+export function BlogSection({ posts }: Props) {
   const t = useTranslations("Blog");
+
+  // Fallback if no posts passed (shouldn't happen with API)
+  if (!posts || posts.length === 0) return null;
 
   return (
     <section className="w-full px-6 md:clamp-[px,12,24] clamp-[py,16,32]">
@@ -88,17 +72,17 @@ export function BlogSection() {
           </div>
         </motion.div>
 
-        {/* Blog Posts — mobile: horizontal scroll, desktop: grid */}
+        {/* Blog Posts — desktop: grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-[1.5vw]">
-          {blogPosts.map((post, index) => (
+          {posts.map((post) => (
             <motion.article
-              key={post.id}
+              key={post.slug}
               variants={cardVariant}
               className="group h-full"
             >
               <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-[0.8vw] bg-zinc-100 dark:bg-zinc-900">
-                  <Image src={post.image} alt={t(`posts.${index}.title`)} fill className="object-cover" sizes="33vw" />
+                  <Image src={post.image} alt={post.title} fill className="object-cover" sizes="33vw" />
                   <div className="absolute inset-0 bg-[#C9FD48]/0 group-hover:bg-[#C9FD48]/10 transition-colors duration-300" />
                 </div>
                 <div className="flex items-center gap-[0.5vw] mb-[0.5vw]">
@@ -110,10 +94,10 @@ export function BlogSection() {
                   </span>
                 </div>
                 <h3 className="text-[1.25vw] font-bold text-foreground leading-[1.1] group-hover:underline decoration-[#C9FD48] decoration-2 underline-offset-4 transition-all duration-300 mb-[0.4vw] line-clamp-2">
-                  {t(`posts.${index}.title`)}
+                  {post.title}
                 </h3>
                 <p className="clamp-[text,0.875rem,1rem] text-muted-foreground leading-relaxed line-clamp-2">
-                  {t(`posts.${index}.excerpt`)}
+                  {post.excerpt}
                 </p>
               </NextLink>
             </motion.article>
@@ -123,15 +107,15 @@ export function BlogSection() {
         {/* Mobile: horizontal scroll */}
         <div className="lg:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6" style={{ WebkitOverflowScrolling: "touch", scrollPaddingLeft: "24px" }}>
           <div className="shrink-0 w-6" />
-          {blogPosts.map((post, index) => (
+          {posts.map((post) => (
             <motion.article
-              key={post.id}
+              key={post.slug}
               variants={cardVariant}
               className="group shrink-0 w-[75vw] snap-start"
             >
               <NextLink href={`/blog/${post.slug}`} className="block">
                 <div className="relative aspect-[3/2] rounded-2xl overflow-hidden mb-3 bg-zinc-100 dark:bg-zinc-900">
-                  <Image src={post.image} alt={t(`posts.${index}.title`)} fill className="object-cover" sizes="75vw" />
+                  <Image src={post.image} alt={post.title} fill className="object-cover" sizes="75vw" />
                 </div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="text-[0.625rem] font-semibold uppercase tracking-wider text-black bg-[#C9FD48] px-2 py-0.5 rounded-full">
@@ -142,10 +126,10 @@ export function BlogSection() {
                   </span>
                 </div>
                 <h3 className="text-base font-bold text-foreground leading-[1.1] mb-1 line-clamp-2">
-                  {t(`posts.${index}.title`)}
+                  {post.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {t(`posts.${index}.excerpt`)}
+                  {post.excerpt}
                 </p>
               </NextLink>
             </motion.article>

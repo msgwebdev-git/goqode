@@ -3,15 +3,13 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
-import type { BlogPost } from "@/content/blog/posts";
+import type { BlogPostDetail } from "@/lib/blog-api";
 
 interface Props {
-  slug: string;
-  post: BlogPost;
+  post: BlogPostDetail;
 }
 
-export default function BlogArticle({ slug, post }: Props) {
-  const t = useTranslations(`BlogPost_${slug}`);
+export default function BlogArticle({ post }: Props) {
   const tb = useTranslations("Blog");
 
   return (
@@ -42,7 +40,7 @@ export default function BlogArticle({ slug, post }: Props) {
           </div>
 
           <h1 className="text-[8vw] md:text-[4vw] font-black leading-[1.1] tracking-tight text-foreground uppercase">
-            {t("title")}
+            {post.title}
           </h1>
 
           {/* Decorative divider */}
@@ -61,7 +59,7 @@ export default function BlogArticle({ slug, post }: Props) {
           <article>
             {/* Intro */}
             <p className="clamp-[text,1.125rem,1.375rem] text-muted-foreground leading-relaxed mb-10 md:mb-14 border-l-4 border-[#C9FD48] pl-4 md:pl-6">
-              {t("intro")}
+              {post.intro}
             </p>
 
             {/* Sections */}
@@ -77,63 +75,48 @@ export default function BlogArticle({ slug, post }: Props) {
                     {sectionIndex + 1}
                   </span>
                   <h2 className="clamp-[text,1.25rem,2rem] font-bold text-foreground leading-tight">
-                    {t(`sections.${section.key}.title`)}
+                    {section.title}
                   </h2>
                 </div>
 
                 {/* Content text */}
                 <div className="clamp-[text,0.9375rem,1.125rem] text-muted-foreground leading-relaxed whitespace-pre-line mb-4 pl-11 md:pl-14">
-                  {t(`sections.${section.key}.content`)}
+                  {section.content}
                 </div>
 
                 {/* List items */}
-                {section.type === "list" && (
+                {section.type === "list" && section.list && (
                   <ul className="space-y-3 mt-5 pl-11 md:pl-14">
-                    {Array.from({ length: 20 }, (_, i) => {
-                      if (!t.has(`sections.${section.key}.list.${i}`))
-                        return null;
-                      return (
-                        <li
-                          key={i}
-                          className="flex gap-3 clamp-[text,0.9375rem,1.125rem] text-muted-foreground leading-relaxed group"
-                        >
-                          <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 dark:bg-zinc-800 text-foreground flex items-center justify-center text-xs font-bold mt-0.5 group-hover:bg-[#C9FD48] group-hover:text-black transition-colors">
-                            {i + 1}
-                          </span>
-                          <span>{t(`sections.${section.key}.list.${i}`)}</span>
-                        </li>
-                      );
-                    })}
+                    {section.list.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-3 clamp-[text,0.9375rem,1.125rem] text-muted-foreground leading-relaxed group"
+                      >
+                        <span className="shrink-0 w-6 h-6 rounded-full bg-zinc-100 dark:bg-zinc-800 text-foreground flex items-center justify-center text-xs font-bold mt-0.5 group-hover:bg-[#C9FD48] group-hover:text-black transition-colors">
+                          {i + 1}
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 )}
 
                 {/* Items with subtitle + text */}
-                {section.type === "items" && (
+                {section.type === "items" && section.items && (
                   <div className="space-y-5 mt-5 pl-11 md:pl-14">
-                    {Array.from({ length: 20 }, (_, i) => {
-                      if (
-                        !t.has(
-                          `sections.${section.key}.items.${i}.subtitle`
-                        )
-                      )
-                        return null;
-                      return (
-                        <div
-                          key={i}
-                          className="border-l-2 border-[#C9FD48] pl-4 py-1"
-                        >
-                          <h3 className="clamp-[text,1rem,1.25rem] font-semibold text-foreground mb-1">
-                            {i + 1}.{" "}
-                            {t(
-                              `sections.${section.key}.items.${i}.subtitle`
-                            )}
-                          </h3>
-                          <p className="clamp-[text,0.9375rem,1.125rem] text-muted-foreground leading-relaxed">
-                            {t(`sections.${section.key}.items.${i}.text`)}
-                          </p>
-                        </div>
-                      );
-                    })}
+                    {section.items.map((item, i) => (
+                      <div
+                        key={i}
+                        className="border-l-2 border-[#C9FD48] pl-4 py-1"
+                      >
+                        <h3 className="clamp-[text,1rem,1.25rem] font-semibold text-foreground mb-1">
+                          {i + 1}. {item.subtitle}
+                        </h3>
+                        <p className="clamp-[text,0.9375rem,1.125rem] text-muted-foreground leading-relaxed">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 )}
 
@@ -148,7 +131,7 @@ export default function BlogArticle({ slug, post }: Props) {
             <div className="mt-12 p-6 md:p-10 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C9FD48] via-[#C9FD48]/60 to-transparent" />
               <p className="clamp-[text,1rem,1.25rem] font-semibold text-foreground mb-5">
-                {t("sections.conclusion.content")}
+                {post.sections.find((s) => s.key === "conclusion")?.content ?? ""}
               </p>
               <Link
                 href="/contact"
@@ -181,7 +164,7 @@ export default function BlogArticle({ slug, post }: Props) {
                         {index + 1}
                       </span>
                       <span className="line-clamp-1">
-                        {t(`sections.${section.key}.title`)}
+                        {section.title}
                       </span>
                     </a>
                   ))}
