@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ChatWidget } from "@/components/ChatWidget";
 
 export default async function LocaleLayout({
   children,
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
         <Navbar />
         <div className="pt-16">{children}</div>
         <Footer />
+        <ChatWidget />
       </NextIntlClientProvider>
     </ThemeProvider>
   );

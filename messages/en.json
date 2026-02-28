@@ -3057,5 +3057,15 @@
     "marketingPackages": "Marketing Packages",
     "orgDescription": "Web development, mobile apps, e-commerce, digital marketing and automation solutions for businesses in Moldova, Romania and Europe.",
     "blog": "Blog"
+  },
+  "ChatWidget": {
+    "openChat": "Open chat",
+    "title": "GoQode Support",
+    "subtitle": "We usually reply within a few minutes",
+    "namePrompt": "What's your name?",
+    "namePlaceholder": "Your name",
+    "startChat": "Start chat",
+    "emptyState": "Send a message to start the conversation",
+    "messagePlaceholder": "Type a message..."
   }
 }
