@@ -43,6 +43,10 @@ export function ChatWidget() {
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
 
+  // Track visual viewport for mobile keyboard handling
+  const [vvHeight, setVvHeight] = useState<number | null>(null);
+  const [vvOffsetTop, setVvOffsetTop] = useState(0);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sessionIdRef = useRef<string>("");
 
@@ -61,6 +65,27 @@ export function ChatWidget() {
     mql.addEventListener("change", handler);
     return () => mql.removeEventListener("change", handler);
   }, []);
+
+  // Track visualViewport on mobile to handle keyboard properly
+  useEffect(() => {
+    if (!isMobile || !isOpen) return;
+
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const update = () => {
+      setVvHeight(vv.height);
+      setVvOffsetTop(vv.offsetTop);
+    };
+
+    update();
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+    };
+  }, [isMobile, isOpen]);
 
   // Lock body scroll on mobile when chat is open
   useEffect(() => {
@@ -136,6 +161,19 @@ export function ChatWidget() {
 
   if (!mounted) return null;
 
+  // On mobile, use visualViewport dimensions so the chat
+  // stays within the visible area even when the keyboard is open
+  const mobileStyle =
+    isMobile && isOpen
+      ? {
+          position: "fixed" as const,
+          top: vvOffsetTop,
+          left: 0,
+          width: "100%",
+          height: vvHeight ?? "100dvh",
+        }
+      : undefined;
+
   return (
     <>
       {/* Floating button */}
@@ -164,9 +202,7 @@ export function ChatWidget() {
                 : { opacity: 0, y: 20, scale: 0.95 }
             }
             animate={
-              isMobile
-                ? { y: 0 }
-                : { opacity: 1, y: 0, scale: 1 }
+              isMobile ? { y: 0 } : { opacity: 1, y: 0, scale: 1 }
             }
             exit={
               isMobile
@@ -174,10 +210,15 @@ export function ChatWidget() {
                 : { opacity: 0, y: 20, scale: 0.95 }
             }
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed z-50 flex flex-col overflow-hidden border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950 inset-0 md:inset-auto md:bottom-6 md:right-6 md:h-[480px] md:w-[360px] md:rounded-2xl md:border"
+            className={
+              isMobile
+                ? "fixed inset-0 z-50 flex flex-col bg-white dark:bg-zinc-950"
+                : "fixed bottom-6 right-6 z-50 flex h-[480px] w-[360px] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+            }
+            style={mobileStyle}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
+            <div className="flex shrink-0 items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
               <div>
                 <p className="text-sm font-semibold text-black dark:text-zinc-50">
                   {t("title")}
@@ -221,7 +262,7 @@ export function ChatWidget() {
             ) : (
               <>
                 {/* Messages */}
-                <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
+                <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 space-y-3">
                   {messages.length === 0 && (
                     <p className="text-center text-xs text-zinc-400 dark:text-zinc-500 pt-8">
                       {t("emptyState")}
@@ -231,7 +272,9 @@ export function ChatWidget() {
                     <div
                       key={msg.id}
                       className={`flex ${
-                        msg.sender === "USER" ? "justify-end" : "justify-start"
+                        msg.sender === "USER"
+                          ? "justify-end"
+                          : "justify-start"
                       }`}
                     >
                       <div
@@ -251,7 +294,7 @@ export function ChatWidget() {
                 {/* Input */}
                 <form
                   onSubmit={handleSend}
-                  className="flex items-center gap-2 border-t border-zinc-200 px-4 py-3 dark:border-zinc-800"
+                  className="flex shrink-0 items-center gap-2 border-t border-zinc-200 px-4 py-3 dark:border-zinc-800"
                 >
                   <Input
                     value={input}
