@@ -3,6 +3,6 @@ import { redirect } from "next/navigation";
 
 export async function POST() {
   const cookieStore = await cookies();
-  cookieStore.delete("admin-auth");
+  cookieStore.delete("admin-token");
   redirect("/admin");
 }

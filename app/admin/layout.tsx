@@ -13,9 +13,9 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
-  const auth = cookieStore.get("admin-auth");
+  const token = cookieStore.get("admin-token");
 
-  if (!auth || auth.value !== process.env.ADMIN_PASSWORD) {
+  if (!token) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950">
         <LoginForm />
