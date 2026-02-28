@@ -309,8 +309,15 @@ export function ChatWidget() {
         <div
           ref={panelRef}
           aria-hidden={!isOpen}
+          style={{
+            transitionProperty: "transform, visibility",
+            transitionDuration: "300ms, 0s",
+            transitionDelay: isOpen ? "0s, 0s" : "0s, 300ms",
+            transitionTimingFunction: "ease-out",
+            visibility: isOpen ? "visible" : "hidden",
+          }}
           className={`fixed inset-0 z-50 flex flex-col bg-white dark:bg-zinc-950
-            will-change-transform transition-transform duration-300 ease-out
+            will-change-transform
             ${isOpen ? "translate-y-0" : "translate-y-full pointer-events-none"}`}
         >
           {chatContent}
