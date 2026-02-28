@@ -705,7 +705,7 @@ export function CalculatorClient({ config }: { config: CalculatorConfig }) {
                     selected={selected}
                     name={t(`step2.levels.${key}`)}
                     description={t(`step2.descriptions.${key}`)}
-                    multiplier={`${config.designMultipliers[key]}x`}
+                    multiplier={`${parseFloat(config.designMultipliers[key].toFixed(2))}x`}
                     onClick={() => setForm((p) => ({ ...p, designLevel: selected ? null : key }))}
                   />
                 );
