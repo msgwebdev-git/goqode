@@ -36,6 +36,7 @@ export function ChatWidget() {
 
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [name, setName] = useState("");
   const [hasName, setHasName] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -53,7 +54,23 @@ export function ChatWidget() {
       setName(saved);
       setHasName(true);
     }
+
+    const mql = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
   }, []);
+
+  // Lock body scroll on mobile when chat is open
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [isMobile, isOpen]);
 
   useEffect(() => {
     if (isOpen && hasName) {
@@ -141,11 +158,23 @@ export function ChatWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-6 right-6 z-50 flex h-[480px] w-[360px] max-w-[calc(100vw-48px)] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950"
+            initial={
+              isMobile
+                ? { y: "100%" }
+                : { opacity: 0, y: 20, scale: 0.95 }
+            }
+            animate={
+              isMobile
+                ? { y: 0 }
+                : { opacity: 1, y: 0, scale: 1 }
+            }
+            exit={
+              isMobile
+                ? { y: "100%" }
+                : { opacity: 0, y: 20, scale: 0.95 }
+            }
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed z-50 flex flex-col overflow-hidden border-zinc-200 bg-white shadow-2xl dark:border-zinc-800 dark:bg-zinc-950 inset-0 md:inset-auto md:bottom-6 md:right-6 md:h-[480px] md:w-[360px] md:rounded-2xl md:border"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
