@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ChatWidget } from "@/components/ChatWidget";
+import { CookieConsentBanner } from "@/components/CookieConsent";
 
 export default async function LocaleLayout({
   children,
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
         <div className="pt-16">{children}</div>
         <Footer />
         <ChatWidget />
+        <CookieConsentBanner />
       </NextIntlClientProvider>
     </ThemeProvider>
   );

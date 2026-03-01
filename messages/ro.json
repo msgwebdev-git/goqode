@@ -332,7 +332,8 @@
       "cases": "Cazuri",
       "packages": "Pachete și prețuri",
       "calculator": "Calculator",
-      "contact": "Contact"
+      "contact": "Contact",
+      "privacy": "Confidențialitate"
     },
     "contact": {
       "title": "Contact"
@@ -3067,5 +3068,59 @@
     "startChat": "Începe conversația",
     "emptyState": "Trimiteți un mesaj pentru a începe conversația",
     "messagePlaceholder": "Scrieți un mesaj..."
+  },
+  "Privacy": {
+    "metaTitle": "Politica de confidențialitate — GoQode",
+    "metaDescription": "Politica de confidențialitate a GoQode. Aflați cum colectăm, utilizăm și protejăm datele dumneavoastră personale.",
+    "title": "Politica de confidențialitate",
+    "lastUpdated": "Ultima actualizare: 1 martie 2026",
+    "intro": {
+      "title": "Introducere",
+      "content": "Bine ați venit pe site-ul GoQode (<a href=\"https://goqode.agency\">goqode.agency</a>). Ne angajăm să protejăm confidențialitatea datelor dumneavoastră personale în conformitate cu Legea nr. 195/2024 privind protecția datelor cu caracter personal din Republica Moldova și Regulamentul General privind Protecția Datelor (GDPR) al UE. Această politică descrie modul în care colectăm, utilizăm, stocăm și protejăm informațiile dumneavoastră."
+    },
+    "controller": {
+      "title": "Operatorul de date",
+      "content": "<ul><li><strong>Compania:</strong> GoQode</li><li><strong>Adresa:</strong> Republica Moldova, mun. Chișinău</li><li><strong>Email:</strong> <a href=\"mailto:hello@goqode.agency\">hello@goqode.agency</a></li><li><strong>Website:</strong> <a href=\"https://goqode.agency\">goqode.agency</a></li></ul>"
+    },
+    "dataCollected": {
+      "title": "Datele pe care le colectăm",
+      "content": "Putem colecta următoarele categorii de date personale:<ul><li><strong>Date de identificare:</strong> nume, prenume, adresa de email, număr de telefon — atunci când completați un formular de contact sau solicitați o ofertă.</li><li><strong>Date tehnice:</strong> adresa IP, tipul de browser, sistemul de operare, paginile vizitate, durata vizitei — colectate automat prin cookies și instrumente de analiză.</li><li><strong>Date de comunicare:</strong> conținutul mesajelor trimise prin formularul de contact sau chat-ul live.</li></ul>"
+    },
+    "legalBasis": {
+      "title": "Temeiul legal al prelucrării",
+      "content": "Prelucrăm datele dumneavoastră personale pe baza următoarelor temeiuri legale, conform Legii nr. 195/2024:<ul><li><strong>Consimțământul:</strong> pentru cookies analitice și de marketing, precum și pentru comunicările de marketing.</li><li><strong>Executarea contractului:</strong> pentru procesarea solicitărilor și furnizarea serviciilor solicitate.</li><li><strong>Interesul legitim:</strong> pentru îmbunătățirea site-ului, securitate și prevenirea fraudei.</li></ul>"
+    },
+    "cookies": {
+      "title": "Politica privind cookie-urile",
+      "content": "Utilizăm următoarele tipuri de cookie-uri:<ul><li><strong>Cookie-uri strict necesare:</strong> asigură funcționarea de bază a site-ului. Nu pot fi dezactivate.</li><li><strong>Cookie-uri analitice:</strong> ne ajută să înțelegem cum utilizați site-ul (Google Analytics). Se activează doar cu consimțământul dumneavoastră.</li><li><strong>Cookie-uri de marketing:</strong> utilizate pentru afișarea de reclame relevante. Se activează doar cu consimțământul dumneavoastră.</li></ul>Puteți gestiona preferințele privind cookie-urile oricând prin intermediul bannerului de cookie-uri afișat pe site."
+    },
+    "thirdParty": {
+      "title": "Transferul datelor către terți",
+      "content": "Putem partaja datele dumneavoastră cu:<ul><li><strong>Google Analytics</strong> — pentru analiza traficului pe site.</li><li><strong>Servicii de hosting</strong> — pentru stocarea și procesarea datelor.</li><li><strong>Platforme de comunicare</strong> — pentru gestionarea chat-ului live.</li></ul>Nu vindem și nu transferăm datele dumneavoastră personale către terți în scopuri comerciale. Toate transferurile se realizează cu respectarea garanțiilor adecvate de protecție a datelor."
+    },
+    "rights": {
+      "title": "Drepturile dumneavoastră",
+      "content": "Conform legislației Republicii Moldova și GDPR, aveți următoarele drepturi:<ul><li><strong>Dreptul de acces:</strong> puteți solicita informații despre datele personale pe care le deținem despre dumneavoastră.</li><li><strong>Dreptul la rectificare:</strong> puteți solicita corectarea datelor inexacte.</li><li><strong>Dreptul la ștergere:</strong> puteți solicita ștergerea datelor personale (\\\"dreptul de a fi uitat\\\").</li><li><strong>Dreptul la restricționarea prelucrării:</strong> puteți solicita limitarea prelucrării datelor.</li><li><strong>Dreptul la portabilitatea datelor:</strong> puteți solicita transferul datelor într-un format structurat.</li><li><strong>Dreptul de opoziție:</strong> puteți obiecta prelucrării datelor în anumite situații.</li><li><strong>Dreptul de a depune o plângere:</strong> puteți depune o plângere la Centrul Național pentru Protecția Datelor cu Caracter Personal (<a href=\"https://datepersonale.md\">datepersonale.md</a>).</li></ul>Pentru exercitarea drepturilor, contactați-ne la <a href=\"mailto:hello@goqode.agency\">hello@goqode.agency</a>."
+    },
+    "retention": {
+      "title": "Perioada de păstrare a datelor",
+      "content": "Păstrăm datele dumneavoastră personale doar atât timp cât este necesar pentru scopurile pentru care au fost colectate:<ul><li><strong>Date din formulare de contact:</strong> până la 24 de luni de la ultima interacțiune.</li><li><strong>Date analitice:</strong> până la 14 luni (conform politicii Google Analytics).</li><li><strong>Date contractuale:</strong> pe durata contractului și conform cerințelor legale aplicabile.</li></ul>"
+    },
+    "security": {
+      "title": "Securitatea datelor",
+      "content": "Implementăm măsuri tehnice și organizatorice adecvate pentru a proteja datele dumneavoastră personale împotriva accesului neautorizat, pierderii, distrugerii sau divulgării, inclusiv:<ul><li>Criptare SSL/TLS pentru toate transferurile de date.</li><li>Acces restricționat la datele personale doar pentru personalul autorizat.</li><li>Monitorizare și audit periodic al sistemelor de securitate.</li></ul>"
+    },
+    "children": {
+      "title": "Datele minorilor",
+      "content": "Site-ul nostru nu este destinat persoanelor sub 16 ani. Nu colectăm cu bună știință date personale de la minori. Dacă aflăm că am colectat date de la un minor, le vom șterge imediat."
+    },
+    "changes": {
+      "title": "Modificări ale politicii",
+      "content": "Ne rezervăm dreptul de a actualiza această politică de confidențialitate. Orice modificări vor fi publicate pe această pagină cu data actualizării. Vă recomandăm să verificați periodic această pagină."
+    },
+    "contact": {
+      "title": "Contact",
+      "content": "Pentru orice întrebări legate de această politică de confidențialitate sau de prelucrarea datelor dumneavoastră personale, vă rugăm să ne contactați:<ul><li><strong>Email:</strong> <a href=\"mailto:hello@goqode.agency\">hello@goqode.agency</a></li><li><strong>Website:</strong> <a href=\"https://goqode.agency\">goqode.agency</a></li></ul>"
+    }
   }
 }

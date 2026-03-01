@@ -36,6 +36,7 @@ const companyLinks = [
   { key: "packages", href: "/packages" },
   { key: "calculator", href: "/calculator" },
   { key: "contact", href: "/contact" },
+  { key: "privacy", href: "/privacy" },
 ] as const;
 
 

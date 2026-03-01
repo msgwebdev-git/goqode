@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css" source("tw-animate-css");
+@import "vanilla-cookieconsent/dist/cookieconsent.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -199,6 +200,243 @@ html.dark, .dark {
 
 .hero-fade-up {
   animation: hero-fade-up 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+/* ── Cookie Consent — custom theme ── */
+#cc-main {
+  --cc-font-family: var(--font-manrope), system-ui, sans-serif;
+  --cc-modal-border-radius: 1rem;
+  --cc-btn-border-radius: 9999px;
+  --cc-separator-border-color: rgba(0, 0, 0, 0.06);
+  --cc-bg: #ffffff;
+  --cc-primary-color: #0a0a0a;
+  --cc-secondary-color: #52525b;
+  --cc-btn-primary-bg: #C9FD48;
+  --cc-btn-primary-color: #000;
+  --cc-btn-primary-hover-bg: #b8ec3d;
+  --cc-btn-primary-hover-color: #000;
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: #0a0a0a;
+  --cc-btn-secondary-hover-bg: rgba(0, 0, 0, 0.05);
+  --cc-btn-secondary-hover-color: #0a0a0a;
+  --cc-btn-secondary-border-color: #18181b;
+  --cc-toggle-on-bg: #C9FD48;
+  --cc-toggle-off-bg: #d4d4d8;
+  --cc-toggle-on-knob-bg: #000;
+  --cc-toggle-off-knob-bg: #fff;
+  --cc-toggle-readonly-bg: #e4e4e7;
+  --cc-toggle-readonly-knob-bg: #a1a1aa;
+  --cc-cookie-category-block-bg: rgba(0, 0, 0, 0.03);
+  --cc-cookie-category-block-hover-bg: rgba(0, 0, 0, 0.06);
+  --cc-overlay-bg: rgba(0, 0, 0, 0.4);
+  --cc-section-border: rgba(0, 0, 0, 0.06);
+}
+
+.dark #cc-main {
+  --cc-bg: #0a0a0a;
+  --cc-primary-color: #ededed;
+  --cc-secondary-color: #a1a1aa;
+  --cc-separator-border-color: rgba(255, 255, 255, 0.1);
+  --cc-btn-secondary-color: #C9FD48;
+  --cc-btn-secondary-hover-bg: rgba(201, 253, 72, 0.1);
+  --cc-btn-secondary-hover-color: #C9FD48;
+  --cc-btn-secondary-border-color: #C9FD48;
+  --cc-toggle-off-bg: #3f3f46;
+  --cc-toggle-off-knob-bg: #71717a;
+  --cc-toggle-readonly-bg: #27272a;
+  --cc-toggle-readonly-knob-bg: #52525b;
+  --cc-cookie-category-block-bg: rgba(255, 255, 255, 0.05);
+  --cc-cookie-category-block-hover-bg: rgba(255, 255, 255, 0.08);
+  --cc-overlay-bg: rgba(0, 0, 0, 0.6);
+  --cc-section-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Consent modal */
+#cc-main .cm {
+  background: var(--cc-bg) !important;
+  border: 1px solid var(--cc-separator-border-color) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03) !important;
+  font-family: var(--cc-font-family) !important;
+  max-width: 420px !important;
+}
+
+.dark #cc-main .cm {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Title */
+#cc-main .cm__title {
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+  color: var(--cc-primary-color) !important;
+}
+
+/* Description */
+#cc-main .cm__desc {
+  color: var(--cc-secondary-color) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Buttons container */
+#cc-main .cm__btns {
+  gap: 0.5rem !important;
+}
+
+/* Primary button — lime accent */
+#cc-main .cm__btn[data-role="all"] {
+  background: var(--cc-btn-primary-bg) !important;
+  color: var(--cc-btn-primary-color) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+#cc-main .cm__btn[data-role="all"]:hover {
+  background: var(--cc-btn-primary-hover-bg) !important;
+  box-shadow: 0 0 20px rgba(201, 253, 72, 0.5) !important;
+}
+
+/* Secondary button — outlined */
+#cc-main .cm__btn[data-role="necessary"] {
+  background: var(--cc-btn-secondary-bg) !important;
+  color: var(--cc-btn-secondary-color) !important;
+  border: 1px solid var(--cc-btn-secondary-border-color) !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+#cc-main .cm__btn[data-role="necessary"]:hover {
+  background: var(--cc-btn-secondary-hover-bg) !important;
+  color: var(--cc-btn-secondary-hover-color) !important;
+}
+
+/* Show preferences link */
+#cc-main .cm__btn[data-role="show"] {
+  background: transparent !important;
+  color: var(--cc-secondary-color) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  font-size: 0.8125rem !important;
+  padding: 0.5rem 1rem !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  transition: color 0.2s ease !important;
+}
+#cc-main .cm__btn[data-role="show"]:hover {
+  color: var(--cc-primary-color) !important;
+}
+
+/* ── Preferences modal ── */
+#cc-main .pm {
+  background: var(--cc-bg) !important;
+  border: 1px solid var(--cc-separator-border-color) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+  font-family: var(--cc-font-family) !important;
+}
+
+.dark #cc-main .pm {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+#cc-main .pm__title {
+  font-weight: 700 !important;
+  color: var(--cc-primary-color) !important;
+}
+
+#cc-main .pm__section-title {
+  font-weight: 600 !important;
+  color: var(--cc-primary-color) !important;
+}
+
+#cc-main .pm__section-desc {
+  color: var(--cc-secondary-color) !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.6 !important;
+}
+
+#cc-main .pm__section-desc a {
+  color: #18181b !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+}
+
+.dark #cc-main .pm__section-desc a {
+  color: #C9FD48 !important;
+}
+
+/* Preferences modal buttons */
+#cc-main .pm__btn[data-role="all"] {
+  background: var(--cc-btn-primary-bg) !important;
+  color: var(--cc-btn-primary-color) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+}
+#cc-main .pm__btn[data-role="all"]:hover {
+  background: var(--cc-btn-primary-hover-bg) !important;
+  box-shadow: 0 0 20px rgba(201, 253, 72, 0.5) !important;
+}
+
+#cc-main .pm__btn[data-role="necessary"] {
+  background: var(--cc-btn-secondary-bg) !important;
+  color: var(--cc-btn-secondary-color) !important;
+  border: 1px solid var(--cc-btn-secondary-border-color) !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+}
+#cc-main .pm__btn[data-role="necessary"]:hover {
+  background: var(--cc-btn-secondary-hover-bg) !important;
+}
+
+#cc-main .pm__btn[data-role="save"] {
+  background: var(--cc-btn-secondary-bg) !important;
+  color: var(--cc-btn-secondary-color) !important;
+  border: 1px solid var(--cc-btn-secondary-border-color) !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.3s ease !important;
+}
+#cc-main .pm__btn[data-role="save"]:hover {
+  background: var(--cc-btn-secondary-hover-bg) !important;
+}
+
+/* Close button */
+#cc-main .pm__close-btn {
+  border-radius: 9999px !important;
+  transition: background 0.2s ease !important;
+}
+#cc-main .pm__close-btn:hover {
+  background: var(--cc-cookie-category-block-hover-bg) !important;
+}
+
+/* Toggle */
+#cc-main .section__toggle .toggle__icon {
+  border-radius: 9999px !important;
+}
+
+/* Section borders */
+#cc-main .pm__section {
+  border-color: var(--cc-section-border) !important;
+}
+
+/* Cookie table */
+#cc-main .pm__section .section__table {
+  border-radius: 0.75rem !important;
+  overflow: hidden;
 }
 
 @layer base {
