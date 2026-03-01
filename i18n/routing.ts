@@ -120,6 +120,11 @@ export const routing = defineRouting({
       en: "/services/digital-marketing",
       ru: "/uslugi/cifrovoj-marketing",
     },
+    "/privacy": {
+      ro: "/confidentialitate",
+      en: "/privacy",
+      ru: "/konfidencialnost",
+    },
   },
 });
 
